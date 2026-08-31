@@ -120,29 +120,6 @@
       :focus-visible{outline:2px solid var(--aparicion);outline-offset:3px}
 
 
-      /* ---------- el mapa ---------- */
-      const ests=document.getElementById('estaciones');
-      if(ests){ests.addEventListener('click',e=>{
-        const b=e.target.closest('.est__cab'); if(!b||b.tagName!=='BUTTON')return;
-        const ab=b.getAttribute('aria-expanded')==='true';
-        b.setAttribute('aria-expanded',String(!ab));
-        document.getElementById(b.getAttribute('aria-controls')).hidden=ab;
-      });}
-      const ley=document.getElementById('leyenda');
-      if(ley){ley.addEventListener('click',e=>{
-        const b=e.target.closest('.pq'); if(!b)return;
-        const act=b.getAttribute('aria-pressed')==='true';
-        ley.querySelectorAll('.pq').forEach(x=>x.setAttribute('aria-pressed','false'));
-        document.querySelectorAll('.hilos .h').forEach(h=>h.classList.remove('sel','dim'));
-        if(act)return;
-        b.setAttribute('aria-pressed','true');
-        const q=b.dataset.q;
-        document.querySelectorAll('.hilos .h').forEach(h=>{
-          if(h.dataset.q===q&&h.classList.contains('on'))h.classList.add('sel');
-          else h.classList.add('dim');
-        });
-      });}
-
       /* ---------- barra ---------- */
       .bar{
         position:fixed;inset:0 0 auto 0;z-index:50;
@@ -474,6 +451,7 @@
       .est__panel dt{font-family:var(--mono);font-size:.5625rem;letter-spacing:.18em;text-transform:uppercase;
         color:var(--gris);padding-top:.35rem}
       .est__panel dd{margin:0 0 1rem;color:#B8B6B0;font-size:.9375rem;max-width:62ch}
+      .est__panel p{margin:0;color:#B8B6B0;font-size:.9375rem;max-width:62ch}
       @media print{.est__panel,.est__panel[hidden]{display:block!important}}
 
       /* preguntas recurrentes */
@@ -750,6 +728,7 @@
                   cambia el significado de algo cuando se pone junto a otras
                   cosas.
                 </p>
+                <p class="mom__d"><b>Curar no es conseguir cosas: es ordenarlas.</b></p>
               </details>
             </article>
             <article class="mom">
@@ -801,7 +780,7 @@
               <details class="mom__c">
                 <summary>Seguir leyendo</summary>
                 <p class="mom__d">
-                  Aquí nació el MUFU, y la escala cambió por completo. La
+                  La escala cambió por completo. La
                   pregunta de partida fue
                   <em>¿hacia dónde se dirige la humanidad?</em>, y a partir de
                   ella se construyó un futuro posible con su propio ecosistema.
@@ -823,6 +802,7 @@
                     narrativas.</b
                   >
                 </p>
+                <p class="mom__d"><b>Exhibir es decidir. El visitante entiende con el cuerpo, no con la cabeza.</b></p>
               </details>
             </article>
             <article class="mom">
@@ -864,6 +844,7 @@
                   no habla nuestro idioma, no tiene nuestro cuerpo y no vive en
                   nuestro siglo. Diseñar sin contexto compartido.
                 </p>
+                <p class="mom__d"><b>Reliquia, talismán y MacGuffin no son tipos de cosas: son funciones que una cosa cumple.</b></p>
               </details>
             </article>
             <article class="mom">
@@ -924,7 +905,7 @@
               <details class="mom__c">
                 <summary>Seguir leyendo</summary>
                 <p class="mom__d">
-                  La selección vuelve a ser personal, pero ahora está atravesada
+                  La selección regresa a lo personal, pero ahora está atravesada
                   por el tiempo. Cada persona aporta cuatro cosas:
                   <b
                     >un objeto que represente el presente, uno que quiera
@@ -936,8 +917,8 @@
                   algo distinto dentro de muchos años. La carta abre una
                   conversación entre el presente y el futuro; los objetos quedan
                   como evidencia material de quién era uno y de qué le parecía
-                  importante. Es otra vez el acto de seleccionar y curar, pero
-                  con la pregunta corrida: ya no qué significa este objeto hoy,
+                  importante. Es el gesto de la primera semana con el reloj
+                  cambiado: ya no qué significa este objeto hoy,
                   sino <em>qué va a significar dentro de muchos años</em>.
                 </p>
                 <p class="mom__d">
@@ -959,6 +940,7 @@
                   De ahí sale el plazo de la cápsula: se abre a veintiún años,
                   la misma distancia que se acababa de recorrer al revés.
                 </p>
+                <p class="mom__d"><b>Un trabajo académico se entrega y se recupera. Este se entrega y no vuelve.</b></p>
               </details>
             </article>
             <article class="mom">
@@ -1015,9 +997,8 @@
               <details class="mom__c">
                 <summary>Seguir leyendo</summary>
                 <p class="mom__d">
-                  Del mundo de la transformación sale un objeto del ecosistema
-                  LNS: los lentes que se cargan con el sol, se adaptan a la
-                  córnea y responden preguntas pensadas. Del mundo del colapso
+                  Del mundo de la transformación sale el objeto central del
+                  ecosistema LNS: los lentes de contacto. Del mundo del colapso
                   sale un objeto de la vida clandestina: el sistema con que se
                   monta y traslada un Nodo de Memoria, las copias de resguardo
                   que protegen a los originales, o el brazalete TRC-507 con su
@@ -1051,26 +1032,21 @@
 
             <div class="preguntas">
               <p class="eyebrow" style="margin-bottom: 1.5rem">
-                Las preguntas que volvieron todo el trimestre
+                Nueve preguntas atravesaron las diez semanas
               </p>
-              <ul>
-                <li>¿Qué seleccionamos?</li>
-                <li>¿Por qué seleccionamos algo?</li>
-                <li>¿Qué conexiones existen entre los objetos?</li>
-                <li>¿Cómo cambia su significado cuando está junto a otros?</li>
-                <li>¿Quién construye la historia de un objeto?</li>
-                <li>¿Qué pasa cuando le inventamos una historia nueva?</li>
-                <li>¿Qué objetos merecen conservarse?</li>
-                <li>¿Cómo imaginamos el futuro?</li>
-                <li>¿Qué queremos que sobreviva al paso del tiempo?</li>
-              </ul>
               <p class="cierre-p">
                 Seleccionar, ordenar, exhibir, contar una historia o guardar
-                algo para el futuro son formas distintas de hacer lo mismo:
+                algo para el futuro parecen oficios distintos, y en el fondo
+                todos piden una sola decisión:
                 <em
-                  >decidir qué merece ser recordado y cómo queremos que sea
+                  >qué merece ser recordado y cómo queremos que sea
                   recordado.</em
                 >
+              </p>
+              <p class="cierre-p" style="margin-top: 1.25rem">
+                Las nueve están listadas en
+                <a href="#mapa">el mapa</a>, donde se puede seguir cada una
+                módulo por módulo y ver cuáles seguían abiertas el último día.
               </p>
             </div>
           </div>
@@ -1203,16 +1179,85 @@
           <div class="head rv">
             <div>
               <p class="eyebrow"><span class="num">03</span> — El hilo</p>
-              <h2 class="display h-l" id="hilo-t">Lo mismo,<br />ocho veces</h2>
+              <h2 class="display h-l" id="hilo-t">Nadie se puso<br />de acuerdo</h2>
             </div>
             <div class="prose">
               <p>
-                Ocho ejercicios, seis docentes, métodos que no se parecen.
-                Vistos de cerca son ocho cosas distintas. Vistos de lejos son
-                <em>la misma operación repetida en escalas cada vez mayores</em
-                >, y esa operación tiene dos mitades que nunca se separan.
+                Seis docentes trabajaron por separado. Dos grupos escribieron su
+                futuro sin hablarse. Eligieron el mismo año sin acordarlo.
+              </p>
+              <p>
+                Y al final del trimestre todos habían desmontado la misma
+                máquina, cada uno con herramientas distintas.
+                <em>Eso no se planeó. Se descubrió tarde, que es como se
+                descubren las cosas ciertas.</em>
               </p>
             </div>
+          </div>
+
+          <div
+            class="prose rv"
+            style="margin-top: clamp(2rem, 4vw, 3rem); max-width: none"
+          >
+            <h3
+              style="
+                font-family: var(--display);
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                color: var(--tiza);
+                text-transform: none;
+                letter-spacing: normal;
+                margin: 0 0 1.25rem;
+              "
+            >
+              Escribieron su pieza final sin saberlo
+            </h3>
+            <p>
+              Las dos ficciones que doce estudiantes inventaron para 2046
+              describen, punto por punto, la obra con la que el curso terminó
+              tres semanas después.
+            </p>
+            <p class="eyebrow" style="margin: 0 0 .5rem">
+              Lo que imaginaron para 2046 · lo que construyeron en 2026
+            </p>
+            <ul class="espejo">
+              <li>
+                <b>Los objetos bajan a bóvedas sin acceso general.</b> La
+                cápsula queda enterrada, sin acceso hasta 2047.
+              </li>
+              <li>
+                <b>Solo se ven en reconstrucción, nunca en materia.</b> En la
+                sala aparecen como luz sobre un vidrio, imposibles de tocar.
+              </li>
+              <li>
+                <b
+                  >La ley obliga al silencio: sin guías, sin explicaciones
+                  habladas.</b
+                >
+                La sala no tiene música ni voz: un golpe seco por cambio.
+              </li>
+              <li>
+                <b
+                  >Los Falsos Nodos exhiben copias para proteger los
+                  originales.</b
+                >
+                Lo que el público ve es un reflejo; lo original ya está bajo
+                tierra.
+              </li>
+              <li>
+                <b>Museos abandonados con las vitrinas vacías.</b> La pieza
+                permanente es una urna vacía y sellada.
+              </li>
+            </ul>
+            <p>
+              Se les pidió imaginar el futuro de los museos y terminaron
+              describiendo la máquina que ellos mismos iban a construir. Es la
+              mejor prueba de que el diseño especulativo no adivina:
+              <em
+                >ordena lo que uno ya venía entendiendo sin saber que lo
+                entendía.</em
+              >
+            </p>
+
           </div>
 
           <div class="hilo rv">
@@ -1227,11 +1272,10 @@
                 cubren de tierra.
               </p>
               <p>
-                Siempre lo mismo: algo deja de estar disponible.
-                <b
-                  >Y en el momento en que deja de estar disponible, empieza a
-                  significar.</b
-                >
+                Cambia el objeto, cambia la escala, cambia quién lo decide. El
+                gesto no.
+                <b>En el momento en que algo deja de estar disponible, empieza a
+                significar.</b>
               </p>
             </div>
             <div class="hilo__mitad">
@@ -1245,11 +1289,10 @@
                 en condicional porque no sabe para qué servía.
               </p>
               <p>
-                Siempre lo mismo:
-                <b
-                  >el significado de una cosa lo termina nombrando alguien que
-                  no es su dueño.</b
-                >
+                Cinco situaciones sin nada en común, y en las cinco la última
+                palabra la tiene un tercero:
+                <b>el significado de una cosa lo termina nombrando alguien que
+                no es su dueño.</b>
               </p>
             </div>
           </div>
@@ -1297,67 +1340,10 @@
                 margin: 2.5rem 0 1.25rem;
               "
             >
-              Los alumnos escribieron su propia pieza final sin saberlo
-            </h3>
-            <p>
-              Esto es lo más raro de todo el trimestre, y no lo planeó nadie.
-              Las dos ficciones de 2046 describen, punto por punto, la obra con
-              la que el curso terminó.
-            </p>
-            <ul class="espejo">
-              <li>
-                <b>Los objetos bajan a bóvedas sin acceso general.</b> La
-                cápsula queda enterrada, sin acceso hasta 2047.
-              </li>
-              <li>
-                <b>Solo se ven en reconstrucción, nunca en materia.</b> En la
-                sala aparecen como luz sobre un vidrio, imposibles de tocar.
-              </li>
-              <li>
-                <b
-                  >La ley obliga al silencio: sin guías, sin explicaciones
-                  habladas.</b
-                >
-                La sala no tiene música ni voz: un golpe seco por cambio.
-              </li>
-              <li>
-                <b
-                  >Los Falsos Nodos exhiben copias para proteger los
-                  originales.</b
-                >
-                Lo que el público ve es un reflejo; lo original ya está bajo
-                tierra.
-              </li>
-              <li>
-                <b>Museos abandonados con las vitrinas vacías.</b> La pieza
-                permanente es una urna vacía y sellada.
-              </li>
-            </ul>
-            <p>
-              Se les pidió imaginar el futuro de los museos y terminaron
-              describiendo la máquina que ellos mismos iban a construir. Es la
-              mejor prueba de que el diseño especulativo no adivina:
-              <em
-                >ordena lo que uno ya venía entendiendo sin saber que lo
-                entendía.</em
-              >
-            </p>
-
-            <h3
-              style="
-                font-family: var(--display);
-                font-size: clamp(1.5rem, 3vw, 2rem);
-                color: var(--tiza);
-                text-transform: none;
-                letter-spacing: normal;
-                margin: 2.5rem 0 1.25rem;
-              "
-            >
               Con una diferencia
             </h3>
             <p>
-              En los dos futuros hay alguien con la llave: la empresa que
-              administra las bóvedas, el régimen que edita las salas.
+              En los dos futuros alguien se queda con la llave.
               <strong>El MUFU se quedó sin llave a propósito.</strong> Nadie —ni
               los autores, ni los docentes, ni la escuela— puede abrir la
               cápsula antes del 5 de septiembre de 2047 a las 07:56. La
@@ -1378,8 +1364,8 @@
               documentos sobre la mesa: los escenarios que doce personas
               escribieron para 2046 y el mundo que efectivamente existe en 2047.
               <strong>Abrir la cápsula será calificar el pronóstico</strong> —
-              la misma operación que se hizo con el año 2005, corriendo esta vez
-              al derecho.
+              el ejercicio que se hizo con el año 2005, corriendo esta vez al
+              derecho.
             </p>
           </div>
         </div>
@@ -1392,7 +1378,7 @@
             <div>
               <p class="eyebrow"><span class="num">04</span> — El mapa</p>
               <h2 class="display h-l" id="mapa-t">
-                Qué preguntamos<br />y qué quedó<br />contestado
+                Lo que quedó<br />abierto
               </h2>
             </div>
             <div class="prose">
@@ -1403,9 +1389,9 @@
                 encendidas donde esa estación las trabajó.
               </p>
               <p>
-                Ninguna pregunta se resuelve de una vez. Se puede seguir cada
-                una a lo largo de las diez semanas y ver cuáles siguen abiertas
-                al final.
+                Ninguna se resuelve de una vez. Abre una estación y verás lo que
+                dejó sin cerrar; toca una pregunta y podrás seguirla por las diez
+                semanas hasta ver cuáles seguían abiertas el último día.
               </p>
             </div>
           </div>
@@ -1455,9 +1441,6 @@
                   <span class="est__n">00</span>
                   <span class="est__mid">
                     <span class="est__t">Mirar sin editar</span>
-                    <span class="est__doc"
-                      >Dirección · Erika Schnitter y Alejandro Pachón</span
-                    >
                     <span class="est__estado"
                       >imágenes sueltas → conjunto con lógica</span
                     >
@@ -1478,20 +1461,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-00" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que la selección ya estaba hecha antes de decidirla: todos
-                      administramos una colección que nunca declaramos.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Si el patrón que otros encuentran en tus fotos es tuyo o
-                      es de ellos.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>Curar no es conseguir cosas: es ordenarlas.</dd>
-                  </dl>
+                  <p>Si el patrón que otros encuentran en tus fotos es tuyo o es de ellos.</p>
                 </div>
               </li>
               <li class="est">
@@ -1504,7 +1474,6 @@
                   <span class="est__n">01</span>
                   <span class="est__mid">
                     <span class="est__t">Agrupar y contar</span>
-                    <span class="est__doc">Román Flórez</span>
                     <span class="est__estado"
                       >objeto propio → pieza con historia</span
                     >
@@ -1525,20 +1494,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-01" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que un mismo conjunto admite varias curadurías y ninguna
-                      es la verdadera.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Hasta dónde se le puede inventar un pasado a un objeto sin
-                      traicionarlo.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>Un objeto no tiene un solo significado.</dd>
-                  </dl>
+                  <p>Hasta dónde se le puede inventar un pasado a un objeto sin traicionarlo.</p>
                 </div>
               </li>
               <li class="est">
@@ -1551,7 +1507,6 @@
                   <span class="est__n">02</span>
                   <span class="est__mid">
                     <span class="est__t">Construir el mundo alrededor</span>
-                    <span class="est__doc">Viridiana Zavala</span>
                     <span class="est__estado"
                       >pieza → pieza dentro de un sistema</span
                     >
@@ -1572,21 +1527,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-02" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que el museo no está en los objetos, sino en quienes los
-                      eligen, los cuidan, diseñan el espacio y escriben el
-                      relato.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>Quién paga y sostiene ese sistema.</dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>
-                      Exhibir es decidir. El visitante entiende con el cuerpo,
-                      no con la cabeza.
-                    </dd>
-                  </dl>
+                  <p>Quién paga y sostiene ese sistema.</p>
                 </div>
               </li>
               <li class="est est--puente">
@@ -1603,7 +1544,6 @@
                         >puente</span
                       ></span
                     >
-                    <span class="est__doc">Luis Miguel Caamaño</span>
                     <span class="est__estado">pieza → signo legible</span>
                     <span
                       class="hilos"
@@ -1622,23 +1562,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-03" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que un objeto empieza a significar exactamente cuando deja
-                      de servir.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Cómo se le habla a alguien que no comparte ningún
-                      contexto: el problema del disco de la Voyager.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>
-                      Reliquia, talismán y MacGuffin no son tipos de cosas: son
-                      funciones que una cosa cumple.
-                    </dd>
-                  </dl>
+                  <p>Cómo se le habla a alguien que no comparte ningún contexto: el problema del disco de la Voyager.</p>
                 </div>
               </li>
               <li class="est">
@@ -1651,7 +1575,6 @@
                   <span class="est__n">04</span>
                   <span class="est__mid">
                     <span class="est__t">Proyectar con evidencia</span>
-                    <span class="est__doc">Karla Paniagua</span>
                     <span class="est__estado">signo → hipótesis fechada</span>
                     <span
                       class="hilos"
@@ -1670,23 +1593,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-04" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que el futuro no se adivina: se construye con señales del
-                      presente rastreadas hasta su fuente.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Quién tendrá la llave de la memoria. Los dos grupos
-                      llegaron ahí y ninguno lo resolvió.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>
-                      Un objeto especulativo depende de un mundo y a la vez
-                      transforma el mundo donde existe.
-                    </dd>
-                  </dl>
+                  <p>Quién tendrá la llave de la memoria. Los dos grupos llegaron ahí y ninguno lo resolvió.</p>
                 </div>
               </li>
               <li class="est est--puente">
@@ -1704,7 +1611,6 @@
                         >puente</span
                       ></span
                     >
-                    <span class="est__doc">Luis Miguel Caamaño</span>
                     <span class="est__estado"
                       >hipótesis → evidencia de uno mismo</span
                     >
@@ -1725,22 +1631,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-05" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Cuánto cambio cabe en veintiún años. De ahí sale el plazo
-                      exacto de la cápsula.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Si lo que elegimos hoy seguirá significando algo en 2047.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>
-                      Un trabajo académico se entrega y se recupera. Este se
-                      entrega y no vuelve.
-                    </dd>
-                  </dl>
+                  <p>Si lo que elegimos hoy seguirá significando algo en 2047.</p>
                 </div>
               </li>
               <li class="est">
@@ -1753,7 +1644,6 @@
                   <span class="est__n">06</span>
                   <span class="est__mid">
                     <span class="est__t">Fabricar la aparición</span>
-                    <span class="est__doc">Luis Miguel Caamaño</span>
                     <span class="est__estado">materia → imagen sin peso</span>
                     <span class="hilos" aria-label="Preguntas trabajadas: 6, 9"
                       ><i class="h" data-q="1" aria-hidden="true"></i
@@ -1770,23 +1660,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-06" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que el «holograma» del futuro es un truco de 1862, y que
-                      la aparición se controla con la luz, no con el vidrio.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Cuánto de lo que hoy llamamos innovación es reciclaje con
-                      otro nombre.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>
-                      Después de armar una ilusión con las manos, ya no se puede
-                      caer en ella.
-                    </dd>
-                  </dl>
+                  <p>Cuánto de lo que hoy llamamos innovación es reciclaje con otro nombre.</p>
                 </div>
               </li>
               <li class="est est--solo">
@@ -1802,9 +1676,6 @@
                       >Los objetos de 2046<span class="est__badge"
                         >sin docente</span
                       ></span
-                    >
-                    <span class="est__doc"
-                      >Trabajo autónomo · los 12 estudiantes</span
                     >
                     <span class="est__estado"
                       >hipótesis → dos prototipos sin uso</span
@@ -1826,26 +1697,7 @@
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-07" hidden>
-                  <dl>
-                    <dt>Resolvió</dt>
-                    <dd>
-                      Que un objeto especulativo solo se entiende cuando existe
-                      en materia: fabricarlo obliga a decidir de qué está hecho,
-                      cuánto pesa y quién lo enciende. Y que elegir uno solo por
-                      mundo es ya una curaduría.
-                    </dd>
-                    <dt>Quedó abierto</dt>
-                    <dd>
-                      Si un prototipo que nunca va a funcionar es un objeto o
-                      solo la ilustración de una idea.
-                    </dd>
-                    <dt>Aprendizaje</dt>
-                    <dd>
-                      La cápsula entierra cosas que dejaron de funcionar; los
-                      prototipos son cosas que nunca funcionaron. Nacen como
-                      signo, sin pasar por la utilidad.
-                    </dd>
-                  </dl>
+                  <p>Si un prototipo que nunca va a funcionar es un objeto o solo la ilustración de una idea.</p>
                 </div>
               </li>
               <li class="est est--fin">
@@ -1889,7 +1741,7 @@
               <p>
                 Ninguna puede verse hoy. Todas están bajo tierra. Lo que sigue
                 es el único acceso que existe hasta la fecha de apertura.
-                También puedes verlas ordenadas por el año desde el que está
+                También puedes agruparlas por el siglo desde el que está
                 escrita su cédula: el futuro que cada quien imaginó para su
                 objeto.
               </p>
@@ -1901,7 +1753,7 @@
             id="filtros"
             role="group"
             hidden
-            aria-label="Filtrar la colección por el año desde el que fue escrita su cédula"
+            aria-label="Filtrar la colección por el siglo desde el que fue escrita su cédula"
           ></div>
           <div class="grid rv" id="grid">
             <a class="pieza" href="ficha-01.html" style="--tono: #bfc48a">
@@ -2064,10 +1916,9 @@
                 <em>Última función</em> es la pieza con la que cerró el
                 recorrido. No resume el trimestre: es lo que salió de él.
                 Durante los días de la muestra, los objetos aparecieron uno por
-                uno sobre un solo pedestal, hechos de luz, con un truco de
-                teatro de 1862 que se usaba para hacer aparecer fantasmas en
-                escena, reconstruido en clase por los propios estudiantes.
-                Noventa segundos cada uno. Ninguno volvió.
+                uno sobre un solo pedestal, hechos de luz, con el aparato
+                victoriano que los propios estudiantes habían reconstruido dos
+                semanas antes. Noventa segundos cada uno. Ninguno volvió.
               </p>
               <p>
                 La última noche la obra cambió de estado delante del público: se
@@ -2085,8 +1936,8 @@
               <h3>La función</h3>
               <p>
                 Sala a oscuras, un pedestal, una urna. Cada objeto aparecía
-                reflejado en un vidrio inclinado a 45°: sin materia, sin peso,
-                imposible de tocar. Doce apariciones, una por estudiante, y en
+                reflejado sobre el vidrio: sin materia, sin peso, imposible de
+                tocar. Doce apariciones, una por estudiante, y en
                 cada una los tres objetos de esa persona en orden: el presente,
                 lo que entrega, lo que quiere recuperar. Entre una persona y la
                 siguiente, ocho segundos de negro y el pedestal vacío.
@@ -2158,9 +2009,10 @@
             </div>
             <div class="prose">
               <p>
-                Un pedestal, una urna vacía, un haz de luz que no ilumina nada y
-                una placa. La obra no está a la vista: está bajo tierra, a pocos
-                metros, hacia donde apunta la luz.
+                Lo primero que sorprende es que no hay nada que mirar. La obra
+                no está a la vista: está bajo tierra, a pocos metros, hacia
+                donde apunta la luz. Lo que queda arriba son instrucciones para
+                encontrarla.
               </p>
               <p>
                 La plaquita que dice cuántos años faltan se cambia a mano una
@@ -2212,17 +2064,14 @@
                 </p>
                 <p>
                   <span class="data">05</span> &nbsp;La fecha va un año por
-                  delante de los escenarios de 2046: es la primera posición
-                  desde la cual se puede comprobar si aquellos futuros
-                  acertaron.
+                  delante de los escenarios de 2046. Ese año de más es
+                  deliberado, y la razón está en la cuenta regresiva.
                 </p>
                 <p>
-                  <span class="data">06</span> &nbsp;La hora no es un adorno: el
-                  5 de septiembre de 2047 a las 07:56 se cumplen exactamente
-                  setenta años, minuto a minuto, del lanzamiento de la
-                  <em>Voyager 1</em> — la sonda que lleva un disco de oro
-                  dirigido a un lector sin contexto. Es la misma apuesta que
-                  hace esta cápsula, hecha setenta años antes.
+                  <span class="data">06</span> &nbsp;La hora tampoco es un
+                  adorno: a las 07:56 el aniversario de la <em>Voyager 1</em> se
+                  cumple al minuto. La cápsula no se abre ese día, se abre en
+                  ese instante.
                 </p>
               </div>
             </div>
@@ -2277,7 +2126,7 @@
           </div>
         </div>
         <div class="firma">
-          <span>El objeto que dejó de funcionar y empezó a significar</span>
+          <span>El objeto que dejó de servir y empezó a significar</span>
           <span>Apertura 05.09.2047 · 07:56</span>
         </div>
       </div>
