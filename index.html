@@ -1,0 +1,2592 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0A0A0C" />
+    <title>MUFU · Museo del Futuro</title>
+    <meta
+      name="description"
+      content="MUFU, Museo del Futuro. Una colección que no se puede ver: objetos enterrados bajo la escuela, una luz que los señala y una fecha de apertura."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MUFU · Museo del Futuro" />
+    <meta property="og:title" content="MUFU · Museo del Futuro" />
+    <meta
+      property="og:description"
+      content="Una colección que no se puede ver: 36 objetos enterrados bajo la escuela, una luz que los señala y una cita para el 5 de septiembre de 2047."
+    />
+    <meta property="og:locale" content="es_PA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "MUFU · Museo del Futuro",
+        "description": "Museo construido durante un trimestre por doce estudiantes. Su colección permanente está enterrada y no puede visitarse hasta el 5 de septiembre de 2047.",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "publicAccess": false,
+        "event": {
+          "@type": "Event",
+          "name": "Apertura de la cápsula",
+          "startDate": "2047-09-05T07:56:00-05:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "description": "Setenta años exactos del lanzamiento de la Voyager 1."
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+         MUFU — sistema de diseño
+         noche / penumbra : la sala a oscuras
+         tiza             : el papel de la cédula
+         laton            : lo que permanece (placa, coordenadas, fechas)
+         aparicion        : lo que se muestra y se apaga (el fantasma)
+         ============================================================ */
+      :root{
+        /* PALETA OFICIAL — negro · blanco · verde oliva
+           60 % negro   superficies y fondo
+           30 % blanco  texto, reglas, rótulos
+           10 % oliva   solo acentos: la cuenta, la placa, lo activo y lo permanente */
+        --noche:#0A0A0C;      /* 60 */
+        --penumbra:#121214;   /* 60 */
+        --borde:#26262A;      /* 60 */
+        --tiza:#F2F0EA;       /* 30 */
+        --gris:#A8A8A2;       /* 30 */
+        --oliva:#A8AD5F;      /* 10 — 8.30:1 sobre negro */
+        --oliva-t:#BFC48A;    /* 10 — variante clara */
+        --laton:var(--oliva);       /* alias heredado */
+        --aparicion:#F2F0EA;  /* la aparición es luz blanca, no color */
+
+        --display:'Instrument Serif',"Iowan Old Style",Palatino,Georgia,serif;
+        --body:'Archivo',"Helvetica Neue",Helvetica,Arial,sans-serif;
+        --mono:'IBM Plex Mono',ui-monospace,"SF Mono",Menlo,monospace;
+
+        --pad:clamp(1.25rem,5vw,4rem);
+        --maxw:1180px;
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+      body{
+        margin:0;background:var(--noche);color:var(--tiza);
+        font-family:var(--body);font-weight:300;font-size:clamp(1rem,.55vw + .9rem,1.0625rem);
+        line-height:1.75;letter-spacing:.005em;
+        -webkit-font-smoothing:antialiased;overflow-x:hidden;
+      }
+      img{max-width:100%;display:block}
+      a{color:inherit}
+
+      /* ---------- utilidades tipográficas ---------- */
+      .eyebrow{
+        font-family:var(--mono);font-size:.6875rem;letter-spacing:.28em;
+        text-transform:uppercase;color:var(--gris);margin:0 0 1.5rem;
+      }
+      .eyebrow .num{color:var(--laton)}
+      .display{
+        font-family:var(--display);font-weight:400;line-height:.98;
+        letter-spacing:-.015em;margin:0;
+      }
+      .h-xl{font-size:clamp(3.4rem,14vw,9.5rem)}
+      .h-l{font-size:clamp(2.4rem,6.5vw,4.75rem)}
+      .h-m{font-size:clamp(1.75rem,3.6vw,2.75rem)}
+      .lede{
+        font-family:var(--display);font-size:clamp(1.3rem,2.6vw,1.9rem);
+        line-height:1.32;color:var(--tiza);max-width:34ch;margin:1.6rem 0 0;
+      }
+      .prose p{max-width:66ch;margin:0 0 1.35rem;color:#C9C7C1}
+      .prose p:last-child{margin-bottom:0}
+      .prose em{color:var(--tiza);font-style:italic}
+      .data{font-family:var(--mono);font-size:.8125rem;letter-spacing:.06em;color:var(--laton)}
+      .mark{color:var(--laton)}
+
+      /* ---------- estructura ---------- */
+      .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+      section{position:relative}
+      .band{padding-block:clamp(5rem,12vw,9.5rem)}
+      .rule{height:1px;background:var(--borde);border:0;margin:0}
+
+      .skip{
+        position:absolute;left:-9999px;top:0;background:var(--laton);color:#000;
+        padding:.75rem 1.25rem;z-index:100;font-family:var(--mono);font-size:.75rem;
+      }
+      .skip:focus{left:1rem;top:1rem}
+      :focus-visible{outline:2px solid var(--aparicion);outline-offset:3px}
+
+
+      /* ---------- el mapa ---------- */
+      const ests=document.getElementById('estaciones');
+      if(ests){ests.addEventListener('click',e=>{
+        const b=e.target.closest('.est__cab'); if(!b||b.tagName!=='BUTTON')return;
+        const ab=b.getAttribute('aria-expanded')==='true';
+        b.setAttribute('aria-expanded',String(!ab));
+        document.getElementById(b.getAttribute('aria-controls')).hidden=ab;
+      });}
+      const ley=document.getElementById('leyenda');
+      if(ley){ley.addEventListener('click',e=>{
+        const b=e.target.closest('.pq'); if(!b)return;
+        const act=b.getAttribute('aria-pressed')==='true';
+        ley.querySelectorAll('.pq').forEach(x=>x.setAttribute('aria-pressed','false'));
+        document.querySelectorAll('.hilos .h').forEach(h=>h.classList.remove('sel','dim'));
+        if(act)return;
+        b.setAttribute('aria-pressed','true');
+        const q=b.dataset.q;
+        document.querySelectorAll('.hilos .h').forEach(h=>{
+          if(h.dataset.q===q&&h.classList.contains('on'))h.classList.add('sel');
+          else h.classList.add('dim');
+        });
+      });}
+
+      /* ---------- barra ---------- */
+      .bar{
+        position:fixed;inset:0 0 auto 0;z-index:50;
+        display:flex;align-items:center;justify-content:space-between;gap:1rem;
+        padding:.9rem var(--pad);
+        background:rgba(10,10,12,0);border-bottom:1px solid transparent;
+        transition:background .4s ease,border-color .4s ease,backdrop-filter .4s ease;
+      }
+      .bar.solid{background:rgba(10,10,12,.82);backdrop-filter:blur(14px);border-bottom-color:var(--borde)}
+      .bar__mark{font-family:var(--mono);font-size:.75rem;letter-spacing:.24em;text-decoration:none;color:var(--tiza)}
+      .bar__mark span{color:var(--laton)}
+      .bar nav{display:flex;gap:clamp(.85rem,2.4vw,2rem);margin-right:auto;margin-left:clamp(1rem,4vw,3rem)}
+      .bar nav a{
+        font-family:var(--mono);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
+        color:var(--gris);text-decoration:none;padding:.35rem 0;position:relative;transition:color .25s;
+      }
+      .bar nav a::after{
+        content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;
+        background:var(--laton);transition:right .35s cubic-bezier(.22,1,.36,1);
+      }
+      .bar nav a:hover,.bar nav a:focus-visible{color:var(--tiza)}
+      .bar nav a:hover::after{right:0}
+      @media(max-width:760px){
+        .bar{gap:.5rem;padding-inline:1rem}
+        .bar nav{margin-left:.75rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+          gap:1rem;flex:1;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,#000 88%,transparent)}
+        .bar nav::-webkit-scrollbar{display:none}
+        .bar nav a{white-space:nowrap}
+      }
+
+      /* ============================================================
+         PORTADA — el pedestal, el haz y la cuenta
+         ============================================================ */
+      .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:7rem 0;overflow:hidden}
+      .hero__grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+      @media(min-width:900px){.hero__grid{grid-template-columns:1.15fr .85fr}}
+      .hero h1{margin:0}
+      .hero h1 .l2{display:block;font-style:italic;color:var(--gris)}
+      .tesis{
+        font-family:var(--body);font-weight:300;font-size:clamp(.95rem,1.4vw,1.0625rem);
+        color:#B8B6B0;max-width:40ch;margin:2rem 0 0;line-height:1.7;
+      }
+
+      /* escena dibujada: no hay fotografía posible de una ausencia */
+      .escena{position:relative;height:clamp(300px,48vw,430px);display:flex;align-items:flex-end;justify-content:center}
+      .haz{
+        position:absolute;top:-10%;left:50%;transform:translateX(-50%);
+        width:min(115%,520px);height:88%;
+        background:linear-gradient(to bottom,rgba(232,228,220,.16),rgba(232,228,220,.045) 55%,rgba(232,228,220,0));
+        clip-path:polygon(41% 0,59% 0,88% 100%,12% 100%);
+        filter:blur(3px);pointer-events:none;
+      }
+      .charco{
+        position:absolute;bottom:6%;left:50%;transform:translateX(-50%);
+        width:min(92%,430px);height:78px;border-radius:50%;
+        background:radial-gradient(ellipse at center,rgba(232,228,220,.2),rgba(232,228,220,.05) 45%,transparent 72%);
+        filter:blur(6px);
+      }
+      .pedestal{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;margin-bottom:6%}
+      .urna{
+        width:clamp(96px,17vw,132px);height:clamp(96px,17vw,132px);
+        border:1px solid rgba(232,228,220,.3);
+        background:linear-gradient(150deg,rgba(232,228,220,.075),rgba(232,228,220,.012) 42%,rgba(242,240,234,.05));
+        position:relative;
+      }
+      .urna::after{
+        content:'';position:absolute;inset:0;
+        background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.11) 47%,transparent 56%);
+      }
+      .bloque{
+        width:clamp(148px,26vw,208px);height:clamp(128px,22vw,180px);
+        background:linear-gradient(175deg,#191919,#0A0A0C);
+        border-top:1px solid rgba(232,228,220,.16);
+        display:flex;align-items:center;justify-content:center;padding:0 1rem;
+      }
+      .placa{
+        width:88%;max-width:150px;padding:.5rem .35rem;text-align:center;
+        border:1px solid rgba(168,173,95,.5);
+        background:linear-gradient(160deg,rgba(168,173,95,.16),rgba(168,173,95,.05));
+        font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;color:var(--laton);line-height:1.5;
+      }
+
+      /* la cuenta: elemento de firma */
+      .cuenta{border-top:1px solid var(--borde);margin-top:clamp(3rem,7vw,5rem)}
+      .cuenta__in{display:grid;grid-template-columns:1fr;gap:1.75rem;padding-block:2rem 2.25rem}
+      @media(min-width:820px){.cuenta__in{grid-template-columns:auto 1fr auto;align-items:end;gap:2.5rem}}
+      .cuenta__lab{font-family:var(--mono);font-size:.625rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gris);margin:0 0 .7rem}
+      .reloj{display:flex;flex-wrap:wrap;gap:clamp(.9rem,2.4vw,2rem);align-items:baseline}
+      .u{display:flex;flex-direction:column;gap:.3rem}
+      .u b{
+        font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,4.6vw,3rem);
+        line-height:1;color:var(--laton);font-variant-numeric:tabular-nums;
+      }
+      .u i{font-family:var(--mono);font-style:normal;font-size:.5625rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+      .coords{font-family:var(--mono);font-size:.75rem;line-height:2;color:var(--gris);letter-spacing:.04em}
+      .coords b{color:var(--tiza);font-weight:400}
+      .prov{
+        display:inline-block;margin-left:.5rem;padding:.1rem .4rem;border:1px solid var(--borde);
+        border-radius:2px;font-size:.5625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);
+      }
+
+      /* botón de entrada */
+      .entrar{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.5rem;padding:.85rem 1.4rem;
+        border:1px solid var(--borde);font-family:var(--mono);font-size:.6875rem;letter-spacing:.18em;
+        text-transform:uppercase;color:var(--tiza);text-decoration:none;
+        transition:border-color .3s,background .3s,color .3s}
+      .entrar:hover,.entrar:focus-visible{border-color:var(--laton);color:var(--laton);background:rgba(168,173,95,.06)}
+      .entrar span{transition:transform .3s}
+      .entrar:hover span{transform:translateY(3px)}
+
+      /* cifras de orientación */
+      .cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem 1rem;
+        border-top:1px solid var(--borde);margin-top:clamp(3rem,7vw,4.5rem);padding-block:2rem 2.25rem}
+      @media(min-width:760px){.cifras{grid-template-columns:repeat(5,1fr)}}
+      .cifra{display:flex;flex-direction:column;gap:.35rem}
+      .cifra b{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;color:var(--tiza)}
+      .cifra i{font-family:var(--mono);font-style:normal;font-size:.5625rem;letter-spacing:.18em;
+        text-transform:uppercase;color:var(--gris)}
+
+      /* semana dentro del número de momento */
+      .mom__n em{display:block;font-style:normal;font-size:.5625rem;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--gris);margin-top:.4rem}
+
+      /* ============================================================
+         LA CUENTA — banda a página completa
+         ============================================================ */
+      .banda{position:relative;overflow:hidden;padding-block:clamp(3.5rem,9vw,6.5rem);
+        background:linear-gradient(180deg,#0A0A0C,var(--noche))}
+      .banda__haz{position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+        width:min(140%,1100px);height:150%;pointer-events:none;
+        background:radial-gradient(ellipse at 50% 0%,rgba(168,173,95,.13),transparent 62%)}
+      .banda .wrap{position:relative}
+      .reloj-xl{display:flex;flex-wrap:wrap;align-items:baseline;gap:clamp(1rem,3.5vw,3.25rem);
+        margin:0 0 clamp(2.25rem,5vw,3.25rem)}
+      .ux{display:flex;flex-direction:column;gap:.4rem}
+      .ux b{font-family:var(--display);font-weight:400;line-height:.9;color:var(--laton);
+        font-size:clamp(3.4rem,12vw,7.5rem);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+      .ux i{font-family:var(--mono);font-style:normal;font-size:.625rem;letter-spacing:.24em;
+        text-transform:uppercase;color:var(--gris)}
+      .ux--s b{color:var(--gris);font-size:clamp(2rem,6vw,3.5rem)}
+      @media(max-width:420px){.ux--s{display:none}}
+
+      .linea{margin:0 0 clamp(2.5rem,5vw,3.5rem)}
+      .linea__b{height:2px;background:var(--borde);position:relative}
+      .linea__b span{position:absolute;left:0;top:0;height:100%;background:var(--laton);width:0;
+        transition:width 1s linear}
+      .linea__b::after{content:'';position:absolute;right:0;top:-4px;width:1px;height:10px;background:var(--laton)}
+      .linea__t{display:flex;justify-content:space-between;gap:1rem;margin-top:.75rem;
+        font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+
+      .banda__pie{display:grid;grid-template-columns:1fr;gap:2rem;
+        border-top:1px solid var(--borde);padding-top:clamp(2rem,4vw,2.75rem)}
+      @media(min-width:880px){.banda__pie{grid-template-columns:1.6fr .8fr;gap:clamp(2rem,6vw,4rem)}}
+      .banda__pie p{margin:0;color:#B8B6B0;font-size:.9375rem;max-width:62ch}
+      .banda__pie b{color:var(--tiza);font-weight:400;font-family:var(--display);font-size:1.15rem}
+      .banda__coord{font-family:var(--mono);font-size:.75rem;line-height:2;color:var(--gris)!important;
+        letter-spacing:.04em}
+
+      /* cuenta compacta en la barra */
+      .estatus u{font-style:normal;text-decoration:none;color:var(--laton);font-variant-numeric:tabular-nums}
+
+      /* ============================================================
+         secciones
+         ============================================================ */
+      .head{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:clamp(2.75rem,6vw,4.5rem)}
+      @media(min-width:880px){.head{grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}}
+
+      .estados{display:grid;grid-template-columns:1fr;gap:1px;background:var(--borde);border:1px solid var(--borde)}
+      @media(min-width:760px){.estados{grid-template-columns:1fr 1fr}}
+      .estado{background:var(--penumbra);padding:clamp(1.75rem,3.5vw,2.75rem)}
+      .estado h3{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:400;margin:.7rem 0 1rem;line-height:1.1}
+      .estado--i h3{color:var(--tiza)}
+      .estado--ii h3{color:var(--oliva)}
+      .estado p{color:#B8B6B0;margin:0 0 1rem;font-size:.9375rem}
+      .estado dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.25rem;margin:1.5rem 0 0;
+        font-family:var(--mono);font-size:.6875rem;letter-spacing:.05em}
+      .estado dt{color:var(--gris);text-transform:uppercase;letter-spacing:.14em}
+      .estado dd{margin:0;color:var(--tiza)}
+
+      /* indicador de estado — convención de museo, invertida */
+      .estatus{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.625rem;
+        letter-spacing:.16em;text-transform:uppercase;color:var(--gris);white-space:nowrap}
+      .estatus i{width:6px;height:6px;border-radius:50%;background:var(--laton);flex:none;
+        box-shadow:0 0 0 0 rgba(168,173,95,.5);animation:latir 3.4s ease-out infinite}
+      @keyframes latir{0%{box-shadow:0 0 0 0 rgba(168,173,95,.45)}70%{box-shadow:0 0 0 7px rgba(168,173,95,0)}100%{box-shadow:0 0 0 0 rgba(168,173,95,0)}}
+      @media(max-width:760px){.estatus span{display:none}}
+
+      /* filtros de la colección */
+      .filtros{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.75rem}
+      .filtro{font-family:var(--mono);font-size:.625rem;letter-spacing:.16em;text-transform:uppercase;
+        color:var(--gris);background:transparent;border:1px solid var(--borde);padding:.5rem .85rem;
+        cursor:pointer;transition:color .25s,border-color .25s,background .25s}
+      .filtro:hover{color:var(--tiza);border-color:#3A3A3A}
+      .filtro[aria-pressed="true"]{color:var(--noche);background:var(--laton);border-color:var(--laton)}
+
+      /* colección — cada tarjeta es un pedestal que se enciende */
+      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,255px),1fr));gap:1px;background:var(--borde);border:1px solid var(--borde)}
+      .pieza{
+        background:var(--penumbra);text-decoration:none;color:inherit;display:block;
+        position:relative;isolation:isolate;transition:background .45s ease;
+      }
+      .pieza{--tono:var(--aparicion)}
+      .pieza::before{
+        content:'';position:absolute;inset:0;z-index:0;opacity:0;transition:opacity .55s ease;
+        background:radial-gradient(120% 78% at 50% 0%,rgba(242,240,234,.16),transparent 62%);
+      }
+      @supports (background:color-mix(in srgb,red 20%,transparent)){
+        .pieza::before{background:radial-gradient(120% 78% at 50% 0%,color-mix(in srgb,var(--tono) 22%,transparent),transparent 62%);
+      }
+      .pieza::after{
+        content:'';position:absolute;left:0;top:0;width:100%;height:2px;z-index:2;
+        background:var(--tono);transform:scaleX(0);transform-origin:left;
+        transition:transform .5s cubic-bezier(.22,1,.36,1);
+      }
+      .pieza:hover::after,.pieza:focus-visible::after{transform:scaleX(1)}
+      .pieza:hover,.pieza:focus-visible{background:#191919}
+      .pieza:hover::before,.pieza:focus-visible::before{opacity:1}
+      .pieza__vitrina{
+        position:relative;z-index:1;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+        border-bottom:1px solid var(--borde);overflow:hidden;background:#0A0A0C;
+      }
+      .pieza__vitrina img{width:100%;height:100%;object-fit:cover;opacity:.86;transition:opacity .5s,transform .8s cubic-bezier(.22,1,.36,1)}
+      .pieza:hover .pieza__vitrina img{opacity:1;transform:scale(1.035)}
+      .pieza__vacia{
+        width:54%;height:52%;border:1px solid rgba(232,228,220,.16);
+        background:linear-gradient(150deg,rgba(232,228,220,.05),transparent 60%);
+      }
+      .pieza__txt{position:relative;z-index:1;padding:1.35rem 1.4rem 1.6rem}
+      .pieza__n{font-family:var(--mono);font-size:.625rem;letter-spacing:.2em;color:var(--tono)}
+      .pieza__ub{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.5625rem;
+        letter-spacing:.14em;text-transform:uppercase;color:#A8A8A2;margin-top:.9rem}
+      .pieza__ub::before{content:'';width:5px;height:5px;border:1px solid #A8A8A2;border-radius:50%;flex:none}
+      .pieza__f{font-family:var(--mono);font-size:.5625rem;letter-spacing:.14em;color:var(--gris);float:right}
+      .pieza__t{font-family:var(--display);font-size:1.35rem;font-weight:400;line-height:1.15;margin:.5rem 0 .35rem}
+      .pieza__a{font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;color:var(--gris)}
+
+      /* archivo — la secuencia sí es una secuencia */
+      .mom{
+        display:grid;grid-template-columns:1fr;gap:.85rem;
+        padding:clamp(1.75rem,4vw,2.5rem) 0;border-top:1px solid var(--borde);
+      }
+      @media(min-width:860px){.mom{grid-template-columns:4.5rem 15rem 1fr;gap:2.5rem;align-items:start}}
+      .mom:last-child{border-bottom:1px solid var(--borde)}
+      .mom__n{font-family:var(--mono);font-size:.8125rem;color:var(--oliva);letter-spacing:.1em;padding-top:.35rem}
+      .mom__t{font-family:var(--display);font-size:clamp(1.35rem,2.4vw,1.7rem);font-weight:400;line-height:1.15;margin:0}
+      .mom__q{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin:.6rem 0 0}
+      .mom__d{margin:0;color:#B8B6B0;font-size:.9375rem;max-width:58ch}
+      .mom__c{grid-column:1/-1;margin:0}
+      @media(min-width:860px){.mom__c{grid-column:3/-1}}
+      .mom__c summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6rem;
+        font-family:var(--mono);font-size:.625rem;letter-spacing:.18em;text-transform:uppercase;
+        color:var(--gris);padding:.55rem 0;transition:color .25s}
+      .mom__c summary::-webkit-details-marker{display:none}
+      .mom__c summary::after{content:'+';font-size:.9rem;color:var(--laton);transition:transform .3s}
+      .mom__c[open] summary::after{content:'−'}
+      .mom__c summary:hover{color:var(--tiza)}
+      .mom__c .mom__d{margin-top:.5rem}
+      .mom__lead{color:var(--tiza)!important;font-family:var(--display);font-size:1.15rem;line-height:1.4}
+      .mom__d b{color:var(--tiza);font-weight:400}
+
+      .futuro__eq{font-family:var(--mono)!important;font-size:.625rem!important;letter-spacing:.1em;
+        color:var(--gris)!important;margin:0 0 1.5rem!important;line-height:1.9}
+      .futuro__cierre{font-family:var(--display)!important;font-size:1.2rem!important;line-height:1.4;
+        color:var(--tiza)!important;border-top:1px solid var(--borde);padding-top:1.25rem;margin-top:1.5rem!important}
+
+      .hilo{display:grid;grid-template-columns:1fr;gap:1px;background:var(--borde);border:1px solid var(--borde)}
+      @media(min-width:800px){.hilo{grid-template-columns:1fr 1fr}}
+      .hilo__mitad{background:var(--penumbra);padding:clamp(1.75rem,3.5vw,2.75rem)}
+      .hilo__k{font-family:var(--mono);font-size:.625rem;letter-spacing:.24em;text-transform:uppercase;
+        color:var(--laton);margin:0 0 1rem}
+      .hilo__mitad h3{font-family:var(--display);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:400;
+        margin:0 0 1.25rem;line-height:1.1;color:var(--tiza);text-transform:none;letter-spacing:normal}
+      .hilo__mitad p{color:#B8B6B0;margin:0 0 1rem;font-size:.9375rem}
+      .hilo__mitad p:last-child{margin-bottom:0}
+      .hilo__mitad b{color:var(--tiza);font-weight:400}
+
+      .espejo{list-style:none;padding:0;margin:1.5rem 0 2rem;display:grid;gap:1px;
+        background:var(--borde);border:1px solid var(--borde)}
+      .espejo li{background:var(--penumbra);padding:1.1rem 1.4rem;font-size:.9375rem;color:#B8B6B0}
+      .espejo b{display:block;color:var(--tiza);font-weight:400;margin-bottom:.35rem;font-size:.875rem}
+
+
+      /* ============ EL MAPA ============ */
+      .preg-leyenda{display:grid;grid-template-columns:1fr;gap:1px;background:var(--borde);
+        border:1px solid var(--borde);margin:0 0 clamp(2rem,4vw,3rem)}
+      @media(min-width:700px){.preg-leyenda{grid-template-columns:1fr 1fr}}
+      @media(min-width:1000px){.preg-leyenda{grid-template-columns:1fr 1fr 1fr}}
+      .pq{display:flex;align-items:center;gap:.75rem;text-align:left;background:var(--penumbra);
+        border:0;padding:.85rem 1rem;color:#B8B6B0;font-family:var(--body);font-weight:300;
+        font-size:.8125rem;cursor:pointer;transition:background .25s,color .25s}
+      .pq span{font-family:var(--mono);font-size:.625rem;color:var(--gris);border:1px solid var(--borde);
+        width:1.6rem;height:1.6rem;display:grid;place-items:center;flex:none;transition:all .25s}
+      .pq:hover{background:#191919;color:var(--tiza)}
+      .pq[aria-pressed="true"]{color:var(--tiza)}
+      .pq[aria-pressed="true"] span{background:var(--laton);color:var(--noche);border-color:var(--laton)}
+      .estaciones{list-style:none;padding:0;margin:0;position:relative}
+      .estaciones::before{content:'';position:absolute;left:1.35rem;top:1.5rem;bottom:1.5rem;width:1px;background:var(--borde)}
+      .est{position:relative}
+      .est__cab{width:100%;display:flex;align-items:flex-start;gap:clamp(.9rem,2.5vw,1.75rem);
+        background:transparent;border:0;border-top:1px solid var(--borde);
+        padding:1.5rem 0;text-align:left;cursor:pointer;color:inherit;transition:background .25s}
+      .est__cab:hover{background:rgba(255,255,255,.02)}
+      .est:last-child .est__cab{border-bottom:1px solid var(--borde)}
+      .est__n{font-family:var(--mono);font-size:.75rem;color:var(--gris);letter-spacing:.08em;
+        width:2.7rem;height:2.7rem;flex:none;display:grid;place-items:center;border:1px solid var(--borde);
+        border-radius:50%;background:var(--noche);position:relative;z-index:2}
+      .est--puente .est__n{border-color:var(--laton);border-style:dashed}
+      .est--fin .est__n{border-color:var(--tiza);color:var(--tiza)}
+      .est--solo .est__n{border-style:dotted;border-color:var(--tiza);color:var(--tiza)}
+      .est--solo .est__badge{color:var(--tiza);border-color:rgba(242,240,234,.4)}
+      .est__mid{display:flex;flex-direction:column;gap:.4rem;flex:1;min-width:0}
+      .est__t{font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.6rem);line-height:1.15;color:var(--tiza)}
+      .est__badge{display:inline-block;margin-left:.6rem;vertical-align:middle;font-family:var(--mono);
+        font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--laton);
+        border:1px solid rgba(168,173,95,.5);padding:.2rem .45rem}
+      .est__doc{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;color:var(--gris)}
+      .est__estado{font-family:var(--mono);font-size:.6875rem;color:var(--gris);margin-top:.25rem}
+      .hilos{display:flex;gap:.4rem;margin-top:.85rem}
+      .hilos .h{width:.5rem;height:.5rem;border-radius:50%;border:1px solid var(--borde);flex:none;
+        transition:background .3s,border-color .3s,transform .3s,opacity .3s}
+      .hilos .h.on{background:var(--gris);border-color:var(--gris)}
+      .hilos .h.sel{background:var(--laton);border-color:var(--laton);transform:scale(1.5)}
+      .hilos .h.dim{opacity:.25}
+      .est__mas{font-family:var(--mono);color:var(--laton);font-size:1rem;flex:none;padding-top:.5rem;transition:transform .3s}
+      .est__cab[aria-expanded="true"] .est__mas{transform:rotate(45deg)}
+      .est__panel{padding:0 0 1.75rem clamp(3.6rem,5vw,4.45rem)}
+      .est__panel dl{display:grid;grid-template-columns:1fr;gap:.35rem 1.5rem;margin:0}
+      @media(min-width:700px){.est__panel dl{grid-template-columns:9rem 1fr}}
+      .est__panel dt{font-family:var(--mono);font-size:.5625rem;letter-spacing:.18em;text-transform:uppercase;
+        color:var(--gris);padding-top:.35rem}
+      .est__panel dd{margin:0 0 1rem;color:#B8B6B0;font-size:.9375rem;max-width:62ch}
+      @media print{.est__panel,.est__panel[hidden]{display:block!important}}
+
+      /* preguntas recurrentes */
+      .preguntas{border:1px solid var(--borde);background:var(--penumbra);
+        padding:clamp(1.75rem,4vw,2.75rem);margin-top:clamp(3rem,6vw,4rem)}
+      .preguntas ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:.65rem}
+      @media(min-width:720px){.preguntas ul{grid-template-columns:1fr 1fr;gap:.65rem 2.5rem}}
+      .preguntas li{font-family:var(--display);font-size:1.15rem;line-height:1.35;color:var(--tiza);
+        padding-left:1.25rem;position:relative}
+      .preguntas li::before{content:'—';position:absolute;left:0;color:var(--laton)}
+      .cierre-p{margin:2.25rem 0 0;color:#B8B6B0;font-size:.9375rem;max-width:62ch}
+
+      /* visita */
+      .visita{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,3.5rem)}
+      @media(min-width:900px){.visita{grid-template-columns:1fr 1fr}}
+      .tarjeta{border:1px solid var(--borde);background:var(--penumbra);padding:clamp(1.75rem,3.5vw,2.5rem)}
+      .tarjeta h3{font-family:var(--mono);font-size:.6875rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin:0 0 1.25rem;font-weight:400}
+      .placa-grande{
+        border:1px solid rgba(168,173,95,.4);padding:clamp(1.5rem,3vw,2.25rem);
+        background:linear-gradient(155deg,rgba(168,173,95,.09),rgba(168,173,95,.02));
+        font-family:var(--mono);font-size:.75rem;line-height:2.1;color:var(--laton);letter-spacing:.05em;
+      }
+      .placa-grande strong{display:block;font-size:.9375rem;letter-spacing:.22em;margin-bottom:1rem;color:var(--laton)}
+      .placa-grande em{display:block;font-style:normal;color:var(--tiza);margin:1rem 0;font-size:.8125rem;line-height:1.9}
+
+      /* pie */
+      footer{border-top:1px solid var(--borde);padding-block:clamp(3.5rem,7vw,5rem)}
+      .creds{display:grid;grid-template-columns:1fr;gap:2.25rem}
+      @media(min-width:760px){.creds{grid-template-columns:repeat(3,1fr)}}
+      .creds h4{font-family:var(--mono);font-size:.625rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin:0 0 .9rem;font-weight:400}
+      .creds p{margin:0;font-size:.9375rem;line-height:1.9;color:#B8B6B0}
+      .firma{margin-top:clamp(3rem,6vw,4.5rem);padding-top:2rem;border-top:1px solid var(--borde);
+        font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;color:#A8A8A2;display:flex;
+        flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between}
+
+      /* revelado */
+      .rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+      .rv.on{opacity:1;transform:none}
+      @media print{
+        *{background:#fff!important;color:#000!important;box-shadow:none!important}
+        .bar,.escena,.filtros,.entrar,.banda__haz,.skip,#linea-f{display:none!important}
+        .rv{opacity:1!important;transform:none!important}
+        .mom__c{display:block!important}
+        .mom__c summary{display:none}
+        .mom__c[open],.mom__c:not([open]){}
+        details:not([open])>*:not(summary){display:block!important}
+        a[href^="http"]::after{content:" (" attr(href) ")";font-size:.7em}
+        .band,.banda{padding-block:1.5rem!important;page-break-inside:avoid}
+        .mom,.pieza,.estado,.tarjeta{page-break-inside:avoid;border-color:#999!important}
+        h1,h2,h3{page-break-after:avoid}
+      }
+      @media(prefers-contrast:more){
+        :root{--gris:#DEDCD6;--borde:#4A4A56;--oliva:#BFC48A;--laton:#BFC48A}
+        .prose p,.mom__d,.estado p,.abierta p{color:var(--tiza)}
+        .pieza,.tarjeta,.preguntas,.estado{border-color:#4A4A56}
+      }
+      @media(prefers-reduced-motion:reduce){
+        html{scroll-behavior:auto}
+        .rv{opacity:1;transform:none;transition:none}
+        *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <header class="bar" id="bar">
+      <a class="bar__mark" href="#portada">MU<span>FU</span></a>
+      <nav aria-label="Principal">
+        <a href="#cuenta">La cuenta</a>
+        <a href="#recorrido">Recorrido</a>
+        <a href="#hilo">El hilo</a>
+        <a href="#mapa">El mapa</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#obra">Última función</a>
+        <a href="#visita">Visita</a>
+      </nav>
+      <a
+        class="estatus"
+        href="#cuenta"
+        title="La colección permanece cerrada hasta el 5 de septiembre de 2047, 07:56"
+        style="text-decoration: none"
+      >
+        <i aria-hidden="true"></i>Cerrada<span>
+          · faltan <u id="mini">—</u></span
+        >
+      </a>
+    </header>
+
+    <main id="contenido">
+      <!-- ============ PORTADA ============ -->
+      <section class="hero wrap" id="portada">
+        <div class="hero__grid">
+          <div>
+            <p class="eyebrow">
+              MUFU <span class="num">— Museo del Futuro</span>
+            </p>
+            <h1 class="display h-xl">
+              ¿Qué es<span class="l2">un museo?</span>
+            </h1>
+            <p class="tesis">
+              Durante diez semanas, un grupo de estudiantes construyó uno para
+              averiguarlo. No un edificio: un museo entendido como la decisión
+              de apartar unas pocas cosas del resto del mundo y decir que valen
+              la pena.
+            </p>
+            <p class="tesis">
+              Empezaron con la galería de fotos de su teléfono. Terminaron
+              enterrando sus objetos bajo la escuela, con una fecha grabada para
+              volver a abrirlos.
+            </p>
+            <a class="entrar" href="#recorrido"
+              >Empezar el recorrido <span aria-hidden="true">↓</span></a
+            >
+          </div>
+
+          <div class="escena" aria-hidden="true">
+            <div class="haz"></div>
+            <div class="charco"></div>
+            <div class="pedestal">
+              <div class="urna"></div>
+              <div class="bloque">
+                <div class="placa">
+                  ÚLTIMA FUNCIÓN<br />MUFU · 2026<br />APERTURA 05.09.2047
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ============ LA CUENTA ============ -->
+      <section class="banda" id="cuenta" aria-labelledby="cuenta-t">
+        <div class="banda__haz" aria-hidden="true"></div>
+        <div class="wrap">
+          <p class="eyebrow" id="cuenta-t">
+            La colección está cerrada
+            <span class="num">— falta para la apertura</span>
+          </p>
+
+          <div class="reloj-xl" role="timer" aria-live="off">
+            <div class="ux"><b id="b-a">—</b><i>años</i></div>
+            <div class="ux"><b id="b-d">—</b><i>días</i></div>
+            <div class="ux"><b id="b-h">—</b><i>horas</i></div>
+            <div class="ux"><b id="b-m">—</b><i>min</i></div>
+            <div class="ux ux--s"><b id="b-s">—</b><i>seg</i></div>
+          </div>
+          <noscript
+            ><p class="data" style="margin: -1.5rem 0 2rem">
+              La cuenta necesita JavaScript. La fecha no:
+              <b>5 de septiembre de 2047, 07:56</b>.
+            </p></noscript
+          >
+
+          <div class="linea">
+            <div class="linea__b"><span id="linea-f"></span></div>
+            <div class="linea__t">
+              <span>Sellada en 2026</span>
+              <span class="data" id="linea-p">—</span>
+              <span>05.09.2047</span>
+            </div>
+          </div>
+
+          <div class="banda__pie">
+            <p>
+              <b>5 de septiembre de 2047, 07:56 de la mañana.</b> Ese día y a
+              esa hora se cumplen setenta años, minuto a minuto, del lanzamiento
+              de la <em>Voyager 1</em> — la sonda que lleva un disco de oro con
+              un mensaje para un lector sin contexto. Esta cápsula hace la misma
+              apuesta a una escala más pequeña: bajo esta escuela, treinta y
+              seis objetos y doce cartas esperan a doce personas que ese día
+              serán otras.
+            </p>
+            <p style="margin-top: 1.25rem">
+              Los dos escenarios de este trimestre imaginaron Panamá en 2046. La
+              cápsula se abre un año después, y ese desfase no es un descuido:
+              <b
+                >es el primer día desde el cual se puede comprobar si
+                acertaron.</b
+              >
+              Un pronóstico no se evalúa el día que ocurre, sino desde el año
+              siguiente.
+            </p>
+            <p class="banda__coord">
+              8.983000° N · 79.520000° W<span class="prov">provisional</span
+              ><br />WGS84 · 22 m al noreste del pedestal
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EL RECORRIDO ============ -->
+      <section class="band" id="recorrido" aria-labelledby="recorrido-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow">
+                <span class="num">01</span> — El recorrido · diez semanas
+              </p>
+              <h2 class="display h-l" id="recorrido-t">
+                Diez semanas<br />para construir<br />un museo
+              </h2>
+            </div>
+            <div class="prose">
+              <p>
+                Un museo no es un depósito. La palabra viene de
+                <em>mouseion</em>, la casa de las Musas, y las Musas son hijas
+                de Mnemosine, que es la memoria: de ella nacen la historia, la
+                danza, la poesía y la astronomía. Desde el origen de la palabra
+                está dicho que recordar no sirve para guardar, sino para crear.
+              </p>
+              <p>
+                Todos los museos trabajan para el futuro: guardan cosas para
+                alguien que todavía no nace. Lo que pasa es que no lo dicen;
+                hablan del pasado en voz alta y del futuro en voz baja. Llamar a
+                este museo <em>Museo del Futuro</em> no inventa una paradoja:
+                solo lo dice de frente.
+              </p>
+              <p>
+                El trimestre entró a esa pregunta por ocho puertas, una detrás
+                de otra, cada una a cargo de un docente distinto. Ninguna mandó
+                sobre las demás.
+                <em
+                  >Leídas en orden, cuentan cómo un objeto cualquiera termina
+                  convertido en pieza de museo.</em
+                >
+              </p>
+              <p>
+                Que se lean en orden no es casualidad. La primera edición de
+                este trimestre —<strong>La Ruta de la Seda, 2024</strong>— dejó
+                una lección: los módulos funcionan solos, y lo que se rompe no
+                son las partes sino los empalmes. Esta segunda edición no cambió
+                las partes. Le puso puentes: la continuidad dejó de ser tierra
+                de nadie y pasó a tener responsable.
+              </p>
+            </div>
+          </div>
+
+          <div class="rv">
+            <article class="mom">
+              <div class="mom__n">00<em>Semana ▢1</em></div>
+              <div>
+                <h3 class="mom__t">
+                  Selección y curaduría de imágenes personales
+                </h3>
+                <p class="mom__q">
+                  Dirección · Erika Schnitter y Alejandro Pachón
+                </p>
+              </div>
+              <p class="mom__d mom__lead">
+                Todos administramos una colección que nunca declaramos como tal:
+                el carrete del teléfono.
+              </p>
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  Cada estudiante eligió fotos de su propio carrete, de manera
+                  intuitiva: las que por alguna razón llamaban la atención.
+                  Después vino la parte difícil, que fue curar esa selección:
+                  entender <em>por qué</em> se habían elegido y qué conexiones
+                  existían entre ellas. Se miraron los colores que se repetían,
+                  los lugares, las personas, la composición, los ángulos y
+                  encuadres.
+                  <b
+                    >Una selección aparentemente aleatoria puede revelar
+                    patrones, intereses y formas personales de mirar el
+                    mundo.</b
+                  >
+                  Aunque ninguna foto se tomó con intención curatorial, había
+                  ahí una narrativa esperando. Quedó planteada la pregunta que
+                  volvería todo el trimestre: qué significa seleccionar, y cómo
+                  cambia el significado de algo cuando se pone junto a otras
+                  cosas.
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">01<em>Semanas ▢2–3</em></div>
+              <div>
+                <h3 class="mom__t">
+                  Objetos personales y formas de hacer curaduría
+                </h3>
+                <p class="mom__q">Román Flórez</p>
+              </div>
+              <p class="mom__d mom__lead">
+                Los mismos objetos, curados de varias maneras distintas, cuentan
+                historias distintas.
+              </p>
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  El proceso pasó de las imágenes a los objetos. Cada quien
+                  trajo cuatro piezas propias: la más antigua que tuviera, una
+                  fotografía entrañable, una elegida al azar y una que lo
+                  describiera. Objetos con valor sentimental, histórico,
+                  cotidiano o simbólico. Después, en grupos y tomando como
+                  referencia el trabajo de curadores estudiados en clase, se
+                  ensayaron varias maneras de curar los mismos objetos.
+                  <b
+                    >No existe una única forma de hacer curaduría: según el
+                    método, las mismas piezas se organizan, se interpretan y se
+                    presentan de manera completamente distinta.</b
+                  >
+                  Terminó en una exposición donde los objetos de cada estudiante
+                  se mezclaron con los del resto, y donde se inventó una
+                  historia alrededor de ellos que no tenía que ser verdadera:
+                  los objetos podían recibir otro pasado, otros significados,
+                  relaciones falsas entre sí. La conclusión es la que sostiene
+                  todo lo demás: un objeto no tiene un solo significado.
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">02<em>Semanas ▢4–5</em></div>
+              <div>
+                <h3 class="mom__t">La construcción de un museo del futuro</h3>
+                <p class="mom__q">Viridiana Zavala</p>
+              </div>
+              <p class="mom__d mom__lead">
+                Aquí nació el MUFU. Ya no era una vitrina: era un mundo entero,
+                con sus pilares y sus reglas.
+              </p>
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  Aquí nació el MUFU, y la escala cambió por completo. La
+                  pregunta de partida fue
+                  <em>¿hacia dónde se dirige la humanidad?</em>, y a partir de
+                  ella se construyó un futuro posible con su propio ecosistema.
+                  Los objetos se organizaron en pilares —lo artesanal, lo
+                  educativo, una filosofía de vida, la tecnología, la cultura,
+                  la sociedad— y cada uno quedó dentro de un sistema mayor: ya
+                  no se trataba de mostrar una colección sino de construir un
+                  mundo alrededor de ella. Se escribió una historia museal, se
+                  diseñó el recorrido que decidía en qué orden la gente se
+                  encontraría con cada pieza, y el salón se repartió en roles:
+                  unos en lo digital, otros en curaduría, otros en el ambiente.
+                  Se construyeron pedestales, formas de exhibición y recursos
+                  digitales, y
+                  <b>hasta una canción propia para acompañar la exposición</b>,
+                  porque el sonido también arma el ambiente.
+                  <b
+                    >Un museo no depende solo de sus objetos, sino de quienes
+                    los eligen, los cuidan, diseñan el espacio y escriben las
+                    narrativas.</b
+                  >
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">03<em>3 días</em></div>
+              <div>
+                <h3 class="mom__t">
+                  El puente: el camino del héroe y los objetos en la narrativa
+                </h3>
+                <p class="mom__q">Luis Miguel Caamaño · puente narrativo</p>
+              </div>
+              <p class="mom__d">
+                Tres días entre el museo construido y los futuros por construir,
+                para conectar una cosa con la otra. A través del cine se vio que
+                los objetos no son decorado: cumplen funciones dentro de la
+                historia. Se separaron tres papeles distintos. El
+                <em>McGuffin</em> pone la trama en movimiento y es aquello que
+                los personajes buscan, persiguen o intentan recuperar. La
+                <em>reliquia</em> vale por su historia, su antigüedad o su
+                procedencia, y carga la memoria de un pasado, una cultura o una
+                persona: su importancia no está en lo que hace, sino en lo que
+                representa y conserva. El <em>talismán</em> es aquel al que se
+                le atribuye un poder, y suele volverse extensión de la identidad
+                de quien lo lleva. Con <em>Matrix</em> se revisó el camino del
+                héroe y cómo los objetos funcionan ahí como detonantes, metas,
+                herramientas, pruebas o recompensas.
+                <b
+                  >Un objeto puede contener una memoria, representar un pasado,
+                  activar un conflicto o ser la razón por la que alguien empieza
+                  un viaje.</b
+                >
+              </p>
+
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  Se analizó también el disco de oro que viaja en la
+                  <em>Voyager 1</em>: el encargo de diseño más difícil que se ha
+                  hecho nunca, porque hay que armar un mensaje para alguien que
+                  no habla nuestro idioma, no tiene nuestro cuerpo y no vive en
+                  nuestro siglo. Diseñar sin contexto compartido.
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">04<em>Semanas ▢7–8</em></div>
+              <div>
+                <h3 class="mom__t">
+                  Diseños del futuro y objetos especulativos
+                </h3>
+                <p class="mom__q">Karla Paniagua</p>
+              </div>
+              <p class="mom__d mom__lead">
+                Dos grupos, dos mundos, el mismo año: 2046. Uno de
+                transformación, otro de colapso.
+              </p>
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  El diseño no sirve solo para resolver problemas de hoy:
+                  también para imaginar futuros. El salón se partió en dos
+                  grupos y cada uno construyó un mundo distinto, ambos ubicados
+                  unos veinte años adelante. Uno trabajó desde un futuro de
+                  transformación; el otro, desde un escenario de colapso. El
+                  método fue el mismo para los dos: recoger señales del presente
+                  —noticias, publicaciones, entrevistas, comentarios—,
+                  clasificarlas en siete categorías (economía, tecnología,
+                  política, sociedad, religión y espiritualidad, ambiente y
+                  legislación), rastrear cada una hasta su fuente, y recién
+                  entonces elegir un arquetipo de futuro de la escuela de Manoa.
+                  Un grupo tomó <em>Transformación</em>; el otro,
+                  <em>Colapso</em>. De ahí salieron objetos especulativos
+                  —lentes de contacto inteligentes, museos portátiles, un método
+                  de transporte clandestino—, cada uno con su razón de existir:
+                  historias, contextos sociales, leyes, usuarios, sistemas
+                  técnicos.
+                  <a href="#futuros" style="color: var(--laton)"
+                    >Ver los dos escenarios completos ↓</a
+                  >
+                  <b
+                    >Un objeto especulativo no existe aislado: depende de un
+                    mundo y, a la vez, puede transformar el mundo donde
+                    existe.</b
+                  >
+                  La pregunta no era predecir el futuro, sino averiguar qué
+                  clase de mundo necesitaría o produciría ese objeto.
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">05<em>Semana ▢8–9 · regreso</em></div>
+              <div>
+                <h3 class="mom__t">La cápsula del tiempo</h3>
+                <p class="mom__q">Luis Miguel Caamaño</p>
+              </div>
+              <p class="mom__d mom__lead">
+                Al regresar, la cápsula: cuatro cosas por persona, tres objetos
+                y una carta.
+              </p>
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  La selección vuelve a ser personal, pero ahora está atravesada
+                  por el tiempo. Cada persona aporta cuatro cosas:
+                  <b
+                    >un objeto que represente el presente, uno que quiera
+                    entregar al futuro, uno que quiera recuperar en el futuro, y
+                    una carta dirigida a sí misma.</b
+                  >
+                  El ejercicio obliga a preguntarse qué representa de verdad
+                  este momento y qué cosas de la vida actual van a significar
+                  algo distinto dentro de muchos años. La carta abre una
+                  conversación entre el presente y el futuro; los objetos quedan
+                  como evidencia material de quién era uno y de qué le parecía
+                  importante. Es otra vez el acto de seleccionar y curar, pero
+                  con la pregunta corrida: ya no qué significa este objeto hoy,
+                  sino <em>qué va a significar dentro de muchos años</em>.
+                </p>
+                <p class="mom__d">
+                  Para no elegir a ciegas qué guardar, el ejercicio miró primero
+                  hacia atrás:
+                  <b
+                    >se reconstruyó el año 2005 —su música, su tecnología, sus
+                    películas, sus noticias— exactamente veintiún años antes del
+                    presente.</b
+                  >
+                  Ahí quedó a la vista qué se volvió ilegible en dos décadas,
+                  qué siguió funcionando y qué cambió de significado sin cambiar
+                  de forma.
+                  <em
+                    >La única manera honesta de calcular cuánto puede cambiar el
+                    futuro es medir cuánto cambió un pasado a la misma
+                    distancia.</em
+                  >
+                  De ahí sale el plazo de la cápsula: se abre a veintiún años,
+                  la misma distancia que se acababa de recorrer al revés.
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">06<em>Semana ▢9</em></div>
+              <div>
+                <h3 class="mom__t">Reconstruir el fantasma de Pepper</h3>
+                <p class="mom__q">Luis Miguel Caamaño</p>
+              </div>
+              <p class="mom__d">
+                En vez de leer sobre el truco, se armó. Una lámina de vidrio
+                inclinada a 45°, un fondo negro detrás y una imagen iluminada
+                fuera de la vista del público: eso es todo lo que hace falta
+                para que algo aparezca flotando en el aire. Es el
+                <em>fantasma de Pepper</em>, presentado en Londres en 1862 —lo
+                concibió Henri Dircks y lo hizo funcionar John Henry Pepper en
+                el Royal Polytechnic— y se usaba para hacer aparecer espectros
+                en escena, en plena fiebre del espiritismo victoriano.
+              </p>
+
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  Construirlo enseña dos cosas que ninguna lectura logra. La
+                  primera es técnica:
+                  <b
+                    >la aparición no se controla con el vidrio sino con la
+                    luz.</b
+                  >
+                  Si se ilumina la figura escondida, aparece; si se apaga, se
+                  desvanece sin que nada se mueva. La segunda es incómoda: casi
+                  todos los llamados «hologramas» de conciertos y museos son
+                  este mismo truco de hace más de ciento sesenta años.
+                  <b
+                    >La industria del espectáculo lleva siglo y medio vendiendo
+                    como futuro un artefacto victoriano.</b
+                  >
+                  Y hay algo que solo pasa cuando uno lo fabrica con las manos:
+                  después de armar la ilusión, ya no se puede volver a caer en
+                  ella.
+                </p>
+              </details>
+            </article>
+            <article class="mom">
+              <div class="mom__n">07<em>Semana ▢10</em></div>
+              <div>
+                <h3 class="mom__t">Los objetos de 2046</h3>
+                <p class="mom__q">Trabajo autónomo · los 12 estudiantes</p>
+              </div>
+              <p class="mom__d mom__lead">
+                El trimestre termina sin docente en el aula: cada grupo
+                construye un prototipo del objeto que él mismo imaginó. Dos
+                objetos, uno por mundo.
+              </p>
+              <details class="mom__c">
+                <summary>Seguir leyendo</summary>
+                <p class="mom__d">
+                  Del mundo de la transformación sale un objeto del ecosistema
+                  LNS: los lentes que se cargan con el sol, se adaptan a la
+                  córnea y responden preguntas pensadas. Del mundo del colapso
+                  sale un objeto de la vida clandestina: el sistema con que se
+                  monta y traslada un Nodo de Memoria, las copias de resguardo
+                  que protegen a los originales, o el brazalete TRC-507 con su
+                  manual de campo redactado en inglés por una autoridad de
+                  ocupación.
+                  <span class="mark">▢ Confirmar cuál eligió cada grupo.</span>
+                </p>
+                <p class="mom__d">
+                  Dos prototipos, no doce. Cada grupo tuvo que decidir cuál de
+                  todos sus objetos merecía existir en materia — que es, otra
+                  vez, la pregunta del trimestre entero aplicada a sí mismos.
+                </p>
+                <p class="mom__d">
+                  Aquí ocurre la última inversión del trimestre, y es simétrica
+                  de todo lo anterior.
+                  <b
+                    >La cápsula entierra cosas que dejaron de funcionar; los
+                    prototipos son cosas que nunca funcionaron.</b
+                  >
+                  Un objeto de 2046 fabricado en 2026 no tiene uso posible: nace
+                  directamente como signo, sin haber pasado nunca por la
+                  utilidad. Es una reliquia sin pasado.
+                </p>
+                <p class="mom__d">
+                  Y no es casual que este módulo no tenga profesor. Después de
+                  diez semanas aprendiendo que el sentido de una cosa lo nombra
+                  siempre alguien más, <b>la última tarea es hacerlo solos.</b>
+                </p>
+              </details>
+            </article>
+
+            <div class="preguntas">
+              <p class="eyebrow" style="margin-bottom: 1.5rem">
+                Las preguntas que volvieron todo el trimestre
+              </p>
+              <ul>
+                <li>¿Qué seleccionamos?</li>
+                <li>¿Por qué seleccionamos algo?</li>
+                <li>¿Qué conexiones existen entre los objetos?</li>
+                <li>¿Cómo cambia su significado cuando está junto a otros?</li>
+                <li>¿Quién construye la historia de un objeto?</li>
+                <li>¿Qué pasa cuando le inventamos una historia nueva?</li>
+                <li>¿Qué objetos merecen conservarse?</li>
+                <li>¿Cómo imaginamos el futuro?</li>
+                <li>¿Qué queremos que sobreviva al paso del tiempo?</li>
+              </ul>
+              <p class="cierre-p">
+                Seleccionar, ordenar, exhibir, contar una historia o guardar
+                algo para el futuro son formas distintas de hacer lo mismo:
+                <em
+                  >decidir qué merece ser recordado y cómo queremos que sea
+                  recordado.</em
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ============ LOS DOS FUTUROS ============ -->
+      <section class="band" id="futuros" aria-labelledby="futuros-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow">
+                <span class="num">02</span> — Los dos futuros
+              </p>
+              <h2 class="display h-l" id="futuros-t">Panamá,<br />2046</h2>
+            </div>
+            <div class="prose">
+              <p>
+                Los dos grupos trabajaron por separado, con métodos idénticos y
+                arquetipos opuestos, y sin haberlo acordado situaron su
+                escenario en el mismo año.
+              </p>
+              <p>
+                Llegaron además a la misma conclusión por caminos contrarios:
+                <em
+                  >en 2046 los objetos ya no están a la vista, y lo único
+                  disponible es su reconstrucción.</em
+                >
+                Uno los hunde en el mar; el otro los esconde bajo tierra firme.
+                Ninguno los deja donde estaban.
+              </p>
+            </div>
+          </div>
+
+          <div class="estados rv">
+            <article class="estado estado--i">
+              <p class="eyebrow" style="margin-bottom: 0">
+                Arquetipo: transformación
+              </p>
+              <h3>A través de los LNS</h3>
+              <p class="futuro__eq">
+                Frida Menaged · Alberto Zebede · Moisés Mizrachi · Raquel Cohen
+                · Frida Antebi · Tamara Cos
+              </p>
+              <p>
+                Un barrio entero de Panamá convertido en ecosistema museal
+                administrado por una empresa privada. El museo deja de ser un
+                edificio y ocurre en calles, buses, viviendas, comercios y
+                paredes. Las comunidades investigan su propio pasado y son
+                dueñas de su relato.
+              </p>
+              <p>
+                Pero los objetos originales ya no están en la superficie: fueron
+                trasladados a bóvedas en las profundidades del mar, donde solo
+                pueden entrar los robots submarinos SUBm. En el barrio se ven
+                mediante lentes de contacto LNS, que se cargan con el sol, se
+                adaptan a la córnea y reconocen intereses, edad y emociones. Las
+                preguntas no se hacen en voz alta: se piensan.
+              </p>
+              <p>
+                La Ley N.º 1374 de 2046 obliga a que los museos permanezcan en
+                silencio y elimina guías y explicaciones habladas. El acceso
+                depende de la membresía.
+              </p>
+              <p>
+                Liliana pertenece a una generación que guardaba sus objetos. Los
+                suyos están en las bóvedas y se niega a usar los lentes: para
+                ella una reconstrucción nunca reemplaza una cosa real. Y hay una
+                paradoja mayor: aunque cada comunidad posee su relato, una
+                empresa privada controla los lentes, los robots, las bóvedas y
+                las membresías.
+              </p>
+              <p class="futuro__cierre">
+                «Pero recordar también tiene un precio.»
+              </p>
+            </article>
+
+            <article class="estado estado--ii">
+              <p class="eyebrow" style="margin-bottom: 0">Arquetipo: colapso</p>
+              <h3>Nodos de Memoria</h3>
+              <p class="futuro__eq">
+                Adriana Solís · Alana Holstein · Amanda Brostella · Karla Torres
+                · Martha Pretto · Roberto Torres
+              </p>
+              <p>
+                Panamá pierde la Tercera Guerra Mundial y queda progresivamente
+                integrado a Estados Unidos. El Canal pasa a control
+                estadounidense y la historia de su construcción y su soberanía
+                se reinterpreta para justificar la nueva realidad. Las tierras
+                indígenas son expropiadas y un gobierno autoritario usa la
+                seguridad nacional para restringir la diversidad cultural.
+              </p>
+              <p>
+                Los museos dejan de ser neutrales. Algunos se vuelven
+                propaganda, otros experiencias comerciales gamificadas, muchos
+                quedan abandonados con sus vitrinas vacías. Los objetos que
+                contradicen la narrativa oficial son modificados, retirados o
+                desaparecen.
+              </p>
+              <p>
+                Sobreviven en secreto los <strong>Nodos de Memoria</strong>:
+                museos clandestinos y móviles que se montan, se desmontan y se
+                trasladan para que el régimen no los encuentre. Guardan
+                documentos, objetos, fotografías y testimonios de un país que ya
+                no existe oficialmente. El público es seleccionado y puesto a
+                prueba.
+              </p>
+              <p>
+                Y existen los <strong>Falsos Nodos</strong>: exposiciones hechas
+                con copias de resguardo. La experiencia parece auténtica, pero
+                los objetos no son los originales. Se muestran precisamente para
+                que nadie encuentre los verdaderos.
+              </p>
+              <p class="futuro__cierre">
+                «El museo deja de ser un lugar donde se visita el pasado: se
+                convierte en un lugar donde se lucha por conservarlo.»
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ============ EL HILO ============ -->
+      <section class="band" id="hilo" aria-labelledby="hilo-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow"><span class="num">03</span> — El hilo</p>
+              <h2 class="display h-l" id="hilo-t">Lo mismo,<br />ocho veces</h2>
+            </div>
+            <div class="prose">
+              <p>
+                Ocho ejercicios, seis docentes, métodos que no se parecen.
+                Vistos de cerca son ocho cosas distintas. Vistos de lejos son
+                <em>la misma operación repetida en escalas cada vez mayores</em
+                >, y esa operación tiene dos mitades que nunca se separan.
+              </p>
+            </div>
+          </div>
+
+          <div class="hilo rv">
+            <div class="hilo__mitad">
+              <p class="hilo__k">Primera mitad</p>
+              <h3>Sacar algo de circulación</h3>
+              <p>
+                Fotos apartadas del carrete. Cuatro objetos que salen de la
+                casa. Piezas que suben a un pedestal y dejan de tocarse. Objetos
+                que en 2046 bajan a bóvedas submarinas o se esconden en nodos
+                móviles. Y treinta y seis objetos que entran a una cápsula y se
+                cubren de tierra.
+              </p>
+              <p>
+                Siempre lo mismo: algo deja de estar disponible.
+                <b
+                  >Y en el momento en que deja de estar disponible, empieza a
+                  significar.</b
+                >
+              </p>
+            </div>
+            <div class="hilo__mitad">
+              <p class="hilo__k">Segunda mitad</p>
+              <h3>Que otro le ponga el sentido</h3>
+              <p>
+                El grupo encuentra en tu carrete el patrón que tú no veías. Una
+                curaduría le inventa a tu objeto un pasado falso. Un régimen
+                reescribe la historia del Canal. Una empresa decide quién puede
+                ver lo que está en el fondo del mar. Un curador de 2047 escribe
+                en condicional porque no sabe para qué servía.
+              </p>
+              <p>
+                Siempre lo mismo:
+                <b
+                  >el significado de una cosa lo termina nombrando alguien que
+                  no es su dueño.</b
+                >
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="prose rv"
+            style="margin-top: clamp(2.5rem, 5vw, 3.5rem); max-width: none"
+          >
+            <h3
+              style="
+                font-family: var(--display);
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                color: var(--tiza);
+                text-transform: none;
+                letter-spacing: normal;
+                margin: 0 0 1.25rem;
+              "
+            >
+              Y de ahí sale lo político
+            </h3>
+            <p>
+              Si separar es la primera mitad y nombrar es la segunda, entonces
+              <strong
+                >quien controla la separación controla el significado</strong
+              >. Los dos grupos lo descubrieron por su cuenta y con signos
+              opuestos: en un futuro es una empresa privada dueña de las bóvedas
+              y las membresías; en el otro es un régimen que edita las salas.
+              Ninguno de los dos escenarios trata sobre tecnología. Los dos
+              tratan sobre <em>quién tiene la llave</em>.
+            </p>
+            <p>
+              Un museo, entonces, no es un edificio con cosas adentro. Es una
+              máquina que retira objetos del uso y decide quién puede darles
+              sentido. Eso es lo que el trimestre estuvo desmontando durante
+              diez semanas.
+            </p>
+
+            <h3
+              style="
+                font-family: var(--display);
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                color: var(--tiza);
+                text-transform: none;
+                letter-spacing: normal;
+                margin: 2.5rem 0 1.25rem;
+              "
+            >
+              Los alumnos escribieron su propia pieza final sin saberlo
+            </h3>
+            <p>
+              Esto es lo más raro de todo el trimestre, y no lo planeó nadie.
+              Las dos ficciones de 2046 describen, punto por punto, la obra con
+              la que el curso terminó.
+            </p>
+            <ul class="espejo">
+              <li>
+                <b>Los objetos bajan a bóvedas sin acceso general.</b> La
+                cápsula queda enterrada, sin acceso hasta 2047.
+              </li>
+              <li>
+                <b>Solo se ven en reconstrucción, nunca en materia.</b> En la
+                sala aparecen como luz sobre un vidrio, imposibles de tocar.
+              </li>
+              <li>
+                <b
+                  >La ley obliga al silencio: sin guías, sin explicaciones
+                  habladas.</b
+                >
+                La sala no tiene música ni voz: un golpe seco por cambio.
+              </li>
+              <li>
+                <b
+                  >Los Falsos Nodos exhiben copias para proteger los
+                  originales.</b
+                >
+                Lo que el público ve es un reflejo; lo original ya está bajo
+                tierra.
+              </li>
+              <li>
+                <b>Museos abandonados con las vitrinas vacías.</b> La pieza
+                permanente es una urna vacía y sellada.
+              </li>
+            </ul>
+            <p>
+              Se les pidió imaginar el futuro de los museos y terminaron
+              describiendo la máquina que ellos mismos iban a construir. Es la
+              mejor prueba de que el diseño especulativo no adivina:
+              <em
+                >ordena lo que uno ya venía entendiendo sin saber que lo
+                entendía.</em
+              >
+            </p>
+
+            <h3
+              style="
+                font-family: var(--display);
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                color: var(--tiza);
+                text-transform: none;
+                letter-spacing: normal;
+                margin: 2.5rem 0 1.25rem;
+              "
+            >
+              Con una diferencia
+            </h3>
+            <p>
+              En los dos futuros hay alguien con la llave: la empresa que
+              administra las bóvedas, el régimen que edita las salas.
+              <strong>El MUFU se quedó sin llave a propósito.</strong> Nadie —ni
+              los autores, ni los docentes, ni la escuela— puede abrir la
+              cápsula antes del 5 de septiembre de 2047 a las 07:56. La
+              institución que acaba de aprender a identificar ese poder empieza
+              por renunciar a él.
+            </p>
+            <p>
+              Por eso la pieza permanente no es una vitrina con algo adentro,
+              sino una luz señalando un punto del piso y una fecha grabada en
+              latón.
+              <em
+                >Es un museo que sabe exactamente qué tiene y ha decidido no
+                poder verlo.</em
+              >
+            </p>
+            <p>
+              Y la apertura no será solo un acto emotivo. Ese día habrá dos
+              documentos sobre la mesa: los escenarios que doce personas
+              escribieron para 2046 y el mundo que efectivamente existe en 2047.
+              <strong>Abrir la cápsula será calificar el pronóstico</strong> —
+              la misma operación que se hizo con el año 2005, corriendo esta vez
+              al derecho.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EL MAPA ============ -->
+      <section class="band" id="mapa" aria-labelledby="mapa-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow"><span class="num">04</span> — El mapa</p>
+              <h2 class="display h-l" id="mapa-t">
+                Qué preguntamos<br />y qué quedó<br />contestado
+              </h2>
+            </div>
+            <div class="prose">
+              <p>
+                Cada estación es un módulo, y lo que la rotula no es la semana
+                ni el tema: es <em>el estado en que el objeto sale de ahí</em>.
+                Debajo, nueve puntos — las nueve preguntas del trimestre,
+                encendidas donde esa estación las trabajó.
+              </p>
+              <p>
+                Ninguna pregunta se resuelve de una vez. Se puede seguir cada
+                una a lo largo de las diez semanas y ver cuáles siguen abiertas
+                al final.
+              </p>
+            </div>
+          </div>
+
+          <div class="rv">
+            <p class="cuenta__lab">
+              Las nueve preguntas · toca una para seguirla
+            </p>
+            <div class="preg-leyenda" id="leyenda">
+              <button class="pq" type="button" data-q="1" aria-pressed="false">
+                <span>1</span>¿Qué seleccionamos?
+              </button>
+              <button class="pq" type="button" data-q="2" aria-pressed="false">
+                <span>2</span>¿Por qué seleccionamos algo?
+              </button>
+              <button class="pq" type="button" data-q="3" aria-pressed="false">
+                <span>3</span>¿Qué conexiones hay entre los objetos?
+              </button>
+              <button class="pq" type="button" data-q="4" aria-pressed="false">
+                <span>4</span>¿Cómo cambia su significado junto a otros?
+              </button>
+              <button class="pq" type="button" data-q="5" aria-pressed="false">
+                <span>5</span>¿Quién construye la historia de un objeto?
+              </button>
+              <button class="pq" type="button" data-q="6" aria-pressed="false">
+                <span>6</span>¿Qué pasa si le inventamos una historia nueva?
+              </button>
+              <button class="pq" type="button" data-q="7" aria-pressed="false">
+                <span>7</span>¿Qué objetos merecen conservarse?
+              </button>
+              <button class="pq" type="button" data-q="8" aria-pressed="false">
+                <span>8</span>¿Cómo imaginamos el futuro?
+              </button>
+              <button class="pq" type="button" data-q="9" aria-pressed="false">
+                <span>9</span>¿Qué queremos que sobreviva al tiempo?
+              </button>
+            </div>
+
+            <ol class="estaciones" id="estaciones">
+              <li class="est">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-00"
+                >
+                  <span class="est__n">00</span>
+                  <span class="est__mid">
+                    <span class="est__t">Mirar sin editar</span>
+                    <span class="est__doc"
+                      >Dirección · Erika Schnitter y Alejandro Pachón</span
+                    >
+                    <span class="est__estado"
+                      >imágenes sueltas → conjunto con lógica</span
+                    >
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 1, 2, 3, 4, 5"
+                      ><i class="h on" data-q="1" aria-hidden="true"></i
+                      ><i class="h on" data-q="2" aria-hidden="true"></i
+                      ><i class="h on" data-q="3" aria-hidden="true"></i
+                      ><i class="h on" data-q="4" aria-hidden="true"></i
+                      ><i class="h on" data-q="5" aria-hidden="true"></i
+                      ><i class="h" data-q="6" aria-hidden="true"></i
+                      ><i class="h" data-q="7" aria-hidden="true"></i
+                      ><i class="h" data-q="8" aria-hidden="true"></i
+                      ><i class="h" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-00" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que la selección ya estaba hecha antes de decidirla: todos
+                      administramos una colección que nunca declaramos.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Si el patrón que otros encuentran en tus fotos es tuyo o
+                      es de ellos.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>Curar no es conseguir cosas: es ordenarlas.</dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-01"
+                >
+                  <span class="est__n">01</span>
+                  <span class="est__mid">
+                    <span class="est__t">Agrupar y contar</span>
+                    <span class="est__doc">Román Flórez</span>
+                    <span class="est__estado"
+                      >objeto propio → pieza con historia</span
+                    >
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 1, 2, 3, 4, 5, 6"
+                      ><i class="h on" data-q="1" aria-hidden="true"></i
+                      ><i class="h on" data-q="2" aria-hidden="true"></i
+                      ><i class="h on" data-q="3" aria-hidden="true"></i
+                      ><i class="h on" data-q="4" aria-hidden="true"></i
+                      ><i class="h on" data-q="5" aria-hidden="true"></i
+                      ><i class="h on" data-q="6" aria-hidden="true"></i
+                      ><i class="h" data-q="7" aria-hidden="true"></i
+                      ><i class="h" data-q="8" aria-hidden="true"></i
+                      ><i class="h" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-01" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que un mismo conjunto admite varias curadurías y ninguna
+                      es la verdadera.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Hasta dónde se le puede inventar un pasado a un objeto sin
+                      traicionarlo.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>Un objeto no tiene un solo significado.</dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-02"
+                >
+                  <span class="est__n">02</span>
+                  <span class="est__mid">
+                    <span class="est__t">Construir el mundo alrededor</span>
+                    <span class="est__doc">Viridiana Zavala</span>
+                    <span class="est__estado"
+                      >pieza → pieza dentro de un sistema</span
+                    >
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 3, 4, 5, 7"
+                      ><i class="h" data-q="1" aria-hidden="true"></i
+                      ><i class="h" data-q="2" aria-hidden="true"></i
+                      ><i class="h on" data-q="3" aria-hidden="true"></i
+                      ><i class="h on" data-q="4" aria-hidden="true"></i
+                      ><i class="h on" data-q="5" aria-hidden="true"></i
+                      ><i class="h" data-q="6" aria-hidden="true"></i
+                      ><i class="h on" data-q="7" aria-hidden="true"></i
+                      ><i class="h" data-q="8" aria-hidden="true"></i
+                      ><i class="h" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-02" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que el museo no está en los objetos, sino en quienes los
+                      eligen, los cuidan, diseñan el espacio y escriben el
+                      relato.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>Quién paga y sostiene ese sistema.</dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>
+                      Exhibir es decidir. El visitante entiende con el cuerpo,
+                      no con la cabeza.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est est--puente">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-03"
+                >
+                  <span class="est__n">03</span>
+                  <span class="est__mid">
+                    <span class="est__t"
+                      >Leer el objeto<span class="est__badge"
+                        >puente</span
+                      ></span
+                    >
+                    <span class="est__doc">Luis Miguel Caamaño</span>
+                    <span class="est__estado">pieza → signo legible</span>
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 4, 5, 6, 7"
+                      ><i class="h" data-q="1" aria-hidden="true"></i
+                      ><i class="h" data-q="2" aria-hidden="true"></i
+                      ><i class="h" data-q="3" aria-hidden="true"></i
+                      ><i class="h on" data-q="4" aria-hidden="true"></i
+                      ><i class="h on" data-q="5" aria-hidden="true"></i
+                      ><i class="h on" data-q="6" aria-hidden="true"></i
+                      ><i class="h on" data-q="7" aria-hidden="true"></i
+                      ><i class="h" data-q="8" aria-hidden="true"></i
+                      ><i class="h" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-03" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que un objeto empieza a significar exactamente cuando deja
+                      de servir.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Cómo se le habla a alguien que no comparte ningún
+                      contexto: el problema del disco de la Voyager.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>
+                      Reliquia, talismán y MacGuffin no son tipos de cosas: son
+                      funciones que una cosa cumple.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-04"
+                >
+                  <span class="est__n">04</span>
+                  <span class="est__mid">
+                    <span class="est__t">Proyectar con evidencia</span>
+                    <span class="est__doc">Karla Paniagua</span>
+                    <span class="est__estado">signo → hipótesis fechada</span>
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 5, 7, 8, 9"
+                      ><i class="h" data-q="1" aria-hidden="true"></i
+                      ><i class="h" data-q="2" aria-hidden="true"></i
+                      ><i class="h" data-q="3" aria-hidden="true"></i
+                      ><i class="h" data-q="4" aria-hidden="true"></i
+                      ><i class="h on" data-q="5" aria-hidden="true"></i
+                      ><i class="h" data-q="6" aria-hidden="true"></i
+                      ><i class="h on" data-q="7" aria-hidden="true"></i
+                      ><i class="h on" data-q="8" aria-hidden="true"></i
+                      ><i class="h on" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-04" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que el futuro no se adivina: se construye con señales del
+                      presente rastreadas hasta su fuente.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Quién tendrá la llave de la memoria. Los dos grupos
+                      llegaron ahí y ninguno lo resolvió.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>
+                      Un objeto especulativo depende de un mundo y a la vez
+                      transforma el mundo donde existe.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est est--puente">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-05"
+                >
+                  <span class="est__n">05</span>
+                  <span class="est__mid">
+                    <span class="est__t"
+                      >Medir hacia atrás para elegir hacia adelante<span
+                        class="est__badge"
+                        >puente</span
+                      ></span
+                    >
+                    <span class="est__doc">Luis Miguel Caamaño</span>
+                    <span class="est__estado"
+                      >hipótesis → evidencia de uno mismo</span
+                    >
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 1, 2, 7, 8, 9"
+                      ><i class="h on" data-q="1" aria-hidden="true"></i
+                      ><i class="h on" data-q="2" aria-hidden="true"></i
+                      ><i class="h" data-q="3" aria-hidden="true"></i
+                      ><i class="h" data-q="4" aria-hidden="true"></i
+                      ><i class="h" data-q="5" aria-hidden="true"></i
+                      ><i class="h" data-q="6" aria-hidden="true"></i
+                      ><i class="h on" data-q="7" aria-hidden="true"></i
+                      ><i class="h on" data-q="8" aria-hidden="true"></i
+                      ><i class="h on" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-05" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Cuánto cambio cabe en veintiún años. De ahí sale el plazo
+                      exacto de la cápsula.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Si lo que elegimos hoy seguirá significando algo en 2047.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>
+                      Un trabajo académico se entrega y se recupera. Este se
+                      entrega y no vuelve.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-06"
+                >
+                  <span class="est__n">06</span>
+                  <span class="est__mid">
+                    <span class="est__t">Fabricar la aparición</span>
+                    <span class="est__doc">Luis Miguel Caamaño</span>
+                    <span class="est__estado">materia → imagen sin peso</span>
+                    <span class="hilos" aria-label="Preguntas trabajadas: 6, 9"
+                      ><i class="h" data-q="1" aria-hidden="true"></i
+                      ><i class="h" data-q="2" aria-hidden="true"></i
+                      ><i class="h" data-q="3" aria-hidden="true"></i
+                      ><i class="h" data-q="4" aria-hidden="true"></i
+                      ><i class="h" data-q="5" aria-hidden="true"></i
+                      ><i class="h on" data-q="6" aria-hidden="true"></i
+                      ><i class="h" data-q="7" aria-hidden="true"></i
+                      ><i class="h" data-q="8" aria-hidden="true"></i
+                      ><i class="h on" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-06" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que el «holograma» del futuro es un truco de 1862, y que
+                      la aparición se controla con la luz, no con el vidrio.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Cuánto de lo que hoy llamamos innovación es reciclaje con
+                      otro nombre.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>
+                      Después de armar una ilusión con las manos, ya no se puede
+                      caer en ella.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est est--solo">
+                <button
+                  class="est__cab"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="est-07"
+                >
+                  <span class="est__n">07</span>
+                  <span class="est__mid">
+                    <span class="est__t"
+                      >Los objetos de 2046<span class="est__badge"
+                        >sin docente</span
+                      ></span
+                    >
+                    <span class="est__doc"
+                      >Trabajo autónomo · los 12 estudiantes</span
+                    >
+                    <span class="est__estado"
+                      >hipótesis → dos prototipos sin uso</span
+                    >
+                    <span
+                      class="hilos"
+                      aria-label="Preguntas trabajadas: 5, 6, 8"
+                      ><i class="h" data-q="1" aria-hidden="true"></i
+                      ><i class="h" data-q="2" aria-hidden="true"></i
+                      ><i class="h" data-q="3" aria-hidden="true"></i
+                      ><i class="h" data-q="4" aria-hidden="true"></i
+                      ><i class="h on" data-q="5" aria-hidden="true"></i
+                      ><i class="h on" data-q="6" aria-hidden="true"></i
+                      ><i class="h" data-q="7" aria-hidden="true"></i
+                      ><i class="h on" data-q="8" aria-hidden="true"></i
+                      ><i class="h" data-q="9" aria-hidden="true"></i
+                    ></span>
+                  </span>
+                  <span class="est__mas" aria-hidden="true">+</span>
+                </button>
+                <div class="est__panel" id="est-07" hidden>
+                  <dl>
+                    <dt>Resolvió</dt>
+                    <dd>
+                      Que un objeto especulativo solo se entiende cuando existe
+                      en materia: fabricarlo obliga a decidir de qué está hecho,
+                      cuánto pesa y quién lo enciende. Y que elegir uno solo por
+                      mundo es ya una curaduría.
+                    </dd>
+                    <dt>Quedó abierto</dt>
+                    <dd>
+                      Si un prototipo que nunca va a funcionar es un objeto o
+                      solo la ilustración de una idea.
+                    </dd>
+                    <dt>Aprendizaje</dt>
+                    <dd>
+                      La cápsula entierra cosas que dejaron de funcionar; los
+                      prototipos son cosas que nunca funcionaron. Nacen como
+                      signo, sin pasar por la utilidad.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="est est--fin">
+                <div class="est__cab" style="cursor: default">
+                  <span class="est__n">→</span>
+                  <span class="est__mid">
+                    <span class="est__t">Última función</span>
+                    <span class="est__doc">La entrega</span>
+                    <span class="est__estado"
+                      >aparición → ausencia con dirección</span
+                    >
+                  </span>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ============ COLECCIÓN ============ -->
+      <section class="band" id="coleccion" aria-labelledby="coleccion-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow"><span class="num">05</span> — La colección</p>
+              <h2 class="display h-l" id="coleccion-t">
+                Las piezas<br />enterradas
+              </h2>
+            </div>
+            <div class="prose">
+              <p>
+                Doce estudiantes, treinta y seis objetos enterrados. Cada uno
+                eligió de los suyos el que cargaba más historia y lo investigó
+                hasta donde alcanzó a saber: de dónde vino, cómo se hizo, cuánto
+                mide exactamente, qué historia arrastra y qué preguntas quedaron
+                sin responder. Esas doce investigaciones son las fichas de esta
+                colección.
+              </p>
+              <p>
+                Ninguna puede verse hoy. Todas están bajo tierra. Lo que sigue
+                es el único acceso que existe hasta la fecha de apertura.
+                También puedes verlas ordenadas por el año desde el que está
+                escrita su cédula: el futuro que cada quien imaginó para su
+                objeto.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="filtros rv"
+            id="filtros"
+            role="group"
+            hidden
+            aria-label="Filtrar la colección por el año desde el que fue escrita su cédula"
+          ></div>
+          <div class="grid rv" id="grid">
+            <a class="pieza" href="ficha-01.html" style="--tono: #bfc48a">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">01</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-02.html" style="--tono: #a8ad5f">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">02</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-03.html" style="--tono: #cbcfa0">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">03</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-04.html" style="--tono: #949a4e">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">04</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-05.html" style="--tono: #b5ba76">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">05</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-06.html" style="--tono: #8f9440">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">06</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-07.html" style="--tono: #d4d7b2">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">07</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-08.html" style="--tono: #9da34d">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">08</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-09.html" style="--tono: #c2c695">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">09</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-10.html" style="--tono: #8a9047">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">10</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-11.html" style="--tono: #b0b569">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">11</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+            <a class="pieza" href="ficha-12.html" style="--tono: #7e8339">
+              <div class="pieza__vitrina">
+                <div class="pieza__vacia" aria-hidden="true"></div>
+              </div>
+              <div class="pieza__txt">
+                <span class="pieza__n">12</span>
+                <h3 class="pieza__t">▢ Título de la pieza</h3>
+                <span class="pieza__a">▢ Autor</span>
+                <span class="pieza__ub">No expuesta · enterrada</span>
+              </div>
+            </a>
+          </div>
+          <p
+            class="data rv"
+            id="conteo"
+            role="status"
+            aria-live="polite"
+            style="margin-top: 1.25rem; color: var(--gris)"
+          ></p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ============ LA OBRA ============ -->
+      <section class="band" id="obra" aria-labelledby="obra-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow">
+                <span class="num">06</span> — La entrega final
+              </p>
+              <h2 class="display h-l" id="obra-t">Última<br />función</h2>
+            </div>
+            <div class="prose">
+              <p>
+                <em>Última función</em> es la pieza con la que cerró el
+                recorrido. No resume el trimestre: es lo que salió de él.
+                Durante los días de la muestra, los objetos aparecieron uno por
+                uno sobre un solo pedestal, hechos de luz, con un truco de
+                teatro de 1862 que se usaba para hacer aparecer fantasmas en
+                escena, reconstruido en clase por los propios estudiantes.
+                Noventa segundos cada uno. Ninguno volvió.
+              </p>
+              <p>
+                La última noche la obra cambió de estado delante del público: se
+                desarmó el aparato, se selló la urna vacía y la lámpara se
+                inclinó hasta que
+                <em>la luz salió de la urna y cayó al piso</em>, apuntando a un
+                punto del campus. Después se atornilló una placa de latón.
+              </p>
+            </div>
+          </div>
+
+          <div class="estados rv">
+            <article class="estado estado--i">
+              <p class="eyebrow" style="margin-bottom: 0">Estado I — cerrado</p>
+              <h3>La función</h3>
+              <p>
+                Sala a oscuras, un pedestal, una urna. Cada objeto aparecía
+                reflejado en un vidrio inclinado a 45°: sin materia, sin peso,
+                imposible de tocar. Doce apariciones, una por estudiante, y en
+                cada una los tres objetos de esa persona en orden: el presente,
+                lo que entrega, lo que quiere recuperar. Entre una persona y la
+                siguiente, ocho segundos de negro y el pedestal vacío.
+              </p>
+              <p>
+                Antes de entrar, el público ya había tocado esos mismos objetos
+                sobre una mesa iluminada. Una aparición solo conmueve a quien
+                alcanzó a tocar la cosa real.
+              </p>
+              <dl>
+                <dt>Dispositivo</dt>
+                <dd>Fantasma de Pepper, 1862</dd>
+                <dt>Construido por</dt>
+                <dd>Los 12 estudiantes</dd>
+                <dt>Duración</dt>
+                <dd>~30 min · 12 apariciones</dd>
+                <dt>Sonido</dt>
+                <dd>Un golpe seco por cambio</dd>
+                <dt>Único material</dt>
+                <dd>Una cédula impresa</dd>
+                <dt>Nunca expuesto</dt>
+                <dd>Las 12 cartas</dd>
+              </dl>
+            </article>
+            <article class="estado estado--ii">
+              <p class="eyebrow" style="margin-bottom: 0">
+                Estado II — permanente
+              </p>
+              <h3>La cita</h3>
+              <p>
+                Pedestal, urna vacía y sellada, un haz de luz sobre el piso y
+                una placa con unas coordenadas y una fecha exacta con su hora.
+                No hay pantalla que se queme ni enlace que se caiga: se lee con
+                la luz apagada.
+              </p>
+              <p>
+                Un monumento mira hacia atrás. Unas coordenadas y una hora que
+                todavía no llega no son un monumento: son <em>una cita</em>,
+                firmada por gente que tal vez no esté ese día.
+              </p>
+              <dl>
+                <dt>Emplazamiento</dt>
+                <dd>Permanente</dd>
+                <dt>Materia</dt>
+                <dd>Piedra, latón, luz</dd>
+                <dt>Mantenimiento</dt>
+                <dd>Una placa al año</dd>
+                <dt>Apertura</dt>
+                <dd>05.09.2047 · 07:56</dd>
+                <dt>Contenido</dt>
+                <dd>36 objetos · 12 cartas</dd>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ============ VISITA ============ -->
+      <section class="band" id="visita" aria-labelledby="visita-t">
+        <div class="wrap">
+          <div class="head rv">
+            <div>
+              <p class="eyebrow"><span class="num">07</span> — La visita</p>
+              <h2 class="display h-l" id="visita-t">
+                Qué se ve<br />al llegar
+              </h2>
+            </div>
+            <div class="prose">
+              <p>
+                Un pedestal, una urna vacía, un haz de luz que no ilumina nada y
+                una placa. La obra no está a la vista: está bajo tierra, a pocos
+                metros, hacia donde apunta la luz.
+              </p>
+              <p>
+                La plaquita que dice cuántos años faltan se cambia a mano una
+                vez al año. Si algún año nadie la cambia, se nota. Eso también
+                es información.
+              </p>
+            </div>
+          </div>
+
+          <div class="visita rv">
+            <div class="tarjeta">
+              <h3>Texto grabado en la placa</h3>
+              <div class="placa-grande">
+                <strong>ÚLTIMA FUNCIÓN</strong>
+                MUFU · Museo del Futuro<br />
+                Cohorte 2026
+                <em
+                  >Bajo esta escuela, a 41° y 22 m de este pedestal, treinta y
+                  seis objetos dejaron de servir y empezaron a significar.</em
+                >
+                70 ANIVERSARIO DEL LANZAMIENTO DE VOYAGER 1<br />
+                UN AÑO DESPUÉS DE LOS ESCENARIOS DE 2046<br />
+                8.983000° N · 79.520000° W · WGS84<br />
+                4,20 m desde columna A3<br />
+                6,75 m desde vértice del muro norte<br /><br />
+                APERTURA: 05.09.2047 · 07:56 h
+              </div>
+            </div>
+            <div class="tarjeta">
+              <h3>Cómo leer la pieza</h3>
+              <div class="prose">
+                <p>
+                  <span class="data">01</span> &nbsp;La urna está vacía porque
+                  antes tuvo algo adentro. No es lo mismo un vidrio que quedó
+                  vacío que uno que siempre lo estuvo.
+                </p>
+                <p>
+                  <span class="data">02</span> &nbsp;La luz no ilumina: apunta.
+                  Hacia donde se inclina está enterrada la cápsula.
+                </p>
+                <p>
+                  <span class="data">03</span> &nbsp;Las coordenadas llevan
+                  datum y seis decimales. Las medidas tomadas desde el edificio
+                  son las que van a servir cuando el GPS ya no exista.
+                </p>
+                <p>
+                  <span class="data">04</span> &nbsp;La fecha no recuerda nada.
+                  Cita.
+                </p>
+                <p>
+                  <span class="data">05</span> &nbsp;La fecha va un año por
+                  delante de los escenarios de 2046: es la primera posición
+                  desde la cual se puede comprobar si aquellos futuros
+                  acertaron.
+                </p>
+                <p>
+                  <span class="data">06</span> &nbsp;La hora no es un adorno: el
+                  5 de septiembre de 2047 a las 07:56 se cumplen exactamente
+                  setenta años, minuto a minuto, del lanzamiento de la
+                  <em>Voyager 1</em> — la sonda que lleva un disco de oro
+                  dirigido a un lector sin contexto. Es la misma apuesta que
+                  hace esta cápsula, hecha setenta años antes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="creds">
+          <div>
+            <h4>Proyecto</h4>
+            <p>
+              MUFU · Museo del Futuro<br />Proyecto de trimestre<br />Cohorte
+              2026
+            </p>
+          </div>
+          <div>
+            <h4>Docentes</h4>
+            <p>
+              Román Flórez<br />Viridiana Zavala<br />Karla Paniagua<br />Luis
+              Miguel Caamaño
+            </p>
+          </div>
+          <div>
+            <h4>Dirección</h4>
+            <p>Erika Schnitter<br />Alejandro Pachón</p>
+          </div>
+        </div>
+        <div class="creds" style="margin-top: 2.5rem">
+          <div>
+            <h4>Derechos</h4>
+            <p>
+              Las fotografías y los textos de cada ficha pertenecen a quien
+              investigó la pieza. Reproducción permitida citando autor y
+              proyecto.
+            </p>
+          </div>
+          <div>
+            <h4>Cómo citar este sitio</h4>
+            <p>
+              MUFU · Museo del Futuro. Cohorte 2026. Consultado el ▢ de ▢ de ▢.
+            </p>
+          </div>
+          <div>
+            <h4>Estado de la colección</h4>
+            <p>
+              Cerrada. 36 objetos y 12 cartas bajo tierra.<br />Ninguna pieza en
+              exhibición.
+            </p>
+          </div>
+        </div>
+        <div class="firma">
+          <span>El objeto que dejó de funcionar y empezó a significar</span>
+          <span>Apertura 05.09.2047 · 07:56</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      /* =====================================================================
+   CONFIGURACIÓN — cambiar aquí y en el HTML de arriba
+   ===================================================================== */
+      const APERTURA = new Date("2047-09-05T07:56:00-05:00");
+      /* ▢ fecha real del entierro: alimenta la barra de progreso de la espera */
+      const ENTIERRO = new Date("2026-11-21T00:00:00-05:00");
+
+      /* Colección. Reemplazar por las piezas reales.
+   n   número de registro       t  título de la pieza
+   a   quien la investigó       f  año desde el que está escrita su cédula
+   c   color propio de la pieza, tomado de su fotografía
+   img ruta a la fotografía (null mientras no exista)  */
+      const PIEZAS = [
+        {
+          n: "01",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2087,
+          c: "#BFC48A",
+          img: null,
+          url: "ficha-01.html",
+        },
+        {
+          n: "02",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2145,
+          c: "#A8AD5F",
+          img: null,
+          url: "ficha-02.html",
+        },
+        {
+          n: "03",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2090,
+          c: "#CBCFA0",
+          img: null,
+          url: "ficha-03.html",
+        },
+        {
+          n: "04",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2210,
+          c: "#949A4E",
+          img: null,
+          url: "ficha-04.html",
+        },
+        {
+          n: "05",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2150,
+          c: "#B5BA76",
+          img: null,
+          url: "ficha-05.html",
+        },
+        {
+          n: "06",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2075,
+          c: "#8F9440",
+          img: null,
+          url: "ficha-06.html",
+        },
+        {
+          n: "07",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2260,
+          c: "#D4D7B2",
+          img: null,
+          url: "ficha-07.html",
+        },
+        {
+          n: "08",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2098,
+          c: "#9DA34D",
+          img: null,
+          url: "ficha-08.html",
+        },
+        {
+          n: "09",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2130,
+          c: "#C2C695",
+          img: null,
+          url: "ficha-09.html",
+        },
+        {
+          n: "10",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2046,
+          c: "#8A9047",
+          img: null,
+          url: "ficha-10.html",
+        },
+        {
+          n: "11",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2185,
+          c: "#B0B569",
+          img: null,
+          url: "ficha-11.html",
+        },
+        {
+          n: "12",
+          t: "▢ Título de la pieza",
+          a: "▢ Autor",
+          f: 2310,
+          c: "#7E8339",
+          img: null,
+          url: "ficha-12.html",
+        },
+      ];
+
+      /* ---------- colección: render y filtros ---------- */
+      const grid = document.getElementById("grid");
+      const conteo = document.getElementById("conteo");
+      const filtros = document.getElementById("filtros");
+      const siglo = (f) => Math.floor(f / 100) * 100;
+
+      function pintar(lista) {
+        grid.innerHTML = lista
+          .map(
+            (p) => `
+    <a class="pieza" href="${p.url}" style="--tono:${p.c}">
+      <div class="pieza__vitrina">
+        ${
+          p.img
+            ? `<img src="${p.img}" alt="${p.t}" loading="lazy">`
+            : `<div class="pieza__vacia" aria-hidden="true"></div>`
+        }
+      </div>
+      <div class="pieza__txt">
+        <span class="pieza__n">${p.n}</span><span class="pieza__f">cédula ${p.f}</span>
+        <h3 class="pieza__t">${p.t}</h3>
+        <span class="pieza__a">${p.a}</span>
+        <span class="pieza__ub">No expuesta · enterrada</span>
+      </div>
+    </a>`,
+          )
+          .join("");
+        conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 36 objetos enterrados · ninguno en exhibición`;
+      }
+
+      const siglos = [...new Set(PIEZAS.map((p) => siglo(p.f)))].sort(
+        (a, b) => a - b,
+      );
+      filtros.hidden = false;
+      filtros.innerHTML =
+        `<button class="filtro" data-s="todas" aria-pressed="true">Todas</button>` +
+        siglos
+          .map(
+            (c) =>
+              `<button class="filtro" data-s="${c}" aria-pressed="false">Siglo ${c / 100 + 1}</button>`,
+          )
+          .join("");
+
+      filtros.addEventListener("click", (e) => {
+        const b = e.target.closest(".filtro");
+        if (!b) return;
+        filtros
+          .querySelectorAll(".filtro")
+          .forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        const s = b.dataset.s;
+        pintar(
+          s === "todas"
+            ? PIEZAS
+            : PIEZAS.filter((p) => String(siglo(p.f)) === s),
+        );
+      });
+
+      pintar(PIEZAS);
+
+      /* ---------- la cuenta ---------- */
+      const el = (id) => document.getElementById(id);
+      const dosDig = (n) => String(n).padStart(2, "0");
+
+      function tick() {
+        const ahora = new Date();
+        if (APERTURA - ahora <= 0) {
+          document
+            .querySelectorAll(".reloj-xl")
+            .forEach(
+              (r) =>
+                (r.innerHTML =
+                  '<div class="ux"><b>Abierta</b><i>la cápsula puede abrirse</i></div>'),
+            );
+          const m = el("mini");
+          if (m) m.textContent = "0";
+          return;
+        }
+        let anios = APERTURA.getFullYear() - ahora.getFullYear();
+        const aniv = new Date(
+          ahora.getFullYear(),
+          APERTURA.getMonth(),
+          APERTURA.getDate(),
+          APERTURA.getHours(),
+          APERTURA.getMinutes(),
+          APERTURA.getSeconds(),
+        );
+        if (ahora >= aniv) anios -= 1; // el aniversario de este año ya pasó
+        const desde = new Date(
+          ahora.getFullYear() + (ahora < aniv ? 0 : 1),
+          APERTURA.getMonth(),
+          APERTURA.getDate(),
+          APERTURA.getHours(),
+          APERTURA.getMinutes(),
+          APERTURA.getSeconds(),
+        );
+        let resto = desde - ahora;
+        const dias = Math.floor(resto / 864e5);
+        resto -= dias * 864e5;
+        const hs = Math.floor(resto / 36e5);
+        resto -= hs * 36e5;
+        const min = Math.floor(resto / 6e4);
+        resto -= min * 6e4;
+        const seg = Math.floor(resto / 1e3);
+
+        const set = (id, v) => {
+          const n = el(id);
+          if (n) n.textContent = v;
+        };
+        set("b-a", anios);
+        set("b-d", dias);
+        set("b-h", dosDig(hs));
+        set("b-m", dosDig(min));
+        set("b-s", dosDig(seg));
+        set("mini", anios + " a " + dias + " d");
+
+        const total = APERTURA - ENTIERRO;
+        const pct = Math.min(
+          100,
+          Math.max(0, ((ahora - ENTIERRO) / total) * 100),
+        );
+        const f = el("linea-f");
+        if (f) f.style.width = pct.toFixed(3) + "%";
+        set("linea-p", pct.toFixed(2) + " % de la espera transcurrida");
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      /* ---------- el mapa ---------- */
+      const ests = document.getElementById("estaciones");
+      if (ests) {
+        ests.addEventListener("click", (e) => {
+          const b = e.target.closest(".est__cab");
+          if (!b || b.tagName !== "BUTTON") return;
+          const ab = b.getAttribute("aria-expanded") === "true";
+          b.setAttribute("aria-expanded", String(!ab));
+          document.getElementById(b.getAttribute("aria-controls")).hidden = ab;
+        });
+      }
+      const ley = document.getElementById("leyenda");
+      if (ley) {
+        ley.addEventListener("click", (e) => {
+          const b = e.target.closest(".pq");
+          if (!b) return;
+          const act = b.getAttribute("aria-pressed") === "true";
+          ley
+            .querySelectorAll(".pq")
+            .forEach((x) => x.setAttribute("aria-pressed", "false"));
+          document
+            .querySelectorAll(".hilos .h")
+            .forEach((h) => h.classList.remove("sel", "dim"));
+          if (act) return;
+          b.setAttribute("aria-pressed", "true");
+          const q = b.dataset.q;
+          document.querySelectorAll(".hilos .h").forEach((h) => {
+            if (h.dataset.q === q && h.classList.contains("on"))
+              h.classList.add("sel");
+            else h.classList.add("dim");
+          });
+        });
+      }
+
+      /* ---------- barra ---------- */
+      const bar = document.getElementById("bar");
+      const onScroll = () => bar.classList.toggle("solid", window.scrollY > 60);
+      onScroll();
+      addEventListener("scroll", onScroll, { passive: true });
+
+      /* ---------- revelado ---------- */
+      const io = new IntersectionObserver(
+        (es) => {
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("on");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      );
+      document.querySelectorAll(".rv").forEach((n) => io.observe(n));
+    </script>
+  </body>
+</html>
