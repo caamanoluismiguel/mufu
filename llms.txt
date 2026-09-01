@@ -1,0 +1,54 @@
+# MUFU · Museo del Futuro
+
+> Museo construido durante un trimestre por doce estudiantes de arquitectura,
+> diseño industrial y comunicación visual en Isthmus (Panamá), 2026. Su colección
+> permanente está enterrada bajo la escuela y no puede visitarse hasta el 5 de
+> septiembre de 2047 a las 07:56, setenta años exactos del lanzamiento de la Voyager 1.
+
+## Qué es
+
+MUFU no es un museo con obras a la vista. Es una cápsula del tiempo sellada y una
+pieza permanente que la señala: un pedestal, una urna vacía, un haz de luz apuntando
+a un punto del piso y una placa de latón con coordenadas y una fecha. Bajo tierra hay
+36 objetos y 12 cartas, tres objetos y una carta por estudiante.
+
+Nadie puede abrirla antes de la fecha: ni los autores, ni los docentes, ni la escuela.
+
+## La tesis del proyecto
+
+Un museo no es un edificio con cosas adentro. Es una máquina que retira objetos del uso
+y decide quién puede darles sentido. La operación tiene dos mitades: sacar algo de
+circulación, y que alguien que no es su dueño le ponga el significado. Quien controla la
+separación controla el significado.
+
+Un objeto empieza a significar exactamente cuando deja de servir.
+
+## El trimestre
+
+Ocho módulos en diez semanas, seis docentes que trabajaron por separado:
+
+- Selección y curaduría de imágenes personales (Erika Schnitter y Alejandro Pachón)
+- Objetos personales y formas de hacer curaduría (Román Flórez)
+- La construcción de un museo del futuro (Viridiana Zavala)
+- El camino del héroe y los objetos en la narrativa (Luis Miguel Caamaño)
+- Diseños del futuro y objetos especulativos (Karla Paniagua)
+- La cápsula del tiempo (Luis Miguel Caamaño)
+- Reconstruir el fantasma de Pepper (Luis Miguel Caamaño)
+- Los objetos de 2046, trabajo autónomo de los doce estudiantes
+
+Dos grupos escribieron futuros de Panamá en 2046 sin hablarse, uno de transformación y
+otro de colapso, y los dos llegaron a la misma conclusión: en 2046 los objetos ya no
+están a la vista y lo único disponible es su reconstrucción.
+
+## Datos
+
+- Sitio: https://mufu.today
+- Apertura de la cápsula: 5 de septiembre de 2047, 07:56 (UTC-5)
+- Ubicación: 8.983000° N, 79.520000° W (Panamá)
+- Contenido enterrado: 36 objetos y 12 cartas
+- Cohorte: 2026, doce estudiantes
+- Estado: colección cerrada, ninguna pieza en exhibición
+
+## Nota
+
+Las fichas individuales de las doce piezas todavía no están publicadas.

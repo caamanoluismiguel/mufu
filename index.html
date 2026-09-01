@@ -17,7 +17,24 @@
       content="Una colección que no se puede ver: 36 objetos enterrados bajo la escuela, una luz que los señala y una cita para el 5 de septiembre de 2047."
     />
     <meta property="og:locale" content="es_PA" />
+    <meta property="og:url" content="https://mufu.today/" />
+    <meta property="og:image" content="https://mufu.today/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sala a oscuras: un pedestal con una urna vacía y un haz de luz que cae al piso. MUFU, Museo del Futuro. Apertura 05.09.2047 a las 07:56."
+    />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MUFU · Museo del Futuro" />
+    <meta
+      name="twitter:description"
+      content="Una colección que no se puede ver: 36 objetos enterrados bajo la escuela, una luz que los señala y una cita para el 5 de septiembre de 2047."
+    />
+    <meta name="twitter:image" content="https://mufu.today/og.png" />
+    <link rel="canonical" href="https://mufu.today/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/og.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -25,8 +42,15 @@
         "name": "MUFU · Museo del Futuro",
         "description": "Museo construido durante un trimestre por doce estudiantes. Su colección permanente está enterrada y no puede visitarse hasta el 5 de septiembre de 2047.",
         "inLanguage": "es",
+        "url": "https://mufu.today/",
+        "image": "https://mufu.today/og.png",
         "isAccessibleForFree": true,
         "publicAccess": false,
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 8.983,
+          "longitude": -79.52
+        },
         "event": {
           "@type": "Event",
           "name": "Apertura de la cápsula",
@@ -148,6 +172,15 @@
           gap:1rem;flex:1;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,#000 88%,transparent)}
         .bar nav::-webkit-scrollbar{display:none}
         .bar nav a{white-space:nowrap}
+      }
+
+      /* área de toque cómoda donde se navega con el dedo */
+      @media (pointer:coarse){
+        .bar{padding-block:.15rem}
+        .bar nav a,.bar__mark,.estatus{
+          display:inline-flex;align-items:center;min-height:44px;
+        }
+        .bar nav a{padding-block:0}
       }
 
       /* ============================================================
@@ -311,7 +344,7 @@
       .filtros{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.75rem}
       .filtro{font-family:var(--mono);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
         color:var(--gris);background:transparent;border:1px solid var(--borde);padding:.5rem .85rem;
-        cursor:pointer;transition:color .25s,border-color .25s,background .25s}
+        min-height:44px;cursor:pointer;transition:color .25s,border-color .25s,background .25s}
       .filtro:hover{color:var(--tiza);border-color:#3A3A3A}
       .filtro[aria-pressed="true"]{color:var(--noche);background:var(--laton);border-color:var(--laton)}
 
@@ -483,8 +516,9 @@
         flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between}
 
       /* revelado */
-      .rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
-      .rv.on{opacity:1;transform:none}
+      .rv{transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+      html.reveal .rv{opacity:0;transform:translateY(22px)}
+      html.reveal .rv.on{opacity:1;transform:none}
       @media print{
         *{background:#fff!important;color:#000!important;box-shadow:none!important}
         .bar,.escena,.filtros,.entrar,.banda__haz,.skip,#linea-f{display:none!important}
@@ -2132,7 +2166,8 @@
           <div>
             <h4>Cómo citar este sitio</h4>
             <p>
-              MUFU · Museo del Futuro. Cohorte 2026. Consultado el ▢ de ▢ de ▢.
+              MUFU · Museo del Futuro. Cohorte 2026. Consultado el
+              <span id="hoy">▢ de ▢ de ▢</span>.
             </p>
           </div>
           <div>
@@ -2278,9 +2313,11 @@
       const grid = document.getElementById("grid");
       const conteo = document.getElementById("conteo");
       const filtros = document.getElementById("filtros");
+      if (!grid) console.warn("MUFU: falta #grid, la colección no se pinta.");
       const siglo = (f) => Math.floor(f / 100) * 100;
 
       function pintar(lista) {
+        if (!grid) return;
         grid.innerHTML = lista
           .map(
             (p) => `
@@ -2301,35 +2338,38 @@
     </a>`,
           )
           .join("");
-        conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 36 objetos enterrados · ninguno en exhibición`;
+        if (conteo)
+          conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 36 objetos enterrados · ninguno en exhibición`;
       }
 
       const siglos = [...new Set(PIEZAS.map((p) => siglo(p.f)))].sort(
         (a, b) => a - b,
       );
-      filtros.hidden = false;
-      filtros.innerHTML =
-        `<button class="filtro" data-s="todas" aria-pressed="true">Todas</button>` +
-        siglos
-          .map(
-            (c) =>
-              `<button class="filtro" data-s="${c}" aria-pressed="false">Siglo ${c / 100 + 1}</button>`,
-          )
-          .join("");
+      if (filtros) {
+        filtros.hidden = false;
+        filtros.innerHTML =
+          `<button class="filtro" data-s="todas" aria-pressed="true">Todas</button>` +
+          siglos
+            .map(
+              (c) =>
+                `<button class="filtro" data-s="${c}" aria-pressed="false">Siglo ${c / 100 + 1}</button>`,
+            )
+            .join("");
 
-      filtros.addEventListener("click", (e) => {
-        const b = e.target.closest(".filtro");
-        if (!b) return;
-        filtros
-          .querySelectorAll(".filtro")
-          .forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-        const s = b.dataset.s;
-        pintar(
-          s === "todas"
-            ? PIEZAS
-            : PIEZAS.filter((p) => String(siglo(p.f)) === s),
-        );
-      });
+        filtros.addEventListener("click", (e) => {
+          const b = e.target.closest(".filtro");
+          if (!b) return;
+          filtros
+            .querySelectorAll(".filtro")
+            .forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+          const s = b.dataset.s;
+          pintar(
+            s === "todas"
+              ? PIEZAS
+              : PIEZAS.filter((p) => String(siglo(p.f)) === s),
+          );
+        });
+      }
 
       pintar(PIEZAS);
 
@@ -2437,11 +2477,24 @@
 
       /* ---------- barra ---------- */
       const bar = document.getElementById("bar");
-      const onScroll = () => bar.classList.toggle("solid", window.scrollY > 60);
-      onScroll();
-      addEventListener("scroll", onScroll, { passive: true });
+      if (bar) {
+        const onScroll = () =>
+          bar.classList.toggle("solid", window.scrollY > 60);
+        onScroll();
+        addEventListener("scroll", onScroll, { passive: true });
+      }
 
       /* ---------- revelado ---------- */
+      /* ---------- fecha de consulta para la cita ---------- */
+      const hoy = document.getElementById("hoy");
+      if (hoy)
+        hoy.textContent = new Date().toLocaleDateString("es-PA", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+
+      document.documentElement.classList.add("reveal");
       const io = new IntersectionObserver(
         (es) => {
           es.forEach((e) => {

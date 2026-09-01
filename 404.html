@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0A0A0C" />
+    <title>Esta sala no existe · MUFU</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --noche: #0a0a0c;
+        --tiza: #f2f0ea;
+        --gris: #a8a8a2;
+        --oliva: #a8ad5f;
+        --borde: #26262a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; min-height: 100svh; background: var(--noche); color: var(--tiza);
+        font-family: "Archivo", Helvetica, Arial, sans-serif; font-weight: 300;
+        font-size: clamp(1.0625rem, .5vw + 1rem, 1.1875rem); line-height: 1.75;
+        display: grid; place-items: center; padding: clamp(1.5rem, 6vw, 4rem);
+        -webkit-font-smoothing: antialiased;
+      }
+      .caja { max-width: 46rem; }
+      .rotulo {
+        font-family: "IBM Plex Mono", monospace; font-size: .75rem;
+        letter-spacing: .28em; text-transform: uppercase; color: var(--oliva);
+        margin: 0 0 1.5rem;
+      }
+      h1 {
+        font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+        font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.02;
+        letter-spacing: -.01em; margin: 0 0 1.75rem;
+      }
+      p { color: var(--gris); margin: 0 0 1.25rem; max-width: 40rem; }
+      .volver {
+        display: inline-flex; align-items: center; min-height: 44px; gap: .6rem;
+        margin-top: 1.5rem; font-family: "IBM Plex Mono", monospace;
+        font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase;
+        color: var(--tiza); text-decoration: none; border-bottom: 1px solid var(--oliva);
+        padding-bottom: .2rem;
+      }
+      .volver:hover { color: var(--oliva); }
+      :focus-visible { outline: 2px solid var(--tiza); outline-offset: 3px; }
+      hr { border: 0; height: 1px; background: var(--borde); margin: 2.5rem 0 0; }
+      .pie {
+        font-family: "IBM Plex Mono", monospace; font-size: .6875rem;
+        letter-spacing: .16em; color: #6e6e68; margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="caja">
+      <p class="rotulo">Error 404</p>
+      <h1>Esta sala<br />no existe</h1>
+      <p>
+        Buscabas algo que este museo no tiene. Puede que la dirección esté mal
+        escrita, o que la pieza todavía no se haya publicado.
+      </p>
+      <p>
+        Casi nada de esta colección se puede ver: treinta y seis objetos están
+        enterrados bajo la escuela y no salen hasta 2047. Que una puerta no
+        abra es, en este caso, bastante coherente.
+      </p>
+      <a class="volver" href="/">Volver a la entrada</a>
+      <hr />
+      <p class="pie">MUFU · MUSEO DEL FUTURO · APERTURA 05.09.2047 · 07:56</p>
+    </main>
+  </body>
+</html>
