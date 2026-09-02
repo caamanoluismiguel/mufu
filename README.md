@@ -32,9 +32,31 @@ sí está a la vista.
 --grafito #5A6470   cotas y anotación
 --tierra  #CDD0C9   la masa excavada (solo en la colección)
 --linea   #B4B9B1   reglas finas
---laton   #8A6A3C   latón pulido: lo que está a ± 0.00
---oliva   #5E6330   el mismo latón, oxidado: lo que está bajo la línea
+--laton   #7F6137   latón pulido: lo que está a ± 0.00      · 4.55:1 sobre papel
+--oliva   #5E6330   el mismo latón, oxidado: bajo la línea   · 5.06:1 sobre papel
 ```
+
+Dentro de `.excavado` el fondo es tierra, más oscura que el papel, así que dos
+tokens llevan ahí su propio valor: `--grafito #505964` (4.56:1) y
+`--oliva #575C2D` (4.53:1). Con los valores del papel se quedaban en 3.86 y
+4.08:1, por debajo del mínimo. Si añades una banda con fondo propio, mídela.
+
+## Jerarquía tipográfica
+
+Tres niveles de encabezado, tres papeles, y ninguno comparte tamaño con otro:
+
+```
+h1   120px  Instrument Serif   la portada, una vez
+h2    64px  Instrument Serif   cabecera de sección
+h3    30px  Instrument Serif   subtítulo bajo un h2
+      26px                     módulo del recorrido (son ocho, 30 pesaría)
+      21px                     título de fila en la colección
+h4    15px  Archivo Narrow     rótulo del pie
+```
+
+El `h4` es lo único que no va en el serif, y es a propósito: es un rótulo, no
+un encabezado de lectura. Antes `.tarjeta h3` medía también 15px en Archivo
+Narrow, o sea que h3 y h4 eran indistinguibles.
 
 **Los dos metales.** El latón enterrado se oxida, así que el acento dice de qué
 lado de la línea de suelo está la cosa de la que habla:

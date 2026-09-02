@@ -87,7 +87,7 @@
         --grafito:#5A6470;  /* cotas y anotación */
         --tierra:#CDD0C9;   /* la masa excavada */
         --linea:#B4B9B1;    /* reglas finas sobre papel */
-        --laton:#8A6A3C;    /* la placa: latón pulido, a ± 0.00 */
+        --laton:#7F6137;    /* la placa: latón pulido, a ± 0.00 · 4.55:1 sobre papel */
         /* El oliva oficial (#A8AD5F) da 1.90:1 sobre papel: invisible. Oscurecido
            mantiene el tono (65.9° contra 63.8°) y sube a 5.06:1. No es un acento:
            es la misma placa dentro de veintiún años, porque el latón enterrado se
@@ -115,6 +115,7 @@
       }
       img{max-width:100%;display:block}
       a{color:inherit}
+      strong{font-weight:600;color:var(--tinta)}
       ::selection{background:var(--laton);color:var(--papel-c)}
 
       /* ---------- tipografía ---------- */
@@ -128,6 +129,11 @@
       .prose p{max-width:64ch;margin:0 0 1.3rem;color:var(--tinta-t)}
       .prose p:last-child{margin-bottom:0}
       .prose em{font-style:italic;color:var(--tinta)}
+      /* los h3 que viven dentro de un bloque de prosa */
+      .prose h3{font-family:var(--disp);font-weight:400;
+        font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.08;letter-spacing:-.012em;
+        color:var(--tinta);margin:2.5rem 0 1.25rem;text-wrap:balance}
+      .prose > h3:first-child{margin-top:0}
       .prose strong,.prose b{font-weight:600;color:var(--tinta)}
       .tesis{max-width:36ch;margin:1.9rem 0 0;font-size:1.0625rem;color:var(--tinta-t)}
 
@@ -149,7 +155,8 @@
       .rule{height:1px;background:var(--linea);border:0;margin:0}
 
       .skip{position:absolute;left:-9999px;top:0;background:var(--tinta);color:var(--papel);
-        padding:.7rem 1.2rem;z-index:100;font-family:var(--cota);font-size:.875rem}
+        padding:.7rem 1.2rem;z-index:100;font-family:var(--cota);font-weight:500;
+        font-size:.875rem}
       .skip:focus{left:1rem;top:1rem}
       :focus-visible{outline:2px solid var(--laton);outline-offset:3px}
 
@@ -158,8 +165,8 @@
         gap:1rem;padding:.75rem var(--pad);background:transparent;
         border-bottom:1px solid transparent;transition:background .35s,border-color .35s}
       .bar.solid{background:var(--papel);border-bottom-color:var(--linea)}
-      .bar__mark{font-family:var(--disp);font-size:1.25rem;text-decoration:none;
-        color:var(--tinta);letter-spacing:-.01em}
+      .bar__mark{font-family:var(--disp);font-weight:400;font-size:1.25rem;
+        text-decoration:none;color:var(--tinta);letter-spacing:-.01em}
       .bar__mark span{color:var(--laton)}
       .bar nav{display:flex;gap:clamp(.8rem,2vw,1.75rem);margin-right:auto;
         margin-left:clamp(1rem,3.5vw,2.5rem)}
@@ -276,7 +283,8 @@
       .coords{font-family:var(--cota);font-weight:500;font-size:.9375rem;line-height:1.9;
         color:var(--grafito);font-variant-numeric:tabular-nums}
       .coords b{color:var(--tinta);font-weight:600}
-      .cuenta__lab,.cuenta__in{font-family:var(--cota)}
+      .cuenta__lab{font-family:var(--cota);font-weight:500;font-size:.875rem;
+        color:var(--grafito);margin:0 0 .7rem}
 
       .cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 1rem;
         border-top:1px solid var(--linea);margin-top:clamp(2.5rem,6vw,4rem);
@@ -315,8 +323,8 @@
       .mom__c[open] summary::after{content:'−'}
       .mom__c summary:hover{color:var(--tinta)}
       .mom__c .mom__d{margin-top:.4rem}
-      .mom__lead{color:var(--tinta)!important;font-family:var(--disp);font-size:1.2rem;
-        line-height:1.3}
+      .mom__lead{color:var(--tinta)!important;font-family:var(--disp);font-weight:400;
+        font-size:1.2rem;line-height:1.3}
       .mom__d b{color:var(--tinta);font-weight:600}
 
       /* ============================================================
@@ -335,7 +343,7 @@
       .estado dd{margin:0;color:var(--tinta)}
       .futuro__eq{font-family:var(--cota)!important;font-weight:500;font-size:.9375rem!important;
         color:var(--grafito)!important;margin:0 0 1.25rem!important;line-height:1.8}
-      .futuro__cierre{font-family:var(--disp)!important;font-size:1.2rem!important;
+      .futuro__cierre{font-family:var(--disp)!important;font-weight:400;font-size:1.2rem!important;
         line-height:1.3;color:var(--tinta)!important;border-top:1px solid var(--linea);
         padding-top:1.1rem;margin-top:1.25rem!important}
 
@@ -395,8 +403,8 @@
       .est--solo .est__n{border-style:dotted}
       .est--solo .est__badge{color:var(--tinta);border-color:var(--linea)}
       .est__mid{display:flex;flex-direction:column;gap:.3rem;flex:1;min-width:0}
-      .est__t{font-family:var(--disp);font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.12;
-        color:var(--tinta)}
+      .est__t{font-family:var(--disp);font-weight:400;
+        font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.12;color:var(--tinta)}
       .est__badge{display:inline-block;margin-left:.5rem;vertical-align:middle;
         font-family:var(--cota);font-weight:500;font-size:.8125rem;color:var(--oliva);
         border:1px solid var(--oliva);padding:.1rem .4rem}
@@ -429,7 +437,11 @@
          es donde los objetos están de verdad bajo tierra.
          ============================================================ */
       .excavado{background:var(--tierra);position:relative;overflow:hidden;
-        border-top:var(--suelo) solid var(--tinta)}
+        border-top:var(--suelo) solid var(--tinta);
+        /* La tierra es más oscura que el papel: grafito y oliva bajaban a 3.86 y
+           4.08:1. Aquí llevan su propio valor, medido contra #CDD0C9. */
+        --grafito:#505964;   /* 4.56:1 sobre tierra */
+        --oliva:#575C2D}     /* 4.53:1 sobre tierra */
       .excavado::before{content:'';position:absolute;inset:0;pointer-events:none;
         background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%235E6330' stroke-opacity='.30' stroke-width='1' fill='none'/></svg>")}
       .excavado > .wrap{position:relative}
@@ -474,8 +486,8 @@
       .visita{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,4vw,3rem)}
       @media(min-width:900px){.visita{grid-template-columns:1fr 1fr}}
       .tarjeta{border-top:1px solid var(--linea);padding-top:1.5rem}
-      .tarjeta h3{font-family:var(--cota);font-weight:600;font-size:.9375rem;
-        color:var(--grafito);margin:0 0 1.1rem}
+      .tarjeta h3{font-family:var(--disp);font-weight:400;font-size:1.3rem;
+        line-height:1.1;color:var(--tinta);margin:0 0 1rem}
       /* la placa: el único latón de toda la página */
       .placa-grande{border:1.5px solid var(--laton);padding:clamp(1.35rem,2.6vw,1.9rem);
         background:var(--papel-c);font-family:var(--cota);font-weight:500;font-size:.9375rem;
@@ -1251,16 +1263,7 @@
             class="prose rv"
             style="margin-top: clamp(2rem, 4vw, 3rem); max-width: none"
           >
-            <h3
-              style="
-                font-family: var(--display);
-                font-size: clamp(1.5rem, 3vw, 2rem);
-                color: var(--tiza);
-                text-transform: none;
-                letter-spacing: normal;
-                margin: 0 0 1.25rem;
-              "
-            >
+            <h3>
               Escribieron su pieza final sin saberlo
             </h3>
             <p>
@@ -1353,16 +1356,7 @@
             class="prose rv"
             style="margin-top: clamp(2.5rem, 5vw, 3.5rem); max-width: none"
           >
-            <h3
-              style="
-                font-family: var(--display);
-                font-size: clamp(1.5rem, 3vw, 2rem);
-                color: var(--tiza);
-                text-transform: none;
-                letter-spacing: normal;
-                margin: 0 0 1.25rem;
-              "
-            >
+            <h3>
               Y de ahí sale lo político
             </h3>
             <p>
@@ -1382,16 +1376,7 @@
               diez semanas.
             </p>
 
-            <h3
-              style="
-                font-family: var(--display);
-                font-size: clamp(1.5rem, 3vw, 2rem);
-                color: var(--tiza);
-                text-transform: none;
-                letter-spacing: normal;
-                margin: 2.5rem 0 1.25rem;
-              "
-            >
+            <h3>
               Con una diferencia
             </h3>
             <p>
