@@ -83,7 +83,7 @@
         --penumbra:#121214;   /* 60 */
         --borde:#26262A;      /* 60 */
         --tiza:#F2F0EA;       /* 30 */
-        --gris:#A8A8A2;       /* 30 */
+        --gris:#B8B6B0;       /* 30 · unificado con el cuerpo secundario */
         --oliva:#A8AD5F;      /* 10 · 8.30:1 sobre negro */
         --oliva-t:#BFC48A;    /* 10 · variante clara */
         --laton:var(--oliva);       /* alias heredado */
@@ -94,10 +94,16 @@
         --mono:'IBM Plex Mono',ui-monospace,"SF Mono",Menlo,monospace;
 
         --pad:clamp(1.25rem,5vw,4rem);
-        --maxw:1180px;
+        --maxw:73.75rem;  /* 1180px a raiz 16px, y crece con ella */
       }
       *{box-sizing:border-box}
-      html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+      /* Proyeccion: por encima de 1600px la raiz crece y con ella todo el diseno,
+         incluidos los rotulos de 10px que a cuatro metros no se leen. Hasta 1600px
+         el sitio es identico al de siempre. En la raiz, rem es el tamano que el
+         lector eligio en su navegador, asi que escalamos su preferencia en vez
+         de pisarla con un px fijo. */
+      html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;
+        font-size:clamp(1rem,.83vw + .17rem,1.5rem)}
       body{
         margin:0;background:var(--noche);color:var(--tiza);
         font-family:var(--body);font-weight:300;font-size:clamp(1.0625rem,.5vw + 1rem,1.1875rem);
@@ -201,14 +207,14 @@
       .haz{
         position:absolute;top:-10%;left:50%;transform:translateX(-50%);
         width:min(115%,520px);height:88%;
-        background:linear-gradient(to bottom,rgba(232,228,220,.16),rgba(232,228,220,.045) 55%,rgba(232,228,220,0));
+        background:linear-gradient(to bottom,rgba(232,228,220,.24),rgba(232,228,220,.07) 55%,rgba(232,228,220,0));
         clip-path:polygon(41% 0,59% 0,88% 100%,12% 100%);
         filter:blur(3px);pointer-events:none;
       }
       .charco{
         position:absolute;bottom:6%;left:50%;transform:translateX(-50%);
         width:min(92%,430px);height:78px;border-radius:50%;
-        background:radial-gradient(ellipse at center,rgba(232,228,220,.2),rgba(232,228,220,.05) 45%,transparent 72%);
+        background:radial-gradient(ellipse at center,rgba(232,228,220,.28),rgba(232,228,220,.08) 45%,transparent 72%);
         filter:blur(6px);
       }
       .pedestal{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;margin-bottom:6%}
@@ -390,8 +396,8 @@
       .pieza__txt{position:relative;z-index:1;padding:1.35rem 1.4rem 1.6rem}
       .pieza__n{font-family:var(--mono);font-size:.6875rem;letter-spacing:.2em;color:var(--tono)}
       .pieza__ub{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.625rem;
-        letter-spacing:.14em;text-transform:uppercase;color:#A8A8A2;margin-top:.9rem}
-      .pieza__ub::before{content:'';width:5px;height:5px;border:1px solid #A8A8A2;border-radius:50%;flex:none}
+        letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-top:.9rem}
+      .pieza__ub::before{content:'';width:5px;height:5px;border:1px solid var(--gris);border-radius:50%;flex:none}
       .pieza__reg{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
       .pieza__f{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;color:var(--gris)}
       .pieza__t{font-family:var(--display);font-size:1.35rem;font-weight:400;line-height:1.15;margin:.5rem 0 .35rem}
@@ -520,7 +526,7 @@
       .creds h4{font-family:var(--mono);font-size:.6875rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin:0 0 .9rem;font-weight:400}
       .creds p{margin:0;font-size:1.0625rem;line-height:1.9;color:#B8B6B0}
       .firma{margin-top:clamp(3rem,6vw,4.5rem);padding-top:2rem;border-top:1px solid var(--borde);
-        font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;color:#A8A8A2;display:flex;
+        font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;color:var(--gris);display:flex;
         flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between}
 
       /* revelado */
