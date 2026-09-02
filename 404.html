@@ -3,63 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0A0A0C" />
+    <meta name="theme-color" content="#E4E6E1" />
     <title>Esta sala no existe · MUFU</title>
     <meta name="robots" content="noindex" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,600&family=Archivo+Narrow:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* Sistema LA SECCIÓN. Cero degradados, cero monoespaciada. */
       :root {
-        --noche: #0a0a0c;
-        --tiza: #f2f0ea;
-        --gris: #a8a8a2;
-        --oliva: #a8ad5f;
-        --borde: #26262a;
+        --papel: #e4e6e1;
+        --tinta: #1b2430;
+        --tinta-t: #2c3540;
+        --grafito: #5a6470;
+        --linea: #b4b9b1;
+        --laton: #8a6a3c;
+        --disp: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
+        --texto: "Spectral", Georgia, "Times New Roman", serif;
+        --cota: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
       * { box-sizing: border-box; }
+      html { font-size: clamp(1rem, .83vw + .17rem, 1.5rem); }
       body {
-        margin: 0; min-height: 100svh; background: var(--noche); color: var(--tiza);
-        font-family: "Archivo", Helvetica, Arial, sans-serif; font-weight: 300;
-        font-size: clamp(1.0625rem, .5vw + 1rem, 1.1875rem); line-height: 1.75;
+        margin: 0; min-height: 100svh; background: var(--papel); color: var(--tinta-t);
+        font-family: var(--texto); font-weight: 300;
+        font-size: clamp(1rem, .4vw + .93rem, 1.1875rem); line-height: 1.7;
         display: grid; place-items: center; padding: clamp(1.5rem, 6vw, 4rem);
         -webkit-font-smoothing: antialiased;
       }
-      .caja { max-width: 46rem; }
+      .caja { max-width: 44rem; width: 100%; }
+      /* la cota de una sala que no existe */
       .rotulo {
-        font-family: "IBM Plex Mono", monospace; font-size: .75rem;
-        letter-spacing: .28em; text-transform: uppercase; color: var(--oliva);
-        margin: 0 0 1.5rem;
+        font-family: var(--cota); font-weight: 500; font-size: .875rem;
+        color: var(--grafito); margin: 0 0 1.25rem;
+        font-variant-numeric: tabular-nums;
       }
+      .rotulo b { font-weight: 600; color: var(--tinta); }
       h1 {
-        font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
-        font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.02;
-        letter-spacing: -.01em; margin: 0 0 1.75rem;
+        font-family: var(--disp); font-weight: 400;
+        font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: .98;
+        letter-spacing: -.015em; margin: 0 0 1.6rem; color: var(--tinta);
+        text-wrap: balance;
       }
-      p { color: var(--gris); margin: 0 0 1.25rem; max-width: 40rem; }
+      p { margin: 0 0 1.2rem; max-width: 58ch; }
       .volver {
-        display: inline-flex; align-items: center; min-height: 44px; gap: .6rem;
-        margin-top: 1.5rem; font-family: "IBM Plex Mono", monospace;
-        font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase;
-        color: var(--tiza); text-decoration: none; border-bottom: 1px solid var(--oliva);
-        padding-bottom: .2rem;
+        display: inline-flex; align-items: center; min-height: 44px; gap: .5rem;
+        margin-top: 1.25rem; padding: .7rem 1.2rem;
+        border: 1px solid var(--tinta); font-family: var(--cota); font-weight: 500;
+        font-size: .9375rem; color: var(--tinta); text-decoration: none;
+        transition: background .25s, color .25s;
       }
-      .volver:hover { color: var(--oliva); }
-      :focus-visible { outline: 2px solid var(--tiza); outline-offset: 3px; }
-      hr { border: 0; height: 1px; background: var(--borde); margin: 2.5rem 0 0; }
+      .volver:hover, .volver:focus-visible { background: var(--tinta); color: var(--papel); }
+      :focus-visible { outline: 2px solid var(--laton); outline-offset: 3px; }
+      /* la línea de suelo, aquí también */
+      hr { border: 0; height: 2.5px; background: var(--tinta); margin: 2.5rem 0 0; }
       .pie {
-        font-family: "IBM Plex Mono", monospace; font-size: .6875rem;
-        letter-spacing: .16em; color: #6e6e68; margin-top: 1.5rem;
+        font-family: var(--cota); font-weight: 500; font-size: .9375rem;
+        color: var(--grafito); margin-top: 1.1rem;
+        font-variant-numeric: tabular-nums;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; }
       }
     </style>
   </head>
   <body>
     <main class="caja">
-      <p class="rotulo">Error 404</p>
+      <p class="rotulo"><b>404</b> · nivel no encontrado</p>
       <h1>Esta sala<br />no existe</h1>
       <p>
         Buscabas algo que este museo no tiene. Puede que la dirección esté mal
@@ -67,12 +81,12 @@
       </p>
       <p>
         Casi nada de esta colección se puede ver: treinta y seis objetos están
-        enterrados bajo la escuela y no salen hasta 2047. Que una puerta no
-        abra es, en este caso, bastante coherente.
+        a −2.40 bajo la escuela y no salen hasta 2047. Que una puerta no abra
+        es, en este caso, bastante coherente.
       </p>
       <a class="volver" href="/">Volver a la entrada</a>
       <hr />
-      <p class="pie">MUFU · MUSEO DEL FUTURO · APERTURA 05.09.2047 · 07:56</p>
+      <p class="pie">± 0.00 · MUFU · Museo del Futuro · apertura 05.09.2047 · 07:56</p>
     </main>
   </body>
 </html>

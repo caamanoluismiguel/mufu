@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0A0A0C" />
+    <meta name="theme-color" content="#E4E6E1" />
     <title>MUFU · Museo del Futuro</title>
     <meta
       name="description"
@@ -63,493 +63,453 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Archivo+Narrow:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
       /* ============================================================
          MUFU · sistema de diseño
-         noche / penumbra : la sala a oscuras
-         tiza             : el papel de la cédula
-         laton            : lo que permanece (placa, coordenadas, fechas)
-         aparicion        : lo que se muestra y se apaga (el fantasma)
+         Dirección: LA SECCIÓN. La página es un corte de obra. Arriba de la
+         línea de suelo está lo que se puede visitar; abajo, la excavación.
+         El tiempo se mide en profundidad: la colección está a −2.40.
+
+         Reglas duras de este sistema, por si alguien vuelve a editar:
+           · cero degradados. La profundidad se hace con línea y trama.
+           · cero monoespaciada. Las cotas van en Archivo Narrow.
+           · cero mayúsculas con tracking abierto.
+           · el latón aparece una sola vez en toda la página: la placa.
          ============================================================ */
       :root{
-        /* PALETA OFICIAL · negro · blanco · verde oliva
-           60 % negro   superficies y fondo
-           30 % blanco  texto, reglas, rótulos
-           10 % oliva   solo acentos: la cuenta, la placa, lo activo y lo permanente */
-        --noche:#0A0A0C;      /* 60 */
-        --penumbra:#121214;   /* 60 */
-        --borde:#26262A;      /* 60 */
-        --tiza:#F2F0EA;       /* 30 */
-        --gris:#B8B6B0;       /* 30 · unificado con el cuerpo secundario */
-        --oliva:#A8AD5F;      /* 10 · 8.30:1 sobre negro */
-        --oliva-t:#BFC48A;    /* 10 · variante clara */
-        --laton:var(--oliva);       /* alias heredado */
-        --aparicion:#F2F0EA;  /* la aparición es luz blanca, no color */
+        --papel:#E4E6E1;    /* bond de diazo, gris verdoso: no es crema */
+        --papel-c:#EDEEEA;  /* el papel un paso más claro, para la placa */
+        --tinta:#1B2430;    /* azul de plano */
+        --tinta-t:#2C3540;  /* texto corrido */
+        --grafito:#5A6470;  /* cotas y anotación */
+        --tierra:#CDD0C9;   /* la masa excavada */
+        --linea:#B4B9B1;    /* reglas finas sobre papel */
+        --laton:#8A6A3C;    /* la placa, y nada más */
 
-        --display:'Instrument Serif',"Iowan Old Style",Palatino,Georgia,serif;
-        --body:'Archivo',"Helvetica Neue",Helvetica,Arial,sans-serif;
-        --mono:'IBM Plex Mono',ui-monospace,"SF Mono",Menlo,monospace;
+        --disp:'Instrument Serif',"Iowan Old Style",Palatino,Georgia,serif;
+        --texto:'Spectral',Georgia,'Times New Roman',serif;
+        --cota:'Archivo Narrow','Helvetica Neue',Helvetica,Arial,sans-serif;
 
         --pad:clamp(1.25rem,5vw,4rem);
-        --maxw:73.75rem;  /* 1180px a raiz 16px, y crece con ella */
+        --maxw:76rem;       /* en rem para que acompañe a la raíz al proyectar */
+        --suelo:2.5px;      /* grosor de la línea de suelo */
       }
       *{box-sizing:border-box}
-      /* Proyeccion: por encima de 1600px la raiz crece y con ella todo el diseno,
-         incluidos los rotulos de 10px que a cuatro metros no se leen. Hasta 1600px
-         el sitio es identico al de siempre. En la raiz, rem es el tamano que el
-         lector eligio en su navegador, asi que escalamos su preferencia en vez
-         de pisarla con un px fijo. */
+      /* Proyección: por encima de 1600px la raíz crece y con ella todo el
+         diseño. En rem, así que escala la preferencia del lector, no la pisa. */
       html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;
         font-size:clamp(1rem,.83vw + .17rem,1.5rem)}
       body{
-        margin:0;background:var(--noche);color:var(--tiza);
-        font-family:var(--body);font-weight:300;font-size:clamp(1.0625rem,.5vw + 1rem,1.1875rem);
-        line-height:1.75;letter-spacing:.005em;
-        -webkit-font-smoothing:antialiased;overflow-x:hidden;
+        margin:0;background:var(--papel);color:var(--tinta-t);
+        font-family:var(--texto);font-weight:300;
+        font-size:clamp(1rem,.4vw + .93rem,1.1875rem);
+        line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:hidden;
       }
       img{max-width:100%;display:block}
       a{color:inherit}
+      ::selection{background:var(--laton);color:var(--papel-c)}
 
-      /* ---------- utilidades tipográficas ---------- */
-      .eyebrow{
-        font-family:var(--mono);font-size:.75rem;letter-spacing:.28em;
-        text-transform:uppercase;color:var(--gris);margin:0 0 1.5rem;
-      }
-      .eyebrow .num{color:var(--laton)}
-      .display{
-        font-family:var(--display);font-weight:400;line-height:.98;
-        letter-spacing:-.015em;margin:0;
-      }
-      .h-xl{font-size:clamp(3.4rem,14vw,9.5rem)}
-      .h-l{font-size:clamp(2.4rem,6.5vw,4.75rem)}
-      .h-m{font-size:clamp(1.75rem,3.6vw,2.75rem)}
-      .lede{
-        font-family:var(--display);font-size:clamp(1.3rem,2.6vw,1.9rem);
-        line-height:1.32;color:var(--tiza);max-width:34ch;margin:1.6rem 0 0;
-      }
-      .prose p{max-width:66ch;margin:0 0 1.35rem;color:#C9C7C1}
+      /* ---------- tipografía ---------- */
+      .display{font-family:var(--disp);font-weight:400;line-height:.96;
+        letter-spacing:-.015em;margin:0;color:var(--tinta);text-wrap:balance}
+      .h-xl{font-size:clamp(3rem,10.5vw,7.5rem)}
+      .h-l{font-size:clamp(2.2rem,5.6vw,4rem)}
+      .h-m{font-size:clamp(1.6rem,3.2vw,2.4rem)}
+      .lede{font-family:var(--disp);font-size:clamp(1.25rem,2.4vw,1.8rem);
+        line-height:1.24;color:var(--tinta);max-width:34ch;margin:1.5rem 0 0}
+      .prose p{max-width:64ch;margin:0 0 1.3rem;color:var(--tinta-t)}
       .prose p:last-child{margin-bottom:0}
-      .prose em{color:var(--tiza);font-style:italic}
-      .data{font-family:var(--mono);font-size:.875rem;letter-spacing:.06em;color:var(--laton)}
-      .mark{color:var(--laton)}
+      .prose em{font-style:italic;color:var(--tinta)}
+      .prose strong,.prose b{font-weight:600;color:var(--tinta)}
+      .tesis{max-width:36ch;margin:1.9rem 0 0;font-size:1.0625rem;color:var(--tinta-t)}
+
+      /* la cota: anotación de plano. Estrecha y sin tracking, nunca mono. */
+      .eyebrow,.data,.cota{font-family:var(--cota);font-weight:500;
+        font-size:.875rem;letter-spacing:0;color:var(--grafito);
+        font-variant-numeric:tabular-nums;margin:0 0 1.2rem;text-transform:none}
+      .eyebrow .num,.mark{color:var(--tinta)}
+      .data{margin:0}
+      /* la profundidad de cada sección: encode real, no decoración */
+      .prof{font-family:var(--cota);font-weight:600;font-size:.875rem;
+        color:var(--tinta);font-variant-numeric:tabular-nums}
 
       /* ---------- estructura ---------- */
       .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
       section{position:relative}
-      .band{padding-block:clamp(5rem,12vw,9.5rem)}
-      .rule{height:1px;background:var(--borde);border:0;margin:0}
+      .band{padding-block:clamp(3.5rem,8vw,6.5rem)}
+      .rule{height:1px;background:var(--linea);border:0;margin:0}
 
-      .skip{
-        position:absolute;left:-9999px;top:0;background:var(--laton);color:#000;
-        padding:.75rem 1.25rem;z-index:100;font-family:var(--mono);font-size:.8125rem;
-      }
+      .skip{position:absolute;left:-9999px;top:0;background:var(--tinta);color:var(--papel);
+        padding:.7rem 1.2rem;z-index:100;font-family:var(--cota);font-size:.875rem}
       .skip:focus{left:1rem;top:1rem}
-      :focus-visible{outline:2px solid var(--aparicion);outline-offset:3px}
-
+      :focus-visible{outline:2px solid var(--laton);outline-offset:3px}
 
       /* ---------- barra ---------- */
-      .bar{
-        position:fixed;inset:0 0 auto 0;z-index:50;
-        display:flex;align-items:center;justify-content:space-between;gap:1rem;
-        padding:.9rem var(--pad);
-        background:rgba(10,10,12,0);border-bottom:1px solid transparent;
-        transition:background .4s ease,border-color .4s ease,backdrop-filter .4s ease;
-      }
-      .bar.solid{background:rgba(10,10,12,.82);backdrop-filter:blur(14px);border-bottom-color:var(--borde)}
-      .bar__mark{font-family:var(--mono);font-size:.8125rem;letter-spacing:.24em;text-decoration:none;color:var(--tiza)}
+      .bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;
+        gap:1rem;padding:.75rem var(--pad);background:transparent;
+        border-bottom:1px solid transparent;transition:background .35s,border-color .35s}
+      .bar.solid{background:var(--papel);border-bottom-color:var(--linea)}
+      .bar__mark{font-family:var(--disp);font-size:1.25rem;text-decoration:none;
+        color:var(--tinta);letter-spacing:-.01em}
       .bar__mark span{color:var(--laton)}
-      .bar nav{display:flex;gap:clamp(.85rem,2.4vw,2rem);margin-right:auto;margin-left:clamp(1rem,4vw,3rem)}
-      .bar nav a{
-        font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;
-        color:var(--gris);text-decoration:none;padding:.35rem 0;position:relative;transition:color .25s;
-      }
-      .bar nav a::after{
-        content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;
-        background:var(--laton);transition:right .35s cubic-bezier(.22,1,.36,1);
-      }
-      .bar nav a:hover,.bar nav a:focus-visible{color:var(--tiza)}
+      .bar nav{display:flex;gap:clamp(.8rem,2vw,1.75rem);margin-right:auto;
+        margin-left:clamp(1rem,3.5vw,2.5rem)}
+      .bar nav a{font-family:var(--cota);font-weight:500;font-size:.875rem;
+        color:var(--grafito);text-decoration:none;padding:.3rem 0;position:relative;
+        transition:color .22s}
+      .bar nav a::after{content:'';position:absolute;left:0;right:100%;bottom:.05rem;
+        height:1px;background:var(--tinta);transition:right .3s cubic-bezier(.22,1,.36,1)}
+      .bar nav a:hover,.bar nav a:focus-visible{color:var(--tinta)}
       .bar nav a:hover::after{right:0}
       @media(max-width:760px){
         .bar{gap:.5rem;padding-inline:1rem}
-        .bar nav{margin-left:.75rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
-          gap:1rem;flex:1;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,#000 88%,transparent)}
+        .bar nav{margin-left:.75rem;overflow-x:auto;scrollbar-width:none;gap:1rem;flex:1;
+          -webkit-overflow-scrolling:touch}
         .bar nav::-webkit-scrollbar{display:none}
         .bar nav a{white-space:nowrap}
       }
-
-      /* área de toque cómoda donde se navega con el dedo */
       @media (pointer:coarse){
-        .bar{padding-block:.15rem}
-        .bar nav a,.bar__mark,.estatus{
-          display:inline-flex;align-items:center;min-height:44px;
-        }
+        .bar nav a,.bar__mark,.estatus{display:inline-flex;align-items:center;min-height:44px}
         .bar nav a{padding-block:0}
       }
 
-      /* ============================================================
-         PORTADA · el pedestal, el haz y la cuenta
-         ============================================================ */
-      .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:7rem 0;overflow:hidden}
-      .hero__grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,6vw,4rem);align-items:center}
-      @media(min-width:900px){.hero__grid{grid-template-columns:1.15fr .85fr}}
-      .hero h1{margin:0}
-      .hero h1 .l2{display:block;font-style:italic;color:var(--gris)}
-      .tesis{
-        font-family:var(--body);font-weight:300;font-size:clamp(.95rem,1.4vw,1.0625rem);
-        color:#B8B6B0;max-width:40ch;margin:2rem 0 0;line-height:1.7;
-      }
-
-      /* escena dibujada: no hay fotografía posible de una ausencia */
-      .escena{position:relative;height:clamp(300px,48vw,430px);display:flex;align-items:flex-end;justify-content:center}
-      .haz{
-        position:absolute;top:-10%;left:50%;transform:translateX(-50%);
-        width:min(115%,520px);height:88%;
-        background:linear-gradient(to bottom,rgba(232,228,220,.24),rgba(232,228,220,.07) 55%,rgba(232,228,220,0));
-        clip-path:polygon(41% 0,59% 0,88% 100%,12% 100%);
-        filter:blur(3px);pointer-events:none;
-      }
-      .charco{
-        position:absolute;bottom:6%;left:50%;transform:translateX(-50%);
-        width:min(92%,430px);height:78px;border-radius:50%;
-        background:radial-gradient(ellipse at center,rgba(232,228,220,.28),rgba(232,228,220,.08) 45%,transparent 72%);
-        filter:blur(6px);
-      }
-      .pedestal{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;margin-bottom:6%}
-      .urna{
-        width:clamp(96px,17vw,132px);height:clamp(96px,17vw,132px);
-        border:1px solid rgba(232,228,220,.3);
-        background:linear-gradient(150deg,rgba(232,228,220,.075),rgba(232,228,220,.012) 42%,rgba(242,240,234,.05));
-        position:relative;
-      }
-      .urna::after{
-        content:'';position:absolute;inset:0;
-        background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.11) 47%,transparent 56%);
-      }
-      .bloque{
-        width:clamp(148px,26vw,208px);height:clamp(128px,22vw,180px);
-        background:linear-gradient(175deg,#191919,#0A0A0C);
-        border-top:1px solid rgba(232,228,220,.16);
-        display:flex;align-items:center;justify-content:center;padding:0 1rem;
-      }
-      .placa{
-        width:88%;max-width:150px;padding:.5rem .35rem;text-align:center;
-        border:1px solid rgba(168,173,95,.5);
-        background:linear-gradient(160deg,rgba(168,173,95,.16),rgba(168,173,95,.05));
-        font-family:var(--mono);font-size:.5625rem;letter-spacing:.1em;color:var(--laton);line-height:1.5;
-      }
-
-      /* la cuenta: elemento de firma */
-      .cuenta{border-top:1px solid var(--borde);margin-top:clamp(3rem,7vw,5rem)}
-      .cuenta__in{display:grid;grid-template-columns:1fr;gap:1.75rem;padding-block:2rem 2.25rem}
-      @media(min-width:820px){.cuenta__in{grid-template-columns:auto 1fr auto;align-items:end;gap:2.5rem}}
-      .cuenta__lab{font-family:var(--mono);font-size:.6875rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gris);margin:0 0 .7rem}
-      .reloj{display:flex;flex-wrap:wrap;gap:clamp(.9rem,2.4vw,2rem);align-items:baseline}
-      .u{display:flex;flex-direction:column;gap:.3rem}
-      .u b{
-        font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,4.6vw,3rem);
-        line-height:1;color:var(--laton);font-variant-numeric:tabular-nums;
-      }
-      .u i{font-family:var(--mono);font-style:normal;font-size:.625rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
-      .coords{font-family:var(--mono);font-size:.8125rem;line-height:2;color:var(--gris);letter-spacing:.04em}
-      .coords b{color:var(--tiza);font-weight:400}
-      .prov{
-        display:inline-block;margin-left:.5rem;padding:.1rem .4rem;border:1px solid var(--borde);
-        border-radius:2px;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);
-      }
-
-      /* botón de entrada */
-      .entrar{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.5rem;padding:.85rem 1.4rem;
-        border:1px solid var(--borde);font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;
-        text-transform:uppercase;color:var(--tiza);text-decoration:none;
-        transition:border-color .3s,background .3s,color .3s}
-      .entrar:hover,.entrar:focus-visible{border-color:var(--laton);color:var(--laton);background:rgba(168,173,95,.06)}
-      .entrar span{transition:transform .3s}
-      .entrar:hover span{transform:translateY(3px)}
-
-      /* cifras de orientación */
-      .cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem 1rem;
-        border-top:1px solid var(--borde);margin-top:clamp(3rem,7vw,4.5rem);padding-block:2rem 2.25rem}
-      @media(min-width:760px){.cifras{grid-template-columns:repeat(5,1fr)}}
-      .cifra{display:flex;flex-direction:column;gap:.35rem}
-      .cifra b{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;color:var(--tiza)}
-      .cifra i{font-family:var(--mono);font-style:normal;font-size:.625rem;letter-spacing:.18em;
-        text-transform:uppercase;color:var(--gris)}
-
-      /* semana dentro del número de momento */
-      .mom__n em{display:block;font-style:normal;font-size:.625rem;letter-spacing:.14em;
-        text-transform:uppercase;color:var(--gris);margin-top:.4rem}
-
-      /* ============================================================
-         LA CUENTA · banda a página completa
-         ============================================================ */
-      .banda{position:relative;overflow:hidden;padding-block:clamp(3.5rem,9vw,6.5rem);
-        background:linear-gradient(180deg,#0A0A0C,var(--noche))}
-      .banda__haz{position:absolute;top:-40%;left:50%;transform:translateX(-50%);
-        width:min(140%,1100px);height:150%;pointer-events:none;
-        background:radial-gradient(ellipse at 50% 0%,rgba(168,173,95,.13),transparent 62%)}
-      .banda .wrap{position:relative}
-      .reloj-xl{display:flex;flex-wrap:wrap;align-items:baseline;gap:clamp(1rem,3.5vw,3.25rem);
-        margin:0 0 clamp(2.25rem,5vw,3.25rem)}
-      .ux{display:flex;flex-direction:column;gap:.4rem}
-      .ux b{font-family:var(--display);font-weight:400;line-height:.9;color:var(--laton);
-        font-size:clamp(3.4rem,12vw,7.5rem);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-      .ux i{font-family:var(--mono);font-style:normal;font-size:.6875rem;letter-spacing:.24em;
-        text-transform:uppercase;color:var(--gris)}
-      .ux--s b{color:var(--gris);font-size:clamp(2rem,6vw,3.5rem)}
-      @media(max-width:420px){.ux--s{display:none}}
-
-      .linea{margin:0 0 clamp(2.5rem,5vw,3.5rem)}
-      .linea__b{height:2px;background:var(--borde);position:relative}
-      .linea__b span{position:absolute;left:0;top:0;height:100%;background:var(--laton);width:0;
-        transition:width 1s linear}
-      .linea__b::after{content:'';position:absolute;right:0;top:-4px;width:1px;height:10px;background:var(--laton)}
-      .linea__t{display:flex;justify-content:space-between;gap:1rem;margin-top:.75rem;
-        font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
-
-      .banda__pie{display:grid;grid-template-columns:1fr;gap:2rem;
-        border-top:1px solid var(--borde);padding-top:clamp(2rem,4vw,2.75rem)}
-      @media(min-width:880px){.banda__pie{grid-template-columns:1.6fr .8fr;gap:clamp(2rem,6vw,4rem)}}
-      .banda__pie p{margin:0;color:#B8B6B0;font-size:1.0625rem;max-width:62ch}
-      .banda__pie b{color:var(--tiza);font-weight:400;font-family:var(--display);font-size:1.15rem}
-      .banda__coord{font-family:var(--mono);font-size:.8125rem;line-height:2;color:var(--gris)!important;
-        letter-spacing:.04em}
-
-      /* cuenta compacta en la barra */
-      .estatus u{font-style:normal;text-decoration:none;color:var(--laton);font-variant-numeric:tabular-nums}
-
-      /* ============================================================
-         secciones
-         ============================================================ */
-      .head{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:clamp(2.75rem,6vw,4.5rem)}
-      @media(min-width:880px){.head{grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}}
-
-      .estados{display:grid;grid-template-columns:1fr;gap:1px;background:var(--borde);border:1px solid var(--borde)}
-      @media(min-width:760px){.estados{grid-template-columns:1fr 1fr}}
-      .estado{background:var(--penumbra);padding:clamp(1.75rem,3.5vw,2.75rem)}
-      .estado h3{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:400;margin:.7rem 0 1rem;line-height:1.1}
-      .estado--i h3{color:var(--tiza)}
-      .estado--ii h3{color:var(--oliva)}
-      .estado p{color:#B8B6B0;margin:0 0 1rem;font-size:1.0625rem}
-      .estado dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.25rem;margin:1.5rem 0 0;
-        font-family:var(--mono);font-size:.75rem;letter-spacing:.05em}
-      .estado dt{color:var(--gris);text-transform:uppercase;letter-spacing:.14em}
-      .estado dd{margin:0;color:var(--tiza)}
-
-      /* indicador de estado · convención de museo, invertida */
-      .estatus{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.6875rem;
-        letter-spacing:.16em;text-transform:uppercase;color:var(--gris);white-space:nowrap;
+      /* indicador de estado: el punto dice la verdad (práctica Baltic) */
+      .estatus{display:flex;align-items:center;gap:.5rem;font-family:var(--cota);
+        font-weight:500;font-size:.875rem;color:var(--grafito);white-space:nowrap;
         text-decoration:none;flex:none;margin-left:.5rem}
-      .estatus b{font-weight:400}
-      .estatus i{width:6px;height:6px;border-radius:50%;background:var(--laton);flex:none;
-        box-shadow:0 0 0 0 rgba(168,173,95,.5);animation:latir 3.4s ease-out infinite}
-      @keyframes latir{0%{box-shadow:0 0 0 0 rgba(168,173,95,.45)}70%{box-shadow:0 0 0 7px rgba(168,173,95,0)}100%{box-shadow:0 0 0 0 rgba(168,173,95,0)}}
-      /* mientras no se sella, la coleccion todavia esta viva: el punto es luz, no laton */
-      .estatus--sin-sellar{color:var(--tiza)}
-      .estatus--sin-sellar i{background:var(--aparicion);
-        box-shadow:0 0 0 0 rgba(242,240,234,.5);animation:latir-luz 1.6s ease-out infinite}
-      @keyframes latir-luz{0%{box-shadow:0 0 0 0 rgba(242,240,234,.5)}70%{box-shadow:0 0 0 7px rgba(242,240,234,0)}100%{box-shadow:0 0 0 0 rgba(242,240,234,0)}}
+      .estatus b{font-weight:600;color:var(--tinta)}
+      .estatus i{width:7px;height:7px;border-radius:50%;background:var(--tinta);flex:none}
+      .estatus--sin-sellar i{background:var(--laton)}
+      .estatus u{font-style:normal;text-decoration:none;font-variant-numeric:tabular-nums}
       @media(max-width:760px){.estatus span{display:none}}
 
-      /* filtros de la colección */
-      .filtros{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.75rem}
-      .filtro{font-family:var(--mono);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
-        color:var(--gris);background:transparent;border:1px solid var(--borde);padding:.5rem .85rem;
-        min-height:44px;cursor:pointer;transition:color .25s,border-color .25s,background .25s}
-      .filtro:hover{color:var(--tiza);border-color:#3A3A3A}
-      .filtro[aria-pressed="true"]{color:var(--noche);background:var(--laton);border-color:var(--laton)}
+      /* ============================================================
+         ± 0.00 · PORTADA · el nivel del patio
+         ============================================================ */
+      /* La portada se ancla abajo: así el alzado se apoya de verdad en la
+         línea de suelo en vez de flotar por encima de ella. */
+      .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+        padding-block:6rem 0}
+      .hero__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,3.5rem);
+        align-items:end}
+      @media(min-width:900px){.hero__grid{grid-template-columns:1.05fr .95fr}}
+      .hero h1{margin:0}
+      .hero h1 .l2{display:block;font-style:italic;color:var(--grafito)}
 
-      /* colección · cada tarjeta es un pedestal que se enciende */
-      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,255px),1fr));gap:1px;background:var(--borde);border:1px solid var(--borde)}
-      .pieza{
-        background:var(--penumbra);text-decoration:none;color:inherit;display:block;
-        position:relative;isolation:isolate;transition:background .45s ease;
-      }
-      .pieza{--tono:var(--aparicion)}
-      .pieza::before{
-        content:'';position:absolute;inset:0;z-index:0;opacity:0;transition:opacity .55s ease;
-        background:radial-gradient(120% 78% at 50% 0%,rgba(242,240,234,.16),transparent 62%);
-      }
-      @supports (background:color-mix(in srgb,red 20%,transparent)){
-        .pieza::before{background:radial-gradient(120% 78% at 50% 0%,color-mix(in srgb,var(--tono) 22%,transparent),transparent 62%)}
-      }
-      .pieza::after{
-        content:'';position:absolute;left:0;top:0;width:100%;height:2px;z-index:2;
-        background:var(--tono);transform:scaleX(0);transform-origin:left;
-        transition:transform .5s cubic-bezier(.22,1,.36,1);
-      }
-      .pieza:hover::after,.pieza:focus-visible::after{transform:scaleX(1)}
-      .pieza:hover,.pieza:focus-visible{background:#191919}
-      .pieza:hover::before,.pieza:focus-visible::before{opacity:1}
-      .pieza__vitrina{
-        position:relative;z-index:1;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
-        border-bottom:1px solid var(--borde);overflow:hidden;background:#0A0A0C;
-      }
-      .pieza__vitrina img{width:100%;height:100%;object-fit:cover;opacity:.86;transition:opacity .5s,transform .8s cubic-bezier(.22,1,.36,1)}
-      .pieza:hover .pieza__vitrina img{opacity:1;transform:scale(1.035)}
-      .pieza__vacia{
-        width:54%;height:52%;border:1px solid rgba(232,228,220,.16);
-        background:linear-gradient(150deg,rgba(232,228,220,.05),transparent 60%);
-      }
-      .pieza__txt{position:relative;z-index:1;padding:1.35rem 1.4rem 1.6rem}
-      .pieza__n{font-family:var(--mono);font-size:.6875rem;letter-spacing:.2em;color:var(--tono)}
-      .pieza__ub{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.625rem;
-        letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-top:.9rem}
-      .pieza__ub::before{content:'';width:5px;height:5px;border:1px solid var(--gris);border-radius:50%;flex:none}
-      .pieza__reg{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
-      .pieza__f{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;color:var(--gris)}
-      .pieza__t{font-family:var(--display);font-size:1.35rem;font-weight:400;line-height:1.15;margin:.5rem 0 .35rem}
-      .pieza__a{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;color:var(--gris)}
+      /* el objeto en alzado: línea, no render. Cero degradado. */
+      .escena{position:relative;height:clamp(200px,26vw,290px);align-self:end}
+      .escena svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 
-      /* archivo · la secuencia sí es una secuencia */
-      .mom{
-        display:grid;grid-template-columns:1fr;gap:.85rem;
-        padding:clamp(1.75rem,4vw,2.5rem) 0;border-top:1px solid var(--borde);
-      }
-      @media(min-width:860px){.mom{grid-template-columns:4.5rem 15rem 1fr;gap:2.5rem;align-items:start}}
-      .mom:last-child{border-bottom:1px solid var(--borde)}
-      .mom__n{font-family:var(--mono);font-size:.875rem;color:var(--oliva);letter-spacing:.1em;padding-top:.35rem}
-      .mom__t{font-family:var(--display);font-size:clamp(1.35rem,2.4vw,1.7rem);font-weight:400;line-height:1.15;margin:0}
-      .mom__q{font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin:.6rem 0 0}
-      .mom__d{margin:0;color:#B8B6B0;font-size:1.0625rem;max-width:58ch}
+      .entrar{display:inline-flex;align-items:center;gap:.55rem;margin-top:2.25rem;
+        padding:.7rem 1.2rem;border:1px solid var(--tinta);font-family:var(--cota);
+        font-weight:500;font-size:.9375rem;color:var(--tinta);text-decoration:none;
+        transition:background .25s,color .25s}
+      .entrar:hover,.entrar:focus-visible{background:var(--tinta);color:var(--papel)}
+      .entrar span{transition:transform .25s}
+      .entrar:hover span{transform:translateY(3px)}
+
+      /* ============================================================
+         LA LÍNEA DE SUELO · la firma de la página
+         ============================================================ */
+      .suelo{position:relative;border-top:var(--suelo) solid var(--tinta);margin-top:0}
+      .suelo__in{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad);
+        display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;
+        padding-block:.85rem 0}
+      .suelo__tag{display:flex;align-items:baseline;gap:.6rem;
+        background:var(--papel);margin-top:calc(var(--suelo) * -1 - .62em);
+        padding-right:.9rem}
+      .suelo__tag b{font-family:var(--cota);font-weight:600;font-size:1rem;
+        color:var(--tinta);font-variant-numeric:tabular-nums}
+      .suelo__co{margin-left:auto}
+
+      /* ---------- cabeceras de sección ---------- */
+      .head{display:grid;grid-template-columns:1fr;gap:1.35rem;
+        margin-bottom:clamp(2.25rem,5vw,3.75rem)}
+      @media(min-width:880px){.head{grid-template-columns:.85fr 1.15fr;
+        gap:clamp(2rem,5vw,4rem);align-items:start}}
+
+      /* ============================================================
+         −0.40 · LA CUENTA · una cota de nivel, no un reloj
+         ============================================================ */
+      .banda{padding-block:clamp(3rem,7vw,5rem);border-bottom:1px solid var(--linea)}
+      .reloj-xl{display:grid;grid-template-columns:repeat(auto-fit,minmax(5.5rem,auto));
+        gap:.6rem clamp(1.5rem,4vw,3rem);align-items:baseline;
+        margin:0 0 clamp(1.75rem,4vw,2.5rem);justify-content:start}
+      .ux{display:flex;flex-direction:column-reverse;gap:.15rem}
+      .ux b{font-family:var(--disp);font-weight:400;line-height:.88;color:var(--tinta);
+        font-size:clamp(2.6rem,8vw,5rem);font-variant-numeric:tabular-nums;
+        letter-spacing:-.02em}
+      .ux i{font-family:var(--cota);font-style:normal;font-weight:500;font-size:.875rem;
+        color:var(--grafito)}
+      .ux--s b{color:var(--grafito);font-size:clamp(1.8rem,5vw,3rem)}
+      @media(max-width:420px){.ux--s{display:none}}
+
+      /* la barra de la espera, dicha como lo que es: casi cero */
+      .linea{margin:0 0 clamp(1.75rem,4vw,2.5rem);max-width:52rem}
+      .linea__b{height:3px;background:var(--linea);position:relative}
+      .linea__b span{position:absolute;left:0;top:0;height:100%;background:var(--tinta);
+        width:0;transition:width 1s linear}
+      .linea__t{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;
+        margin-top:.6rem;font-family:var(--cota);font-weight:500;font-size:.875rem;
+        color:var(--grafito);font-variant-numeric:tabular-nums}
+      .banda__pie{display:grid;grid-template-columns:1fr;gap:1.5rem;
+        border-top:1px solid var(--linea);padding-top:clamp(1.75rem,4vw,2.5rem)}
+      @media(min-width:880px){.banda__pie{grid-template-columns:1.6fr .8fr;
+        gap:clamp(2rem,5vw,3.5rem)}}
+      .banda__pie p{margin:0;max-width:62ch;color:var(--tinta-t)}
+      .banda__pie b{color:var(--tinta);font-weight:600}
+      .banda__coord{font-family:var(--cota)!important;font-weight:500;font-size:.875rem;
+        line-height:1.9;color:var(--grafito)!important;font-variant-numeric:tabular-nums}
+      .prov{display:inline-block;margin-left:.45rem;padding:.05rem .4rem;
+        border:1px solid var(--linea);font-size:.8125rem;color:var(--grafito)}
+      .coords{font-family:var(--cota);font-weight:500;font-size:.9375rem;line-height:1.9;
+        color:var(--grafito);font-variant-numeric:tabular-nums}
+      .coords b{color:var(--tinta);font-weight:600}
+      .cuenta__lab,.cuenta__in{font-family:var(--cota)}
+
+      .cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 1rem;
+        border-top:1px solid var(--linea);margin-top:clamp(2.5rem,6vw,4rem);
+        padding-block:1.75rem 0}
+      @media(min-width:760px){.cifras{grid-template-columns:repeat(5,1fr)}}
+      .cifra{display:flex;flex-direction:column-reverse;gap:.2rem}
+      .cifra b{font-family:var(--disp);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.4rem);
+        line-height:1;color:var(--tinta);font-variant-numeric:tabular-nums}
+      .cifra i{font-family:var(--cota);font-style:normal;font-weight:500;font-size:.875rem;
+        color:var(--grafito)}
+
+      /* ============================================================
+         −0.80 · EL RECORRIDO · ocho módulos, y sí son una secuencia
+         ============================================================ */
+      .mom{display:grid;grid-template-columns:1fr;gap:.7rem;
+        padding:clamp(1.5rem,3.5vw,2.25rem) 0;border-top:1px solid var(--linea)}
+      @media(min-width:860px){.mom{grid-template-columns:4rem 16rem 1fr;gap:2.25rem;
+        align-items:start}}
+      .mom:last-child{border-bottom:1px solid var(--linea)}
+      .mom__n{font-family:var(--cota);font-weight:600;font-size:1rem;color:var(--tinta);
+        padding-top:.3rem;font-variant-numeric:tabular-nums}
+      .mom__n em{display:block;font-style:normal;font-weight:500;font-size:.875rem;
+        color:var(--grafito);margin-top:.3rem}
+      .mom__t{font-family:var(--disp);font-size:clamp(1.3rem,2.2vw,1.6rem);font-weight:400;
+        line-height:1.12;margin:0;color:var(--tinta)}
+      .mom__q{font-family:var(--cota);font-weight:500;font-size:.875rem;color:var(--grafito);
+        margin:.5rem 0 0}
+      .mom__d{margin:0;color:var(--tinta-t);max-width:60ch}
       .mom__c{grid-column:1/-1;margin:0}
       @media(min-width:860px){.mom__c{grid-column:3/-1}}
-      .mom__c summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6rem;
-        font-family:var(--mono);font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;
-        color:var(--gris);padding:.55rem 0;transition:color .25s}
+      .mom__c summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;
+        gap:.5rem;font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        color:var(--grafito);padding:.5rem 0;transition:color .22s}
       .mom__c summary::-webkit-details-marker{display:none}
-      .mom__c summary::after{content:'+';font-size:1rem;color:var(--laton);transition:transform .3s}
+      .mom__c summary::after{content:'+';font-size:1.05rem;color:var(--laton)}
       .mom__c[open] summary::after{content:'−'}
-      .mom__c summary:hover{color:var(--tiza)}
-      .mom__c .mom__d{margin-top:.5rem}
-      .mom__lead{color:var(--tiza)!important;font-family:var(--display);font-size:1.15rem;line-height:1.4}
-      .mom__d b{color:var(--tiza);font-weight:400}
+      .mom__c summary:hover{color:var(--tinta)}
+      .mom__c .mom__d{margin-top:.4rem}
+      .mom__lead{color:var(--tinta)!important;font-family:var(--disp);font-size:1.2rem;
+        line-height:1.3}
+      .mom__d b{color:var(--tinta);font-weight:600}
 
-      .futuro__eq{font-family:var(--mono)!important;font-size:.6875rem!important;letter-spacing:.1em;
-        color:var(--gris)!important;margin:0 0 1.5rem!important;line-height:1.9}
-      .futuro__cierre{font-family:var(--display)!important;font-size:1.2rem!important;line-height:1.4;
-        color:var(--tiza)!important;border-top:1px solid var(--borde);padding-top:1.25rem;margin-top:1.5rem!important}
+      /* ============================================================
+         −1.20 · PANAMÁ 2046 · dos futuros
+         ============================================================ */
+      .estados{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,3.5vw,2.5rem)}
+      @media(min-width:760px){.estados{grid-template-columns:1fr 1fr}}
+      .estado{border-top:2px solid var(--tinta);padding-top:1.5rem}
+      .estado--ii{border-top-color:var(--grafito)}
+      .estado h3{font-family:var(--disp);font-size:clamp(1.4rem,2.4vw,1.9rem);
+        font-weight:400;margin:.5rem 0 .9rem;line-height:1.1;color:var(--tinta)}
+      .estado p{color:var(--tinta-t);margin:0 0 .9rem}
+      .estado dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.1rem;
+        margin:1.25rem 0 0;font-family:var(--cota);font-weight:500;font-size:.9375rem}
+      .estado dt{color:var(--grafito)}
+      .estado dd{margin:0;color:var(--tinta)}
+      .futuro__eq{font-family:var(--cota)!important;font-weight:500;font-size:.9375rem!important;
+        color:var(--grafito)!important;margin:0 0 1.25rem!important;line-height:1.8}
+      .futuro__cierre{font-family:var(--disp)!important;font-size:1.2rem!important;
+        line-height:1.3;color:var(--tinta)!important;border-top:1px solid var(--linea);
+        padding-top:1.1rem;margin-top:1.25rem!important}
 
-      .hilo{display:grid;grid-template-columns:1fr;gap:1px;background:var(--borde);border:1px solid var(--borde)}
+      /* ============================================================
+         −1.60 · EL HILO
+         ============================================================ */
+      .hilo{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,4vw,3rem)}
       @media(min-width:800px){.hilo{grid-template-columns:1fr 1fr}}
-      .hilo__mitad{background:var(--penumbra);padding:clamp(1.75rem,3.5vw,2.75rem)}
-      .hilo__k{font-family:var(--mono);font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;
-        color:var(--laton);margin:0 0 1rem}
-      .hilo__mitad h3{font-family:var(--display);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:400;
-        margin:0 0 1.25rem;line-height:1.1;color:var(--tiza);text-transform:none;letter-spacing:normal}
-      .hilo__mitad p{color:#B8B6B0;margin:0 0 1rem;font-size:1.0625rem}
+      .hilo__mitad{border-top:1px solid var(--linea);padding-top:1.5rem}
+      .hilo__k{font-family:var(--cota);font-weight:600;font-size:.9375rem;
+        color:var(--laton);margin:0 0 .8rem}
+      .hilo__mitad h3{font-family:var(--disp);font-size:clamp(1.4rem,2.6vw,1.9rem);
+        font-weight:400;margin:0 0 1.1rem;line-height:1.1;color:var(--tinta)}
+      .hilo__mitad p{color:var(--tinta-t);margin:0 0 .9rem}
       .hilo__mitad p:last-child{margin-bottom:0}
-      .hilo__mitad b{color:var(--tiza);font-weight:400}
+      .hilo__mitad b{color:var(--tinta);font-weight:600}
+      .espejo{list-style:none;padding:0;margin:1.35rem 0 1.75rem}
+      .espejo li{padding:.9rem 0;border-top:1px solid var(--linea);color:var(--tinta-t)}
+      .espejo li:last-child{border-bottom:1px solid var(--linea)}
+      .espejo b{display:block;color:var(--tinta);font-weight:600;margin-bottom:.25rem;
+        font-family:var(--cota);font-size:.9375rem}
 
-      .espejo{list-style:none;padding:0;margin:1.5rem 0 2rem;display:grid;gap:1px;
-        background:var(--borde);border:1px solid var(--borde)}
-      .espejo li{background:var(--penumbra);padding:1.1rem 1.4rem;font-size:1.0625rem;color:#B8B6B0}
-      .espejo b{display:block;color:var(--tiza);font-weight:400;margin-bottom:.35rem;font-size:.9375rem}
-
-
-      /* ============ EL MAPA ============ */
-      .preg-leyenda{display:grid;grid-template-columns:1fr;gap:1px;background:var(--borde);
-        border:1px solid var(--borde);margin:0 0 clamp(2rem,4vw,3rem)}
+      /* ============================================================
+         −2.00 · EL MAPA
+         ============================================================ */
+      .preg-leyenda{display:grid;grid-template-columns:1fr;gap:1px;
+        background:var(--linea);border:1px solid var(--linea);
+        margin:0 0 clamp(1.75rem,4vw,2.5rem)}
       @media(min-width:700px){.preg-leyenda{grid-template-columns:1fr 1fr}}
-      @media(min-width:1000px){.preg-leyenda{grid-template-columns:1fr 1fr 1fr}}
-      .pq{display:flex;align-items:center;gap:.75rem;text-align:left;background:var(--penumbra);
-        border:0;padding:.85rem 1rem;color:#B8B6B0;font-family:var(--body);font-weight:300;
-        font-size:.875rem;cursor:pointer;transition:background .25s,color .25s}
-      .pq span{font-family:var(--mono);font-size:.6875rem;color:var(--gris);border:1px solid var(--borde);
-        width:1.6rem;height:1.6rem;display:grid;place-items:center;flex:none;transition:all .25s}
-      .pq:hover{background:#191919;color:var(--tiza)}
-      .pq[aria-pressed="true"]{color:var(--tiza)}
-      .pq[aria-pressed="true"] span{background:var(--laton);color:var(--noche);border-color:var(--laton)}
+      @media(min-width:1000px){.preg-leyenda{grid-template-columns:repeat(3,1fr)}}
+      .pq{display:flex;align-items:center;gap:.7rem;text-align:left;background:var(--papel);
+        border:0;padding:.8rem 1rem;color:var(--tinta-t);font-family:var(--texto);
+        font-weight:300;font-size:.9375rem;cursor:pointer;transition:background .22s}
+      .pq span{font-family:var(--cota);font-weight:600;font-size:.875rem;color:var(--grafito);
+        border:1px solid var(--linea);width:1.7rem;height:1.7rem;display:grid;
+        place-items:center;flex:none;transition:all .22s}
+      .pq:hover{background:var(--papel-c);color:var(--tinta)}
+      .pq[aria-pressed="true"]{color:var(--tinta)}
+      .pq[aria-pressed="true"] span{background:var(--tinta);color:var(--papel);
+        border-color:var(--tinta)}
       .estaciones{list-style:none;padding:0;margin:0;position:relative}
-      .estaciones::before{content:'';position:absolute;left:1.35rem;top:1.5rem;bottom:1.5rem;width:1px;background:var(--borde)}
+      .estaciones::before{content:'';position:absolute;left:1.35rem;top:1.5rem;bottom:1.5rem;
+        width:1px;background:var(--linea)}
       .est{position:relative}
-      .est__cab{width:100%;display:flex;align-items:flex-start;gap:clamp(.9rem,2.5vw,1.75rem);
-        background:transparent;border:0;border-top:1px solid var(--borde);
-        padding:1.5rem 0;text-align:left;cursor:pointer;color:inherit;transition:background .25s}
-      .est__cab:hover{background:rgba(255,255,255,.02)}
-      .est:last-child .est__cab{border-bottom:1px solid var(--borde)}
-      .est__n{font-family:var(--mono);font-size:.8125rem;color:var(--gris);letter-spacing:.08em;
-        width:2.7rem;height:2.7rem;flex:none;display:grid;place-items:center;border:1px solid var(--borde);
-        border-radius:50%;background:var(--noche);position:relative;z-index:2}
-      .est--puente .est__n{border-color:var(--laton);border-style:dashed}
-      .est--fin .est__n{border-color:var(--tiza);color:var(--tiza)}
-      .est--solo .est__n{border-style:dotted;border-color:var(--tiza);color:var(--tiza)}
-      .est--solo .est__badge{color:var(--tiza);border-color:rgba(242,240,234,.4)}
-      .est__mid{display:flex;flex-direction:column;gap:.4rem;flex:1;min-width:0}
-      .est__t{font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.6rem);line-height:1.15;color:var(--tiza)}
-      .est__badge{display:inline-block;margin-left:.6rem;vertical-align:middle;font-family:var(--mono);
-        font-size:.5625rem;letter-spacing:.18em;text-transform:uppercase;color:var(--laton);
-        border:1px solid rgba(168,173,95,.5);padding:.2rem .45rem}
-      .est__doc{font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;color:var(--gris)}
-      .est__estado{font-family:var(--mono);font-size:.75rem;color:var(--gris);margin-top:.25rem}
-      .hilos{display:flex;gap:.4rem;margin-top:.85rem}
-      .hilos .h{width:.5rem;height:.5rem;border-radius:50%;border:1px solid var(--borde);flex:none;
-        transition:background .3s,border-color .3s,transform .3s,opacity .3s}
-      .hilos .h.on{background:var(--gris);border-color:var(--gris)}
+      .est__cab{width:100%;display:flex;align-items:flex-start;
+        gap:clamp(.85rem,2.2vw,1.6rem);background:transparent;border:0;
+        border-top:1px solid var(--linea);padding:1.35rem 0;text-align:left;cursor:pointer;
+        color:inherit;transition:background .22s}
+      .est__cab:hover{background:var(--papel-c)}
+      .est:last-child .est__cab{border-bottom:1px solid var(--linea)}
+      .est__n{font-family:var(--cota);font-weight:600;font-size:.9375rem;color:var(--grafito);
+        width:2.7rem;height:2.7rem;flex:none;display:grid;place-items:center;
+        border:1px solid var(--linea);border-radius:50%;background:var(--papel);
+        position:relative;z-index:2;font-variant-numeric:tabular-nums}
+      .est--puente .est__n{border-color:var(--laton);border-style:dashed;color:var(--laton)}
+      .est--fin .est__n,.est--solo .est__n{border-color:var(--tinta);color:var(--tinta)}
+      .est--solo .est__n{border-style:dotted}
+      .est--solo .est__badge{color:var(--tinta);border-color:var(--linea)}
+      .est__mid{display:flex;flex-direction:column;gap:.3rem;flex:1;min-width:0}
+      .est__t{font-family:var(--disp);font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.12;
+        color:var(--tinta)}
+      .est__badge{display:inline-block;margin-left:.5rem;vertical-align:middle;
+        font-family:var(--cota);font-weight:500;font-size:.8125rem;color:var(--laton);
+        border:1px solid var(--laton);padding:.1rem .4rem}
+      .est__doc,.est__estado{font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        color:var(--grafito)}
+      .hilos{display:flex;gap:.35rem;margin-top:.75rem}
+      .hilos .h{width:.5rem;height:.5rem;border-radius:50%;border:1px solid var(--linea);
+        flex:none;transition:background .25s,border-color .25s,transform .25s,opacity .25s}
+      .hilos .h.on{background:var(--grafito);border-color:var(--grafito)}
       .hilos .h.sel{background:var(--laton);border-color:var(--laton);transform:scale(1.5)}
-      .hilos .h.dim{opacity:.25}
-      .est__mas{font-family:var(--mono);color:var(--laton);font-size:1rem;flex:none;padding-top:.5rem;transition:transform .3s}
+      .hilos .h.dim{opacity:.3}
+      .est__mas{font-family:var(--cota);font-weight:500;color:var(--laton);font-size:1.15rem;
+        flex:none;padding-top:.45rem;transition:transform .25s}
       .est__cab[aria-expanded="true"] .est__mas{transform:rotate(45deg)}
-      .est__panel{padding:0 0 1.75rem clamp(3.6rem,5vw,4.45rem)}
-      .est__panel dl{display:grid;grid-template-columns:1fr;gap:.35rem 1.5rem;margin:0}
+      .est__panel{padding:0 0 1.6rem clamp(3.55rem,5vw,4.3rem)}
+      .est__panel dl{display:grid;grid-template-columns:1fr;gap:.3rem 1.4rem;margin:0}
       @media(min-width:700px){.est__panel dl{grid-template-columns:9rem 1fr}}
-      .est__panel dt{font-family:var(--mono);font-size:.625rem;letter-spacing:.18em;text-transform:uppercase;
-        color:var(--gris);padding-top:.35rem}
-      .est__panel dd{margin:0 0 1rem;color:#B8B6B0;font-size:1.0625rem;max-width:62ch}
-      .est__panel p{margin:0;color:#B8B6B0;font-size:1.0625rem;max-width:62ch}
+      .est__panel dt{font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        color:var(--grafito);padding-top:.25rem}
+      .est__panel dd{margin:0 0 .9rem;color:var(--tinta-t);max-width:62ch}
+      .est__panel p{margin:0;color:var(--tinta-t);max-width:62ch}
       @media print{.est__panel,.est__panel[hidden]{display:block!important}}
+      .preguntas{border-top:2px solid var(--tinta);padding-top:1.5rem;
+        margin-top:clamp(2.5rem,5vw,3.5rem)}
+      .cierre-p{margin:2rem 0 0;color:var(--tinta-t);max-width:62ch}
 
-      /* preguntas recurrentes */
-      .preguntas{border:1px solid var(--borde);background:var(--penumbra);
-        padding:clamp(1.75rem,4vw,2.75rem);margin-top:clamp(3rem,6vw,4rem)}
-            .cierre-p{margin:2.25rem 0 0;color:#B8B6B0;font-size:1.0625rem;max-width:62ch}
+      /* ============================================================
+         −2.40 · LA COLECCIÓN · la única banda excavada de la página.
+         La trama a 45° aparece aquí y en ningún otro sitio, porque aquí
+         es donde los objetos están de verdad bajo tierra.
+         ============================================================ */
+      .excavado{background:var(--tierra);position:relative;overflow:hidden;
+        border-top:var(--suelo) solid var(--tinta)}
+      .excavado::before{content:'';position:absolute;inset:0;pointer-events:none;
+        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%231B2430' stroke-opacity='.16' stroke-width='1' fill='none'/></svg>")}
+      .excavado > .wrap{position:relative}
+      .excavado .rule{background:rgba(27,36,48,.24)}
 
-      /* visita */
-      .visita{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,3.5rem)}
-      @media(min-width:900px){.visita{grid-template-columns:1fr 1fr}}
-      .tarjeta{border:1px solid var(--borde);background:var(--penumbra);padding:clamp(1.75rem,3.5vw,2.5rem)}
-      .tarjeta h3{font-family:var(--mono);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin:0 0 1.25rem;font-weight:400}
-      .placa-grande{
-        border:1px solid rgba(168,173,95,.4);padding:clamp(1.5rem,3vw,2.25rem);
-        background:linear-gradient(155deg,rgba(168,173,95,.09),rgba(168,173,95,.02));
-        font-family:var(--mono);font-size:.8125rem;line-height:2.1;color:var(--laton);letter-spacing:.05em;
+      .filtros{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.6rem}
+      .filtro{font-family:var(--cota);font-weight:500;font-size:.9375rem;color:var(--grafito);
+        background:transparent;border:1px solid rgba(27,36,48,.3);padding:.45rem .85rem;
+        min-height:44px;cursor:pointer;transition:color .22s,border-color .22s,background .22s}
+      .filtro:hover{color:var(--tinta);border-color:var(--tinta)}
+      .filtro[aria-pressed="true"]{color:var(--papel);background:var(--tinta);
+        border-color:var(--tinta)}
+
+      /* cada pieza es una cota de excavación, no una tarjeta de tienda */
+      .grid{display:grid;grid-template-columns:1fr;gap:0}
+      .pieza{display:grid;grid-template-columns:1fr;gap:.3rem;
+        padding:1rem 0;border-bottom:1px solid rgba(27,36,48,.22);
+        text-decoration:none;color:inherit;transition:background .22s}
+      .pieza:first-child{border-top:1px solid rgba(27,36,48,.22)}
+      @media(min-width:720px){
+        .pieza{grid-template-columns:5rem minmax(0,22rem) 1fr auto;gap:1rem 1.5rem;
+          align-items:baseline}
+        .pieza__f{text-align:right}
       }
-      .placa-grande strong{display:block;font-size:1.0625rem;letter-spacing:.22em;margin-bottom:1rem;color:var(--laton)}
-      .placa-grande em{display:block;font-style:normal;color:var(--tiza);margin:1rem 0;font-size:.875rem;line-height:1.9}
+      .pieza:hover,.pieza:focus-visible{background:rgba(27,36,48,.05)}
+      .pieza:hover .pieza__t{font-style:italic}
+      .pieza__n{font-family:var(--cota);font-weight:600;font-size:.9375rem;color:var(--tinta);
+        font-variant-numeric:tabular-nums}
+      .pieza__t{font-family:var(--disp);font-size:1.3rem;font-weight:400;line-height:1.1;
+        margin:0;color:var(--tinta)}
+      .pieza__a{font-family:var(--cota);font-weight:500;font-size:.9375rem;color:var(--grafito)}
+      .pieza__f,.pieza__ub{font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        color:var(--grafito);font-variant-numeric:tabular-nums}
+      .pieza__reg{display:contents}
+      /* la vitrina desaparece: no hay nada que enseñar hasta que haya fotos */
+      .pieza__vitrina,.pieza__vacia,.pieza__txt{display:contents}
+      .pieza__vitrina img{display:none}
 
-      /* pie */
-      footer{border-top:1px solid var(--borde);padding-block:clamp(3.5rem,7vw,5rem)}
-      .creds{display:grid;grid-template-columns:1fr;gap:2.25rem}
+      /* ============================================================
+         VISITA · se vuelve al patio
+         ============================================================ */
+      .visita{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,4vw,3rem)}
+      @media(min-width:900px){.visita{grid-template-columns:1fr 1fr}}
+      .tarjeta{border-top:1px solid var(--linea);padding-top:1.5rem}
+      .tarjeta h3{font-family:var(--cota);font-weight:600;font-size:.9375rem;
+        color:var(--grafito);margin:0 0 1.1rem}
+      /* la placa: el único latón de toda la página */
+      .placa-grande{border:1.5px solid var(--laton);padding:clamp(1.35rem,2.6vw,1.9rem);
+        background:var(--papel-c);font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        line-height:1.95;color:var(--tinta);font-variant-numeric:tabular-nums}
+      .placa-grande strong{display:block;font-weight:600;font-size:1.0625rem;
+        color:var(--laton);margin-bottom:.8rem}
+      .placa-grande em{display:block;font-style:normal;color:var(--tinta-t);margin:.8rem 0;
+        line-height:1.8}
+
+      /* ---------- pie ---------- */
+      footer{border-top:var(--suelo) solid var(--tinta);padding-block:clamp(3rem,6vw,4.5rem)}
+      .creds{display:grid;grid-template-columns:1fr;gap:2rem}
       @media(min-width:760px){.creds{grid-template-columns:repeat(3,1fr)}}
-      .creds h4{font-family:var(--mono);font-size:.6875rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin:0 0 .9rem;font-weight:400}
-      .creds p{margin:0;font-size:1.0625rem;line-height:1.9;color:#B8B6B0}
-      .firma{margin-top:clamp(3rem,6vw,4.5rem);padding-top:2rem;border-top:1px solid var(--borde);
-        font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;color:var(--gris);display:flex;
-        flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between}
+      .creds h4{font-family:var(--cota);font-weight:600;font-size:.9375rem;
+        color:var(--grafito);margin:0 0 .8rem}
+      .creds p{margin:0;line-height:1.8;color:var(--tinta-t)}
+      .firma{margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:1.6rem;
+        border-top:1px solid var(--linea);font-family:var(--cota);font-weight:500;
+        font-size:.9375rem;color:var(--grafito);display:flex;flex-wrap:wrap;
+        gap:.6rem 1.75rem;justify-content:space-between}
 
-      /* revelado */
-      .rv{transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
-      html.reveal .rv{opacity:0;transform:translateY(22px)}
+      /* ---------- revelado ---------- */
+      .rv{transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+      html.reveal .rv{opacity:0;transform:translateY(16px)}
       html.reveal .rv.on{opacity:1;transform:none}
+
       @media print{
         *{background:#fff!important;color:#000!important;box-shadow:none!important}
-        .bar,.escena,.filtros,.entrar,.banda__haz,.skip,#linea-f{display:none!important}
+        .bar,.escena,.filtros,.entrar,.skip,#linea-f,.excavado::before{display:none!important}
         .rv{opacity:1!important;transform:none!important}
         .mom__c{display:block!important}
         .mom__c summary{display:none}
-        .mom__c[open],.mom__c:not([open]){}
         details:not([open])>*:not(summary){display:block!important}
         a[href^="http"]::after{content:" (" attr(href) ")";font-size:.7em}
-        .band,.banda{padding-block:1.5rem!important;page-break-inside:avoid}
+        .band,.banda{padding-block:1.25rem!important;page-break-inside:avoid}
         .mom,.pieza,.estado,.tarjeta{page-break-inside:avoid;border-color:#999!important}
         h1,h2,h3{page-break-after:avoid}
+        .suelo,.excavado,footer{border-top-color:#000!important}
       }
       @media(prefers-contrast:more){
-        :root{--gris:#DEDCD6;--borde:#4A4A56;--oliva:#BFC48A;--laton:#BFC48A}
-        .prose p,.mom__d,.estado p,.abierta p{color:var(--tiza)}
-        .pieza,.tarjeta,.preguntas,.estado{border-color:#4A4A56}
+        :root{--grafito:#3A424C;--linea:#8C938A;--tinta-t:#141B24}
+        .pieza,.tarjeta,.estado,.hilo__mitad{border-color:#6E756C}
       }
       @media(prefers-reduced-motion:reduce){
         html{scroll-behavior:auto}
@@ -605,29 +565,53 @@
             >
           </div>
 
-          <div class="escena" aria-hidden="true">
-            <div class="haz"></div>
-            <div class="charco"></div>
-            <div class="pedestal">
-              <div class="urna"></div>
-              <div class="bloque">
-                <div class="placa">
-                  ÚLTIMA FUNCIÓN<br />MUFU · 2026<br />APERTURA 05.09.2047
-                </div>
-              </div>
-            </div>
+          <div class="escena">
+            <svg
+              viewBox="0 0 340 178"
+              role="img"
+              aria-label="Alzado de la última función: un pedestal con una urna vacía, un haz de luz dibujado en línea discontinua y una placa de latón. El conjunto se apoya en el nivel del patio."
+              fill="none"
+              stroke="#1B2430"
+              stroke-width="1.25"
+            >
+              <title>Última función · alzado</title>
+              <!-- el haz: linea de construccion, no un resplandor -->
+              <path d="M140 6 L200 6 L246 176 L94 176 Z" stroke-opacity=".32" stroke-dasharray="5 4" />
+              <!-- la urna, vacia -->
+              <rect x="136" y="58" width="68" height="68" stroke-opacity=".9" />
+              <path d="M136 58 L204 126" stroke-opacity=".2" />
+              <!-- el bloque -->
+              <rect x="110" y="126" width="120" height="50" stroke-opacity=".9" />
+              <!-- la placa: el unico laton del dibujo -->
+              <rect x="136" y="140" width="68" height="22" stroke="#8A6A3C" stroke-width="1.5" />
+              <!-- el nivel del patio no se dibuja aquí: lo dibuja la página -->
+              <!-- eje -->
+              <path d="M170 126 V58" stroke-opacity=".35" stroke-dasharray="3 3" />
+              <!-- cotas -->
+              <path d="M254 58 V126 M250 58 H258 M250 126 H258" stroke-opacity=".45" />
+              <text x="264" y="96" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#5A6470" stroke="none">urna · vacía</text>
+              <text x="264" y="156" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#8A6A3C" stroke="none">placa de latón</text>
+            </svg>
           </div>
         </div>
       </section>
 
-      <hr class="rule" />
+      <div class="suelo">
+        <div class="suelo__in">
+          <span class="suelo__tag"
+            ><b>± 0.00</b
+            ><span class="cota">nivel del patio · lo que se puede visitar</span></span
+          >
+          <span class="cota suelo__co">8.983000° N · 79.520000° W</span>
+        </div>
+      </div>
 
       <!-- ============ LA CUENTA ============ -->
       <section class="banda" id="cuenta" aria-labelledby="cuenta-t">
-        <div class="banda__haz" aria-hidden="true"></div>
         <div class="wrap">
           <p class="eyebrow" id="cuenta-t">
-            <span id="cuenta-lab">La colección está cerrada</span>
+            <span class="prof">−0.40</span> ·
+            <span id="cuenta-lab">La colección está cerrada</span> ·
             <span class="num">falta para la apertura</span>
           </p>
 
@@ -688,7 +672,7 @@
           <div class="head rv">
             <div>
               <p class="eyebrow">
-                <span class="num">01</span> · El recorrido · diez semanas
+                <span class="prof">−0.80</span> · El recorrido · diez semanas
               </p>
               <h2 class="display h-l" id="recorrido-t">
                 Diez semanas<br />para construir<br />un museo
@@ -1121,7 +1105,7 @@
           <div class="head rv">
             <div>
               <p class="eyebrow">
-                <span class="num">02</span> · Los dos futuros
+                <span class="prof">−1.20</span> · Los dos futuros
               </p>
               <h2 class="display h-l" id="futuros-t">Panamá,<br />2046</h2>
             </div>
@@ -1238,7 +1222,7 @@
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="num">03</span> · El hilo</p>
+              <p class="eyebrow"><span class="prof">−1.60</span> · El hilo</p>
               <h2 class="display h-l" id="hilo-t">Nadie se puso<br />de acuerdo</h2>
             </div>
             <div class="prose">
@@ -1436,7 +1420,7 @@
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="num">04</span> · El mapa</p>
+              <p class="eyebrow"><span class="prof">−2.00</span> · El mapa</p>
               <h2 class="display h-l" id="mapa-t">
                 Lo que quedó<br />abierto
               </h2>
@@ -1777,14 +1761,12 @@
         </div>
       </section>
 
-      <hr class="rule" />
-
-      <!-- ============ COLECCIÓN ============ -->
-      <section class="band" id="coleccion" aria-labelledby="coleccion-t">
+      <!-- ============ COLECCIÓN · la única banda bajo tierra ============ -->
+      <section class="band excavado" id="coleccion" aria-labelledby="coleccion-t">
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="num">05</span> · La colección</p>
+              <p class="eyebrow"><span class="prof">−2.40</span> · La colección</p>
               <h2 class="display h-l" id="coleccion-t">
                 Las piezas<br />enterradas
               </h2>
@@ -1815,138 +1797,80 @@
             hidden
             aria-label="Filtrar la colección por el siglo desde el que fue escrita su cédula"
           ></div>
+          <!-- Respaldo sin JavaScript. Se regenera desde PIEZAS; si cambias uno,
+               cambia el otro. -->
           <div class="grid rv" id="grid">
-            <a class="pieza" href="ficha-01.html" style="--tono: #bfc48a">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">01</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-01.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2087</span>
             </a>
-            <a class="pieza" href="ficha-02.html" style="--tono: #a8ad5f">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">02</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-02.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2145</span>
             </a>
-            <a class="pieza" href="ficha-03.html" style="--tono: #cbcfa0">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">03</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-03.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2090</span>
             </a>
-            <a class="pieza" href="ficha-04.html" style="--tono: #949a4e">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">04</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-04.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2210</span>
             </a>
-            <a class="pieza" href="ficha-05.html" style="--tono: #b5ba76">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">05</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-05.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2150</span>
             </a>
-            <a class="pieza" href="ficha-06.html" style="--tono: #8f9440">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">06</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-06.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2075</span>
             </a>
-            <a class="pieza" href="ficha-07.html" style="--tono: #d4d7b2">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">07</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-07.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2260</span>
             </a>
-            <a class="pieza" href="ficha-08.html" style="--tono: #9da34d">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">08</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-08.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2098</span>
             </a>
-            <a class="pieza" href="ficha-09.html" style="--tono: #c2c695">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">09</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-09.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2130</span>
             </a>
-            <a class="pieza" href="ficha-10.html" style="--tono: #8a9047">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">10</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-10.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2046</span>
             </a>
-            <a class="pieza" href="ficha-11.html" style="--tono: #b0b569">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">11</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-11.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2185</span>
             </a>
-            <a class="pieza" href="ficha-12.html" style="--tono: #7e8339">
-              <div class="pieza__vitrina">
-                <div class="pieza__vacia" aria-hidden="true"></div>
-              </div>
-              <div class="pieza__txt">
-                <span class="pieza__n">12</span>
-                <h3 class="pieza__t">▢ Título de la pieza</h3>
-                <span class="pieza__a">▢ Autor</span>
-                <span class="pieza__ub">No expuesta · enterrada</span>
-              </div>
+            <a class="pieza" href="ficha-12.html">
+              <span class="pieza__n">−2.40</span>
+              <h3 class="pieza__t">▢ Título de la pieza</h3>
+              <span class="pieza__a">▢ Autor</span>
+              <span class="pieza__f">cédula 2310</span>
             </a>
           </div>
           <p
@@ -1954,7 +1878,7 @@
             id="conteo"
             role="status"
             aria-live="polite"
-            style="margin-top: 1.25rem; color: var(--gris)"
+            style="margin-top: 1.25rem"
           ></p>
         </div>
       </section>
@@ -1967,7 +1891,7 @@
           <div class="head rv">
             <div>
               <p class="eyebrow">
-                <span class="num">06</span> · La entrega final
+                <span class="prof">± 0.00</span> · La entrega final
               </p>
               <h2 class="display h-l" id="obra-t">Última<br />función</h2>
             </div>
@@ -2062,7 +1986,7 @@
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="num">07</span> · La visita</p>
+              <p class="eyebrow"><span class="prof">± 0.00</span> · La visita</p>
               <h2 class="display h-l" id="visita-t">
                 Qué se ve<br />al llegar
               </h2>
@@ -2204,7 +2128,10 @@
       /* Colección. Reemplazar por las piezas reales.
    n   número de registro       t  título de la pieza
    a   quien la investigó       f  año desde el que está escrita su cédula
-   c   color propio de la pieza, tomado de su fotografía
+   c   color propio de la pieza, tomado de su fotografía. NO se usa en el
+       índice: en la dirección «la sección» el latón aparece una sola vez y la
+       diferencia entre piezas la hace el contenido, no el color. Se reserva
+       para la ficha de cada pieza, donde manda una sola fotografía.
    img ruta a la fotografía (null mientras no exista)  */
       const PIEZAS = [
         {
@@ -2329,20 +2256,11 @@
         grid.innerHTML = lista
           .map(
             (p) => `
-    <a class="pieza" href="${p.url}" style="--tono:${p.c}">
-      <div class="pieza__vitrina">
-        ${
-          p.img
-            ? `<img src="${p.img}" alt="${p.t}" loading="lazy">`
-            : `<div class="pieza__vacia" aria-hidden="true"></div>`
-        }
-      </div>
-      <div class="pieza__txt">
-        <div class="pieza__reg"><span class="pieza__n">${p.n}</span><span class="pieza__f">cédula ${p.f}</span></div>
-        <h3 class="pieza__t">${p.t}</h3>
-        <span class="pieza__a">${p.a}</span>
-        <span class="pieza__ub">No expuesta · enterrada</span>
-      </div>
+    <a class="pieza" href="${p.url}">
+      <span class="pieza__n">−2.40</span>
+      <h3 class="pieza__t">${p.t}</h3>
+      <span class="pieza__a">${p.a}</span>
+      <span class="pieza__f">cédula ${p.f}</span>
     </a>`,
           )
           .join("");
