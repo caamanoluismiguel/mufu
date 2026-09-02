@@ -25,11 +25,39 @@ CNAME             dominio propio (GitHub Pages)
 
 ## Pendiente
 
-- [ ] Las doce fichas siguen con textos ▢ de plantilla.
-- [ ] `PIEZAS` en `index.html` (línea ~1276) tiene títulos y autores ▢ — al llenar
-      cada ficha, actualizar también esa lista y la rejilla de la colección.
-- [ ] Falta `og:image` en `index.html`: sin ella, el sitio se comparte sin imagen
-      en WhatsApp y redes. Añadir una imagen 1200×630 y su etiqueta.
+- [ ] Las doce fichas siguen con textos ▢ de plantilla (43 marcas por ficha).
+- [ ] No hay ninguna fotografía en `img/`. Sin ellas la colección son doce
+      vitrinas vacías iguales.
+- [ ] `PIEZAS` en `index.html` (línea ~2203) tiene títulos y autores ▢.
+
+## Publicar una ficha
+
+Al llenar `ficha-NN.html` hay que tocar cinco sitios. Si falta uno, la ficha
+queda invisible o queda a medias:
+
+1. `ficha-NN.html`: reemplazar los ▢ y quitar la línea
+   `<meta name="robots" content="noindex, follow">`.
+2. `img/pieza-NN.jpg`: poner la foto y descomentar el `<img>` de la ficha.
+3. `index.html`, en `PIEZAS`: el título, el autor, la ruta de la foto en `img`,
+   y el color `c` de la pieza tomado de su propia fotografía.
+4. `robots.txt`: quitar las dos líneas `Disallow` cuando ya estén las doce.
+5. `sitemap.xml`: añadir la URL de la ficha.
+
+## Fechas
+
+Las dos fechas viven en una sola línea cada una, al principio del `<script>`
+de `index.html`. El sitio cambia de estado solo:
+
+| Estado | Cuándo | Qué dice |
+|---|---|---|
+| Sin sellar | antes del entierro | punto blanco, «Sin sellar» |
+| Cerrada | desde el entierro | punto oliva, «Sellada hace N días» |
+| Abierta | 05.09.2047, 07:56 | «La colección puede abrirse» |
+
+- `ENTIERRO` = 4 de septiembre de 2026
+- `APERTURA` = 5 de septiembre de 2047, 07:56 (UTC-5)
+- La espera completa son 7.671 días. Un día mueve la barra 0,013 %, así que la
+  cifra que de verdad se mueve es la de los días transcurridos, no la barra.
 
 ## Publicación
 

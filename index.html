@@ -334,10 +334,17 @@
 
       /* indicador de estado · convención de museo, invertida */
       .estatus{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.6875rem;
-        letter-spacing:.16em;text-transform:uppercase;color:var(--gris);white-space:nowrap}
+        letter-spacing:.16em;text-transform:uppercase;color:var(--gris);white-space:nowrap;
+        text-decoration:none;flex:none;margin-left:.5rem}
+      .estatus b{font-weight:400}
       .estatus i{width:6px;height:6px;border-radius:50%;background:var(--laton);flex:none;
         box-shadow:0 0 0 0 rgba(168,173,95,.5);animation:latir 3.4s ease-out infinite}
       @keyframes latir{0%{box-shadow:0 0 0 0 rgba(168,173,95,.45)}70%{box-shadow:0 0 0 7px rgba(168,173,95,0)}100%{box-shadow:0 0 0 0 rgba(168,173,95,0)}}
+      /* mientras no se sella, la coleccion todavia esta viva: el punto es luz, no laton */
+      .estatus--sin-sellar{color:var(--tiza)}
+      .estatus--sin-sellar i{background:var(--aparicion);
+        box-shadow:0 0 0 0 rgba(242,240,234,.5);animation:latir-luz 1.6s ease-out infinite}
+      @keyframes latir-luz{0%{box-shadow:0 0 0 0 rgba(242,240,234,.5)}70%{box-shadow:0 0 0 7px rgba(242,240,234,0)}100%{box-shadow:0 0 0 0 rgba(242,240,234,0)}}
       @media(max-width:760px){.estatus span{display:none}}
 
       /* filtros de la colección */
@@ -360,7 +367,7 @@
         background:radial-gradient(120% 78% at 50% 0%,rgba(242,240,234,.16),transparent 62%);
       }
       @supports (background:color-mix(in srgb,red 20%,transparent)){
-        .pieza::before{background:radial-gradient(120% 78% at 50% 0%,color-mix(in srgb,var(--tono) 22%,transparent),transparent 62%);
+        .pieza::before{background:radial-gradient(120% 78% at 50% 0%,color-mix(in srgb,var(--tono) 22%,transparent),transparent 62%)}
       }
       .pieza::after{
         content:'';position:absolute;left:0;top:0;width:100%;height:2px;z-index:2;
@@ -385,7 +392,8 @@
       .pieza__ub{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.625rem;
         letter-spacing:.14em;text-transform:uppercase;color:#A8A8A2;margin-top:.9rem}
       .pieza__ub::before{content:'';width:5px;height:5px;border:1px solid #A8A8A2;border-radius:50%;flex:none}
-      .pieza__f{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;color:var(--gris);float:right}
+      .pieza__reg{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
+      .pieza__f{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;color:var(--gris)}
       .pieza__t{font-family:var(--display);font-size:1.35rem;font-weight:400;line-height:1.15;margin:.5rem 0 .35rem}
       .pieza__a{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;color:var(--gris)}
 
@@ -539,7 +547,7 @@
       }
       @media(prefers-reduced-motion:reduce){
         html{scroll-behavior:auto}
-        .rv{opacity:1;transform:none;transition:none}
+        .rv,html.reveal .rv,html.reveal .rv.on{opacity:1;transform:none;transition:none}
         *{animation-duration:.01ms!important;transition-duration:.01ms!important}
       }
     </style>
@@ -558,15 +566,9 @@
         <a href="#obra">Última función</a>
         <a href="#visita">Visita</a>
       </nav>
-      <a
-        class="estatus"
-        href="#cuenta"
-        title="La colección permanece cerrada hasta el 5 de septiembre de 2047, 07:56"
-        style="text-decoration: none"
-      >
-        <i aria-hidden="true"></i>Cerrada<span>
-          · faltan <u id="mini">·</u></span
-        >
+      <a class="estatus" id="estatus" href="#cuenta">
+        <i aria-hidden="true"></i><b id="estado-lab">Cerrada</b
+        ><span> · faltan <u id="mini">·</u></span>
       </a>
     </header>
 
@@ -619,7 +621,7 @@
         <div class="banda__haz" aria-hidden="true"></div>
         <div class="wrap">
           <p class="eyebrow" id="cuenta-t">
-            La colección está cerrada
+            <span id="cuenta-lab">La colección está cerrada</span>
             <span class="num">falta para la apertura</span>
           </p>
 
@@ -640,7 +642,7 @@
           <div class="linea">
             <div class="linea__b"><span id="linea-f"></span></div>
             <div class="linea__t">
-              <span>Sellada en 2026</span>
+              <span id="linea-desde">Sellada en 2026</span>
               <span class="data" id="linea-p">·</span>
               <span>05.09.2047</span>
             </div>
@@ -2190,8 +2192,8 @@
    CONFIGURACIÓN · cambiar aquí y en el HTML de arriba
    ===================================================================== */
       const APERTURA = new Date("2047-09-05T07:56:00-05:00");
-      /* ▢ fecha real del entierro: alimenta la barra de progreso de la espera */
-      const ENTIERRO = new Date("2026-11-21T00:00:00-05:00");
+      /* Fecha del entierro: alimenta lo transcurrido y la barra de la espera. */
+      const ENTIERRO = new Date("2026-09-04T00:00:00-05:00");
 
       /* Colección. Reemplazar por las piezas reales.
    n   número de registro       t  título de la pieza
@@ -2330,7 +2332,7 @@
         }
       </div>
       <div class="pieza__txt">
-        <span class="pieza__n">${p.n}</span><span class="pieza__f">cédula ${p.f}</span>
+        <div class="pieza__reg"><span class="pieza__n">${p.n}</span><span class="pieza__f">cédula ${p.f}</span></div>
         <h3 class="pieza__t">${p.t}</h3>
         <span class="pieza__a">${p.a}</span>
         <span class="pieza__ub">No expuesta · enterrada</span>
@@ -2376,6 +2378,53 @@
       /* ---------- la cuenta ---------- */
       const el = (id) => document.getElementById(id);
       const dosDig = (n) => String(n).padStart(2, "0");
+      const FECHA_LARGA = new Intl.DateTimeFormat("es-PA", {
+        day: "numeric",
+        month: "long",
+      });
+      /* se repinta solo cuando cambia el estado o el dia, no cada segundo */
+      let estadoPintado = null;
+
+      /* El museo tiene tres estados y el sitio los dice en voz alta:
+         sin sellar (la coleccion todavia se puede tocar), sellada, abierta. */
+      function estado(ahora) {
+        const sellada = ahora >= ENTIERRO;
+        const dias = sellada ? Math.floor((ahora - ENTIERRO) / 864e5) : -1;
+        const clave = sellada + ":" + dias;
+        if (clave === estadoPintado) return;
+        estadoPintado = clave;
+
+        const cuando = FECHA_LARGA.format(ENTIERRO);
+        const rotulo = el("estado-lab");
+        const ancla = el("estatus");
+        const banda = el("cuenta-lab");
+        const desde = el("linea-desde");
+
+        if (sellada) {
+          if (rotulo) rotulo.textContent = "Cerrada";
+          if (ancla) {
+            ancla.classList.remove("estatus--sin-sellar");
+            ancla.title =
+              "La colección permanece cerrada hasta el 5 de septiembre de 2047, 07:56";
+          }
+          if (banda) banda.textContent = "La colección está cerrada";
+          if (desde)
+            desde.textContent =
+              dias === 0
+                ? "Sellada hoy"
+                : dias === 1
+                  ? "Sellada ayer"
+                  : `Sellada hace ${dias} días`;
+        } else {
+          if (rotulo) rotulo.textContent = "Sin sellar";
+          if (ancla) {
+            ancla.classList.add("estatus--sin-sellar");
+            ancla.title = `La colección se sella el ${cuando}`;
+          }
+          if (banda) banda.textContent = "La colección todavía no se sella";
+          if (desde) desde.textContent = `Se sella el ${cuando}`;
+        }
+      }
 
       function tick() {
         const ahora = new Date();
@@ -2389,6 +2438,18 @@
             );
           const m = el("mini");
           if (m) m.textContent = "0";
+          const rotulo = el("estado-lab");
+          if (rotulo) rotulo.textContent = "Abierta";
+          const banda = el("cuenta-lab");
+          if (banda) banda.textContent = "La colección puede abrirse";
+          const espera = Math.floor((APERTURA - ENTIERRO) / 864e5);
+          const desde = el("linea-desde");
+          if (desde)
+            desde.textContent = `Sellada ${espera.toLocaleString("es-PA")} días`;
+          const barra = el("linea-f");
+          if (barra) barra.style.width = "100%";
+          const pctT = el("linea-p");
+          if (pctT) pctT.textContent = "100 % de la espera transcurrida";
           return;
         }
         let anios = APERTURA.getFullYear() - ahora.getFullYear();
@@ -2427,7 +2488,10 @@
         set("b-h", dosDig(hs));
         set("b-m", dosDig(min));
         set("b-s", dosDig(seg));
-        set("mini", anios + " a " + dias + " d");
+        const plural = (n, uno, varios) => `${n} ${n === 1 ? uno : varios}`;
+        set("mini", `${plural(anios, "año", "años")} ${plural(dias, "día", "días")}`);
+
+        estado(ahora);
 
         const total = APERTURA - ENTIERRO;
         const pct = Math.min(
@@ -2494,6 +2558,12 @@
           year: "numeric",
         });
 
+      /* Quien pide menos movimiento no entra al revelado: no se oculta nada
+         y el observador nunca se monta. */
+      const sinMovimiento = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!sinMovimiento) montarRevelado();
+
+      function montarRevelado() {
       document.documentElement.classList.add("reveal");
       const io = new IntersectionObserver(
         (es) => {
@@ -2507,6 +2577,7 @@
         { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
       );
       document.querySelectorAll(".rv").forEach((n) => io.observe(n));
+      }
     </script>
   </body>
 </html>
