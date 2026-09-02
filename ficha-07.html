@@ -40,7 +40,11 @@
         --grafito: #5a6470;
         --tierra: #cdd0c9;
         --linea: #b4b9b1;
-        --laton: #8a6a3c;
+        --laton: #8a6a3c;   /* latón pulido, a ± 0.00 */
+        /* La pieza de esta ficha está a −2.40, y el latón enterrado se oxida.
+           El oliva oficial (#A8AD5F) da 1.90:1 sobre papel; oscurecido mantiene
+           el tono y sube a 5.06:1. */
+        --oliva: #5e6330;
         --disp: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
         --texto: "Spectral", Georgia, "Times New Roman", serif;
         --cota: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -66,8 +70,8 @@
       }
       img { max-width: 100%; display: block }
       a { color: inherit }
-      ::selection { background: var(--laton); color: var(--papel-c) }
-      :focus-visible { outline: 2px solid var(--laton); outline-offset: 3px }
+      ::selection { background: var(--oliva); color: var(--papel-c) }
+      :focus-visible { outline: 2px solid var(--oliva); outline-offset: 3px }
       .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad) }
       .wide { max-width: 64rem; margin-inline: auto; padding-inline: var(--pad) }
       .skip {
@@ -102,6 +106,7 @@
         font-variant-numeric: tabular-nums; letter-spacing: 0;
       }
       .eyebrow b { font-weight: 600; color: var(--tinta) }
+      .cota-prof { color: var(--oliva) }
       .eyebrow .num { color: var(--grafito) }
       .enc h1 {
         font-family: var(--disp); font-weight: 400;
@@ -121,7 +126,7 @@
       }
       .vitrina::after {
         content: ""; position: absolute; inset: 0; pointer-events: none;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%231B2430' stroke-opacity='.14' stroke-width='1' fill='none'/></svg>");
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%235E6330' stroke-opacity='.26' stroke-width='1' fill='none'/></svg>");
       }
       .vitrina img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover }
       .vitrina img ~ ::after { display: none }
@@ -158,7 +163,7 @@
         font-family: var(--disp); font-size: clamp(1.2rem, 2.4vw, 1.55rem);
         line-height: 1.32; color: var(--tinta); margin: 0;
       }
-      sup a { text-decoration: none; color: var(--laton); font-family: var(--cota);
+      sup a { text-decoration: none; color: var(--oliva); font-family: var(--cota);
         font-weight: 600; font-size: .75em; padding-left: .1em }
 
       /* ---------- ficha técnica: el cuadro de rótulos ---------- */
@@ -194,7 +199,7 @@
       }
       .escala__b::before { left: 0 }
       .escala__b::after { right: 0 }
-      .escala__m { height: 3px; background: var(--laton); margin-top: -1px }
+      .escala__m { height: 3px; background: var(--oliva); margin-top: -1px }
       .escala__t {
         display: flex; justify-content: space-between; gap: 1rem;
         font-family: var(--cota); font-weight: 500; font-size: .875rem;
@@ -205,11 +210,11 @@
       /* ---------- término en línea ---------- */
       .term {
         font: inherit; color: var(--tinta); background: transparent; border: 0;
-        border-bottom: 1px dashed var(--laton); padding: 0; cursor: pointer;
+        border-bottom: 1px dashed var(--oliva); padding: 0; cursor: pointer;
       }
-      .term:hover { color: var(--laton) }
+      .term:hover { color: var(--oliva) }
       .def {
-        display: none; border-left: 2px solid var(--laton);
+        display: none; border-left: 2px solid var(--oliva);
         padding: .2rem 0 .2rem 1rem; margin: .9rem 0 1.2rem;
         color: var(--tinta-t); font-size: .9375rem;
       }
@@ -223,12 +228,12 @@
 
       /* ---------- cédula desde el futuro: el único latón ---------- */
       .cedula {
-        border: 1.5px solid var(--laton); background: var(--papel-c);
+        border: 1.5px solid var(--oliva); background: var(--papel-c);
         padding: clamp(1.35rem, 2.6vw, 1.9rem); margin: 1.5rem 0 0;
       }
       .cedula__k {
         font-family: var(--cota); font-weight: 600; font-size: .9375rem;
-        color: var(--laton); margin: 0 0 1.1rem !important;
+        color: var(--oliva); margin: 0 0 1.1rem !important;
       }
       .cedula dl {
         display: grid; grid-template-columns: 1fr; gap: .3rem 1.2rem; margin: 0;
@@ -239,7 +244,7 @@
       .cedula dd { margin: 0 0 .6rem; color: var(--tinta); font-weight: 500 }
       .cedula > p:last-child {
         margin: 1.1rem 0 0 !important; padding-top: 1.1rem;
-        border-top: 1px solid rgba(138, 106, 60, .35);
+        border-top: 1px solid rgba(94, 99, 48, .4);
         font-family: var(--texto); font-weight: 300; color: var(--tinta-t);
       }
 
@@ -315,7 +320,7 @@
       <!-- ============ PORTADA DE LA PIEZA ============ -->
       <header class="enc wrap">
         <p class="eyebrow">
-          <b>−2.40</b> · Colección permanente
+          <b class="cota-prof">−2.40</b> · Colección permanente
           <span class="num">— Pieza 07 · Cohorte 2026</span>
         </p>
         <h1>▢ Título<br />de la pieza</h1>
@@ -487,7 +492,7 @@
           <ol class="fuentes">
             <li id="f1">
               ▢ Autor, <em>Título</em>, editorial o publicación, año, página.
-              <a href="#r1" style="color: var(--laton); text-decoration: none"
+              <a href="#r1" style="color: var(--oliva); text-decoration: none"
                 >↩</a
               >
             </li>

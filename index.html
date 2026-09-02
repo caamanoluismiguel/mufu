@@ -87,7 +87,12 @@
         --grafito:#5A6470;  /* cotas y anotación */
         --tierra:#CDD0C9;   /* la masa excavada */
         --linea:#B4B9B1;    /* reglas finas sobre papel */
-        --laton:#8A6A3C;    /* la placa, y nada más */
+        --laton:#8A6A3C;    /* la placa: latón pulido, a ± 0.00 */
+        /* El oliva oficial (#A8AD5F) da 1.90:1 sobre papel: invisible. Oscurecido
+           mantiene el tono (65.9° contra 63.8°) y sube a 5.06:1. No es un acento:
+           es la misma placa dentro de veintiún años, porque el latón enterrado se
+           oxida. Regla: latón para lo que está a ± 0.00, oliva para lo de debajo. */
+        --oliva:#5E6330;
 
         --disp:'Instrument Serif',"Iowan Old Style",Palatino,Georgia,serif;
         --texto:'Spectral',Georgia,'Times New Roman',serif;
@@ -134,7 +139,8 @@
       .data{margin:0}
       /* la profundidad de cada sección: encode real, no decoración */
       .prof{font-family:var(--cota);font-weight:600;font-size:.875rem;
-        color:var(--tinta);font-variant-numeric:tabular-nums}
+        color:var(--oliva);font-variant-numeric:tabular-nums}
+      .prof--cero{color:var(--laton)}
 
       /* ---------- estructura ---------- */
       .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
@@ -222,7 +228,7 @@
         background:var(--papel);margin-top:calc(var(--suelo) * -1 - .62em);
         padding-right:.9rem}
       .suelo__tag b{font-family:var(--cota);font-weight:600;font-size:1rem;
-        color:var(--tinta);font-variant-numeric:tabular-nums}
+        font-variant-numeric:tabular-nums}
       .suelo__co{margin-left:auto}
 
       /* ---------- cabeceras de sección ---------- */
@@ -244,8 +250,10 @@
         letter-spacing:-.02em}
       .ux i{font-family:var(--cota);font-style:normal;font-weight:500;font-size:.875rem;
         color:var(--grafito)}
-      .ux--s b{color:var(--grafito);font-size:clamp(1.8rem,5vw,3rem)}
-      @media(max-width:420px){.ux--s{display:none}}
+      /* Los segundos no se demotan: en una espera de 7.671 días son lo único
+         que el ojo ve moverse. tabular-nums evita el salto al cambiar. */
+      .ux--s b{color:var(--tinta)}
+      /* la rejilla envuelve sola: los segundos tampoco se esconden en el móvil */
 
       /* la barra de la espera, dicha como lo que es: casi cero */
       .linea{margin:0 0 clamp(1.75rem,4vw,2.5rem);max-width:52rem}
@@ -303,7 +311,7 @@
         gap:.5rem;font-family:var(--cota);font-weight:500;font-size:.9375rem;
         color:var(--grafito);padding:.5rem 0;transition:color .22s}
       .mom__c summary::-webkit-details-marker{display:none}
-      .mom__c summary::after{content:'+';font-size:1.05rem;color:var(--laton)}
+      .mom__c summary::after{content:'+';font-size:1.05rem;color:var(--oliva)}
       .mom__c[open] summary::after{content:'−'}
       .mom__c summary:hover{color:var(--tinta)}
       .mom__c .mom__d{margin-top:.4rem}
@@ -337,8 +345,8 @@
       .hilo{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,4vw,3rem)}
       @media(min-width:800px){.hilo{grid-template-columns:1fr 1fr}}
       .hilo__mitad{border-top:1px solid var(--linea);padding-top:1.5rem}
-      .hilo__k{font-family:var(--cota);font-weight:600;font-size:.9375rem;
-        color:var(--laton);margin:0 0 .8rem}
+      .hilo__mitad .hilo__k{font-family:var(--cota);font-weight:600;font-size:.9375rem;
+        color:var(--oliva);margin:0 0 .8rem}
       .hilo__mitad h3{font-family:var(--disp);font-size:clamp(1.4rem,2.6vw,1.9rem);
         font-weight:400;margin:0 0 1.1rem;line-height:1.1;color:var(--tinta)}
       .hilo__mitad p{color:var(--tinta-t);margin:0 0 .9rem}
@@ -382,7 +390,7 @@
         width:2.7rem;height:2.7rem;flex:none;display:grid;place-items:center;
         border:1px solid var(--linea);border-radius:50%;background:var(--papel);
         position:relative;z-index:2;font-variant-numeric:tabular-nums}
-      .est--puente .est__n{border-color:var(--laton);border-style:dashed;color:var(--laton)}
+      .est--puente .est__n{border-color:var(--oliva);border-style:dashed;color:var(--oliva)}
       .est--fin .est__n,.est--solo .est__n{border-color:var(--tinta);color:var(--tinta)}
       .est--solo .est__n{border-style:dotted}
       .est--solo .est__badge{color:var(--tinta);border-color:var(--linea)}
@@ -390,17 +398,17 @@
       .est__t{font-family:var(--disp);font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.12;
         color:var(--tinta)}
       .est__badge{display:inline-block;margin-left:.5rem;vertical-align:middle;
-        font-family:var(--cota);font-weight:500;font-size:.8125rem;color:var(--laton);
-        border:1px solid var(--laton);padding:.1rem .4rem}
+        font-family:var(--cota);font-weight:500;font-size:.8125rem;color:var(--oliva);
+        border:1px solid var(--oliva);padding:.1rem .4rem}
       .est__doc,.est__estado{font-family:var(--cota);font-weight:500;font-size:.9375rem;
         color:var(--grafito)}
       .hilos{display:flex;gap:.35rem;margin-top:.75rem}
       .hilos .h{width:.5rem;height:.5rem;border-radius:50%;border:1px solid var(--linea);
         flex:none;transition:background .25s,border-color .25s,transform .25s,opacity .25s}
       .hilos .h.on{background:var(--grafito);border-color:var(--grafito)}
-      .hilos .h.sel{background:var(--laton);border-color:var(--laton);transform:scale(1.5)}
+      .hilos .h.sel{background:var(--oliva);border-color:var(--oliva);transform:scale(1.5)}
       .hilos .h.dim{opacity:.3}
-      .est__mas{font-family:var(--cota);font-weight:500;color:var(--laton);font-size:1.15rem;
+      .est__mas{font-family:var(--cota);font-weight:500;color:var(--oliva);font-size:1.15rem;
         flex:none;padding-top:.45rem;transition:transform .25s}
       .est__cab[aria-expanded="true"] .est__mas{transform:rotate(45deg)}
       .est__panel{padding:0 0 1.6rem clamp(3.55rem,5vw,4.3rem)}
@@ -423,7 +431,7 @@
       .excavado{background:var(--tierra);position:relative;overflow:hidden;
         border-top:var(--suelo) solid var(--tinta)}
       .excavado::before{content:'';position:absolute;inset:0;pointer-events:none;
-        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%231B2430' stroke-opacity='.16' stroke-width='1' fill='none'/></svg>")}
+        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%235E6330' stroke-opacity='.30' stroke-width='1' fill='none'/></svg>")}
       .excavado > .wrap{position:relative}
       .excavado .rule{background:rgba(27,36,48,.24)}
 
@@ -432,8 +440,8 @@
         background:transparent;border:1px solid rgba(27,36,48,.3);padding:.45rem .85rem;
         min-height:44px;cursor:pointer;transition:color .22s,border-color .22s,background .22s}
       .filtro:hover{color:var(--tinta);border-color:var(--tinta)}
-      .filtro[aria-pressed="true"]{color:var(--papel);background:var(--tinta);
-        border-color:var(--tinta)}
+      .filtro[aria-pressed="true"]{color:var(--papel);background:var(--oliva);
+        border-color:var(--oliva)}
 
       /* cada pieza es una cota de excavación, no una tarjeta de tienda */
       .grid{display:grid;grid-template-columns:1fr;gap:0}
@@ -448,7 +456,7 @@
       }
       .pieza:hover,.pieza:focus-visible{background:rgba(27,36,48,.05)}
       .pieza:hover .pieza__t{font-style:italic}
-      .pieza__n{font-family:var(--cota);font-weight:600;font-size:.9375rem;color:var(--tinta);
+      .pieza__n{font-family:var(--cota);font-weight:600;font-size:.9375rem;color:var(--oliva);
         font-variant-numeric:tabular-nums}
       .pieza__t{font-family:var(--disp);font-size:1.3rem;font-weight:400;line-height:1.1;
         margin:0;color:var(--tinta)}
@@ -599,7 +607,7 @@
       <div class="suelo">
         <div class="suelo__in">
           <span class="suelo__tag"
-            ><b>± 0.00</b
+            ><b class="prof prof--cero">± 0.00</b
             ><span class="cota">nivel del patio · lo que se puede visitar</span></span
           >
           <span class="cota suelo__co">8.983000° N · 79.520000° W</span>
@@ -900,7 +908,7 @@
                   de transporte clandestino, cada uno con su razón de existir:
                   historias, contextos sociales, leyes, usuarios, sistemas
                   técnicos.
-                  <a href="#futuros" style="color: var(--laton)"
+                  <a href="#futuros" style="color: var(--oliva)"
                     >Ver los dos escenarios completos ↓</a
                   >
                   <b
@@ -1891,7 +1899,7 @@
           <div class="head rv">
             <div>
               <p class="eyebrow">
-                <span class="prof">± 0.00</span> · La entrega final
+                <span class="prof prof--cero">± 0.00</span> · La entrega final
               </p>
               <h2 class="display h-l" id="obra-t">Última<br />función</h2>
             </div>
@@ -1986,7 +1994,7 @@
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="prof">± 0.00</span> · La visita</p>
+              <p class="eyebrow"><span class="prof prof--cero">± 0.00</span> · La visita</p>
               <h2 class="display h-l" id="visita-t">
                 Qué se ve<br />al llegar
               </h2>

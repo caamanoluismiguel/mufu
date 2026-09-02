@@ -32,11 +32,32 @@ sí está a la vista.
 --grafito #5A6470   cotas y anotación
 --tierra  #CDD0C9   la masa excavada (solo en la colección)
 --linea   #B4B9B1   reglas finas
---laton   #8A6A3C   la placa, y nada más
+--laton   #8A6A3C   latón pulido: lo que está a ± 0.00
+--oliva   #5E6330   el mismo latón, oxidado: lo que está bajo la línea
 ```
+
+**Los dos metales.** El latón enterrado se oxida, así que el acento dice de qué
+lado de la línea de suelo está la cosa de la que habla:
+
+| | dónde | qué lleva |
+|---|---|---|
+| Latón `#8A6A3C` | a ± 0.00 | la cota de la línea de suelo, la placa de la visita, la marca de la barra |
+| Oliva `#5E6330` | bajo la línea | todas las cotas negativas, la trama de la excavación, el recorrido, el hilo, el mapa, y las trece fichas completas |
+
+El oliva oficial de la cohorte (`#A8AD5F`) da **1.90:1 sobre papel**: es
+invisible. Oscurecido conserva el tono (65.9° contra 63.8°) y sube a 5.06:1,
+que ya pasa AA para texto. Es el mismo verde, con pátina.
+
+Las fichas van enteras en oliva porque su pieza está a −2.40. No tienen placa.
 
 Instrument Serif para los títulos · Spectral para leer · Archivo Narrow solo
 para cotas y anotación.
+
+La cuenta lleva los cinco valores al mismo tamaño, segundos incluidos, también
+en el móvil. En una espera de 7.671 días el segundero es lo único que el ojo ve
+moverse: demotarlo era ir contra el propio concepto. `tabular-nums` evita que
+la cifra salte al cambiar, y el `role="timer" aria-live="off"` impide que un
+lector de pantalla lo anuncie cada segundo.
 
 **Cuatro reglas que no se rompen.** Si alguien vuelve a editar esto, son lo
 primero que hay que respetar, porque romperlas es exactamente lo que hacía que
@@ -48,8 +69,10 @@ el sitio anterior pareciera hecho por una máquina:
    mono. Antes el 69 % de la tipografía era monoespaciada.
 3. **Cero mayúsculas con tracking abierto.** Ni en rótulos, ni en botones, ni en
    la navegación.
-4. **El latón aparece una sola vez por página**, en la placa. Es el material del
-   que está hecha la placa, no un color de acento.
+4. **Los dos metales no se mezclan sin motivo.** Latón para lo que está a
+   ± 0.00, oliva para lo que está debajo. Ninguno de los dos es «el color de
+   acento»: son el mismo material antes y después de veintiún años bajo tierra.
+   Si añades un acento y no sabes a qué cota pertenece, no lo añadas.
 
 La trama a 45° aparece únicamente en la sección de la colección, porque es la
 única que está literalmente bajo tierra. En cualquier otro sitio es decoración.
