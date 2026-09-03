@@ -447,13 +447,6 @@
       .excavado > .wrap{position:relative}
       .excavado .rule{background:rgba(27,36,48,.24)}
 
-      .filtros{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.6rem}
-      .filtro{font-family:var(--cota);font-weight:500;font-size:.9375rem;color:var(--grafito);
-        background:transparent;border:1px solid rgba(27,36,48,.3);padding:.45rem .85rem;
-        min-height:44px;cursor:pointer;transition:color .22s,border-color .22s,background .22s}
-      .filtro:hover{color:var(--tinta);border-color:var(--tinta)}
-      .filtro[aria-pressed="true"]{color:var(--papel);background:var(--oliva);
-        border-color:var(--oliva)}
 
       /* cada pieza es una cota de excavación, no una tarjeta de tienda */
       .grid{display:grid;grid-template-columns:1fr;gap:0}
@@ -516,7 +509,7 @@
 
       @media print{
         *{background:#fff!important;color:#000!important;box-shadow:none!important}
-        .bar,.escena,.filtros,.entrar,.skip,#linea-f,.excavado::before{display:none!important}
+        .bar,.escena,.entrar,.skip,#linea-f,.excavado::before{display:none!important}
         .rv{opacity:1!important;transform:none!important}
         .mom__c{display:block!important}
         .mom__c summary{display:none}
@@ -1766,104 +1759,71 @@
             </div>
             <div class="prose">
               <p>
-                Doce estudiantes, treinta y seis objetos enterrados. Cada uno
-                eligió de los suyos el que cargaba más historia y lo investigó
-                hasta donde alcanzó a saber: de dónde vino, cómo se hizo, cuánto
-                mide exactamente, qué historia arrastra y qué preguntas quedaron
-                sin responder. Esas doce investigaciones son las fichas de esta
-                colección.
+                Ocho personas, 34 piezas enterradas. Cada quien registró las
+                suyas una por una: de dónde vino, de qué está hecha, cuánto mide
+                exactamente y por qué la eligió. Esos registros son las fichas de
+                esta colección, y están agrupados por quien las enterró, porque
+                la autoría es de la persona y no del objeto.
               </p>
               <p>
-                Ninguna puede verse hoy. Todas están bajo tierra. Lo que sigue
-                es el único acceso que existe hasta la fecha de apertura.
-                También puedes agruparlas por el siglo desde el que está
-                escrita su cédula: el futuro que cada quien imaginó para su
-                objeto.
+                Ninguna puede verse hoy. Todas están bajo tierra, a −2.40. Lo que
+                sigue es el único acceso que existe hasta la fecha de apertura.
+                31 de las 34 se fotografiaron antes de sellarlas; las otras
+                3 solo existen ya como texto.
               </p>
             </div>
           </div>
 
-          <div
-            class="filtros rv"
-            id="filtros"
-            role="group"
-            hidden
-            aria-label="Filtrar la colección por el siglo desde el que fue escrita su cédula"
-          ></div>
           <!-- Respaldo sin JavaScript. Se regenera desde PIEZAS; si cambias uno,
                cambia el otro. -->
           <div class="grid rv" id="grid">
             <a class="pieza" href="ficha-01.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2087</span>
+              <h3 class="pieza__t">Adriana Solís</h3>
+              <span class="pieza__a">4 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-02.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2145</span>
+              <h3 class="pieza__t">Karla Torres</h3>
+              <span class="pieza__a">3 piezas</span>
+              <span class="pieza__f">sin fotografiar</span>
             </a>
             <a class="pieza" href="ficha-03.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2090</span>
+              <h3 class="pieza__t">Martha Pretto</h3>
+              <span class="pieza__a">4 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-04.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2210</span>
+              <h3 class="pieza__t">Raquel Cohen</h3>
+              <span class="pieza__a">4 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-05.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2150</span>
+              <h3 class="pieza__t">Frida Antebi</h3>
+              <span class="pieza__a">5 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-06.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2075</span>
+              <h3 class="pieza__t">Moises Mizrachi</h3>
+              <span class="pieza__a">2 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-07.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2260</span>
+              <h3 class="pieza__t">Roberto Torres</h3>
+              <span class="pieza__a">3 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-08.html">
               <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2098</span>
-            </a>
-            <a class="pieza" href="ficha-09.html">
-              <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2130</span>
-            </a>
-            <a class="pieza" href="ficha-10.html">
-              <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2046</span>
-            </a>
-            <a class="pieza" href="ficha-11.html">
-              <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2185</span>
-            </a>
-            <a class="pieza" href="ficha-12.html">
-              <span class="pieza__n">−2.40</span>
-              <h3 class="pieza__t">▢ Título de la pieza</h3>
-              <span class="pieza__a">▢ Autor</span>
-              <span class="pieza__f">cédula 2310</span>
+              <h3 class="pieza__t">Tamara Cos</h3>
+              <span class="pieza__a">9 piezas</span>
+              <span class="pieza__f">todas fotografiadas</span>
             </a>
           </div>
           <p
@@ -2118,131 +2078,73 @@
       /* Fecha del entierro: alimenta lo transcurrido y la barra de la espera. */
       const ENTIERRO = new Date("2026-09-04T00:00:00-05:00");
 
-      /* Colección. Reemplazar por las piezas reales.
-   n   número de registro       t  título de la pieza
-   a   quien la investigó       f  año desde el que está escrita su cédula
-   c   color propio de la pieza, tomado de su fotografía. NO se usa en el
-       índice: en la dirección «la sección» el latón aparece una sola vez y la
-       diferencia entre piezas la hace el contenido, no el color. Se reserva
-       para la ficha de cada pieza, donde manda una sola fotografía.
-   img ruta a la fotografía (null mientras no exista)  */
+      /* Colección: una entrada por persona, no por objeto.
+   n      número de registro        t       nombre de quien la enterró
+   piezas cuántas enterró           fotos   cuántas se fotografiaron
+   url    su ficha                                                        */
       const PIEZAS = [
         {
           n: "01",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2087,
-          c: "#BFC48A",
-          img: null,
+          t: "Adriana Solís",
+          piezas: 4,
+          fotos: 4,
           url: "ficha-01.html",
         },
         {
           n: "02",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2145,
-          c: "#A8AD5F",
-          img: null,
+          t: "Karla Torres",
+          piezas: 3,
+          fotos: 0,
           url: "ficha-02.html",
         },
         {
           n: "03",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2090,
-          c: "#CBCFA0",
-          img: null,
+          t: "Martha Pretto",
+          piezas: 4,
+          fotos: 4,
           url: "ficha-03.html",
         },
         {
           n: "04",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2210,
-          c: "#949A4E",
-          img: null,
+          t: "Raquel Cohen",
+          piezas: 4,
+          fotos: 4,
           url: "ficha-04.html",
         },
         {
           n: "05",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2150,
-          c: "#B5BA76",
-          img: null,
+          t: "Frida Antebi",
+          piezas: 5,
+          fotos: 5,
           url: "ficha-05.html",
         },
         {
           n: "06",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2075,
-          c: "#8F9440",
-          img: null,
+          t: "Moises Mizrachi",
+          piezas: 2,
+          fotos: 2,
           url: "ficha-06.html",
         },
         {
           n: "07",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2260,
-          c: "#D4D7B2",
-          img: null,
+          t: "Roberto Torres",
+          piezas: 3,
+          fotos: 3,
           url: "ficha-07.html",
         },
         {
           n: "08",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2098,
-          c: "#9DA34D",
-          img: null,
+          t: "Tamara Cos",
+          piezas: 9,
+          fotos: 9,
           url: "ficha-08.html",
-        },
-        {
-          n: "09",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2130,
-          c: "#C2C695",
-          img: null,
-          url: "ficha-09.html",
-        },
-        {
-          n: "10",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2046,
-          c: "#8A9047",
-          img: null,
-          url: "ficha-10.html",
-        },
-        {
-          n: "11",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2185,
-          c: "#B0B569",
-          img: null,
-          url: "ficha-11.html",
-        },
-        {
-          n: "12",
-          t: "▢ Título de la pieza",
-          a: "▢ Autor",
-          f: 2310,
-          c: "#7E8339",
-          img: null,
-          url: "ficha-12.html",
         },
       ];
 
       /* ---------- colección: render y filtros ---------- */
       const grid = document.getElementById("grid");
       const conteo = document.getElementById("conteo");
-      const filtros = document.getElementById("filtros");
       if (!grid) console.warn("MUFU: falta #grid, la colección no se pinta.");
-      const siglo = (f) => Math.floor(f / 100) * 100;
 
       function pintar(lista) {
         if (!grid) return;
@@ -2252,42 +2154,13 @@
     <a class="pieza" href="${p.url}">
       <span class="pieza__n">−2.40</span>
       <h3 class="pieza__t">${p.t}</h3>
-      <span class="pieza__a">${p.a}</span>
-      <span class="pieza__f">cédula ${p.f}</span>
+      <span class="pieza__a">${p.piezas} ${p.piezas === 1 ? "pieza" : "piezas"}</span>
+      <span class="pieza__f">${p.fotos === p.piezas ? "todas fotografiadas" : p.fotos === 0 ? "sin fotografiar" : p.fotos + " fotografiadas"}</span>
     </a>`,
           )
           .join("");
         if (conteo)
-          conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 36 objetos enterrados · ninguno en exhibición`;
-      }
-
-      const siglos = [...new Set(PIEZAS.map((p) => siglo(p.f)))].sort(
-        (a, b) => a - b,
-      );
-      if (filtros) {
-        filtros.hidden = false;
-        filtros.innerHTML =
-          `<button class="filtro" data-s="todas" aria-pressed="true">Todas</button>` +
-          siglos
-            .map(
-              (c) =>
-                `<button class="filtro" data-s="${c}" aria-pressed="false">Siglo ${c / 100 + 1}</button>`,
-            )
-            .join("");
-
-        filtros.addEventListener("click", (e) => {
-          const b = e.target.closest(".filtro");
-          if (!b) return;
-          filtros
-            .querySelectorAll(".filtro")
-            .forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-          const s = b.dataset.s;
-          pintar(
-            s === "todas"
-              ? PIEZAS
-              : PIEZAS.filter((p) => String(siglo(p.f)) === s),
-          );
-        });
+          conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 34 piezas enterradas · ninguna en exhibición`;
       }
 
       pintar(PIEZAS);
