@@ -3,10 +3,8 @@
 User-agent: *
 Allow: /
 
-# Las fichas de las piezas todavía están sin contenido.
-# Quitar estas dos líneas cuando se publiquen.
+# ficha.html es la plantilla vacía, no una pieza del museo.
 Disallow: /ficha.html
-Disallow: /ficha-
 
 # Rastreadores de IA: bienvenidos, el proyecto quiere ser citado.
 User-agent: GPTBot

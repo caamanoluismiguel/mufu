@@ -114,12 +114,21 @@ para escalar la preferencia de tamaño del lector en vez de pisarla. Hasta
 3. Pon la foto en `img/pieza-NN.jpg` y descomenta la línea del `<img>`.
 4. Guarda, haz commit y sube. El sitio se actualiza solo en un par de minutos.
 
+## Estado
+
+Las doce fichas están publicadas, una por persona, con las 50 piezas y sus 50
+fotografías. Los datos salen del deck de Canva «Cápsula del tiempo»: 34 fichas
+con el texto exacto de la capa del PDF y 16 leídas con reconocimiento de texto
+en el dispositivo y validadas contra las anteriores (96,5 % de campos idénticos).
+
+**Fuera del sitio, a propósito:** los doce correos personales, las direcciones
+de los datos del propietario y el valor en dólares de cada pieza. El sitio
+publica las coordenadas exactas del entierro y `robots.txt` invita a los
+rastreadores de IA, así que esos tres campos no salen. Los nombres sí: son la
+autoría.
+
 ## Pendiente
 
-- [ ] Las doce fichas siguen con textos ▢ de plantilla (43 marcas por ficha).
-- [ ] No hay ninguna fotografía en `img/`. Sin ellas la colección son doce
-      vitrinas vacías iguales.
-- [ ] `PIEZAS` en `index.html` (línea ~2203) tiene títulos y autores ▢.
 - [ ] `og.png` sigue siendo la sala a oscuras del diseño anterior. Al compartir
       el enlace se ve una imagen que ya no se parece al sitio.
 
