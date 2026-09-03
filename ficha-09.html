@@ -4,20 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#E4E6E1" />
-    <!-- Sin contenido todavía: fuera de los buscadores hasta que se publique.
-         Quitar esta línea (y el Disallow de robots.txt) al llenar la ficha. -->
-    <meta name="robots" content="noindex, follow" />
+    <title>Frida Menaged · MUFU</title>
+    <meta name="description" content="Frida Menaged enterró 4 piezas en la cápsula de MUFU. Ninguna puede verse hasta el 5 de septiembre de 2047." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Frida Menaged · MUFU" />
+    <meta property="og:description" content="4 piezas enterradas bajo la escuela, a −2.40. Apertura 05.09.2047." />
+    <meta property="og:url" content="https://mufu.today/ficha-09.html" />
+    <link rel="canonical" href="https://mufu.today/ficha-09.html" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <!-- ================================================================
-     PLANTILLA DE FICHA — MUFU
-     Duplicar este archivo por pieza: ficha-01.html, ficha-02.html…
-     Reemplazar todo lo marcado con ▢. No mover la estructura.
-     ================================================================ -->
-    <title>▢ Título de la pieza · MUFU</title>
-    <meta
-      name="description"
-      content="▢ Una línea que diga qué es el objeto y por qué importa."
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -303,6 +297,50 @@
         }
         * { animation-duration: .01ms !important; transition-duration: .01ms !important }
       }
+
+      /* ── una ficha por persona: cada pieza es una lámina ── */
+      .pieza-l{border-top:1px solid var(--linea);padding-top:clamp(1.5rem,3vw,2.25rem);
+        margin-bottom:clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:1fr;
+        gap:clamp(1.25rem,3vw,2.25rem)}
+      @media(min-width:780px){.pieza-l{grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        align-items:start}}
+      .pieza-l__n{font-family:var(--cota);font-weight:600;font-size:.9375rem;
+        color:var(--oliva);font-variant-numeric:tabular-nums;grid-column:1/-1;margin:0}
+      .lamina{margin:0}
+      .lamina .vitrina{aspect-ratio:4/3}
+      /* la foto viene sobre negro: el fondo de la vitrina se pone negro también
+         para que el encaje no deje franjas de tierra alrededor del objeto */
+      .vitrina--foto{background:#0B0B0C;border-color:var(--tinta)}
+      .vitrina--foto::after{display:none}
+      .vitrina--foto img{object-fit:contain}
+      .lamina figcaption{font-family:var(--cota);font-weight:500;font-size:.875rem;
+        color:var(--grafito);margin:.6rem 0 0}
+      .pieza-l h2{margin:0 0 .8rem}
+      .pieza-l__d{margin:0 0 1.2rem;color:var(--tinta-t)}
+      .pieza-l dl{display:grid;grid-template-columns:1fr;gap:0;margin:0;
+        font-family:var(--cota);font-size:.9375rem}
+      @media(min-width:620px){.pieza-l dl{grid-template-columns:8.5rem 1fr}}
+      .pieza-l dt{font-weight:500;color:var(--grafito);padding:.6rem 0 0;
+        border-top:1px solid var(--linea)}
+      .pieza-l dt:first-of-type{border-top:0;padding-top:0}
+      .pieza-l dd{margin:0;padding:.6rem 0;color:var(--tinta)}
+      @media(min-width:620px){
+        .pieza-l dd{border-top:1px solid var(--linea);padding-top:.6rem}
+        .pieza-l dl > dd:first-of-type{border-top:0;padding-top:0}
+        .pieza-l dt{padding-bottom:.6rem}
+      }
+      /* la vitrina tiene fondo de tierra, no de papel: el grafito del papel
+         se queda en 3.86:1 encima. Aquí lleva el valor medido contra tierra. */
+      .sinfoto{font-family:var(--cota);font-weight:500;font-size:.875rem;
+        color:#505964;text-align:center;padding:0 1.5rem}
+      .indice{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1.5rem 0 0;
+        font-family:var(--cota);font-weight:500;font-size:.9375rem}
+      .indice a{color:var(--grafito);text-decoration:none;transition:color .22s}
+      .indice a:hover{color:var(--tinta)}
+      /* cuatro piezas se fotografiaron sobre fondo claro, no sobre pedestal
+         negro: ahí la vitrina se queda en tierra y la imagen cubre el marco. */
+      .vitrina--clara{background:var(--tierra)}
+      .vitrina--clara img{object-fit:cover}
     </style>
   </head>
   <body>
@@ -311,253 +349,145 @@
     <div class="top">
       <div class="top__in">
         <a href="index.html">← MUFU · Colección</a>
-        <b>Pieza 09</b>
+        <b>Frida Menaged</b>
       </div>
       <div id="barra"></div>
     </div>
 
     <main id="ficha">
-      <!-- ============ PORTADA DE LA PIEZA ============ -->
       <header class="enc wrap">
         <p class="eyebrow">
           <b class="cota-prof">−2.40</b> · Colección permanente
-          <span class="num">— Pieza 09 · Cohorte 2026</span>
+          <span class="num">— 4 piezas · Cohorte 2026</span>
         </p>
-        <h1>▢ Título<br />de la pieza</h1>
-        <p class="sub">▢ Una sola línea: qué es y por qué dejó de servir.</p>
+        <h1>Frida Menaged</h1>
+        <p class="sub">
+          4 piezas enterradas bajo la escuela.
+          Ninguna puede verse hasta 2047.
+        </p>
+        <nav class="indice" aria-label="Piezas de esta ficha"><a href="#p01">Moneda de un centavo de dólar es</a> <a href="#p02">Estuche / cosmetiquera metálica </a> <a href="#p03">Bolígrafo MUJI de tinta negra</a> <a href="#p04">Carta para el futuro — &quot;Car</a></nav>
       </header>
 
-      <div class="wide">
-        <figure style="margin: 0">
-          <div class="vitrina">
-            <!-- ▢ Sustituir por: <img src="img/pieza-09.jpg" alt="▢ descripción"> -->
-            <div class="vacio" aria-hidden="true"></div>
-          </div>
-          <figcaption class="pie">
-            ▢ Fotografía del objeto sobre fondo negro. Autor, fecha.
-          </figcaption>
-        </figure>
-      </div>
-
-      <article class="wrap">
-        <!-- ============ EN DOS MINUTOS ============ -->
-        <section class="resumen rv">
-          <p>
-            ▢ Tres o cuatro frases que cuenten toda la historia. Quien lea solo
-            esto tiene que quedarse sabiendo qué es el objeto, de dónde viene y
-            qué descubriste.
-          </p>
-        </section>
-
-        <!-- ============ EL OBJETO ============ -->
-        <section class="rv">
-          <h2>El objeto</h2>
-          <p>
-            ▢ Describe el objeto tal cual. Qué es, de qué está hecho, cómo se
-            siente en la mano, qué le falta, qué se le gastó. Escribe lo que se
-            ve, no lo que te hace sentir.
-          </p>
-
-          <div class="tecnica">
+      <div class="wrap">
+        <section class="pieza-l rv" id="p01">
+          <p class="pieza-l__n">−2.40 · pieza 01</p>
+          <figure class="lamina">
+            <div class="vitrina vitrina--foto"><img src="img/frida-menaged-01.jpg" alt="Moneda de un centavo de dólar estadounidense — Lincoln Shield Cent / One Cent, fotografiado antes de enterrarlo." width="778" height="867" loading="lazy" decoding="async"></div>
+            <figcaption>aproximadamente 97.5% zinc y 2.5% cobre</figcaption>
+          </figure>
+          <div>
+            <h2>Moneda de un centavo de dólar estadounidense — Lincoln Shield Cent / One Cent</h2>
+            <p class="pieza-l__d">Moneda estadounidense de un centavo, de color cobrizo. En el reverso presenta el escudo de la Unión, las inscripciones &quot;UNITED STATES OF AMERICA&quot;, &quot;EPLURIBUS UNUM&quot; y &quot;ONE CENT&quot; &quot;, además de señales leves de desgaste por uso</p>
             <dl>
-              <dt>Denominación</dt>
-              <dd>▢ Nombre del objeto</dd>
-              <dt>Material</dt>
-              <dd>▢ Metal, papel, plástico…</dd>
+              <dt>Origen</dt>
+              <dd>Estados Unidos de América. Diseño introducido en 2010</dd>
               <dt>Medidas</dt>
-              <dd>▢ 00,0 × 00,0 × 0,0 mm</dd>
-              <dt>Masa</dt>
-              <dd>▢ 0,00 g</dd>
-              <dt>Fabricación</dt>
-              <dd>▢ Lugar y año, o «desconocida»</dd>
-              <dt>Procedencia</dt>
-              <dd>▢ Cómo llegó a sus manos</dd>
-              <dt>Estado</dt>
-              <dd>▢ Qué sobrevivió, qué se perdió</dd>
+              <dd>Zinc recubierto de cobre</dd>
+              <dt>Material</dt>
+              <dd>aproximadamente 97.5% zinc y 2.5% cobre</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto con</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
-
-          <h3>Escala física</h3>
-          <div class="escala">
-            <div class="escala__b">
-              <div class="escala__m" style="width: 34%"></div>
-            </div>
-            <div class="escala__t">
-              <span>0 mm</span><span><b>▢ 34 mm — el ancho de la pieza</b></span
-              ><span>100 mm</span>
-            </div>
-          </div>
-          <p>
-            ▢ Compáralo con algo que quien lee tenga a mano: una moneda, el
-            pulgar, una tarjeta. Un número solo se entiende cuando se puede
-            tocar algo parecido.
-          </p>
         </section>
-
-        <!-- ============ LA INVESTIGACIÓN ============ -->
-        <section class="rv">
-          <h2>▢ Título de la sección</h2>
-          <p>
-            ▢ Aquí va lo que averiguaste. Todo lo que no sea evidente lleva su
-            fuente al final<sup><a href="#f1" id="r1">01</a></sup
-            >. Si algo lo supones pero no lo puedes probar, dilo así:
-            <em>se presume que</em>.
-          </p>
-
-          <p>
-            ▢ Un término técnico puede explicarse sin sacar al lector del texto:
-            <button
-              class="term"
-              type="button"
-              aria-expanded="false"
-              aria-controls="d1"
-            >
-              ▢ término</button
-            >.
-          </p>
-          <div class="def" id="d1">
-            ▢ Explícalo en palabras simples. Dos líneas máximo.
-          </div>
-
-          <blockquote>
-            ▢ Si alguna fuente dice algo que vale la pena citar, va aquí. Corta.
-          </blockquote>
-
-          <h2>▢ Otra sección</h2>
-          <p>
-            ▢ Sigue. Con tres o cuatro secciones alcanza. Es mejor una pregunta
-            perseguida a fondo que cinco temas apenas tocados.
-          </p>
-        </section>
-
-        <!-- ============ CÉDULA DESDE EL FUTURO ============ -->
-        <section class="rv">
-          <h2>Cédula desde el futuro</h2>
-          <p>
-            La escribe un curador del año ▢, que encontró este objeto y nunca
-            conoció a quien lo tuvo.
-          </p>
-
-          <div class="cedula">
-            <p class="cedula__k">Museo del Futuro · Registro de hallazgo</p>
+        <section class="pieza-l rv" id="p02">
+          <p class="pieza-l__n">−2.40 · pieza 02</p>
+          <figure class="lamina">
+            <div class="vitrina vitrina--foto"><img src="img/frida-menaged-02.jpg" alt="Estuche / cosmetiquera metálica plateada, fotografiado antes de enterrarlo." width="712" height="643" loading="lazy" decoding="async"></div>
+            <figcaption>Material sintético flexible con recubrimiento metálico plateado у cierre de metal</figcaption>
+          </figure>
+          <div>
+            <h2>Estuche / cosmetiquera metálica plateada</h2>
+            <p class="pieza-l__d">Estuche rectangular de color plateado con acabado metálico brillante. Presenta bordes redondeados, cierre de cremallera y una superficie reflectante con leves pliegues propios del material</p>
             <dl>
-              <dt>Registro</dt>
-              <dd>▢ MUFU-0000-▢</dd>
-              <dt>Hallazgo</dt>
-              <dd>▢ Año</dd>
-              <dt>Denominación</dt>
-              <dd>
-                ▢ El nombre que le pone alguien que no sabe para qué servía
-              </dd>
-              <dt>Función</dt>
-              <dd>▢ Se presume que… / posiblemente servía para…</dd>
-              <dt>Conservación</dt>
-              <dd>▢ Qué llegó entero</dd>
+              <dt>Origen</dt>
+              <dd>Año de adquisición: 2025. Origen y año de fabricación no identificados</dd>
+              <dt>Medidas</dt>
+              <dd>20 cm de largo x15 cm de alto x5 cm de profundidad</dd>
+              <dt>Material</dt>
+              <dd>Material sintético flexible con recubrimiento metálico plateado у cierre de metal</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto con</dd>
+              <dt>Depósito</dt>
+              <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
-            <p>
-              ▢ Nota del curador: qué significa este objeto ahora que nadie
-              recuerda para qué servía. Con dudas, no con certezas. Sin
-              nostalgia y sin chistes.
-            </p>
           </div>
         </section>
-
-        <!-- ============ PREGUNTAS ABIERTAS ============ -->
-        <section class="rv">
-          <h2>Preguntas abiertas</h2>
-          <p>
-            Lo que no lograste resolver. Una investigación honesta muestra sus
-            huecos: son el trabajo que le queda a quien venga después.
-          </p>
-          <div class="abiertas">
-            <div class="abierta">
-              <h4>▢ ¿Pregunta que quedó sin respuesta?</h4>
-              <p>
-                ▢ Qué intentaste, hasta dónde llegaste, qué haría falta para
-                resolverla.
-              </p>
-            </div>
-            <div class="abierta">
-              <h4>▢ ¿Otra?</h4>
-              <p>▢ Ídem.</p>
-            </div>
+        <section class="pieza-l rv" id="p03">
+          <p class="pieza-l__n">−2.40 · pieza 03</p>
+          <figure class="lamina">
+            <div class="vitrina vitrina--foto"><img src="img/frida-menaged-03.jpg" alt="Bolígrafo MUJI de tinta negra, fotografiado antes de enterrarlo." width="858" height="867" loading="lazy" decoding="async"></div>
+            <figcaption>Plástico translúcido, tinta negra y pequeños componentes metálicos</figcaption>
+          </figure>
+          <div>
+            <h2>Bolígrafo MUJI de tinta negra</h2>
+            <p class="pieza-l__d">Bolígrafo MUJI de cuerpo translúcido, diseño minimalista y tinta de color negro. Cuenta con tapa protectora removible y punta fina para escritura</p>
+            <dl>
+              <dt>Origen</dt>
+              <dd>Japón. Año de adquisición: 2025</dd>
+              <dt>Medidas</dt>
+              <dd>15 cm de largo ×1 cm de ancho ×1 cm de profundidad</dd>
+              <dt>Material</dt>
+              <dd>Plástico translúcido, tinta negra y pequeños componentes metálicos</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto de uso personal conservado como representación de actividades cotidianas, académicas y de escritura</dd>
+              <dt>Depósito</dt>
+              <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
+            </dl>
           </div>
         </section>
-
-        <!-- ============ FUENTES ============ -->
-        <section class="rv">
-          <h2>Fuentes</h2>
-          <ol class="fuentes">
-            <li id="f1">
-              ▢ Autor, <em>Título</em>, editorial o publicación, año, página.
-              <a href="#r1" style="color: var(--oliva); text-decoration: none"
-                >↩</a
-              >
-            </li>
-            <li>
-              ▢ Entrevista, archivo, catálogo o sitio consultado, con fecha de
-              consulta.
-            </li>
-            <li>
-              ▢ Tus propias mediciones, si las hiciste: con qué instrumento y
-              cómo.
-            </li>
-          </ol>
+        <section class="pieza-l rv" id="p04">
+          <p class="pieza-l__n">−2.40 · pieza 04</p>
+          <figure class="lamina">
+            <div class="vitrina vitrina--foto"><img src="img/frida-menaged-04.jpg" alt="Carta para el futuro — &quot;Carta 2046&quot;, fotografiado antes de enterrarlo." width="858" height="865" loading="lazy" decoding="async"></div>
+            <figcaption>Papel y tinta</figcaption>
+          </figure>
+          <div>
+            <h2>Carta para el futuro — &quot;Carta 2046&quot;</h2>
+            <p class="pieza-l__d">Carta personal escrita a mano y doblada, identificada en el exterior con el texto &quot;CARTA 2046...&quot; y el nombre &quot;Frida Menaged&quot;. Fue preparada como un mensaje para ser abierto y leído en el futuro</p>
+            <dl>
+              <dt>Origen</dt>
+              <dd>Ciudad de Panamá, Panamá. Año de creación: 2026</dd>
+              <dt>Medidas</dt>
+              <dd>28 cm de largo × 21.6 cm de ancho x 0.01 cm de profundidad</dd>
+              <dt>Material</dt>
+              <dd>Papel y tinta</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto con alto</dd>
+              <dt>Depósito</dt>
+              <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
+            </dl>
+          </div>
         </section>
-      </article>
+      </div>
+
+      <div class="wrap">
+        <p class="pie2">
+          <a href="index.html">← Volver a la colección</a>
+          <span>Apertura 05.09.2047 · 07:56</span>
+        </p>
+      </div>
     </main>
 
-    <footer>
-      <div class="wrap">
-        <div class="pie2">
-          <span>▢ Nombre de quien investigó · Cohorte 2026</span>
-          <a href="index.html">MUFU · Museo del Futuro</a>
-        </div>
-      </div>
-    </footer>
-
     <script>
-      /* progreso de lectura */
       const barra = document.getElementById("barra");
-      addEventListener(
-        "scroll",
-        () => {
-          const h = document.documentElement;
-          const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-          barra.style.width = Math.min(100, p * 100) + "%";
-        },
-        { passive: true },
-      );
+      addEventListener("scroll", () => {
+        const h = document.documentElement;
+        barra.style.width = Math.min(100, (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100) + "%";
+      }, { passive: true });
 
-      /* términos en línea */
-      document.querySelectorAll(".term").forEach((b) => {
-        b.addEventListener("click", () => {
-          const d = document.getElementById(b.getAttribute("aria-controls"));
-          const abierto = b.getAttribute("aria-expanded") === "true";
-          b.setAttribute("aria-expanded", String(!abierto));
-          d.classList.toggle("open", !abierto);
-        });
-      });
-
-      /* revelado · quien pide menos movimiento no entra: no se oculta nada */
+      /* quien pide menos movimiento no entra al revelado */
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) montarRevelado();
-
       function montarRevelado() {
-      document.documentElement.classList.add("reveal");
-      const io = new IntersectionObserver(
-        (es) => {
-          es.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("on");
-              io.unobserve(e.target);
-            }
+        document.documentElement.classList.add("reveal");
+        const io = new IntersectionObserver((es) => {
+          es.forEach((x) => {
+            if (x.isIntersecting) { x.target.classList.add("on"); io.unobserve(x.target); }
           });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
-      );
-      document.querySelectorAll(".rv").forEach((n) => io.observe(n));
+        }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+        document.querySelectorAll(".rv").forEach((n) => io.observe(n));
       }
     </script>
   </body>

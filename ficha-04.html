@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#E4E6E1" />
     <title>Raquel Cohen · MUFU</title>
-    <meta
-      name="description"
-      content="Raquel Cohen enterró 4 piezas en la cápsula de MUFU. Ninguna puede verse hasta el 5 de septiembre de 2047."
-    />
+    <meta name="description" content="Raquel Cohen enterró 4 piezas en la cápsula de MUFU. Ninguna puede verse hasta el 5 de septiembre de 2047." />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Raquel Cohen · MUFU" />
     <meta property="og:description" content="4 piezas enterradas bajo la escuela, a −2.40. Apertura 05.09.2047." />
@@ -340,6 +337,10 @@
         font-family:var(--cota);font-weight:500;font-size:.9375rem}
       .indice a{color:var(--grafito);text-decoration:none;transition:color .22s}
       .indice a:hover{color:var(--tinta)}
+      /* cuatro piezas se fotografiaron sobre fondo claro, no sobre pedestal
+         negro: ahí la vitrina se queda en tierra y la imagen cubre el marco. */
+      .vitrina--clara{background:var(--tierra)}
+      .vitrina--clara img{object-fit:cover}
     </style>
   </head>
   <body>
@@ -364,14 +365,14 @@
           4 piezas enterradas bajo la escuela.
           Ninguna puede verse hasta 2047.
         </p>
-        <nav class="indice" aria-label="Piezas de esta ficha"><a href="#p01">Carta para mi yo del futuro</a> <a href="#p02">Tarjeta de crédito Visa Infinite C</a> <a href="#p03">Collar con dije de Hamsa azul</a> <a href="#p04">Baraja de cartas Hello Kitty</a></nav>
+        <nav class="indice" aria-label="Piezas de esta ficha"><a href="#p01">Carta para mi yo del futuro</a> <a href="#p02">Tarjeta de crédito Visa Infinite</a> <a href="#p03">Collar con dije de Hamsa azul</a> <a href="#p04">Baraja de cartas Hello Kitty</a></nav>
       </header>
 
       <div class="wrap">
         <section class="pieza-l rv" id="p01">
           <p class="pieza-l__n">−2.40 · pieza 01</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-01.jpg" alt="Carta para mi yo del futuro, fotografiado sobre fondo negro." width="724" height="543" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-01.jpg" alt="Carta para mi yo del futuro, fotografiado antes de enterrarlo." width="724" height="543" loading="lazy" decoding="async"></div>
             <figcaption>Papel y sobre de papel color rosado</figcaption>
           </figure>
           <div>
@@ -384,18 +385,17 @@
               <dd>13 cm de largo x 10 cm de alto x 1mm de profundo</dd>
               <dt>Material</dt>
               <dd>Papel y sobre de papel color rosado</dd>
-            <dt>Filiación</dt>
-            <dd>Objeto de carácter íntimo y sentimental creado por Raquel Cohen como testimonio de sus sueños, expectativas y visión de vida en 2026</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto de carácter íntimo y sentimental creado por Raquel Cohen como testimonio de sus sueños, expectativas y visión de vida en 2026</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
         </section>
-
         <section class="pieza-l rv" id="p02">
           <p class="pieza-l__n">−2.40 · pieza 02</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-02.jpg" alt="Tarjeta de crédito Visa Infinite ConnectMiles, fotografiado sobre fondo negro." width="692" height="353" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-02.jpg" alt="Tarjeta de crédito Visa Infinite ConnectMiles, fotografiado antes de enterrarlo." width="692" height="353" loading="lazy" decoding="async"></div>
             <figcaption>Tarjeta plástica con chip metálico integrado</figcaption>
           </figure>
           <div>
@@ -408,18 +408,17 @@
               <dd>8.6 cm de largo × 5.4 cm de alto x 1mm de profundidad</dd>
               <dt>Material</dt>
               <dd>Tarjeta plástica con chip metálico integrado</dd>
-            <dt>Filiación</dt>
-            <dd>Objeto de uso cotidiano que representa independencia financiera y forma parte de mis actividades personales, compras y viajes</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto de uso cotidiano que representa independencia financiera y forma parte de mis actividades personales, compras y viajes</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
         </section>
-
         <section class="pieza-l rv" id="p03">
           <p class="pieza-l__n">−2.40 · pieza 03</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-03.jpg" alt="Collar con dije de Hamsa azul, fotografiado sobre fondo negro." width="512" height="768" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-03.jpg" alt="Collar con dije de Hamsa azul, fotografiado antes de enterrarlo." width="512" height="768" loading="lazy" decoding="async"></div>
             <figcaption>Cadena metálica plateada y dije decorativo con acabado iridiscente tipo ópalo</figcaption>
           </figure>
           <div>
@@ -432,18 +431,17 @@
               <dd>Cadena 40cm de largo. Dije 1 cm de largo x 1.5 cm de alto x 3mm de profundo</dd>
               <dt>Material</dt>
               <dd>Cadena metálica plateada y dije decorativo con acabado iridiscente tipo ópalo</dd>
-            <dt>Filiación</dt>
-            <dd>Recuerdo de un viaje a Israel y objeto asociado a la protección y a los recuerdos de esa experiencia</dd>
+              <dt>Filiación</dt>
+              <dd>Recuerdo de un viaje a Israel y objeto asociado a la protección y a los recuerdos de esa experiencia</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
         </section>
-
         <section class="pieza-l rv" id="p04">
           <p class="pieza-l__n">−2.40 · pieza 04</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-04.jpg" alt="Baraja de cartas Hello Kitty, fotografiado sobre fondo negro." width="724" height="543" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/raquel-cohen-04.jpg" alt="Baraja de cartas Hello Kitty, fotografiado antes de enterrarlo." width="724" height="543" loading="lazy" decoding="async"></div>
             <figcaption>Cartón impreso y plastificado</figcaption>
           </figure>
           <div>
@@ -456,8 +454,8 @@
               <dd>9 cm de alto × 6 cm de ancho x 1.5 cm de profundo</dd>
               <dt>Material</dt>
               <dd>Cartón impreso y plastificado</dd>
-            <dt>Filiación</dt>
-            <dd>Objeto de infancia con valor sentimental, asociado al juego, entretenimiento y recuerdos de esa etapa de mi vida</dd>
+              <dt>Filiación</dt>
+              <dd>Objeto de infancia con valor sentimental, asociado al juego, entretenimiento y recuerdos de esa etapa de mi vida</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
@@ -474,34 +472,21 @@
     </main>
 
     <script>
-      /* progreso de lectura */
       const barra = document.getElementById("barra");
-      addEventListener(
-        "scroll",
-        () => {
-          const h = document.documentElement;
-          const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-          barra.style.width = Math.min(100, p * 100) + "%";
-        },
-        { passive: true },
-      );
+      addEventListener("scroll", () => {
+        const h = document.documentElement;
+        barra.style.width = Math.min(100, (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100) + "%";
+      }, { passive: true });
 
-      /* revelado · quien pide menos movimiento no entra: no se oculta nada */
+      /* quien pide menos movimiento no entra al revelado */
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) montarRevelado();
-
       function montarRevelado() {
         document.documentElement.classList.add("reveal");
-        const io = new IntersectionObserver(
-          (es) => {
-            es.forEach((x) => {
-              if (x.isIntersecting) {
-                x.target.classList.add("on");
-                io.unobserve(x.target);
-              }
-            });
-          },
-          { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
-        );
+        const io = new IntersectionObserver((es) => {
+          es.forEach((x) => {
+            if (x.isIntersecting) { x.target.classList.add("on"); io.unobserve(x.target); }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
         document.querySelectorAll(".rv").forEach((n) => io.observe(n));
       }
     </script>

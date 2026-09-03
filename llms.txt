@@ -10,7 +10,8 @@
 MUFU no es un museo con obras a la vista. Es una cápsula del tiempo sellada y una
 pieza permanente que la señala: un pedestal, una urna vacía, un haz de luz apuntando
 a un punto del piso y una placa de latón con coordenadas y una fecha. Bajo tierra hay
-36 objetos y 12 cartas, tres objetos y una carta por estudiante.
+38 objetos y 12 cartas: una carta por persona, y entre uno y ocho objetos
+cada quien.
 
 Nadie puede abrirla antes de la fecha: ni los autores, ni los docentes, ni la escuela.
 
@@ -45,10 +46,13 @@ están a la vista y lo único disponible es su reconstrucción.
 - Sitio: https://mufu.today
 - Apertura de la cápsula: 5 de septiembre de 2047, 07:56 (UTC-5)
 - Ubicación: 8.983000° N, 79.520000° W (Panamá)
-- Contenido enterrado: 36 objetos y 12 cartas
+- Contenido enterrado: 38 objetos y 12 cartas, 50 piezas registradas una por una
 - Cohorte: 2026, doce estudiantes
 - Estado: colección cerrada, ninguna pieza en exhibición
 
-## Nota
+## Las fichas
 
-Las fichas individuales de las doce piezas todavía no están publicadas.
+Hay una ficha por persona, doce en total, con la cédula de cada una de sus
+piezas: nombre, descripción, origen, medidas, material y por qué la eligió. Las
+50 se fotografiaron antes de cerrar la cápsula, y esas fotografías son lo único
+que queda a la vista de la colección.

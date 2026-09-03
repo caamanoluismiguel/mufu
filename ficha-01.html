@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#E4E6E1" />
     <title>Adriana Solís · MUFU</title>
-    <meta
-      name="description"
-      content="Adriana Solís enterró 4 piezas en la cápsula de MUFU. Ninguna puede verse hasta el 5 de septiembre de 2047."
-    />
+    <meta name="description" content="Adriana Solís enterró 4 piezas en la cápsula de MUFU. Ninguna puede verse hasta el 5 de septiembre de 2047." />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Adriana Solís · MUFU" />
     <meta property="og:description" content="4 piezas enterradas bajo la escuela, a −2.40. Apertura 05.09.2047." />
@@ -340,6 +337,10 @@
         font-family:var(--cota);font-weight:500;font-size:.9375rem}
       .indice a{color:var(--grafito);text-decoration:none;transition:color .22s}
       .indice a:hover{color:var(--tinta)}
+      /* cuatro piezas se fotografiaron sobre fondo claro, no sobre pedestal
+         negro: ahí la vitrina se queda en tierra y la imagen cubre el marco. */
+      .vitrina--clara{background:var(--tierra)}
+      .vitrina--clara img{object-fit:cover}
     </style>
   </head>
   <body>
@@ -371,7 +372,7 @@
         <section class="pieza-l rv" id="p01">
           <p class="pieza-l__n">−2.40 · pieza 01</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-01.jpg" alt="Carta, fotografiado sobre fondo negro." width="628" height="837" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-01.jpg" alt="Carta, fotografiado antes de enterrarlo." width="628" height="837" loading="lazy" decoding="async"></div>
             <figcaption>Hoja de papel</figcaption>
           </figure>
           <div>
@@ -384,18 +385,17 @@
               <dd>Largo: 15.50cm. Alto: 22.0cm. Profundidad: 0.1mm</dd>
               <dt>Material</dt>
               <dd>Hoja de papel</dd>
-            <dt>Filiación</dt>
-            <dd>Carta hecha para mi yo futuro</dd>
+              <dt>Filiación</dt>
+              <dd>Carta hecha para mi yo futuro</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
         </section>
-
         <section class="pieza-l rv" id="p02">
           <p class="pieza-l__n">−2.40 · pieza 02</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-02.jpg" alt="Moneda, fotografiado sobre fondo negro." width="551" height="308" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-02.jpg" alt="Moneda, fotografiado antes de enterrarlo." width="551" height="308" loading="lazy" decoding="async"></div>
             <figcaption>Metal</figcaption>
           </figure>
           <div>
@@ -408,18 +408,17 @@
               <dd>Diámetro: 2.30 cm, profundidad: 1 mm</dd>
               <dt>Material</dt>
               <dd>Metal</dd>
-            <dt>Filiación</dt>
-            <dd>Moneda significativa de la época</dd>
+              <dt>Filiación</dt>
+              <dd>Moneda significativa de la época</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
         </section>
-
         <section class="pieza-l rv" id="p03">
           <p class="pieza-l__n">−2.40 · pieza 03</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-03.jpg" alt="Cola, fotografiado sobre fondo negro." width="717" height="956" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-03.jpg" alt="Cola, fotografiado antes de enterrarlo." width="717" height="956" loading="lazy" decoding="async"></div>
             <figcaption>Hilo de poliéster</figcaption>
           </figure>
           <div>
@@ -432,18 +431,17 @@
               <dd>Diámetro: 14 cm Profundidad: 5 cm</dd>
               <dt>Material</dt>
               <dd>Hilo de poliéster</dd>
-            <dt>Filiación</dt>
-            <dd>Primera cola tejida hecha por mi</dd>
+              <dt>Filiación</dt>
+              <dd>Primera cola tejida hecha por mi</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
           </div>
         </section>
-
         <section class="pieza-l rv" id="p04">
           <p class="pieza-l__n">−2.40 · pieza 04</p>
           <figure class="lamina">
-            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-04.jpg" alt="Pulsera, fotografiado sobre fondo negro." width="807" height="1076" loading="lazy" decoding="async"></div>
+            <div class="vitrina vitrina--foto"><img src="img/adriana-solis-04.jpg" alt="Pulsera, fotografiado antes de enterrarlo." width="807" height="1076" loading="lazy" decoding="async"></div>
             <figcaption>Plástico</figcaption>
           </figure>
           <div>
@@ -456,8 +454,8 @@
               <dd>Diámetro: 6.00 cm Profundidad: 3.00 mm</dd>
               <dt>Material</dt>
               <dd>Plástico</dd>
-            <dt>Filiación</dt>
-            <dd>Regalo de mi hermana</dd>
+              <dt>Filiación</dt>
+              <dd>Regalo de mi hermana</dd>
               <dt>Depósito</dt>
               <dd>Cápsula MUFU · 8.983000° N 79.520000° W</dd>
             </dl>
@@ -474,34 +472,21 @@
     </main>
 
     <script>
-      /* progreso de lectura */
       const barra = document.getElementById("barra");
-      addEventListener(
-        "scroll",
-        () => {
-          const h = document.documentElement;
-          const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-          barra.style.width = Math.min(100, p * 100) + "%";
-        },
-        { passive: true },
-      );
+      addEventListener("scroll", () => {
+        const h = document.documentElement;
+        barra.style.width = Math.min(100, (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100) + "%";
+      }, { passive: true });
 
-      /* revelado · quien pide menos movimiento no entra: no se oculta nada */
+      /* quien pide menos movimiento no entra al revelado */
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) montarRevelado();
-
       function montarRevelado() {
         document.documentElement.classList.add("reveal");
-        const io = new IntersectionObserver(
-          (es) => {
-            es.forEach((x) => {
-              if (x.isIntersecting) {
-                x.target.classList.add("on");
-                io.unobserve(x.target);
-              }
-            });
-          },
-          { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
-        );
+        const io = new IntersectionObserver((es) => {
+          es.forEach((x) => {
+            if (x.isIntersecting) { x.target.classList.add("on"); io.unobserve(x.target); }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
         document.querySelectorAll(".rv").forEach((n) => io.observe(n));
       }
     </script>
