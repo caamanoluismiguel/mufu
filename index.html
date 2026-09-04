@@ -474,6 +474,16 @@
       .pieza__vitrina,.pieza__vacia,.pieza__txt{display:contents}
       .pieza__vitrina img{display:none}
 
+      /* ── la aparición: la única imagen en movimiento de la página. Va sobre
+         negro porque el fantasma de Pepper necesita oscuridad, y porque las
+         cincuenta fotografías ya vienen sobre negro. ── */
+      .aparicion{margin:0 0 clamp(2.5rem,5vw,4rem);border:1px solid var(--tinta);
+        background:#0B0B0C}
+      .aparicion__v{display:block;width:100%;height:auto}
+      .aparicion figcaption{font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        color:var(--grafito);background:var(--papel);padding:.7rem .9rem;
+        border-top:1px solid var(--tinta);max-width:62ch}
+
       /* ============================================================
          VISITA · se vuelve al patio
          ============================================================ */
@@ -1891,26 +1901,46 @@
                 desarmó el aparato, se selló la urna vacía y la lámpara se
                 inclinó hasta que
                 <em>la luz salió de la urna y cayó al piso</em>, apuntando a un
-                punto del campus. Después se atornilló una placa de latón.
+                punto del campus. La placa de latón que va en la pared todavía está por poner.
               </p>
             </div>
           </div>
 
+            <figure class="aparicion rv">
+              <video
+                class="aparicion__v"
+                poster="medios/aparicion.jpg"
+                width="1280"
+                height="720"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Los objetos de la cápsula girando sobre fondo negro, uno detrás de otro: el material de la aparición del fantasma de Pepper."
+              >
+                <source src="medios/aparicion.mp4" type="video/mp4" />
+              </video>
+              <figcaption>
+                Los objetos que aparecen hoy. Es lo único que se mueve en todo
+                este sitio, y son cosas que a partir de hoy no se pueden tocar.
+              </figcaption>
+            </figure>
+
           <div class="estados rv">
             <article class="estado estado--i">
-              <p class="eyebrow" style="margin-bottom: 0">Estado I · cerrado</p>
+              <p class="eyebrow" style="margin-bottom: 0">Estado I · hoy, 4 de septiembre</p>
               <h3>La función</h3>
               <p>
-                Sala a oscuras, un pedestal, una urna. Cada objeto aparecía
-                reflejado sobre el vidrio: sin materia, sin peso, imposible de
+                Sala a oscuras y un vidrio inclinado. Cada objeto aparece
+                  reflejado sobre él: sin materia, sin peso, imposible de
                 tocar. Doce apariciones, una por estudiante, y en
                 cada una los tres objetos de esa persona en orden: el presente,
                 lo que entrega, lo que quiere recuperar. Entre una persona y la
                 siguiente, ocho segundos de negro y el pedestal vacío.
               </p>
               <p>
-                Antes de entrar, el público ya había tocado esos mismos objetos
-                sobre una mesa iluminada. Una aparición solo conmueve a quien
+                Antes de entrar, el público ya tocó esos mismos objetos sobre una
+                  mesa iluminada. Una aparición solo conmueve a quien
                 alcanzó a tocar la cosa real.
               </p>
               <dl>
@@ -1934,10 +1964,11 @@
               </p>
               <h3>La cita</h3>
               <p>
-                Pedestal, urna vacía y sellada, un haz de luz sobre el piso y
-                una placa con unas coordenadas y una fecha exacta con su hora.
-                No hay pantalla que se queme ni enlace que se caiga: se lee con
-                la luz apagada.
+                Un vacío construido bajo la escalera, cerrado con una pared, y
+                  en su cara frontal una placa con unas coordenadas y una fecha
+                  exacta con su hora. La placa todavía no está puesta. No hay
+                  pantalla que se queme ni enlace que se caiga: se lee de pie,
+                  delante de la pared.
               </p>
               <p>
                 Un monumento mira hacia atrás. Unas coordenadas y una hora que
@@ -1946,9 +1977,9 @@
               </p>
               <dl>
                 <dt>Emplazamiento</dt>
-                <dd>Permanente</dd>
+                  <dd>Edificio 106, bajo la escalera</dd>
                 <dt>Materia</dt>
-                <dd>Piedra, latón, luz</dd>
+                  <dd>Gypsum, latón, una pared</dd>
                 <dt>Mantenimiento</dt>
                 <dd>Una placa al año</dd>
                 <dt>Apertura</dt>
@@ -2393,6 +2424,21 @@
           month: "long",
           year: "numeric",
         });
+
+      /* La aparición se reproduce sola, salvo que pidas menos movimiento:
+         ahí se queda en el póster, con controles por si la quieres ver. */
+      const apar = document.querySelector(".aparicion__v");
+      if (apar) {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          apar.removeAttribute("loop");
+          apar.controls = true;
+        } else {
+          apar.autoplay = true;
+          apar.play().catch(() => {
+            apar.controls = true;
+          });
+        }
+      }
 
       /* Quien pide menos movimiento no entra al revelado: no se oculta nada
          y el observador nunca se monta. */
