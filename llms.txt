@@ -13,8 +13,7 @@ posterior del edificio 106, en Ciudad del Saber. Pidieron permiso para enterrarl
 la tierra del campus y no se lo dieron, así que no está enterrada: está emparedada.
 En su cara frontal irá una placa de latón con las coordenadas y la fecha, todavía sin
 poner. Detrás de esa pared hay
-38 objetos y 12 cartas: una carta por persona, y entre uno y ocho objetos
-cada quien.
+50 piezas registradas una por una, entre dos y nueve por persona.
 
 Nadie puede abrirla antes de la fecha: ni los autores, ni los docentes, ni la escuela.
 
@@ -68,7 +67,8 @@ objeto, de quién es y en cuál de las dos cajas va. Son dos cajas, no una.
 - Apertura de la cápsula: 5 de septiembre de 2047, 07:56 (UTC-5)
 - Ubicación: 8.999423° N, 79.582829° W · Ciudad del Saber, edificio 106,
   Isthmus, Panamá · bajo la escalera de la fachada posterior
-- Contenido enterrado: 38 objetos y 12 cartas, 50 piezas registradas una por una
+- Contenido: 50 piezas registradas una por una, más dos de staff que entraron
+  sobre la hora y todavía no tienen ficha
 - Cohorte: 2026, doce estudiantes
 - Estado: colección cerrada, ninguna pieza en exhibición
 
