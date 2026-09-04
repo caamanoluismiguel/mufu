@@ -474,6 +474,12 @@
       .pieza__vitrina,.pieza__vacia,.pieza__txt{display:contents}
       .pieza__vitrina img{display:none}
 
+      /* el edificio, dibujado a línea igual que todo lo demás de esta página */
+      .edificio{margin:0 0 clamp(2.5rem,5vw,3.5rem)}
+      .edificio img{width:100%;height:auto;border:1px solid var(--linea)}
+      .edificio figcaption{font-family:var(--cota);font-weight:500;font-size:.9375rem;
+        color:var(--grafito);margin:.7rem 0 0;max-width:56ch}
+
       /* ── la aparición: la única imagen en movimiento de la página. Va sobre
          negro porque el fantasma de Pepper necesita oscuridad, y porque las
          cincuenta fotografías ya vienen sobre negro. ── */
@@ -2053,6 +2059,21 @@
               </p>
             </div>
           </div>
+          <figure class="edificio rv">
+            <img
+              src="medios/isthmus.jpg"
+              alt="Dibujo a línea y acuarela del edificio 106 de Isthmus, en Ciudad del Saber: tres plantas, aleros de teja, palmeras delante y la calle en primer plano."
+              width="1500"
+              height="1063"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              Isthmus, edificio 106. La colección está detrás de una pared, bajo
+              la escalera de la fachada que no se ve en este dibujo.
+            </figcaption>
+          </figure>
+
 
           <div class="visita rv">
             <div class="tarjeta">
