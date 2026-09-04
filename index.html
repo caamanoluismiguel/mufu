@@ -7,14 +7,14 @@
     <title>MUFU · Museo del Futuro</title>
     <meta
       name="description"
-      content="MUFU, Museo del Futuro. Una colección que no se puede ver: objetos enterrados bajo la escuela, una luz que los señala y una fecha de apertura."
+      content="MUFU, Museo del Futuro. Una colección que no se puede ver: objetos emparedados bajo una escalera, una fecha de apertura y ningún permiso para enterrarlos."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="MUFU · Museo del Futuro" />
     <meta property="og:title" content="MUFU · Museo del Futuro" />
     <meta
       property="og:description"
-      content="Una colección que no se puede ver: 38 objetos y 12 cartas enterrados bajo la escuela, una luz que los señala y una cita para el 5 de septiembre de 2047."
+      content="Una colección que no se puede ver: 38 objetos y 12 cartas emparedados bajo la escalera trasera del edificio 106, con cita para el 5 de septiembre de 2047."
     />
     <meta property="og:locale" content="es_PA" />
     <meta property="og:url" content="https://mufu.today/" />
@@ -23,13 +23,13 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Sala a oscuras: un pedestal con una urna vacía y un haz de luz que cae al piso. MUFU, Museo del Futuro. Apertura 05.09.2047 a las 07:56."
+      content="MUFU, Museo del Futuro. Cincuenta piezas emparedadas bajo una escalera en Ciudad del Saber. Apertura 05.09.2047 a las 07:56."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MUFU · Museo del Futuro" />
     <meta
       name="twitter:description"
-      content="Una colección que no se puede ver: 38 objetos y 12 cartas enterrados bajo la escuela, una luz que los señala y una cita para el 5 de septiembre de 2047."
+      content="Una colección que no se puede ver: 38 objetos y 12 cartas emparedados bajo la escalera trasera del edificio 106, con cita para el 5 de septiembre de 2047."
     />
     <meta name="twitter:image" content="https://mufu.today/og.png" />
     <link rel="canonical" href="https://mufu.today/" />
@@ -40,7 +40,7 @@
         "@context": "https://schema.org",
         "@type": "Museum",
         "name": "MUFU · Museo del Futuro",
-        "description": "Museo construido durante un trimestre por doce estudiantes. Su colección permanente está enterrada y no puede visitarse hasta el 5 de septiembre de 2047.",
+        "description": "Museo construido durante un trimestre por doce estudiantes. Su colección permanente está emparedada bajo una escalera y no puede visitarse hasta el 5 de septiembre de 2047.",
         "inLanguage": "es",
         "url": "https://mufu.today/",
         "image": "https://mufu.today/og.png",
@@ -48,8 +48,8 @@
         "publicAccess": false,
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 8.983,
-          "longitude": -79.52
+          "latitude": 8.999423,
+          "longitude": -79.582829
         },
         "event": {
           "@type": "Event",
@@ -70,8 +70,9 @@
       /* ============================================================
          MUFU · sistema de diseño
          Dirección: LA SECCIÓN. La página es un corte de obra. Arriba de la
-         línea de suelo está lo que se puede visitar; abajo, la excavación.
-         El tiempo se mide en profundidad: la colección está a −2.40.
+         línea de suelo está lo que se puede visitar; debajo, el vacío que se
+         construyó bajo la escalera trasera del edificio 106, donde quedó
+         emparedada la colección. No está enterrada: no dieron el permiso.
 
          Reglas duras de este sistema, por si alguien vuelve a editar:
            · cero degradados. La profundidad se hace con línea y trama.
@@ -85,12 +86,12 @@
         --tinta:#1B2430;    /* azul de plano */
         --tinta-t:#2C3540;  /* texto corrido */
         --grafito:#5A6470;  /* cotas y anotación */
-        --tierra:#CDD0C9;   /* la masa excavada */
+        --tierra:#CDD0C9;   /* la masa construida que rodea el vacío */
         --linea:#B4B9B1;    /* reglas finas sobre papel */
         --laton:#7F6137;    /* la placa: latón pulido, a ± 0.00 · 4.55:1 sobre papel */
         /* El oliva oficial (#A8AD5F) da 1.90:1 sobre papel: invisible. Oscurecido
            mantiene el tono (65.9° contra 63.8°) y sube a 5.06:1. No es un acento:
-           es la misma placa dentro de veintiún años, porque el latón enterrado se
+           es la misma placa dentro de veintiún años, porque el latón encerrado se
            oxida. Regla: latón para lo que está a ± 0.00, oliva para lo de debajo. */
         --oliva:#5E6330;
 
@@ -432,20 +433,20 @@
       .cierre-p{margin:2rem 0 0;color:var(--tinta-t);max-width:62ch}
 
       /* ============================================================
-         −2.40 · LA COLECCIÓN · la única banda excavada de la página.
-         La trama a 45° aparece aquí y en ningún otro sitio, porque aquí
-         es donde los objetos están de verdad bajo tierra.
+         LA COLECCIÓN · el vacío bajo la escalera. La trama a 45° aparece
+         aquí y en ningún otro sitio: es el material que habría que cortar
+         para llegar a las piezas.
          ============================================================ */
-      .excavado{background:var(--tierra);position:relative;overflow:hidden;
+      .emparedado{background:var(--tierra);position:relative;overflow:hidden;
         border-top:var(--suelo) solid var(--tinta);
         /* La tierra es más oscura que el papel: grafito y oliva bajaban a 3.86 y
            4.08:1. Aquí llevan su propio valor, medido contra #CDD0C9. */
         --grafito:#505964;   /* 4.56:1 sobre tierra */
         --oliva:#575C2D}     /* 4.53:1 sobre tierra */
-      .excavado::before{content:'';position:absolute;inset:0;pointer-events:none;
+      .emparedado::before{content:'';position:absolute;inset:0;pointer-events:none;
         background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path d='M-2 12 L12 -2 M2 16 L16 2' stroke='%235E6330' stroke-opacity='.30' stroke-width='1' fill='none'/></svg>")}
-      .excavado > .wrap{position:relative}
-      .excavado .rule{background:rgba(27,36,48,.24)}
+      .emparedado > .wrap{position:relative}
+      .emparedado .rule{background:rgba(27,36,48,.24)}
 
 
       /* cada pieza es una cota de excavación, no una tarjeta de tienda */
@@ -509,7 +510,7 @@
 
       @media print{
         *{background:#fff!important;color:#000!important;box-shadow:none!important}
-        .bar,.escena,.entrar,.skip,#linea-f,.excavado::before{display:none!important}
+        .bar,.escena,.entrar,.skip,#linea-f,.emparedado::before{display:none!important}
         .rv{opacity:1!important;transform:none!important}
         .mom__c{display:block!important}
         .mom__c summary{display:none}
@@ -518,7 +519,7 @@
         .band,.banda{padding-block:1.25rem!important;page-break-inside:avoid}
         .mom,.pieza,.estado,.tarjeta{page-break-inside:avoid;border-color:#999!important}
         h1,h2,h3{page-break-after:avoid}
-        .suelo,.excavado,footer{border-top-color:#000!important}
+        .suelo,.emparedado,footer{border-top-color:#000!important}
       }
       @media(prefers-contrast:more){
         :root{--grafito:#3A424C;--linea:#8C938A;--tinta-t:#141B24}
@@ -570,7 +571,7 @@
             </p>
             <p class="tesis">
               Empezaron con la galería de fotos de su teléfono. Terminaron
-              enterrando sus objetos bajo la escuela, con una fecha grabada para
+              emparedando sus objetos bajo una escalera, con una fecha grabada para
               volver a abrirlos.
             </p>
             <a class="entrar" href="#recorrido"
@@ -582,28 +583,27 @@
             <svg
               viewBox="0 0 340 178"
               role="img"
-              aria-label="Alzado de la última función: un pedestal con una urna vacía, un haz de luz dibujado en línea discontinua y una placa de latón. El conjunto se apoya en el nivel del patio."
+              aria-label="Sección por la escalera trasera del edificio 106: los peldaños, el vacío construido debajo donde quedó emparedada la colección, y la placa de latón que irá en su cara frontal. Todo apoyado en el nivel del patio."
               fill="none"
               stroke="#1B2430"
               stroke-width="1.25"
             >
-              <title>Última función · alzado</title>
-              <!-- el haz: linea de construccion, no un resplandor -->
-              <path d="M140 6 L200 6 L246 176 L94 176 Z" stroke-opacity=".32" stroke-dasharray="5 4" />
-              <!-- la urna, vacia -->
-              <rect x="136" y="58" width="68" height="68" stroke-opacity=".9" />
-              <path d="M136 58 L204 126" stroke-opacity=".2" />
-              <!-- el bloque -->
-              <rect x="110" y="126" width="120" height="50" stroke-opacity=".9" />
-              <!-- la placa: el unico laton del dibujo -->
-              <rect x="136" y="140" width="68" height="22" stroke="#8A6A3C" stroke-width="1.5" />
-              <!-- el nivel del patio no se dibuja aquí: lo dibuja la página -->
-              <!-- eje -->
-              <path d="M170 126 V58" stroke-opacity=".35" stroke-dasharray="3 3" />
-              <!-- cotas -->
-              <path d="M254 58 V126 M250 58 H258 M250 126 H258" stroke-opacity=".45" />
-              <text x="264" y="96" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#5A6470" stroke="none">urna · vacía</text>
-              <text x="264" y="156" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#8A6A3C" stroke="none">placa de latón</text>
+              <title>La escalera y el vacío · sección</title>
+              <!-- los peldaños, en corte -->
+              <path d="M74 176 V96 H100 V80 H126 V64 H152 V48 H178 V32 H204 V16 H244" stroke-opacity=".9" />
+              <path d="M244 16 V176" stroke-opacity=".35" stroke-dasharray="4 4" />
+              <!-- el intradós: la diagonal bajo los peldaños -->
+              <path d="M74 176 L232 24" stroke-opacity=".55" />
+              <!-- el vacío construido: la caja emparedada -->
+              <rect x="92" y="118" width="118" height="58" stroke-opacity=".95" />
+              <!-- la placa, todavía pendiente, en la cara frontal -->
+              <rect x="118" y="134" width="66" height="20" stroke="#7F6137" stroke-width="1.5" stroke-dasharray="3 3" />
+              <!-- nivel del patio: lo dibuja la página, aquí solo el arranque -->
+              <path d="M20 176 H74" stroke-opacity=".3" stroke-dasharray="2 4" />
+              <path d="M244 176 H320" stroke-opacity=".3" stroke-dasharray="2 4" />
+              <text x="252" y="86" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#5A6470" stroke="none">escalera</text>
+              <text x="252" y="140" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#5A6470" stroke="none">el vacío</text>
+              <text x="252" y="154" font-family="Archivo Narrow" font-size="11" font-weight="500" fill="#7F6137" stroke="none">placa · pendiente</text>
             </svg>
           </div>
         </div>
@@ -615,7 +615,7 @@
             ><b class="prof prof--cero">± 0.00</b
             ><span class="cota">nivel del patio · lo que se puede visitar</span></span
           >
-          <span class="cota suelo__co">8.983000° N · 79.520000° W</span>
+          <span class="cota suelo__co">8.999423° N · 79.582829° W</span>
         </div>
       </div>
 
@@ -623,7 +623,7 @@
       <section class="banda" id="cuenta" aria-labelledby="cuenta-t">
         <div class="wrap">
           <p class="eyebrow" id="cuenta-t">
-            <span class="prof">−0.40</span> ·
+            <span class="prof prof--cero">± 0.00</span> ·
             <span id="cuenta-lab">La colección está cerrada</span> ·
             <span class="num">falta para la apertura</span>
           </p>
@@ -672,8 +672,8 @@
               siguiente.
             </p>
             <p class="banda__coord">
-              8.983000° N · 79.520000° W<span class="prov">provisional</span
-              ><br />WGS84 · 22 m al noreste del pedestal
+              8.999423° N · 79.582829° W<br />WGS84 · Ciudad del Saber, edificio
+              106 · bajo la escalera de la fachada posterior
             </p>
           </div>
         </div>
@@ -685,7 +685,7 @@
           <div class="head rv">
             <div>
               <p class="eyebrow">
-                <span class="prof">−0.80</span> · El recorrido · diez semanas
+                El recorrido · diez semanas
               </p>
               <h2 class="display h-l" id="recorrido-t">
                 Diez semanas<br />para construir<br />un museo
@@ -1118,7 +1118,7 @@
           <div class="head rv">
             <div>
               <p class="eyebrow">
-                <span class="prof">−1.20</span> · Los dos futuros
+                Los dos futuros
               </p>
               <h2 class="display h-l" id="futuros-t">Panamá,<br />2046</h2>
             </div>
@@ -1235,7 +1235,7 @@
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="prof">−1.60</span> · El hilo</p>
+              <p class="eyebrow">El hilo</p>
               <h2 class="display h-l" id="hilo-t">Nadie se puso<br />de acuerdo</h2>
             </div>
             <div class="prose">
@@ -1270,7 +1270,12 @@
             <ul class="espejo">
               <li>
                 <b>Los objetos bajan a bóvedas sin acceso general.</b> La
-                cápsula queda enterrada, sin acceso hasta 2047.
+                cápsula queda sellada, sin acceso hasta 2047. Pidieron permiso
+                    para enterrarla en la tierra del campus y no se lo dieron,
+                    así que la cápsula no está enterrada: está emparedada en un
+                    espacio que construyeron ellos mismos debajo de la escalera
+                    trasera del edificio 106. Con suerte, para 2047 alguien ya
+                    habrá contestado si se podía enterrar o no.
               </li>
               <li>
                 <b>Solo se ven en reconstrucción, nunca en materia.</b> En la
@@ -1406,7 +1411,7 @@
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="prof">−2.00</span> · El mapa</p>
+              <p class="eyebrow">El mapa</p>
               <h2 class="display h-l" id="mapa-t">
                 Lo que quedó<br />abierto
               </h2>
@@ -1747,26 +1752,27 @@
         </div>
       </section>
 
-      <!-- ============ COLECCIÓN · la única banda bajo tierra ============ -->
-      <section class="band excavado" id="coleccion" aria-labelledby="coleccion-t">
+      <!-- ============ COLECCIÓN · el vacío bajo la escalera ============ -->
+      <section class="band emparedado" id="coleccion" aria-labelledby="coleccion-t">
         <div class="wrap">
           <div class="head rv">
             <div>
-              <p class="eyebrow"><span class="prof">−2.40</span> · La colección</p>
+              <p class="eyebrow"><span class="prof">Bajo la escalera</span> · La colección</p>
               <h2 class="display h-l" id="coleccion-t">
-                Las piezas<br />enterradas
+                Las piezas<br />emparedadas
               </h2>
             </div>
             <div class="prose">
               <p>
-                Doce personas, 50 piezas enterradas. Cada quien registró las
+                Doce personas, 50 piezas emparedadas. Cada quien registró las
                 suyas una por una: de dónde vino, de qué está hecha, cuánto mide
                 exactamente y por qué la eligió. Esos registros son las fichas de
                 esta colección, y están agrupados por quien las enterró, porque
                 la autoría es de la persona y no del objeto.
               </p>
               <p>
-                Ninguna puede verse hoy. Todas están bajo tierra, a −2.40. Lo que
+                Ninguna puede verse hoy. Todas están detrás de una pared que
+                ellos mismos levantaron. Lo que
                 sigue es el único acceso que existe hasta la fecha de apertura:
                 50 fotografías tomadas el día antes de cerrar la cápsula.
               </p>
@@ -1777,73 +1783,73 @@
                cambia el otro. -->
           <div class="grid rv" id="grid">
             <a class="pieza" href="ficha-01.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Adriana Solís</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-02.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Karla Torres</h3>
               <span class="pieza__a">3 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-03.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Martha Pretto</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-04.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Raquel Cohen</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-05.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Alana Holstein</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-06.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Alberto Zebede</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-07.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Amanda Brostella</h3>
               <span class="pieza__a">3 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-08.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Frida Antebi</h3>
               <span class="pieza__a">5 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-09.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Frida Menaged</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-10.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Moises Mizrachi</h3>
               <span class="pieza__a">2 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-11.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Roberto Torres</h3>
               <span class="pieza__a">4 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
             </a>
             <a class="pieza" href="ficha-12.html">
-              <span class="pieza__n">−2.40</span>
+              <span class="pieza__n">bajo la escalera</span>
               <h3 class="pieza__t">Tamara Cos</h3>
               <span class="pieza__a">9 piezas</span>
               <span class="pieza__f">todas fotografiadas</span>
@@ -1969,10 +1975,10 @@
             </div>
             <div class="prose">
               <p>
-                Lo primero que sorprende es que no hay nada que mirar. La obra
-                no está a la vista: está bajo tierra, a pocos metros, hacia
-                donde apunta la luz. Lo que queda arriba son instrucciones para
-                encontrarla.
+                Lo primero que sorprende es que no hay nada que mirar. La
+                  colección no está a la vista: está detrás de la pared que la
+                  cierra, bajo la escalera de la fachada posterior del edificio
+                  106. Lo que queda afuera son instrucciones para encontrarla.
               </p>
               <p>
                 La plaquita que dice cuántos años faltan se cambia a mano una
@@ -1990,14 +1996,14 @@
                 MUFU · Museo del Futuro<br />
                 Cohorte 2026
                 <em
-                  >Bajo esta escuela, a 41° y 22 m de este pedestal, treinta y
-                  seis objetos dejaron de servir y empezaron a significar.</em
+                  >Detrás de esta pared, treinta y ocho objetos y doce cartas
+                  dejaron de servir y empezaron a significar.</em
                 >
                 70 ANIVERSARIO DEL LANZAMIENTO DE VOYAGER 1<br />
                 UN AÑO DESPUÉS DE LOS ESCENARIOS DE 2046<br />
-                8.983000° N · 79.520000° W · WGS84<br />
-                4,20 m desde columna A3<br />
-                6,75 m desde vértice del muro norte<br /><br />
+                8.999423° N · 79.582829° W · WGS84<br />
+                CIUDAD DEL SABER · EDIFICIO 106<br />
+                BAJO LA ESCALERA DE LA FACHADA POSTERIOR<br /><br />
                 APERTURA: 05.09.2047 · 07:56 h
               </div>
             </div>
@@ -2005,13 +2011,14 @@
               <h3>Cómo leer la pieza</h3>
               <div class="prose">
                 <p>
-                  <span class="data">01</span> &nbsp;La urna está vacía porque
-                  antes tuvo algo adentro. No es lo mismo un vidrio que quedó
-                  vacío que uno que siempre lo estuvo.
+                  <span class="data">01</span> &nbsp;La pared está lisa porque
+                    detrás tiene algo. No es lo mismo un muro que tapa que uno
+                    que nunca tuvo nada detrás.
                 </p>
                 <p>
-                  <span class="data">02</span> &nbsp;La luz no ilumina: apunta.
-                  Hacia donde se inclina está enterrada la cápsula.
+                  <span class="data">02</span> &nbsp;El espacio no se ve pero
+                    se puede medir. La escalera de arriba dice exactamente
+                    dónde está.
                 </p>
                 <p>
                   <span class="data">03</span> &nbsp;Las coordenadas llevan
@@ -2081,7 +2088,7 @@
           <div>
             <h4>Estado de la colección</h4>
             <p>
-              Cerrada. 38 objetos y 12 cartas bajo tierra.<br />Ninguna pieza en
+              Cerrada. 38 objetos y 12 cartas tras la pared.<br />Ninguna pieza en
               exhibición.
             </p>
           </div>
@@ -2191,7 +2198,7 @@
           .map(
             (p) => `
     <a class="pieza" href="${p.url}">
-      <span class="pieza__n">−2.40</span>
+      <span class="pieza__n">bajo la escalera</span>
       <h3 class="pieza__t">${p.t}</h3>
       <span class="pieza__a">${p.piezas} ${p.piezas === 1 ? "pieza" : "piezas"}</span>
       <span class="pieza__f">todas fotografiadas</span>
@@ -2199,7 +2206,7 @@
           )
           .join("");
         if (conteo)
-          conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 50 piezas enterradas · ninguna en exhibición`;
+          conteo.textContent = `${lista.length} de ${PIEZAS.length} fichas · 50 piezas emparedadas · ninguna en exhibición`;
       }
 
       pintar(PIEZAS);
