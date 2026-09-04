@@ -14,8 +14,7 @@ la tierra del campus y no se lo dieron, así que no está enterrada: está empar
 En su cara frontal irá una placa de latón con las coordenadas y la fecha, todavía sin
 poner. Detrás de esa pared hay
 cuatro piezas por persona: una que quiere recuperar, una que regala, una que
-muestra este año, y su carta. Doce personas, cuarenta y ocho piezas, más dos que
-entraron sobre la hora de parte del staff de Isthmus.
+muestra este año, y su carta. Doce personas, cuarenta y ocho piezas.
 
 Nadie puede abrirla antes de la fecha: ni los autores, ni los docentes, ni la escuela.
 
@@ -69,11 +68,9 @@ objeto, de quién es y en cuál de las dos cajas va. Son dos cajas, no una.
 - Apertura de la cápsula: 5 de septiembre de 2047, 07:56 (UTC-5)
 - Ubicación: 8.999423° N, 79.582829° W · Ciudad del Saber, edificio 106,
   Isthmus, Panamá · bajo la escalera de la fachada posterior
-- Contenido de las cajas: cuatro piezas por persona, 48 en total, más dos de
-  staff de Isthmus que entraron sobre la hora y todavía no tienen ficha
-- Fichas de registro publicadas: 50. El registro no es el inventario: hay quien
-  registró más piezas de las que entraron y quien registró menos, porque la
-  curaduría vino después
+- Contenido de las cajas: cuatro piezas por persona, 48 en total
+- Fichas de registro publicadas: 51. El registro no es el inventario de las
+  cajas: la curaduría vino después del registro
 - Cohorte: 2026, doce estudiantes
 - Estado: colección cerrada, ninguna pieza en exhibición
 
@@ -81,5 +78,5 @@ objeto, de quién es y en cuál de las dos cajas va. Son dos cajas, no una.
 
 Hay una ficha por persona, doce en total, con la cédula de cada una de sus
 piezas: nombre, descripción, origen, medidas, material y por qué la eligió. Las
-50 se fotografiaron antes de cerrar la cápsula, y esas fotografías son lo único
+51 se fotografiaron antes de cerrar la cápsula, y esas fotografías son lo único
 que queda a la vista. Son fichas de registro, no el inventario de las cajas.
