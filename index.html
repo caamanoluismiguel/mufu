@@ -23,7 +23,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="MUFU, Museo del Futuro. Cincuenta piezas emparedadas bajo una escalera en Ciudad del Saber. Apertura 05.09.2047 a las 07:56."
+      content="Dibujo de sección: una escalera con un vacío construido debajo y una placa de latón por poner en su cara frontal. MUFU, Museo del Futuro. Apertura 05.09.2047 a las 07:56."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MUFU · Museo del Futuro" />
@@ -34,7 +34,6 @@
     <meta name="twitter:image" content="https://mufu.today/og.png" />
     <link rel="canonical" href="https://mufu.today/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/og.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -527,6 +526,10 @@
       @media print{
         *{background:#fff!important;color:#000!important;box-shadow:none!important}
         .bar,.escena,.entrar,.skip,#linea-f,.emparedado::before{display:none!important}
+        /* el vídeo en papel es un rectángulo negro: se imprime su póster */
+        .aparicion__v{display:none!important}
+        .aparicion{background:none!important;border-color:#999!important}
+        .aparicion::before{content:'';display:block;height:0}
         .rv{opacity:1!important;transform:none!important}
         .mom__c{display:block!important}
         .mom__c summary{display:none}
@@ -1955,7 +1958,7 @@
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
                 aria-label="Los objetos de la cápsula girando sobre fondo negro, uno detrás de otro: el material de la aparición del fantasma de Pepper."
               >
                 <source src="medios/aparicion.mp4" type="video/mp4" />
@@ -2486,13 +2489,22 @@
       const apar = document.querySelector(".aparicion__v");
       if (apar) {
         if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          apar.removeAttribute("loop");
           apar.controls = true;
+          apar.removeAttribute("loop");
         } else {
-          apar.autoplay = true;
-          apar.play().catch(() => {
-            apar.controls = true;
-          });
+          /* El vídeo pesa 5,4 MB. Con preload="none" no se baja al abrir la
+             portada: arranca cuando la aparición entra en pantalla y se para
+             al salir, así quien no llega hasta ahí no lo paga. */
+          const ojo = new IntersectionObserver(
+            (es) => {
+              es.forEach((x) => {
+                if (x.isIntersecting) apar.play().catch(() => (apar.controls = true));
+                else apar.pause();
+              });
+            },
+            { threshold: 0.25 },
+          );
+          ojo.observe(apar);
         }
       }
 

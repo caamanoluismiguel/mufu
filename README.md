@@ -129,8 +129,14 @@ autoría.
 
 ## Pendiente
 
-- [ ] `og.png` sigue siendo la sala a oscuras del diseño anterior. Al compartir
-      el enlace se ve una imagen que ya no se parece al sitio.
+- [ ] La placa de latón de la cara frontal de la pared no está puesta. En el
+      dibujo de portada va en línea discontinua justo por eso; cuando se ponga,
+      quitarle el `stroke-dasharray`.
+- [ ] `ficha.html` es la plantilla original de investigación y sigue con sus 43
+      ▢. No se usa: las doce fichas se generan por script. Está en `noindex` y
+      bloqueada en `robots.txt`.
+- [ ] Dos piezas de staff de Isthmus entraron sobre la hora y no tienen ficha de
+      registro. Quedan fuera del sitio a propósito.
 
 ## Publicar una ficha
 
