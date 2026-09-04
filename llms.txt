@@ -2,14 +2,17 @@
 
 > Museo construido durante un trimestre por doce estudiantes de arquitectura,
 > diseño industrial y comunicación visual en Isthmus (Panamá), 2026. Su colección
-> permanente está enterrada bajo la escuela y no puede visitarse hasta el 5 de
+> permanente está emparedada bajo una escalera y no puede visitarse hasta el 5 de
 > septiembre de 2047 a las 07:56, setenta años exactos del lanzamiento de la Voyager 1.
 
 ## Qué es
 
-MUFU no es un museo con obras a la vista. Es una cápsula del tiempo sellada y una
-pieza permanente que la señala: un pedestal, una urna vacía, un haz de luz apuntando
-a un punto del piso y una placa de latón con coordenadas y una fecha. Bajo tierra hay
+MUFU no es un museo con obras a la vista. Es una cápsula del tiempo sellada dentro
+de un vacío que los propios estudiantes construyeron bajo la escalera de la fachada
+posterior del edificio 106, en Ciudad del Saber. Pidieron permiso para enterrarla en
+la tierra del campus y no se lo dieron, así que no está enterrada: está emparedada.
+En su cara frontal irá una placa de latón con las coordenadas y la fecha, todavía sin
+poner. Detrás de esa pared hay
 38 objetos y 12 cartas: una carta por persona, y entre uno y ocho objetos
 cada quien.
 
@@ -40,6 +43,24 @@ Ocho módulos en diez semanas, seis docentes que trabajaron por separado:
 Dos grupos escribieron futuros de Panamá en 2046 sin hablarse, uno de transformación y
 otro de colapso, y los dos llegaron a la misma conclusión: en 2046 los objetos ya no
 están a la vista y lo único disponible es su reconstrucción.
+
+## Cómo se armó
+
+Cada quien investigó primero un objeto de su propia casa, con su contexto, su
+materialidad y sus historias de familia. Después estudiaron cápsulas del tiempo de
+otras partes del mundo y, sobre todo, cómo se conservan las cosas durante veintiún
+años. Solo entonces empezaron a traer objetos, y se descartó lo que no aguantaría el
+encierro. Lo que entró se ordenó en cuatro categorías, y cada pieza tuvo que caber en
+una de ellas:
+
+- Para dar: algo que se entrega y ya no vuelve.
+- Para recuperar: algo que se quiere de vuelta en 2047.
+- Para representar el presente: algo que explique este año a quien lo abra.
+- La carta: una por persona, para leerse dentro de veinte años.
+
+El cierre fue de taller. Levantaron una estructura de gypsum, sellaron cada objeto en
+su propia bolsa con máquina de succión, y etiquetaron una por una con el nombre del
+objeto, de quién es y en cuál de las dos cajas va. Son dos cajas, no una.
 
 ## Datos
 
