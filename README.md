@@ -1,173 +1,112 @@
 # MUFU · Museo del Futuro
 
-Sitio del museo construido durante el Trimestre Especial (Isthmus, Panamá) por la cohorte 2026.
-La colección permanente está enterrada bajo la escuela y no se puede visitar hasta el
-**5 de septiembre de 2047** — setenta años exactos del lanzamiento de la Voyager 1.
+Museo construido por 12 estudiantes durante diez semanas de Trimestre Especial
+de Isthmus, Panamá, en 2026. Sitio público: https://mufu.today.
 
-En vivo: **https://mufu.today**
+La colección reúne **51 objetos registrados + 2 bonus sin registro = 53 objetos**.
+Se guarda en dos cajas, emparedadas bajo la escalera posterior del edificio 106,
+Ciudad del Saber. El cierre se registra el 4 de septiembre de 2026, sin hora.
+La cita de apertura es el **5 de septiembre de 2047, 07:56 de Panamá (UTC−5)**,
+70 aniversario de Voyager 1 con precisión de minuto. Una fecha no acredita una
+apertura física; esta necesita documentación propia.
 
-## Estructura
+## Esta edición
 
+- `index.html`: relato completo, módulos, escenarios, preguntas, video, visita y reloj.
+- `atlas.html`: 21 conexiones curatoriales, ocho módulos, tiempos, futuros y luz.
+- `coleccion.html`: 51 registros originales y dos bonus explícitamente desconocidos.
+- `archivo.html`: fuentes, niveles de evidencia, privacidad, custodia y correcciones.
+- `infografia.html`: síntesis accesible e imprimible de todo el trimestre.
+- `ficha-01.html` a `ficha-12.html`: páginas por autor, con 51 registros en total.
+- `ficha.html`: plantilla histórica sin publicar, en `noindex`.
+- `archive/`: versión original íntegra, manifiestos SHA-256 y edición descargable.
+
+## Preservación
+
+El punto de partida es el commit `221d43b58498aab5fa1847a80411679d2e06d0b2`.
+Sus 78 archivos se conservan íntegros en `archive/mufu-2026-original.zip`;
+`archive/original-manifest.json` contiene una huella SHA-256 por archivo.
+La versión histórica contiene errores superados, incluidos conteos y referencias
+a un entierro. El historial público explica las correcciones.
+
+Los 51 títulos, descripciones, campos declarados y fotografías se conservan.
+Los tests comparan cada registro y cada fotografía contra el commit original.
+Los IDs `MUFU-001` a `MUFU-051` son identificadores editoriales estables;
+`MUFU-B01` y `MUFU-B02` no atribuyen identidad, fotografía, medidas ni autoría.
+Las rutas y anclas originales de las fichas permanecen disponibles.
+
+`data/registry.json` es la transcripción pública conservada. No asignar categorías
+de selección ni cajas por inferencia. `data/editorial.mjs` reúne hechos, fuentes,
+módulos, conexiones, preguntas, estados y correcciones. Editar estas fuentes y
+regenerar; no editar directamente las cuatro páginas nuevas ni `assets/data.js`.
+
+## Desarrollo
+
+Requiere Node.js 22+, npm, Git, zip y unzip. GitHub Pages sirve HTML estático;
+no necesita ejecutar Node ni instalar dependencias en producción.
+
+```sh
+npm ci
+npm run build
+npm run package
+npm test
+npx playwright install chromium
+npm run test:browser
+npm run preview
 ```
-index.html        portada, colección, recorrido, cuenta regresiva
-ficha.html        PLANTILLA — no se publica como pieza, se duplica
-ficha-01…12.html  una ficha por pieza (una por estudiante)
-img/              fotografías de las piezas: pieza-01.jpg … pieza-12.jpg
-CNAME             dominio propio (GitHub Pages)
-```
 
-## El sistema de diseño · «la sección»
+Con la vista local en marcha, `npm run export:infographic` genera el PNG
+descargable directamente desde la misma infografía HTML. Después, volver a
+ejecutar `npm run package` para que la copia incluya la última imagen.
 
-La página es un corte de obra. Arriba de la línea de suelo está lo que se puede
-visitar; abajo, la excavación. El tiempo se dice en profundidad: la colección
-está a −2.40, y las cotas de cada sección (−0.40, −0.80, −1.20…) marcan cuánto
-has bajado. Las dos últimas secciones vuelven a ± 0.00 porque hablan de lo que
-sí está a la vista.
+La vista local está en http://127.0.0.1:4177. `PORT` permite cambiar el puerto.
+`build` copia las fuentes tipográficas y sus licencias para no depender de Google
+Fonts. Los medios originales se sirven localmente. El contenido se lee sin
+JavaScript; la búsqueda, los filtros, el diálogo y el atlas son mejoras progresivas.
+La copia descargable se puede leer con archivos HTML sin conexión; un servidor
+estático local habilita los módulos JavaScript y las interacciones.
 
-```
---papel   #E4E6E1   bond de diazo, gris verdoso frío
---papel-c #EDEEEA   el papel un paso más claro
---tinta   #1B2430   azul de plano
---tinta-t #2C3540   texto corrido
---grafito #5A6470   cotas y anotación
---tierra  #CDD0C9   la masa excavada (solo en la colección)
---linea   #B4B9B1   reglas finas
---laton   #7F6137   latón pulido: lo que está a ± 0.00      · 4.55:1 sobre papel
---oliva   #5E6330   el mismo latón, oxidado: bajo la línea   · 5.06:1 sobre papel
-```
+`scripts/migrate.mjs` documenta la migración inicial desde el commit original.
+**No es un comando habitual de desarrollo**: reconstruye las fichas y el relato
+desde aquella versión y sobrescribiría ediciones posteriores. Para una nueva
+corrección, actualizar el registro, su página de origen y el historial con fuente.
 
-Dentro de `.excavado` el fondo es tierra, más oscura que el papel, así que dos
-tokens llevan ahí su propio valor: `--grafito #505964` (4.56:1) y
-`--oliva #575C2D` (4.53:1). Con los valores del papel se quedaban en 3.86 y
-4.08:1, por debajo del mínimo. Si añades una banda con fondo propio, mídela.
+## Diseño y confianza
 
-## Jerarquía tipográfica
+Se conserva el lenguaje de sección arquitectónica: papel gris verdoso, tinta,
+reglas, latón y oliva. Las cuatro familias de conexiones usan latón (memoria),
+verde azulado (representación), rojo apagado (poder) y oliva (tiempo). El color
+siempre tiene un rótulo; nunca es la única forma de identificar una relación.
+Instrument Serif titula, Spectral acompaña la lectura y Archivo Narrow rotula.
+Los diagramas conceptuales no se presentan como mediciones del lugar construido.
 
-Tres niveles de encabezado, tres papeles, y ninguno comparte tamaño con otro:
+El trimestre tiene ocho módulos. Las duraciones individuales no están documentadas.
+Pepper es reflexión óptica; Leia es un holograma de ficción, no el primero de la
+historia. Los mundos de 2046 son especulaciones estudiantiles. Las conexiones del
+atlas no prueban causalidad histórica. La referencia a MoMA es de esta ampliación.
 
-```
-h1   120px  Instrument Serif   la portada, una vez
-h2    64px  Instrument Serif   cabecera de sección
-h3    30px  Instrument Serif   subtítulo bajo un h2
-      26px                     módulo del recorrido (son ocho, 30 pesaría)
-      21px                     título de fila en la colección
-h4    15px  Archivo Narrow     rótulo del pie
-```
+Las dos láminas de IA anteriores se conservan en `medios/` como borradores
+identificados, con sus limitaciones. La infografía web corregida es la versión
+de consulta. Las preguntas del archivo tienen respuestas editoriales con fuentes,
+no un modelo generativo encubierto. No se envían preguntas ni registros a un
+proveedor de IA; no hay analítica añadida ni credenciales en el cliente.
 
-El `h4` es lo único que no va en el serif, y es a propósito: es un rótulo, no
-un encabezado de lectura. Antes `.tarjeta h3` medía también 15px en Archivo
-Narrow, o sea que h3 y h4 eran indistinguibles.
+## Límites y trabajo humano
 
-**Los dos metales.** El latón enterrado se oxida, así que el acento dice de qué
-lado de la línea de suelo está la cosa de la que habla:
-
-| | dónde | qué lleva |
-|---|---|---|
-| Latón `#8A6A3C` | a ± 0.00 | la cota de la línea de suelo, la placa de la visita, la marca de la barra |
-| Oliva `#5E6330` | bajo la línea | todas las cotas negativas, la trama de la excavación, el recorrido, el hilo, el mapa, y las trece fichas completas |
-
-El oliva oficial de la cohorte (`#A8AD5F`) da **1.90:1 sobre papel**: es
-invisible. Oscurecido conserva el tono (65.9° contra 63.8°) y sube a 5.06:1,
-que ya pasa AA para texto. Es el mismo verde, con pátina.
-
-Las fichas van enteras en oliva porque su pieza está a −2.40. No tienen placa.
-
-Instrument Serif para los títulos · Spectral para leer · Archivo Narrow solo
-para cotas y anotación.
-
-La cuenta lleva los cinco valores al mismo tamaño, segundos incluidos, también
-en el móvil. En una espera de 7.671 días el segundero es lo único que el ojo ve
-moverse: demotarlo era ir contra el propio concepto. `tabular-nums` evita que
-la cifra salte al cambiar, y el `role="timer" aria-live="off"` impide que un
-lector de pantalla lo anuncie cada segundo.
-
-**Cuatro reglas que no se rompen.** Si alguien vuelve a editar esto, son lo
-primero que hay que respetar, porque romperlas es exactamente lo que hacía que
-el sitio anterior pareciera hecho por una máquina:
-
-1. **Cero degradados.** La profundidad se hace con línea y con trama, no con
-   resplandores. Antes había trece.
-2. **Cero monoespaciada.** Las cotas van en Archivo Narrow, que es estrecha, no
-   mono. Antes el 69 % de la tipografía era monoespaciada.
-3. **Cero mayúsculas con tracking abierto.** Ni en rótulos, ni en botones, ni en
-   la navegación.
-4. **Los dos metales no se mezclan sin motivo.** Latón para lo que está a
-   ± 0.00, oliva para lo que está debajo. Ninguno de los dos es «el color de
-   acento»: son el mismo material antes y después de veintiún años bajo tierra.
-   Si añades un acento y no sabes a qué cota pertenece, no lo añadas.
-
-La trama a 45° aparece únicamente en la sección de la colección, porque es la
-única que está literalmente bajo tierra. En cualquier otro sitio es decoración.
-
-## Proyección
-
-El sitio se ve en proyector y en los portátiles de la clase, sin modo aparte.
-Por encima de 1600 px la raíz crece (`clamp(1rem,.83vw + .17rem,1.5rem)`) y con
-ella todo el diseño, incluidas las cotas pequeñas. Está en `rem`, no en `px`,
-para escalar la preferencia de tamaño del lector en vez de pisarla. Hasta
-1600 px el sitio no cambia.
-
-## Cómo llenar una ficha
-
-1. Abre `ficha-NN.html` (el número ya está puesto).
-2. Reemplaza **todo lo marcado con ▢**. No muevas la estructura.
-3. Pon la foto en `img/pieza-NN.jpg` y descomenta la línea del `<img>`.
-4. Guarda, haz commit y sube. El sitio se actualiza solo en un par de minutos.
-
-## Estado
-
-Las doce fichas están publicadas, una por persona, con las 50 piezas y sus 50
-fotografías. Los datos salen del deck de Canva «Cápsula del tiempo»: 34 fichas
-con el texto exacto de la capa del PDF y 16 leídas con reconocimiento de texto
-en el dispositivo y validadas contra las anteriores (96,5 % de campos idénticos).
-
-**Fuera del sitio, a propósito:** los doce correos personales, las direcciones
-de los datos del propietario y el valor en dólares de cada pieza. El sitio
-publica las coordenadas exactas del entierro y `robots.txt` invita a los
-rastreadores de IA, así que esos tres campos no salen. Los nombres sí: son la
-autoría.
-
-## Pendiente
-
-- [ ] La placa de latón de la cara frontal de la pared no está puesta. En el
-      dibujo de portada va en línea discontinua justo por eso; cuando se ponga,
-      quitarle el `stroke-dasharray`.
-- [ ] `ficha.html` es la plantilla original de investigación y sigue con sus 43
-      ▢. No se usa: las doce fichas se generan por script. Está en `noindex` y
-      bloqueada en `robots.txt`.
-- [ ] Dos piezas de staff de Isthmus entraron sobre la hora y no tienen ficha de
-      registro. Quedan fuera del sitio a propósito.
-
-## Publicar una ficha
-
-Al llenar `ficha-NN.html` hay que tocar cinco sitios. Si falta uno, la ficha
-queda invisible o queda a medias:
-
-1. `ficha-NN.html`: reemplazar los ▢ y quitar la línea
-   `<meta name="robots" content="noindex, follow">`.
-2. `img/pieza-NN.jpg`: poner la foto y descomentar el `<img>` de la ficha.
-3. `index.html`, en `PIEZAS`: el título, el autor, la ruta de la foto en `img`,
-   y el color `c` de la pieza tomado de su propia fotografía.
-4. `robots.txt`: quitar las dos líneas `Disallow` cuando ya estén las doce.
-5. `sitemap.xml`: añadir la URL de la ficha.
-
-## Fechas
-
-Las dos fechas viven en una sola línea cada una, al principio del `<script>`
-de `index.html`. El sitio cambia de estado solo:
-
-| Estado | Cuándo | Qué dice |
-|---|---|---|
-| Sin sellar | antes del entierro | punto blanco, «Sin sellar» |
-| Cerrada | desde el entierro | punto oliva, «Sellada hace N días» |
-| Abierta | 05.09.2047, 07:56 | «La colección puede abrirse» |
-
-- `ENTIERRO` = 4 de septiembre de 2026
-- `APERTURA` = 5 de septiembre de 2047, 07:56 (UTC-5)
-- La espera completa son 7.671 días. Un día mueve la barra 0,013 %, así que la
-  cifra que de verdad se mueve es la de los días transcurridos, no la barra.
+- Los correos personales, domicilios, valoraciones y contenidos reservados no se publican.
+- No reconstruir el texto cubierto de las cartas ni crear recuerdos como si fueran pruebas.
+- La placa seguía pendiente en el último registro; no se inventa una inspección posterior.
+- Falta un inventario público por caja y la identificación consentida de los bonus.
+- Falta confirmar cuáles fueron los dos prototipos finales de 2046.
+- La sucesión de custodia, permisos, consentimiento de apertura y cambios de edificio
+  necesitan responsables humanos. La plantilla JSON no equivale a un acta.
+- Cualquier futura IA generativa requiere backend seguro, corpus público revisado,
+  citas verificables, límites de coste, consentimiento y evaluación de respuestas.
+  Cualquier reconstrucción debe separar indicio e inferencia.
 
 ## Publicación
 
-GitHub Pages desde la rama `main`, raíz del repositorio. El archivo `CNAME`
-apunta a `mufu.today`; los registros DNS viven en Namecheap.
+GitHub Pages desde `main`, raíz del repositorio. `CNAME` conserva `mufu.today`.
+Antes de publicar: generar, empaquetar, ejecutar las pruebas, revisar el diff y
+guardar una nueva versión del manifiesto. La rama de implementación es
+`codex/mufu-connected-archive`; no cambiar DNS ni proveedores para esta ampliación.

@@ -1,31 +1,10 @@
-# MUFU · Museo del Futuro — mufu.today
-
+# MUFU · Museo del Futuro
+# El mismo alcance para todos los rastreadores, incluidos los de IA.
 User-agent: *
 Allow: /
-
-# ficha.html es la plantilla vacía, no una pieza del museo.
 Disallow: /ficha.html
-
-# Rastreadores de IA: bienvenidos, el proyecto quiere ser citado.
-User-agent: GPTBot
-Allow: /
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: ChatGPT-User
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: Claude-Web
-Allow: /
-User-agent: anthropic-ai
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Google-Extended
-Allow: /
-User-agent: Applebot-Extended
-Allow: /
-User-agent: CCBot
-Allow: /
+Disallow: /archive/mufu-2026-original.zip
+Disallow: /scripts/
+Disallow: /tests/
 
 Sitemap: https://mufu.today/sitemap.xml

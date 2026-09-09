@@ -1,0 +1,13 @@
+{
+  "kind": "blank-template",
+  "date": null,
+  "responsible": null,
+  "wallCondition": null,
+  "plateInstalled": null,
+  "platePhoto": null,
+  "domainReviewed": null,
+  "offlineCopiesVerified": [],
+  "evidence": [],
+  "notes": null,
+  "physicalOpeningConfirmed": false
+}

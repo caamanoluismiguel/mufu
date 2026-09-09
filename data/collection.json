@@ -1,0 +1,1933 @@
+{
+  "facts": {
+    "revision": "2026-09-09",
+    "weeks": 10,
+    "modules": 8,
+    "students": 12,
+    "registered": 51,
+    "bonus": 2,
+    "total": 53,
+    "boxes": 2,
+    "appearances": 12,
+    "closureDate": "2026-09-04",
+    "opening": "2047-09-05T07:56:00-05:00",
+    "location": "Edificio 106, Ciudad del Saber, Panamá; bajo la escalera de la fachada posterior",
+    "coordinates": {
+      "latitude": 8.999423,
+      "longitude": -79.582829
+    },
+    "originalCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+    "countSource": "Confirmación de Luis Miguel Caamaño en la conversación de actualización del 9 de septiembre de 2026: 51 objetos declarados y dos añadidos sin registro como bonus.",
+    "physicalOpeningConfirmed": false
+  },
+  "people": [
+    {
+      "id": "MUFU-P01",
+      "name": "Adriana Solís",
+      "url": "ficha-01.html"
+    },
+    {
+      "id": "MUFU-P02",
+      "name": "Karla Torres",
+      "url": "ficha-02.html"
+    },
+    {
+      "id": "MUFU-P03",
+      "name": "Martha Pretto",
+      "url": "ficha-03.html"
+    },
+    {
+      "id": "MUFU-P04",
+      "name": "Raquel Cohen",
+      "url": "ficha-04.html"
+    },
+    {
+      "id": "MUFU-P05",
+      "name": "Alana Holstein",
+      "url": "ficha-05.html"
+    },
+    {
+      "id": "MUFU-P06",
+      "name": "Alberto Zebede",
+      "url": "ficha-06.html"
+    },
+    {
+      "id": "MUFU-P07",
+      "name": "Amanda Brostella",
+      "url": "ficha-07.html"
+    },
+    {
+      "id": "MUFU-P08",
+      "name": "Frida Antebi",
+      "url": "ficha-08.html"
+    },
+    {
+      "id": "MUFU-P09",
+      "name": "Frida Menaged",
+      "url": "ficha-09.html"
+    },
+    {
+      "id": "MUFU-P10",
+      "name": "Moises Mizrachi",
+      "url": "ficha-10.html"
+    },
+    {
+      "id": "MUFU-P11",
+      "name": "Roberto Torres",
+      "url": "ficha-11.html"
+    },
+    {
+      "id": "MUFU-P12",
+      "name": "Tamara Cos",
+      "url": "ficha-12.html"
+    }
+  ],
+  "records": [
+    {
+      "id": "MUFU-001",
+      "personId": "MUFU-P01",
+      "person": "Adriana Solís",
+      "title": "Carta",
+      "description": "Carta dirigida para mi yo futuro del 5 de septiembre de 2025",
+      "fields": {
+        "Origen": "Ciudad de Panamá , Panamá . 31 de agosto de 2026",
+        "Medidas": "Largo: 15.50cm. Alto: 22.0cm. Profundidad: 0.1mm",
+        "Material": "Hoja de papel",
+        "Filiación": "Carta hecha para mi yo futuro",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/adriana-solis-01.jpg",
+        "alt": "Carta, fotografiado antes de emparedarlo.",
+        "width": 628,
+        "height": 837,
+        "caption": "Hoja de papel"
+      },
+      "source": "ficha-01.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-002",
+      "personId": "MUFU-P01",
+      "person": "Adriana Solís",
+      "title": "Moneda",
+      "description": "Moneda un Balboa de la jmj 2019. Un lado tiene la imagen de la iglesia de San jose en su parte dorada y en la parte plateada el nombre de la jmj. Del otro lado de la moneda está el escudo de Panamá en su parte dorada y en su parte plateada tenemos la descripción de medio balboa",
+      "fields": {
+        "Origen": "Ciudad de Panamá , Panamá . 31 de agosto de 2026",
+        "Medidas": "Diámetro: 2.30 cm, profundidad: 1 mm",
+        "Material": "Metal",
+        "Filiación": "Moneda significativa de la época",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/adriana-solis-02.jpg",
+        "alt": "Moneda, fotografiado antes de emparedarlo.",
+        "width": 551,
+        "height": 308,
+        "caption": "Metal"
+      },
+      "source": "ficha-01.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-003",
+      "personId": "MUFU-P01",
+      "person": "Adriana Solís",
+      "title": "Cola",
+      "description": "Cola tejida usando la técnica de crochet sobre una liga de tela de plástico",
+      "fields": {
+        "Origen": "Ciudad de Panamá , Panamá . 31 de agosto de 2026",
+        "Medidas": "Diámetro: 14 cm Profundidad: 5 cm",
+        "Material": "Hilo de poliéster",
+        "Filiación": "Primera cola tejida hecha por mi",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/adriana-solis-03.jpg",
+        "alt": "Cola, fotografiado antes de emparedarlo.",
+        "width": 717,
+        "height": 956,
+        "caption": "Hilo de poliéster"
+      },
+      "source": "ficha-01.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-004",
+      "personId": "MUFU-P01",
+      "person": "Adriana Solís",
+      "title": "Pulsera",
+      "description": "Pulsera hecha de bisutería con un mensaje que dice el mismo aire",
+      "fields": {
+        "Origen": "Ciudad de Panamá , Panamá . 31 de agosto de 2026",
+        "Medidas": "Diámetro: 6.00 cm Profundidad: 3.00 mm",
+        "Material": "Plástico",
+        "Filiación": "Regalo de mi hermana",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/adriana-solis-04.jpg",
+        "alt": "Pulsera, fotografiado antes de emparedarlo.",
+        "width": 807,
+        "height": 1076,
+        "caption": "Plástico"
+      },
+      "source": "ficha-01.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-005",
+      "personId": "MUFU-P02",
+      "person": "Karla Torres",
+      "title": "Iluminador Yv cosmetics",
+      "description": "Objeto de plastico con calcomania vinyl, polvo compacto con pigmentos de tonos dorados y rosados",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. 2017",
+        "Medidas": "Diametro 8cm. Alto 2 cm",
+        "Material": "Plastico",
+        "Filiación": "Objeto con valor sentimental, presentación original de producto del emprendimiento de una amiga cercana, lo formulamos y prensamos a mano en su momento",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/karla-torres-01.jpg",
+        "alt": "Iluminador Yv cosmetics, fotografiado antes de emparedarlo.",
+        "width": 858,
+        "height": 865,
+        "caption": "Plastico"
+      },
+      "source": "ficha-02.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-006",
+      "personId": "MUFU-P02",
+      "person": "Karla Torres",
+      "title": "Boleto del Biomuseo",
+      "description": "Boleto de cartoncillo con impresiones a color",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. 2025",
+        "Medidas": "5cmx14cm",
+        "Material": "Plastico",
+        "Filiación": "Boleto de visita al museo junto con amigo cercano y sus amigos extranjeros. Primera visita despues de trabajar en Gehry Partners",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/karla-torres-02.jpg",
+        "alt": "Boleto del Biomuseo, fotografiado antes de emparedarlo.",
+        "width": 858,
+        "height": 867,
+        "caption": "Plastico"
+      },
+      "source": "ficha-02.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-007",
+      "personId": "MUFU-P02",
+      "person": "Karla Torres",
+      "title": "Carta de Ito",
+      "description": "Carta escrita a mano por mi abuelo",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. 2026",
+        "Medidas": "21cmx28cm",
+        "Material": "Papel libre de acido originado de bitacora personal. Escrito con plumilla 1.8mm",
+        "Filiación": "Nota",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/karla-torres-03.jpg",
+        "alt": "Carta de Ito, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 708,
+        "caption": "Papel libre de acido originado de bitacora personal. Escrito con plumilla 1.8mm"
+      },
+      "source": "ficha-02.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-008",
+      "personId": "MUFU-P02",
+      "person": "Karla Torres",
+      "title": "Carta a mi misma",
+      "description": "Carta escrita en word. Empieza «Querida Karla de 2046,» y el resto del texto lo cubrió ella antes de registrarla: la carta se puede ver, pero no leer.",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. 2026",
+        "Medidas": "8.5x11",
+        "Material": "Papel Bond",
+        "Filiación": "Nota",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/karla-torres-04.jpg",
+        "alt": "Carta a mi misma, con el texto cubierto por su autora: solo se lee el encabezado.",
+        "width": 1200,
+        "height": 718,
+        "caption": "Papel Bond"
+      },
+      "source": "ficha-02.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-009",
+      "personId": "MUFU-P03",
+      "person": "Martha Pretto",
+      "title": "Carta a Martha Pretto 2047",
+      "description": "Carta escrita sobre papel reciclado. Carta a Martha Pretto en 21 años. Con el proposito de abrir conversación y reflexión al pasado",
+      "fields": {
+        "Origen": "Escrita el lumes 31 de agosto del 2026 en el salón 208 de la escuela Isthmus en Ciudad del Saber, Panamá",
+        "Medidas": "Largo: 48.7 cm. Alto: 31 cm",
+        "Material": "Papel reciclado",
+        "Filiación": "Objeto de alto valor sentimental creado por la dueña para si misma en el futuro",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/martha-pretto-01.jpg",
+        "alt": "Carta a Martha Pretto 2047, fotografiado antes de emparedarlo.",
+        "width": 543,
+        "height": 724,
+        "caption": "Papel reciclado"
+      },
+      "source": "ficha-03.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-010",
+      "personId": "MUFU-P03",
+      "person": "Martha Pretto",
+      "title": "Puppet para animación en stop motion",
+      "description": "Puppet diseñado para stop motion, inspirado en el Antiguo Egipto. Conforma un relato inventado de una deidad del caos",
+      "fields": {
+        "Origen": "Obtenido en Colombia en 2025",
+        "Medidas": "Largo: 11.5cm. Alto: 26.5cm. Profundidad: 4 cm",
+        "Material": "Telas varias",
+        "Filiación": "Objeto de alto valor sentimental creado por la dueña por una clase de la universidad",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/martha-pretto-02.jpg",
+        "alt": "Puppet para animación en stop motion, fotografiado antes de emparedarlo.",
+        "width": 898,
+        "height": 1122,
+        "caption": "Telas varias"
+      },
+      "source": "ficha-03.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-011",
+      "personId": "MUFU-P03",
+      "person": "Martha Pretto",
+      "title": "Collar de Obsidiana",
+      "description": "Pendiente artesanal de obsidiana sostenido por alambre dorado, colgado en cordón negro con cierres de alambre plateado",
+      "fields": {
+        "Origen": "Obtenido en Colombia en 2025",
+        "Medidas": "Colgante Largo: 2 cm. Alto: 3.2 cm. Profundidad : 0.2cm",
+        "Material": "Obsidiana",
+        "Filiación": "Objeto con valor sentimental y espiritual. Fué un regalo",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/martha-pretto-03.jpg",
+        "alt": "Collar de Obsidiana, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 705,
+        "caption": "Obsidiana"
+      },
+      "source": "ficha-03.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-012",
+      "personId": "MUFU-P03",
+      "person": "Martha Pretto",
+      "title": "Marcapáginas",
+      "description": "Marcapáginas de la librería “El Lector” . Diseño moderno, fondo rosa, texto rojo, sucursales, contacto y marca en blanco",
+      "fields": {
+        "Origen": "Obtenido en la Feria del Libro Panamá el viernes 28 de agosto del 2026",
+        "Medidas": "Largo: 6 cm. Alto: 20.3 cm",
+        "Material": "Cartulina satinada",
+        "Filiación": "Objeto con valor sentimental. Marca la retoma de un pasatiempo",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/martha-pretto-04.jpg",
+        "alt": "Marcapáginas, fotografiado antes de emparedarlo.",
+        "width": 900,
+        "height": 1200,
+        "caption": "Cartulina satinada"
+      },
+      "source": "ficha-03.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-013",
+      "personId": "MUFU-P04",
+      "person": "Raquel Cohen",
+      "title": "Carta para mi yo del futuro",
+      "description": "Carta personal escrita por Raquel Cohen y dirigida a su “yo” del futuro, para ser leída dentro de 20 años. En ella expresa sus expectativas sobre su familia, sus futuros hijos, su hogar y su desarrollo profesional como arquitecta de interiores. La carta se encuentra guardada dentro de un sobre de color rosado",
+      "fields": {
+        "Origen": "Panamá, Ciudad de Panamá. Año: 2026",
+        "Medidas": "13 cm de largo x 10 cm de alto x 1mm de profundo",
+        "Material": "Papel y sobre de papel color rosado",
+        "Filiación": "Objeto de carácter íntimo y sentimental creado por Raquel Cohen como testimonio de sus sueños, expectativas y visión de vida en 2026",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/raquel-cohen-01.jpg",
+        "alt": "Carta para mi yo del futuro, fotografiado antes de emparedarlo.",
+        "width": 724,
+        "height": 543,
+        "caption": "Papel y sobre de papel color rosado"
+      },
+      "source": "ficha-04.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-014",
+      "personId": "MUFU-P04",
+      "person": "Raquel Cohen",
+      "title": "Tarjeta de crédito Visa Infinite ConnectMiles",
+      "description": "Tarjeta de crédito de color negro emitida por St. Georges Bank, asociada al programa de viajero frecuente ConnectMiles de Copa Airlines y a la categoría Visa Infinite. Cuenta con chip y tecnología de pago sin contacto",
+      "fields": {
+        "Origen": "Panamá, República de Panamá Agosto 2025",
+        "Medidas": "8.6 cm de largo × 5.4 cm de alto x 1mm de profundidad",
+        "Material": "Tarjeta plástica con chip metálico integrado",
+        "Filiación": "Objeto de uso cotidiano que representa independencia financiera y forma parte de mis actividades personales, compras y viajes",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/raquel-cohen-02.jpg",
+        "alt": "Tarjeta de crédito Visa Infinite ConnectMiles, fotografiado antes de emparedarlo.",
+        "width": 692,
+        "height": 353,
+        "caption": "Tarjeta plástica con chip metálico integrado"
+      },
+      "source": "ficha-04.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-015",
+      "personId": "MUFU-P04",
+      "person": "Raquel Cohen",
+      "title": "Collar con dije de Hamsa azul",
+      "description": "Collar de cadena fina plateada con un dije en forma de Hamsa (mano), de color azul con reflejos verdes. La Hamsa es un símbolo tradicional utilizado como amuleto de protección",
+      "fields": {
+        "Origen": "Mahane Yehuda Shuk, Jerusalem Israel. Año de adquisición: 2018",
+        "Medidas": "Cadena 40cm de largo. Dije 1 cm de largo x 1.5 cm de alto x 3mm de profundo",
+        "Material": "Cadena metálica plateada y dije decorativo con acabado iridiscente tipo ópalo",
+        "Filiación": "Recuerdo de un viaje a Israel y objeto asociado a la protección y a los recuerdos de esa experiencia",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/raquel-cohen-03.jpg",
+        "alt": "Collar con dije de Hamsa azul, fotografiado antes de emparedarlo.",
+        "width": 512,
+        "height": 768,
+        "caption": "Cadena metálica plateada y dije decorativo con acabado iridiscente tipo ópalo"
+      },
+      "source": "ficha-04.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-016",
+      "personId": "MUFU-P04",
+      "person": "Raquel Cohen",
+      "title": "Baraja de cartas Hello Kitty",
+      "description": "Juego de cartas inspirado en el personaje Hello Kitty. La baraja presenta ilustraciones coloridas de Hello Kitty en las diferentes cartas y se conserva en su caja original decorada en tonos amarillo, rosado y azul",
+      "fields": {
+        "Origen": "Tienda Sanrio (Hello Kitty), Multiplaza Pacific, Ciudad de Panamá. Año aproximado de adquisición: 2006",
+        "Medidas": "9 cm de alto × 6 cm de ancho x 1.5 cm de profundo",
+        "Material": "Cartón impreso y plastificado",
+        "Filiación": "Objeto de infancia con valor sentimental, asociado al juego, entretenimiento y recuerdos de esa etapa de mi vida",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/raquel-cohen-04.jpg",
+        "alt": "Baraja de cartas Hello Kitty, fotografiado antes de emparedarlo.",
+        "width": 724,
+        "height": 543,
+        "caption": "Cartón impreso y plastificado"
+      },
+      "source": "ficha-04.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-017",
+      "personId": "MUFU-P05",
+      "person": "Alana Holstein",
+      "title": "Lady Gaga Mayhem Target Limited Edition Exclusive CD Album Brand New Sealed NOS",
+      "description": "Disco compacto (CD) delálbum Mayhem de Lady Gaga, presentado en una caja plástica transparente.La portada presenta una fotografía en blanco y negro y etiquetas en tonos rojo y naranja. Se encuentra nuevo y conserva su envoltura plástica original sellada",
+      "fields": {
+        "Origen": "Chicago, Illinois, Estados Unidos de America. Año: 7 de marzo de 2025",
+        "Medidas": "Largo: 14.4 cm. Alto:12.6 cm. Profundidad: 1.2 cm",
+        "Material": "Plástico poliestireno (PS)",
+        "Filiación": "Objeto con",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alana-holstein-01.jpg",
+        "alt": "Lady Gaga Mayhem Target Limited Edition Exclusive CD Album Brand New Sealed NOS, fotografiado antes de emparedarlo.",
+        "width": 547,
+        "height": 854,
+        "caption": "Plástico poliestireno (PS)"
+      },
+      "source": "ficha-05.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-018",
+      "personId": "MUFU-P05",
+      "person": "Alana Holstein",
+      "title": "Pen+Gear Mixed Media Sketch Book, 8.5 in x 11 in, 80 Sheets, White, Acid-Free, Perforated",
+      "description": "Cuaderno de dibujo de formato rectangular, con tapas duras recubiertas de tela color gris oscuro. Presenta desgaste considerable en los bordes, esquinas y lomo, con pérdida parcial del material de recubrimiento",
+      "fields": {
+        "Origen": "St, Louis, Missouri, Estados Unidos de America. Año: 27 de Diciembre 2021",
+        "Medidas": "Largo: 22.0 cm. Alto: 28.5 cm. Profundidad: 2.0 cm",
+        "Material": "Papel y cartón",
+        "Filiación": "Objeto con",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alana-holstein-02.jpg",
+        "alt": "Pen+Gear Mixed Media Sketch Book, 8.5 in x 11 in, 80 Sheets, White, Acid-Free, Perforated, fotografiado antes de emparedarlo.",
+        "width": 612,
+        "height": 867,
+        "caption": "Papel y cartón"
+      },
+      "source": "ficha-05.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-019",
+      "personId": "MUFU-P05",
+      "person": "Alana Holstein",
+      "title": "Manuscrito impreso de obra literaria",
+      "description": "Manuscrito compuesto por hojas de papel blanco con texto impreso en tinta negra. Las páginas se encuentran perforadas y unidas mediante hilos metálicos. Presenta una disposición sencilla, sin cubierta exterior",
+      "fields": {
+        "Origen": "Ciudad de Saber, Panamá, Ciudad de Panamá. Año: 25 de agosto de 2026",
+        "Medidas": "Largo: 21.59 cm. Alto: 27.94 cm. Profundidad: 1.0 cm",
+        "Material": "Papel",
+        "Filiación": "Objeto con",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alana-holstein-03.jpg",
+        "alt": "Manuscrito impreso de obra literaria, fotografiado antes de emparedarlo.",
+        "width": 858,
+        "height": 867,
+        "caption": "Papel"
+      },
+      "source": "ficha-05.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-020",
+      "personId": "MUFU-P05",
+      "person": "Alana Holstein",
+      "title": "Colecciones de Cartas para abrir en 21 años",
+      "description": "Cartas escrita para Alana, de parte de ella misma y su familia immediata",
+      "fields": {
+        "Origen": "Panamá, Ciudad de Panamá. Año: 2026",
+        "Medidas": "Largo: 21.59 cm. Alto: 27.94 cm. Profundidad: 0.1 cm",
+        "Material": "Papel",
+        "Filiación": "Objeto con",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alana-holstein-04.jpg",
+        "alt": "Colecciones de Cartas para abrir en 21 años, fotografiado antes de emparedarlo.",
+        "width": 612,
+        "height": 867,
+        "caption": "Papel"
+      },
+      "source": "ficha-05.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-021",
+      "personId": "MUFU-P06",
+      "person": "Alberto Zebede",
+      "title": "Portaminas Staedtler de dibujo técnico",
+      "description": "Portaminas Staedtler de cuerpo negro, detalles metálicos, clipy empuñadura texturizada. Instrumento utilizado para bocetos, dibujo técnico y proyectos universitarios",
+      "fields": {
+        "Origen": "La Rocha, Ciudad de Panamá, Panamá. Adquirido a finales de 2024",
+        "Medidas": "Largo: 14.5 cm aprox. Diámetro: 0.9 cm aprox",
+        "Material": "Metal y plástico",
+        "Filiación": "Primer portaminas que adquirí al cambiarme a Diseño Industrial. Me acompañó en proyectos, dibujos y trabajos universitarios, y todavía lo utilizo",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alberto-zebede-01.jpg",
+        "alt": "Portaminas Staedtler de dibujo técnico, fotografiado antes de emparedarlo.",
+        "width": 859,
+        "height": 868,
+        "caption": "Metal y plástico"
+      },
+      "source": "ficha-06.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-022",
+      "personId": "MUFU-P06",
+      "person": "Alberto Zebede",
+      "title": "Carta para Alberto dentro de 21 años",
+      "description": "Carta manuscrita dirigida a mi yo futuro. Registra mi manera de pensar actual, mis valores, aspiraciones y las cualidades que deseo mantener y desarrollar",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. Escrita el 31 de agosto de 2026",
+        "Medidas": "Largo: 21.59 cm. Alto: 27.94 cm. Profundidad: 0.1mm",
+        "Material": "Papely tinta",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alberto-zebede-02.jpg",
+        "alt": "Carta para Alberto dentro de 21 años, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 726,
+        "caption": "Papely tinta"
+      },
+      "source": "ficha-06.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-023",
+      "personId": "MUFU-P06",
+      "person": "Alberto Zebede",
+      "title": "Kipá escolar",
+      "description": "Kipá negra de tela, sin marca visible, utilizada durante mi último año de escuela como parte de mi vida cotidiana y práctica religiosa",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. Año de adquisición no determinado",
+        "Medidas": "Diámetro: 20.5 cm aprox. Altura: 6 cm aprox",
+        "Material": "Tela sintética",
+        "Filiación": "Representa mi identidad judía, la tradición y una etapa importante de mi vida escolar",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alberto-zebede-03.jpg",
+        "alt": "Kipá escolar, fotografiado antes de emparedarlo.",
+        "width": 859,
+        "height": 868,
+        "caption": "Tela sintética"
+      },
+      "source": "ficha-06.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-024",
+      "personId": "MUFU-P06",
+      "person": "Alberto Zebede",
+      "title": "iPhone 12 azul",
+      "description": "Teléfono inteligente Apple iPhone 12 de color azul. Se conserva funcional, aunque tiene un fragmento del cable de carga dentro del puerto y debe cargarse de forma inalámbrica",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. Adquirido de segunda mano en febrero de 2023",
+        "Medidas": "Largo:7.15 cm. Alto: 14.67 cm. Profundidad: 0.74 cm",
+        "Material": "Vidrio yaluminio",
+        "Filiación": "Me acompañó durante el inicio de mi vida laboral y universitaria, una etapa importante de crecimiento y transición",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/alberto-zebede-04.jpg",
+        "alt": "iPhone 12 azul, fotografiado antes de emparedarlo.",
+        "width": 859,
+        "height": 868,
+        "caption": "Vidrio yaluminio"
+      },
+      "source": "ficha-06.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-025",
+      "personId": "MUFU-P07",
+      "person": "Amanda Brostella",
+      "title": "Collar con dije de bala",
+      "description": "Collar compuesto por un cordón negro y un dije metálico en forma de cartucho de bala. El dije presenta un cuerpo de tono dorado, con señales visibles de desgaste, oxidación y pátina superficial, y una punta de tonalidad más oscura",
+      "fields": {
+        "Origen": "Panamá, Panamá. Año: 2002",
+        "Medidas": "Alto: 3.24 cm. Ancho máximo: 1.21 cm. Profundidad: 1.21 cm",
+        "Material": "Metal, aparentemente latón, con punta metálica de tonalidad oscura. Cordón textil negro",
+        "Filiación": "Objeto de",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/amanda-brostella-01.jpg",
+        "alt": "Collar con dije de bala, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 728,
+        "caption": "Metal, aparentemente latón, con punta metálica de tonalidad oscura. Cordón textil negro"
+      },
+      "source": "ficha-07.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-026",
+      "personId": "MUFU-P07",
+      "person": "Amanda Brostella",
+      "title": "Pin decorativo para Crocs \"Bud Light\"",
+      "description": "Accesorio decorativo de pequeño formato diseñado para insertarse en los orificios de calzado tipo Crocs. Presenta forma rectangular alargada, borde negro y una composición en tonos azul oscuro y celeste. En el frente incorpora en relieve la inscripción blanca \"BUD LIGHT\", \", acompañada por un elemento gráfico en el extremo derecho. Posee un botón circular negro en la parte posterior que permite fijarlo al calzado",
+      "fields": {
+        "Origen": "Panamá, Panamá. Año: 2023",
+        "Medidas": "3.5 cm de largo ×1.2 cm de alto × 0.8-1 cm de profundidad",
+        "Material": "PVC flexible / caucho sintético moldeado",
+        "Filiación": "Pieza obsequiada por antiguos amigos, adquirida previamente en una tienda de segunda mano. Su",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/amanda-brostella-02.jpg",
+        "alt": "Pin decorativo para Crocs \"Bud Light\", fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 728,
+        "caption": "PVC flexible / caucho sintético moldeado"
+      },
+      "source": "ficha-07.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-027",
+      "personId": "MUFU-P07",
+      "person": "Amanda Brostella",
+      "title": "Carta escrita a mano dirigida a Amanda Brostella dentro de 21 años",
+      "description": "Carta manuscrita de carácter personal, elaborada sobre papel de tono marfil y plegada en varias secciones. El documento está dirigido a una versión futura de la destinataria y contiene reflexiones personales, observaciones sobre el presente y una serie de indicaciones destinadas a ser revisadas posteriormente. La pieza fue concebida específicamente para permanecer cerrada y fuera de consulta durante un periodo aproximado de 21 años, con apertura prevista para el año 204",
+      "fields": {
+        "Origen": "Panamá, Panamá. Año: 2026",
+        "Medidas": "Dimensiones variables según el estado de plegado; documento de formato rectangular y espesor mínimo correspondiente a una hoja de papel",
+        "Material": "Papel de tono marfil, con escritura manuscrita en tinta negra",
+        "Filiación": "Pieza de autoría personal concebida como documento de archivo temporal. Su relevancia reside en registrar pensamientos, circunstancias у percepciones correspondientes al año 2026 para ser confrontados con la experiencia de la misma destinataria en 2047.El periodo deliberado de clausura constituye una parte integral de la pieza y de su función documental",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/amanda-brostella-03.jpg",
+        "alt": "Carta escrita a mano dirigida a Amanda Brostella dentro de 21 años, fotografiado antes de emparedarlo.",
+        "width": 858,
+        "height": 867,
+        "caption": "Papel de tono marfil, con escritura manuscrita en tinta negra"
+      },
+      "source": "ficha-07.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-028",
+      "personId": "MUFU-P08",
+      "person": "Frida Antebi",
+      "title": "Conjunto de 50 monedas de un centavo apiladas en forma de torre",
+      "description": "Conjunto compuesto por 50 monedas de un centavo, fabricadas con una composición de 97.5 % zinc y 2.5 % cobre. Las monedas se encuentran apiladas verticalmente y envueltas en papel, formando una estructura cilíndrica y alargada. La envoltura mantiene las piezas agrupadas y dispuestas de manera uniforme",
+      "fields": {
+        "Origen": "Banco General, República de Panamá, Panamá. 31 de agosto 2026",
+        "Medidas": "Diámetro: 1.905 cm. Espesor: 0.152 cm",
+        "Material": "Zinc (97.5 %)",
+        "Filiación": "No se registra una filiación personal o afectiva específica. El conjunto puede asociarse al uso cotidiano del dinero y a prácticas de ahorro o acumulación de monedas",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-antebi-01.jpg",
+        "alt": "Conjunto de 50 monedas de un centavo apiladas en forma de torre, fotografiado antes de emparedarlo.",
+        "width": 543,
+        "height": 724,
+        "caption": "Zinc (97.5 %)"
+      },
+      "source": "ficha-08.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-029",
+      "personId": "MUFU-P08",
+      "person": "Frida Antebi",
+      "title": "Mascarilla de tela con logotipo de Macabi",
+      "description": "Mascarilla reutilizable confeccionada en tela, con elásticos laterales para su sujeción alrededor de las orejas. En la parte frontal presenta la impresión del logotipo de la organización Macabi. Fue utilizada como elemento de protección durante la pandemia de COVID-19",
+      "fields": {
+        "Origen": "República de Panamá, Panamá. Año: 2021",
+        "Medidas": "23cm x 11cm x 0.02cm",
+        "Material": "Tela blanca",
+        "Filiación": "Vínculo afectivo con la organización Macabi, donde su propietaria participó como maestra de baile durante la pandemia",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-antebi-02.jpg",
+        "alt": "Mascarilla de tela con logotipo de Macabi, fotografiado antes de emparedarlo.",
+        "width": 543,
+        "height": 724,
+        "caption": "Tela blanca"
+      },
+      "source": "ficha-08.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-030",
+      "personId": "MUFU-P08",
+      "person": "Frida Antebi",
+      "title": "Carta personal para apertura futura",
+      "description": "Carta manuscrita en una hoja de papel tamaño 8.5 × 11 pulgadas, escrita a mano con pluma de tinta azul. Fue redactada por su propietaria para ser leída por ella misma en una fecha futura",
+      "fields": {
+        "Origen": "Documento de elaboración personal. 31 de agosto 2026",
+        "Medidas": "21.59 × 27.94 cm (8.5 × 11 pulgadas)",
+        "Material": "Papel",
+        "Filiación": "Objeto de carácter personal y afectivo, escrito como mensaje para el futuro y destinado a ser abierto el 5 de septiembre de 2047",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-antebi-03.jpg",
+        "alt": "Carta personal para apertura futura, fotografiado antes de emparedarlo.",
+        "width": 740,
+        "height": 934,
+        "caption": "Papel"
+      },
+      "source": "ficha-08.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-031",
+      "personId": "MUFU-P08",
+      "person": "Frida Antebi",
+      "title": "Memoria USB marca Kapture con videos de boda y competencias de baile",
+      "description": "Dispositivo de almacenamiento digital tipo USB que contiene los videos de la boda de su propietaria, celebrada el 16 de junio de 2024 y de una competencia de baile en el 2022",
+      "fields": {
+        "Origen": "Documento digital de uso personal. USB comprado en el 2022",
+        "Medidas": "7cm x 2.5cm x 0.5cm",
+        "Material": "Plástico negro con conector metálico USB",
+        "Filiación": "Objeto de alto valor afectivo por conservar el registro audiovisual de la boda de su propietaria",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-antebi-04.jpg",
+        "alt": "Memoria USB marca Kapture con videos de boda y competencias de baile, fotografiado antes de emparedarlo.",
+        "width": 869,
+        "height": 1159,
+        "caption": "Plástico negro con conector metálico USB"
+      },
+      "source": "ficha-08.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-032",
+      "personId": "MUFU-P08",
+      "person": "Frida Antebi",
+      "title": "Multa de tránsito por mal estacionamiento",
+      "description": "Documento impreso correspondiente a una infracción de tránsito emitida por estacionamiento indebido a un vehículo Kia Sportage rojo, placa AR0705",
+      "fields": {
+        "Origen": "Paitilla, Panamá. 11 de junio de 2021, a las 11:56 a. m",
+        "Medidas": "13.5cm x 10.8cm x 0.01cm",
+        "Material": "Papel laminado con impresión y escritura en tinta",
+        "Filiación": "Documento vinculado al uso cotidiano del vehículo y que conserva registro de una situación específica ocurrida en la vida de su propietaria",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-antebi-05.jpg",
+        "alt": "Multa de tránsito por mal estacionamiento, fotografiado antes de emparedarlo.",
+        "width": 543,
+        "height": 724,
+        "caption": "Papel laminado con impresión y escritura en tinta"
+      },
+      "source": "ficha-08.html#p05",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-033",
+      "personId": "MUFU-P09",
+      "person": "Frida Menaged",
+      "title": "Moneda de un centavo de dólar estadounidense — Lincoln Shield Cent / One Cent",
+      "description": "Moneda estadounidense de un centavo, de color cobrizo. En el reverso presenta el escudo de la Unión, las inscripciones \"UNITED STATES OF AMERICA\", \"EPLURIBUS UNUM\" y \"ONE CENT\" \", además de señales leves de desgaste por uso",
+      "fields": {
+        "Origen": "Estados Unidos de América. Diseño introducido en 2010",
+        "Medidas": "Zinc recubierto de cobre",
+        "Material": "aproximadamente 97.5% zinc y 2.5% cobre",
+        "Filiación": "Objeto con",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-menaged-01.jpg",
+        "alt": "Moneda de un centavo de dólar estadounidense — Lincoln Shield Cent / One Cent, fotografiado antes de emparedarlo.",
+        "width": 778,
+        "height": 867,
+        "caption": "aproximadamente 97.5% zinc y 2.5% cobre"
+      },
+      "source": "ficha-09.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-034",
+      "personId": "MUFU-P09",
+      "person": "Frida Menaged",
+      "title": "Estuche / cosmetiquera metálica plateada",
+      "description": "Estuche rectangular de color plateado con acabado metálico brillante. Presenta bordes redondeados, cierre de cremallera y una superficie reflectante con leves pliegues propios del material",
+      "fields": {
+        "Origen": "Año de adquisición: 2025. Origen y año de fabricación no identificados",
+        "Medidas": "20 cm de largo x15 cm de alto x5 cm de profundidad",
+        "Material": "Material sintético flexible con recubrimiento metálico plateado у cierre de metal",
+        "Filiación": "Objeto con",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-menaged-02.jpg",
+        "alt": "Estuche / cosmetiquera metálica plateada, fotografiado antes de emparedarlo.",
+        "width": 712,
+        "height": 643,
+        "caption": "Material sintético flexible con recubrimiento metálico plateado у cierre de metal"
+      },
+      "source": "ficha-09.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-035",
+      "personId": "MUFU-P09",
+      "person": "Frida Menaged",
+      "title": "Bolígrafo MUJI de tinta negra",
+      "description": "Bolígrafo MUJI de cuerpo translúcido, diseño minimalista y tinta de color negro. Cuenta con tapa protectora removible y punta fina para escritura",
+      "fields": {
+        "Origen": "Japón. Año de adquisición: 2025",
+        "Medidas": "15 cm de largo ×1 cm de ancho ×1 cm de profundidad",
+        "Material": "Plástico translúcido, tinta negra y pequeños componentes metálicos",
+        "Filiación": "Objeto de uso personal conservado como representación de actividades cotidianas, académicas y de escritura",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-menaged-03.jpg",
+        "alt": "Bolígrafo MUJI de tinta negra, fotografiado antes de emparedarlo.",
+        "width": 858,
+        "height": 867,
+        "caption": "Plástico translúcido, tinta negra y pequeños componentes metálicos"
+      },
+      "source": "ficha-09.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-036",
+      "personId": "MUFU-P09",
+      "person": "Frida Menaged",
+      "title": "Carta para el futuro — \"Carta 2046\"",
+      "description": "Carta personal escrita a mano y doblada, identificada en el exterior con el texto \"CARTA 2046...\" y el nombre \"Frida Menaged\". Fue preparada como un mensaje para ser abierto y leído en el futuro",
+      "fields": {
+        "Origen": "Ciudad de Panamá, Panamá. Año de creación: 2026",
+        "Medidas": "28 cm de largo × 21.6 cm de ancho x 0.01 cm de profundidad",
+        "Material": "Papel y tinta",
+        "Filiación": "Objeto con alto",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/frida-menaged-04.jpg",
+        "alt": "Carta para el futuro — \"Carta 2046\", fotografiado antes de emparedarlo.",
+        "width": 858,
+        "height": 865,
+        "caption": "Papel y tinta"
+      },
+      "source": "ficha-09.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-037",
+      "personId": "MUFU-P10",
+      "person": "Moises Mizrachi",
+      "title": "Paquete de cartas Topps Chrome Premier League 2026",
+      "description": "Paquete de Topps Chrome 2026, colección oficial de tarjetas de la Premier League. Contiene 4 tarjetas coleccionables de jugadores de fútbol",
+      "fields": {
+        "Origen": "2026",
+        "Medidas": "Largo: 8cm. Alto: 10cm. Profundidad: 0.1 cm",
+        "Material": "Carton",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/moises-mizrachi-01.jpg",
+        "alt": "Paquete de cartas Topps Chrome Premier League 2026, fotografiado antes de emparedarlo.",
+        "width": 543,
+        "height": 724,
+        "caption": "Carton"
+      },
+      "source": "ficha-10.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-038",
+      "personId": "MUFU-P10",
+      "person": "Moises Mizrachi",
+      "title": "Carta para el futuro — “Carta 2046”",
+      "description": "Carta personal escrita a mano y doblada, identificada en el exterior con el texto “CARTA 2046…” y el nombre Moises Mizrachi. Fue preparada como un mensaje para ser abierto y leído en el futuro",
+      "fields": {
+        "Origen": "2026",
+        "Medidas": "8.5 x 11 inch",
+        "Material": "Papel y tinta",
+        "Filiación": "Objeto con alto valor sentimental, creado como mensaje personal para conservar recuerdos, pensamientos y expectativas del presente y ser leído en el año 2046",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/moises-mizrachi-02.jpg",
+        "alt": "Carta para el futuro — “Carta 2046”, fotografiado antes de emparedarlo.",
+        "width": 543,
+        "height": 724,
+        "caption": "Papel y tinta"
+      },
+      "source": "ficha-10.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-039",
+      "personId": "MUFU-P11",
+      "person": "Roberto Torres",
+      "title": "Pelota de golf Pinnacle No. 3 – Walt Disney World",
+      "description": "Pelota de golf blanca de la marca Pinnacle, identificada con el número rojo 3. Presenta una superficie cubierta de hoyuelos y diferentes impresiones gráficas. En uno de sus lados aparece una ilustración del personaje Mickey jugando golf, acompañada por la inscripción “Walt Disney World”. La pieza presenta señales de uso",
+      "fields": {
+        "Origen": "Adquirida en Walt Disney World, Florida, Estados Unidos, en el año 2005",
+        "Medidas": "Largo: 4.27 cm. Alto: 4.27 cm. Profundidad: 4.27 cm",
+        "Material": "Núcleo de material elastomérico o caucho sintético y cubierta exterior de polímero plástico resistente",
+        "Filiación": "Objeto con valor sentimental, adquirido durante mi primera visita a Walt Disney World en 2005 y conservado desde entonces como recuerdo de la experiencia y como objeto de colección",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/roberto-torres-01.jpg",
+        "alt": "Pelota de golf Pinnacle No. 3 – Walt Disney World, fotografiado antes de emparedarlo.",
+        "width": 724,
+        "height": 543,
+        "caption": "Núcleo de material elastomérico o caucho sintético y cubierta exterior de polímero plástico resistente"
+      },
+      "source": "ficha-11.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-040",
+      "personId": "MUFU-P11",
+      "person": "Roberto Torres",
+      "title": "Ticket de entrada — Museo de la Libertad y los Derechos Humanos",
+      "description": "Entrada impresa correspondiente al Museo de la Libertad y los Derechos Humanos, en Panamá. El ticket presenta una composición gráfica institucional con el logotipo del museo, una fotografía del edificio y datos de identificación de la entrada. La otra cara contiene una nota fechada 5 de septiembre de 2026, relacionada sobre cómo podría ser el año 2046 y una comparación con Blade Runner",
+      "fields": {
+        "Origen": "Adquirido durante una visita al Museo de la Libertad y los Derechos Humanos, Panamá, el 31 de julio de 2026",
+        "Medidas": "Largo: 5.25 cm. Alto: 11.4 cm. Profundidad: 0.05 cm",
+        "Material": "Papel o cartulina impresa. Tinta de impresión gráfica y tinta o grafito utilizado para la anotación manuscrita en la cara posterior",
+        "Filiación": "Objeto con valor personal y documental, conservado como recuerdo de una visita al Museo de la Libertad y los Derechos Humanos. La anotación manuscrita en su reverso aumenta su valor afectivo",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/roberto-torres-02.jpg",
+        "alt": "Ticket de entrada — Museo de la Libertad y los Derechos Humanos, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 902,
+        "caption": "Papel o cartulina impresa. Tinta de impresión gráfica y tinta o grafito utilizado para la anotación manuscrita en la cara posterior"
+      },
+      "source": "ficha-11.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-041",
+      "personId": "MUFU-P11",
+      "person": "Roberto Torres",
+      "title": "Caja metálica de reloj infantil de Spider-Man",
+      "description": "Caja metálica rectangular decorada con imágenes у gráticos de Spider-Man, utilizada originalmente como estuche de presentación para un reloj infantil. Posee tapa abatible, bisagras y cierre metálico. En sus diferentes caras aparecen ilustraciones del personaje, motivos de telarañas y ellogotipo de Spider-Man. La caja presenta señales de uso y envejecimiento",
+      "fields": {
+        "Origen": "Adquirida en San Carlos, Panamá Oeste. 2007",
+        "Medidas": "Largo: 6.7 cm. Alto: 9.1 cm. Profundidad:3.3 cm",
+        "Material": "Lámina metálica con impresión gráfica decorativa. Piezas metálicas utilizadas en el cierre y las bisagras, con presencia de oxidación superficial",
+        "Filiación": "Objeto de importante",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/roberto-torres-03.jpg",
+        "alt": "Caja metálica de reloj infantil de Spider-Man, fotografiado antes de emparedarlo.",
+        "width": 865,
+        "height": 867,
+        "caption": "Lámina metálica con impresión gráfica decorativa. Piezas metálicas utilizadas en el cierre y las bisagras, con presencia de oxidación superficial"
+      },
+      "source": "ficha-11.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-042",
+      "personId": "MUFU-P11",
+      "person": "Roberto Torres",
+      "title": "Carta manuscrita para Abigail",
+      "description": "Carta personal escrita a mano sobre una hoja blanca tamaño A4 y destinada a Abigail Abrego. El documento fue posteriormente plegado para su conservación y presentación. En el exterior se identifica a la destinataria y al remitente, junto con una indicación relacionada con su apertura en una fecha futura. El contenido de la carta es de carácter privado y afectivo, por lo que no se reproduce ni se describe en detalle dentro de esta ficha",
+      "fields": {
+        "Origen": "Escrita por Roberto Torres en ISTHMUS, Ciudad del Saber, Ciudad de Panamá",
+        "Medidas": "Largo: 29.7 cm. Alto: 21 cm. Profundidad: aproximadamente 0.1 mm",
+        "Material": "Papel blanco tamaño A4. Tinta de bolígrafo o marcador utilizada para la escritura manuscrita y pequeños elementos gráficos realizados manualmente",
+        "Filiación": "Objeto de alto valor sentimental y personal, creado específicamente para Abigail. Su importancia reside en haber sido escrito para una persona concreta y en haber sido concebido para permanecer cerrado durante 21 años",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/roberto-torres-04.jpg",
+        "alt": "Carta manuscrita para Abigail, fotografiado antes de emparedarlo.",
+        "width": 865,
+        "height": 867,
+        "caption": "Papel blanco tamaño A4. Tinta de bolígrafo o marcador utilizada para la escritura manuscrita y pequeños elementos gráficos realizados manualmente"
+      },
+      "source": "ficha-11.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-043",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Libreta de Dibujo de la universidad",
+      "description": "Libreta de sketch miniatura y portátiles para dibujo. Cuenta con papel blanco liso dentro y una tapa y contratapa en cartón con logo universitario prensado",
+      "fields": {
+        "Origen": "2023, regalo de la universidad a alumnos de nuevo ingreso",
+        "Medidas": "Largo: 14.0 cm. Alto: 10.5 cm",
+        "Material": "Papel y cartón",
+        "Filiación": "Objeto con valor sentimental por haberse adquirido apenas comencé a estudiar",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-01.jpg",
+        "alt": "Libreta de Dibujo de la universidad, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 800,
+        "caption": "Papel y cartón"
+      },
+      "source": "ficha-12.html#p01",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-044",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Rollo de cinta de pintor azul",
+      "description": "Rollo de cinta adhesiva azul, utilizado como material de embalaje, señalización o sujeción temporal. Presenta una pestaña parcialmente desprendida y desgaste visible. Es un rollo terminado",
+      "fields": {
+        "Origen": "2023, regalo de la universidad a alumnos de nuevo ingreso",
+        "Medidas": "10 cm de diámetro × 2.5 cm de ancho",
+        "Material": "Cinta de papel crepé pigmentado con adhesivo y núcleo interior de cartón",
+        "Filiación": "Objeto con valor sentimental por haberse adquirido para el inicio de la universidad",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-02.jpg",
+        "alt": "Rollo de cinta de pintor azul, fotografiado antes de emparedarlo.",
+        "width": 800,
+        "height": 1200,
+        "caption": "Cinta de papel crepé pigmentado con adhesivo y núcleo interior de cartón"
+      },
+      "source": "ficha-12.html#p02",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-045",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Foto personal",
+      "description": "Fotografía impresa a color en papel fotográfico. La imagen representa una escena de playa con dos personas caminando junto a la orilla del mar",
+      "fields": {
+        "Origen": "2024, regalo de la universidad a alumnos de nuevo ingreso",
+        "Medidas": "8.8 × 10.7 cm",
+        "Material": "Papel fotográfico con recubrimiento plástico protector y capa de impresión a color",
+        "Filiación": "Valor sentimental por estar con mi novio en la playa, cuando ibámos regresar a ser novios, luego de 1 año de corte",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-03.jpg",
+        "alt": "Foto personal, fotografiado antes de emparedarlo.",
+        "width": 900,
+        "height": 1200,
+        "caption": "Papel fotográfico con recubrimiento plástico protector y capa de impresión a color"
+      },
+      "source": "ficha-12.html#p03",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-046",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Moneda 25 centavos de peso argentino",
+      "description": "Moneda de 25 centavos de Argentina, de forma circular y acabado metálico. En el anverso presenta la denominación numérica «25» y la inscripción «centavos», mientras que el reverso presenta la inscripción «República Argentina» y un motivo arquitectónico",
+      "fields": {
+        "Origen": "1994, adquirido cuando vivía en Argentina",
+        "Medidas": "Aproximadamente 2,4 cm de diámetro × 0,2 cm de grosor",
+        "Material": "Metal, aleación metálica de circulación monetaria",
+        "Filiación": "Moneda con filiación personal que me acompañó en una mudanza",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-04.jpg",
+        "alt": "Moneda 25 centavos de peso argentino, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 800,
+        "caption": "Metal, aleación metálica de circulación monetaria"
+      },
+      "source": "ficha-12.html#p04",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-047",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Moneda 25 centavos de peso argentino",
+      "description": "Moneda de 25 centavos de Argentina, de forma circular y acabado metálico. En el anverso presenta la denominación numérica «25» y la inscripción «centavos», mientras que el reverso presenta la inscripción «República Argentina» y un motivo arquitectónico",
+      "fields": {
+        "Origen": "1994, adquirido cuando vivía en Argentina",
+        "Medidas": "Aproximadamente 2,4 cm de diámetro × 0,2 cm de grosor",
+        "Material": "Metal, aleación metálica de circulación monetaria",
+        "Filiación": "Moneda con filiación personal que me acompañó en una mudanza",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-05.jpg",
+        "alt": "Moneda 25 centavos de peso argentino, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 800,
+        "caption": "Metal, aleación metálica de circulación monetaria"
+      },
+      "source": "ficha-12.html#p05",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-048",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Moneda conmemorativa de 1 peso argentino — Bicentenario de la Revolución de Mayo",
+      "description": "Moneda bimetálica de circulación corriente emitida en 2010 con motivo del Bicentenario de la Revolución de Mayo de 1810. Una de sus caras presenta el valor «1 PESO» y la identidad gráfica del Bicentenario, mientras la otra incorpora paisajes representativos de Argentina, entre ellos Mar del Plata, según la variante de la moneda fotografiada",
+      "fields": {
+        "Origen": "2010, adquirido cuando vivía en Argentina",
+        "Medidas": "Diámetro: 23 mm. Espesor: 2,2 mm. Peso: 6,35 g",
+        "Material": "Moneda bimetálica: anillo exterior de cuproníquel y núcleo de bronce de aluminio",
+        "Filiación": "Moneda con filiación personal que me acompañó en una mudanza",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-06.jpg",
+        "alt": "Moneda conmemorativa de 1 peso argentino — Bicentenario de la Revolución de Mayo, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 506,
+        "caption": "Moneda bimetálica: anillo exterior de cuproníquel y núcleo de bronce de aluminio"
+      },
+      "source": "ficha-12.html#p06",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-049",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Moneda de 2 pesos argentinos — Bicentenario",
+      "description": "Moneda bimetálica argentina de circulación corriente. Presenta en una cara el valor facial «2 PESOS», acompañado por la identidad visual del Bicentenario y laureles. En la otra aparece un sol central y las leyendas «REPÚBLICA ARGENTINA» y «EN UNIÓN Y LIBERTAD». La pieza fotografiada corresponde a una acuñación de 2014",
+      "fields": {
+        "Origen": "2014, adquirido cuando vivía en Argentina",
+        "Medidas": "Diámetro: 24,5 mm. Espesor: 2,2 mm. Peso: 7,20 g",
+        "Material": "Moneda bimetálica: anillo exterior bronce de aluminio y núcleo de cuproníquel",
+        "Filiación": "Moneda con filiación personal que me acompañó en una mudanza",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-07.jpg",
+        "alt": "Moneda de 2 pesos argentinos — Bicentenario, fotografiado antes de emparedarlo.",
+        "width": 883,
+        "height": 580,
+        "caption": "Moneda bimetálica: anillo exterior bronce de aluminio y núcleo de cuproníquel"
+      },
+      "source": "ficha-12.html#p07",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-050",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Chocolate Cadbury Dairy Milk — Milk Chocolate, 38 g",
+      "description": "Tableta de chocolate con leche envuelta en su empaque original de color morado, característico de la marca Cadbury Dairy Milk. El objeto se conserva como un producto cotidiano representativo de su época, incluyendo tanto el alimento como su envoltorio y diseño gráfico comercial",
+      "fields": {
+        "Origen": "2026, en Riba Smith de Multiplaza",
+        "Medidas": "Aprox: 13 cm largo × 4 cm alto × 1.5 cm profundidad, según la tableta de 38 g",
+        "Material": "El contenido está compuesto principalmente por chocolate con leche. El empaque está compuesto principalmente por una envoltura flexible de material plástico metalizado e impreso",
+        "Filiación": "Filiación por gusto al chocolate",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-08.jpg",
+        "alt": "Chocolate Cadbury Dairy Milk — Milk Chocolate, 38 g, fotografiado antes de emparedarlo.",
+        "width": 1200,
+        "height": 800,
+        "caption": "El contenido está compuesto principalmente por chocolate con leche. El empaque está compuesto principalmente por una envoltura flexible de material plástico metalizado e impreso"
+      },
+      "source": "ficha-12.html#p08",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    },
+    {
+      "id": "MUFU-051",
+      "personId": "MUFU-P12",
+      "person": "Tamara Cos",
+      "title": "Carta para mi yo del futuro manuscrita",
+      "description": "Hoja de papel blanco escrita a mano por ambas caras, con un mensaje personal dirigido a Tami. La carta contiene texto manuscrito y firma de la persona remitente",
+      "fields": {
+        "Origen": "Origen personal. Fecha de escritura: 31/08/26",
+        "Medidas": "Aproximadamente 21 × 10.5 cm; profundidad menor a 1 mm",
+        "Material": "Papel, tinta, grapas y goma",
+        "Filiación": "Valor afectivo ya que reflejé mi vida ahora mismo en esa carta",
+        "Depósito": "Cápsula MUFU · Ciudad del Saber, edificio 106 · 8.999423° N 79.582829° W"
+      },
+      "image": {
+        "src": "img/tamara-cos-09.jpg",
+        "alt": "Carta para mi yo del futuro manuscrita, fotografiado antes de emparedarlo.",
+        "width": 300,
+        "height": 533,
+        "caption": "Papel, tinta, grapas y goma"
+      },
+      "source": "ficha-12.html#p09",
+      "sourceCommit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+      "status": "Documentado",
+      "box": null,
+      "curationCategory": null
+    }
+  ],
+  "bonus": [
+    {
+      "id": "MUFU-B01",
+      "title": "Objeto bonus 01",
+      "status": "Sin registro",
+      "source": "conteo"
+    },
+    {
+      "id": "MUFU-B02",
+      "title": "Objeto bonus 02",
+      "status": "Sin registro",
+      "source": "conteo"
+    }
+  ],
+  "sources": [
+    {
+      "id": "curso",
+      "title": "Relato del trimestre MUFU",
+      "type": "Archivo del proyecto",
+      "url": "index.html#recorrido",
+      "note": "Ocho módulos en diez semanas. El archivo no fija la duración de cada módulo."
+    },
+    {
+      "id": "conteo",
+      "title": "Corrección del total: 51 + 2 = 53",
+      "type": "Testimonio",
+      "url": "archivo.html#conteo",
+      "note": "Confirmación de Luis Miguel Caamaño en la conversación de actualización del 9 de septiembre de 2026: 51 objetos declarados y dos añadidos sin registro como bonus."
+    },
+    {
+      "id": "fichas",
+      "title": "51 fichas y sus fotografías",
+      "type": "Documentado",
+      "url": "coleccion.html",
+      "note": "Transcripción publicada del registro de la cohorte. Una ficha puede describir un conjunto, por ejemplo una torre de monedas; no contamos cada componente por separado."
+    },
+    {
+      "id": "futuros",
+      "title": "A través de los LNS / Nodos de Memoria",
+      "type": "Especulativo",
+      "url": "index.html#futuros",
+      "note": "Dos relatos estudiantiles ambientados en 2046. Sus leyes, tecnologías y gobiernos pertenecen a la ficción."
+    },
+    {
+      "id": "hilo",
+      "title": "El hilo y las nueve preguntas",
+      "type": "Interpretación curatorial",
+      "url": "index.html#hilo",
+      "note": "El archivo describe la convergencia entre los ejercicios. Las relaciones son lecturas curatoriales, no pruebas de causalidad histórica."
+    },
+    {
+      "id": "cierre",
+      "title": "Última función y cierre de la cápsula",
+      "type": "Relato del proyecto",
+      "url": "index.html#obra",
+      "note": "Se conservan el video de doce apariciones y el relato del montaje. Los detalles contradictorios de versiones anteriores se señalan en el historial."
+    },
+    {
+      "id": "nasa",
+      "title": "NASA · Voyager 1",
+      "type": "Fuente histórica",
+      "url": "https://science.nasa.gov/mission/voyager/voyager-1/",
+      "note": "Lanzamiento el 5 de septiembre de 1977 a las 12:56 UTC, 07:56 en Panamá. La ficha técnica da 12:56:01 UT; MUFU fija su cita con precisión de minuto."
+    },
+    {
+      "id": "disco",
+      "title": "NASA · Golden Record Contents",
+      "type": "Fuente histórica",
+      "url": "https://science.nasa.gov/mission/voyager/golden-record-contents/",
+      "note": "Imágenes, sonidos, música, saludos e instrucciones simbólicas seleccionados para un posible receptor sin contexto humano compartido."
+    },
+    {
+      "id": "leia",
+      "title": "Lucasfilm · Holograms in Star Wars",
+      "type": "Fuente histórica / ficción",
+      "url": "https://www.starwars.com/news/6-ways-holograms-play-an-important-role-in-star-wars",
+      "note": "El mensaje de Leia activa el viaje de Luke y reaparece décadas después. Su relación con MUFU es narrativa; no establece una genealogía técnica con Pepper."
+    },
+    {
+      "id": "pepper",
+      "title": "Science Museum Group · John Henry Pepper",
+      "type": "Fuente histórica",
+      "url": "https://collection.sciencemuseumgroup.org.uk/people/cp87361/john-henry-pepper",
+      "note": "Asocia a Pepper con la ilusión concebida por Henry Dircks. El relato de MUFU sitúa la demostración en 1862. Es reflexión óptica, no holografía."
+    },
+    {
+      "id": "moma",
+      "title": "MoMA · Full Disclosure",
+      "type": "Referencia posterior",
+      "url": "https://www.moma.org/calendar/exhibitions/5926",
+      "note": "Referencia para esta ampliación del archivo: información, confianza y fuentes. No se presenta como parte del programa original."
+    }
+  ],
+  "threads": [
+    {
+      "id": "memoria",
+      "name": "Memoria",
+      "color": "#825b2b",
+      "question": "¿Qué merece sobrevivir?",
+      "detail": "Del carrete al museo: seleccionar es construir una memoria. El mensaje sobrevive al momento y cambia cuando alguien vuelve a leerlo."
+    },
+    {
+      "id": "imagen",
+      "name": "Representación",
+      "color": "#30696d",
+      "question": "¿Qué vemos cuando falta el original?",
+      "detail": "Una fotografía, un reflejo y una reconstrucción tienen soportes y límites distintos. Hacen presente algo que no se puede tocar."
+    },
+    {
+      "id": "poder",
+      "name": "Poder",
+      "color": "#844d45",
+      "question": "¿Quién tiene la llave?",
+      "detail": "La selección, la tecnología y las reglas de acceso determinan qué puede aparecer y quién puede interpretarlo."
+    },
+    {
+      "id": "tiempo",
+      "name": "Tiempo",
+      "color": "#5e6330",
+      "question": "¿Para quién guardamos?",
+      "detail": "2005 ayuda a pensar 2047; 1977 fija una cita. El destinatario de un archivo puede ser alguien que todavía no existe o nosotros mismos, transformados."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "carrete",
+      "title": "El carrete",
+      "date": "00 · Inicio",
+      "icon": "images",
+      "threads": [
+        "memoria",
+        "poder"
+      ],
+      "text": "Una imagen privada entra en una selección; al cambiar de vecinas, cambia de significado.",
+      "sources": [
+        "curso"
+      ]
+    },
+    {
+      "id": "curar",
+      "title": "La curaduría",
+      "date": "01–02 · Museo",
+      "icon": "landmark",
+      "threads": [
+        "memoria",
+        "poder"
+      ],
+      "text": "Agrupar, inventar una historia y diseñar un recorrido convierten objetos cotidianos en piezas. El museo decide qué deja afuera.",
+      "sources": [
+        "curso",
+        "hilo"
+      ]
+    },
+    {
+      "id": "narrar",
+      "title": "El objeto narrativo",
+      "date": "03 · Puente",
+      "icon": "clapperboard",
+      "threads": [
+        "memoria",
+        "imagen",
+        "tiempo"
+      ],
+      "text": "En Matrix y el camino del héroe, los objetos activan acciones y transformaciones. McGuffin: mueve la trama. Reliquia: conserva un pasado. Talismán: concentra un poder atribuido.",
+      "sources": [
+        "curso"
+      ]
+    },
+    {
+      "id": "leia",
+      "title": "El mensaje de Leia",
+      "date": "1977 · Ficción",
+      "icon": "message-circle",
+      "threads": [
+        "memoria",
+        "imagen"
+      ],
+      "text": "Un mensaje de una persona ausente, confiado a R2-D2, activa el viaje de Luke. Es un holograma dentro de la ficción de Star Wars, no el primer holograma de la historia.",
+      "sources": [
+        "leia"
+      ]
+    },
+    {
+      "id": "voyager",
+      "title": "El Disco de Oro",
+      "date": "1977 · Voyager 1",
+      "icon": "disc-3",
+      "threads": [
+        "memoria",
+        "tiempo"
+      ],
+      "text": "Sonidos, imágenes e instrucciones viajan hacia un posible lector sin contexto. Igual que una cápsula, el disco necesita sobrevivir y poder interpretarse.",
+      "sources": [
+        "nasa",
+        "disco"
+      ]
+    },
+    {
+      "id": "pepper",
+      "title": "El fantasma de Pepper",
+      "date": "1862 · Óptica",
+      "icon": "lightbulb",
+      "threads": [
+        "imagen",
+        "poder",
+        "tiempo"
+      ],
+      "text": "El reflejo en un vidrio inclinado hace aparecer una imagen sin materia en la escena. Una lámpara funciona como una llave de la visibilidad.",
+      "sources": [
+        "pepper",
+        "curso"
+      ]
+    },
+    {
+      "id": "lns",
+      "title": "A través de los LNS",
+      "date": "2046 · Transformación",
+      "icon": "scan-eye",
+      "threads": [
+        "imagen",
+        "poder",
+        "tiempo"
+      ],
+      "text": "En esta ficción, comunidades poseen sus relatos, pero una empresa controla bóvedas submarinas, robots, lentes y membresías. Liliana rechaza que la reconstrucción sustituya al original.",
+      "sources": [
+        "futuros"
+      ]
+    },
+    {
+      "id": "nodos",
+      "title": "Nodos de Memoria",
+      "date": "2046 · Colapso",
+      "icon": "network",
+      "threads": [
+        "memoria",
+        "imagen",
+        "poder"
+      ],
+      "text": "En esta ficción, un régimen reescribe la historia. Museos clandestinos conservan lo excluido y los Falsos Nodos exhiben copias para proteger los originales.",
+      "sources": [
+        "futuros"
+      ]
+    },
+    {
+      "id": "carta",
+      "title": "La carta aplazada",
+      "date": "2026 → 2047",
+      "icon": "mail",
+      "threads": [
+        "memoria",
+        "tiempo"
+      ],
+      "text": "El receptor se llama igual, pero ya será otra persona. Karla cubrió el texto de su carta antes de registrarla: mostrar el soporte no obliga a revelar el mensaje.",
+      "sources": [
+        "curso",
+        "fichas"
+      ]
+    },
+    {
+      "id": "funcion",
+      "title": "Última función",
+      "date": "2026 · Aparición",
+      "icon": "projector",
+      "threads": [
+        "imagen",
+        "poder"
+      ],
+      "text": "El video muestra doce objetos, uno por estudiante. La presencia como luz conecta el aparato de Pepper con ambos futuros de originales inaccesibles.",
+      "sources": [
+        "cierre",
+        "hilo"
+      ]
+    },
+    {
+      "id": "pared",
+      "title": "La pared",
+      "date": "2026 · Cierre",
+      "icon": "brick-wall",
+      "threads": [
+        "poder",
+        "tiempo",
+        "imagen"
+      ],
+      "text": "El permiso para enterrar fue denegado, según el relato del proyecto. Se construyó un vacío bajo la escalera. Una restricción institucional terminó definiendo la forma del museo.",
+      "sources": [
+        "cierre",
+        "hilo",
+        "conteo"
+      ]
+    },
+    {
+      "id": "apertura",
+      "title": "La cita",
+      "date": "05.09.2047 · 07:56",
+      "icon": "calendar-clock",
+      "threads": [
+        "memoria",
+        "tiempo",
+        "poder"
+      ],
+      "text": "La fecha autoriza la apertura; no confirma que haya ocurrido. Será el 70 aniversario de Voyager 1, al minuto, y una ocasión para releer los escenarios de 2046 desde otro presente.",
+      "sources": [
+        "nasa",
+        "curso",
+        "cierre"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "carrete",
+      "curar",
+      "memoria",
+      "Seleccionar y ordenar produce memoria."
+    ],
+    [
+      "curar",
+      "narrar",
+      "memoria",
+      "Una pieza recibe funciones y relatos."
+    ],
+    [
+      "narrar",
+      "leia",
+      "imagen",
+      "Un objeto-mensaje pone en marcha un viaje."
+    ],
+    [
+      "leia",
+      "voyager",
+      "memoria",
+      "Dos mensajes de 1977: uno ficticio y otro enviado al espacio. Es una analogía, no una influencia demostrada."
+    ],
+    [
+      "voyager",
+      "carta",
+      "memoria",
+      "El mensaje espera a un destinatario distante."
+    ],
+    [
+      "carta",
+      "apertura",
+      "tiempo",
+      "La espera transforma a quien leerá."
+    ],
+    [
+      "pepper",
+      "leia",
+      "imagen",
+      "Presencia luminosa de un ausente; técnicas distintas."
+    ],
+    [
+      "pepper",
+      "funcion",
+      "imagen",
+      "El taller reconstruye el aparato óptico."
+    ],
+    [
+      "lns",
+      "funcion",
+      "imagen",
+      "Los originales se sustituyen por representaciones."
+    ],
+    [
+      "nodos",
+      "funcion",
+      "imagen",
+      "Las copias mantienen a salvo los originales."
+    ],
+    [
+      "curar",
+      "lns",
+      "poder",
+      "La curaduría se convierte en una infraestructura de acceso."
+    ],
+    [
+      "curar",
+      "nodos",
+      "poder",
+      "Decidir qué se muestra también permite censurar."
+    ],
+    [
+      "lns",
+      "nodos",
+      "poder",
+      "Empresa y régimen son dos posibles titulares de la llave."
+    ],
+    [
+      "pepper",
+      "funcion",
+      "poder",
+      "Quien controla la luz controla la aparición."
+    ],
+    [
+      "funcion",
+      "pared",
+      "imagen",
+      "La aparición deja paso a la ausencia material."
+    ],
+    [
+      "pared",
+      "apertura",
+      "poder",
+      "El pacto de esperar limita el acceso de la propia institución."
+    ],
+    [
+      "voyager",
+      "apertura",
+      "tiempo",
+      "1977 + 70 años = 2047; mismo día y minuto local."
+    ],
+    [
+      "lns",
+      "apertura",
+      "tiempo",
+      "Los escenarios se releen un año después de su fecha ficticia."
+    ],
+    [
+      "nodos",
+      "carta",
+      "memoria",
+      "Documentos y testimonios preservan historias vulnerables."
+    ],
+    [
+      "carrete",
+      "carta",
+      "memoria",
+      "La selección personal vuelve al final con el reloj cambiado."
+    ],
+    [
+      "narrar",
+      "apertura",
+      "tiempo",
+      "Un futuro lector puede atribuir una historia nueva al mismo objeto."
+    ]
+  ],
+  "questions": [
+    {
+      "q": "¿Cuántos objetos hay?",
+      "keywords": "cuantos cantidad total 53 51 48 bonus registro piezas",
+      "answer": "53 objetos: 51 declarados y registrados, más dos bonus sin ficha. El total proviene de la corrección del responsable del proyecto. Los 51 registros no equivalen a 51 componentes físicos: algunos describen conjuntos.",
+      "sources": [
+        "conteo",
+        "fichas"
+      ]
+    },
+    {
+      "q": "¿Cuándo se puede abrir?",
+      "keywords": "cuando abrir apertura fecha hora 2047 voyager 1977 septiembre",
+      "answer": "La cita es el 5 de septiembre de 2047 a las 07:56, hora de Panamá (UTC−5). Coincide con el 70 aniversario de Voyager 1 con precisión de minuto. Llegar a la fecha no demuestra que la apertura física haya sucedido.",
+      "sources": [
+        "nasa",
+        "cierre"
+      ]
+    },
+    {
+      "q": "¿Está enterrada?",
+      "keywords": "donde ubicacion enterrada emparedada escalera edificio cajas muro pared permiso",
+      "answer": "Está emparedada en un vacío bajo la escalera posterior del edificio 106, en Ciudad del Saber, Panamá. El relato atribuye esa decisión a la negativa del permiso para enterrarla en el campus. Son dos cajas; falta el inventario público por caja.",
+      "sources": [
+        "cierre",
+        "hilo"
+      ]
+    },
+    {
+      "q": "¿Qué une a Leia, Voyager y las cartas?",
+      "keywords": "leia star wars disco oro cartas mensaje conexion ausente receptor",
+      "answer": "Un emisor ausente confía un mensaje a un soporte. En Star Wars activa un viaje; en Voyager se dirige a un posible lector desconocido; en MUFU espera a una persona futura. Es una conexión curatorial, no una causalidad histórica demostrada.",
+      "sources": [
+        "leia",
+        "disco",
+        "curso"
+      ]
+    },
+    {
+      "q": "¿Pepper es un holograma?",
+      "keywords": "pepper holograma holografia vidrio luz reflejo optica",
+      "answer": "El fantasma de Pepper es una ilusión por reflexión en vidrio. El holograma de Leia pertenece a la ficción cinematográfica. MUFU relaciona ambas presencias sin materia, pero no las presenta como la misma técnica ni como el primer holograma.",
+      "sources": [
+        "pepper",
+        "leia",
+        "curso"
+      ]
+    },
+    {
+      "q": "¿Por qué 2005, 2026 y 2047?",
+      "keywords": "2005 2026 2047 21 anos espejo tiempo simetria",
+      "answer": "El curso reconstruyó 2005 desde 2026: 21 años hacia atrás. La cápsula propone la misma distancia nominal hacia 2047. El cierre del 4 de septiembre de 2026 y la cita del 5 de septiembre de 2047 no están separados por exactamente 21 años al segundo.",
+      "sources": [
+        "curso",
+        "cierre"
+      ]
+    },
+    {
+      "q": "¿Los escenarios predicen lo que pasará?",
+      "keywords": "2046 futuros escenarios transformacion colapso prediccion lns nodos",
+      "answer": "Son ficciones especulativas de dos grupos. Ambas dejan los originales fuera del alcance del visitante. El año 2047 permite confrontarlas con otra realidad, sin convertirlas en pronósticos científicos ni evaluar a sus autores por acertar.",
+      "sources": [
+        "futuros",
+        "hilo"
+      ]
+    },
+    {
+      "q": "¿Puedo leer las cartas?",
+      "keywords": "leer cartas privado privacidad datos karla reservado",
+      "answer": "Las fichas describen las cartas; eso no autoriza a revelar su contenido privado. Karla cubrió el texto de la suya antes de registrarla. El archivo respeta esa decisión y no intenta reconstruir el texto oculto.",
+      "sources": [
+        "fichas",
+        "curso"
+      ]
+    },
+    {
+      "q": "¿Quién tiene la llave?",
+      "keywords": "poder llave gobierno empresa institucion propiedad acceso",
+      "answer": "En las ficciones, la empresa controla la infraestructura y el régimen controla los relatos. MUFU propone limitar su propio acceso hasta 2047. La sucesión de responsables, la autorización final y el protocolo ante un traslado aún requieren documentación.",
+      "sources": [
+        "futuros",
+        "hilo",
+        "cierre"
+      ]
+    }
+  ]
+}
