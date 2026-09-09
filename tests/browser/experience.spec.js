@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-const pages=['index.html','atlas.html','coleccion.html','archivo.html','infografia.html','ficha-02.html'];
+const pages=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','ficha-02.html'];
 for(const width of [375,768,1440,1920]){
   test(`${width}px pages render with local assets, no horizontal overflow or accessibility violations`,async({page})=>{
     await page.setViewportSize({width,height:1000});
@@ -74,4 +74,15 @@ test('short mobile viewport keeps navigation and the next section visible',async
   const bottom=await page.locator('#portada').evaluate(e=>e.getBoundingClientRect().bottom);expect(bottom).toBeLessThan(667);
   await expect(page.locator('#hero-play')).toBeInViewport();
   await page.screenshot({path:'output/index-short-mobile.png'});
+});
+test('visual infographics are immediate, openable, downloadable and reachable from the home page',async({page})=>{
+  await page.goto('/infografias.html');
+  await expect(page.getByRole('heading',{name:/diez semanas/i})).toBeVisible();
+  await expect(page.locator('.visual-poster img')).toHaveCount(2);
+  await expect(page.locator('.visual-poster img').first()).toBeVisible();
+  await expect(page.locator('.visual-actions a[download]')).toHaveCount(2);
+  await expect(page.locator('.visual-actions a[target=_blank]')).toHaveCount(2);
+  await page.goto('/index.html');
+  await expect(page.getByRole('link',{name:'Ver infografías'})).toHaveAttribute('href','infografias.html');
+  await expect(page.locator('.bar nav a[href="infografias.html"]')).toBeVisible();
 });

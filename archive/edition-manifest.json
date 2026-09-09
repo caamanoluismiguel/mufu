@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6166,
-      "sha256": "d6edecee7e491f7621358d1ad4cbe88a1b40c32e656732465c67f121c60dac17"
+      "bytes": 6249,
+      "sha256": "262fab183f8a92807ad6abacd868b0f77c5080a9b1186d69293da55718b96174"
     },
     {
       "path": "archive/condition-report-template.json",
@@ -39,13 +39,13 @@
     },
     {
       "path": "archivo.html",
-      "bytes": 43142,
-      "sha256": "c156fa09dc5198d95a3e5c84c4eed85cee536dbf7f2fcf2976d0d8d02a36699d"
+      "bytes": 43916,
+      "sha256": "0a595c9319e1fa37be48af3e92f40ad75e1a5e1adf69f5015a94d71ed7fcfd69"
     },
     {
       "path": "assets/archive.css",
-      "bytes": 40424,
-      "sha256": "cebd5e3382bc5f9fa0adb7445075f6f69ff287f6f1e44dffa5ad4cb7ae4105a3"
+      "bytes": 43074,
+      "sha256": "d711c24d7549521ede051d2c04a27bd46ee2b9022a3a52177963d386976b00b7"
     },
     {
       "path": "assets/clock.js",
@@ -149,13 +149,13 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 75200,
-      "sha256": "9b7eda66c06dd07070888d2937b78a935d13fef71d71f1bb8e39becac7e63179"
+      "bytes": 75299,
+      "sha256": "c905488bc315fe5cd6189fc04ea227b85c379bdfceec83f0bd07beeb4ba99c1f"
     },
     {
       "path": "coleccion.html",
-      "bytes": 59367,
-      "sha256": "08bec0ea56e5d86cbf2b752e549b69344347179382b612fb2584045e906b9d78"
+      "bytes": 59466,
+      "sha256": "9535ea14877c3447f8fd1eb6e2cc2e4646ced9714ff8e912feb1f51bbd78d850"
     },
     {
       "path": "data/collection.json",
@@ -499,18 +499,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 118766,
-      "sha256": "2a9dbe9cb7c5ef621975e129b7af44b3505bf0d490b5015312881e3b9621b0ef"
+      "bytes": 118874,
+      "sha256": "4dc1a481dff5c636e1cbdd284e6e9d6b47ff3048fcf2d5e45940ea54711afd54"
     },
     {
       "path": "infografia.html",
-      "bytes": 16207,
-      "sha256": "e6772ea0753875a9749f36e2c9157c69aa91892eeafe72ef2cfa8843abe2216d"
+      "bytes": 16306,
+      "sha256": "96de606f933c4c71c087c27a151b9f2494f8034ab9e7055eb75c4b6894582981"
+    },
+    {
+      "path": "infografias.html",
+      "bytes": 7626,
+      "sha256": "30c5cf153b29dae12451a9a50bbce2d135219fcb9f0b371de15dbaa4a51a6661"
     },
     {
       "path": "llms.txt",
-      "bytes": 2596,
-      "sha256": "4d4e06e3bb13b1f1cba3f5ccb868e13d780eda94543638e68d2dc95f1a050181"
+      "bytes": 2634,
+      "sha256": "1eaaec4234b12d0ff34d81aa6c3889bab7b78aac62536b2dc02e2b71918a8b9a"
     },
     {
       "path": "medios/aparicion.jpg",
@@ -564,8 +569,8 @@
     },
     {
       "path": "scripts/build.mjs",
-      "bytes": 37001,
-      "sha256": "6e8683aa41f39b7bcd4534fdafe17b70c1fc09580d90938fd640c7deb0fa6fa9"
+      "bytes": 41334,
+      "sha256": "1be25e5d6dfa3bb8b0ab703456fcc88deb93de036f1203139fe07a8820b75403"
     },
     {
       "path": "scripts/export-infographic.mjs",
@@ -589,18 +594,18 @@
     },
     {
       "path": "sitemap.xml",
-      "bytes": 1558,
-      "sha256": "8a8e3ef9759da81b2c1268cc3c3fa7c23c43ff377f9898c3e1fee11c5beea5c8"
+      "bytes": 1647,
+      "sha256": "c81b85dddaca1de264bfa4133493ac0654a25e9dca6ed90e7d51760111967e60"
     },
     {
       "path": "tests/archive.test.mjs",
-      "bytes": 5838,
-      "sha256": "f39c37cbc5902695f778b3999c18464e8243e7676a90aaa5b265932204796d42"
+      "bytes": 5876,
+      "sha256": "b9e320f272f272ff0a4eee8cf2237d47efb9c9071667c4df2ac1a50cc412d2cc"
     },
     {
       "path": "tests/browser/experience.spec.js",
-      "bytes": 6720,
-      "sha256": "143894a2512e67ade6815b2bd67a56da88330ad1654f5b29a49044b7a1b06e0a"
+      "bytes": 7502,
+      "sha256": "7f3ab2ce7923ea1dff716424932aed9a25b5cf77114f80aa801b3682f4c0f159"
     }
   ]
 }

@@ -43,7 +43,7 @@ test('entire original snapshot matches its SHA-256 manifest',()=>{
   }
 });
 test('all published local links, fragments, images and scripts resolve; no duplicate ids',()=>{
-  const pages=['index.html','atlas.html','coleccion.html','archivo.html','infografia.html','404.html',...registry.people.map(p=>p.url)];
+  const pages=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','404.html',...registry.people.map(p=>p.url)];
   const documents=new Map(pages.map(p=>[p,load(fs.readFileSync(p,'utf8'))]));
   for(const [page,$] of documents){
     const ids=$('[id]').map((_,el)=>$(el).attr('id')).get();assert.equal(ids.length,new Set(ids).size,`${page}: duplicate ids`);
@@ -79,7 +79,7 @@ test('clock is correct at anniversaries, leap day, second before, and after open
   }
 });
 test('generated outputs are deterministic and match canonical data',()=>{
-  const files=['index.html','atlas.html','coleccion.html','archivo.html','infografia.html','assets/data.js','assets/facts.js','data/collection.json','sitemap.xml','llms.txt'];
+  const files=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','assets/data.js','assets/facts.js','data/collection.json','sitemap.xml','llms.txt'];
   const before=files.map(f=>hash(fs.readFileSync(f)));
   execFileSync(process.execPath,['scripts/build.mjs']);
   assert.deepEqual(files.map(f=>hash(fs.readFileSync(f))),before);

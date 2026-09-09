@@ -26,6 +26,7 @@ Dos escenarios ficticios de Panamá en 2046: transformación (LNS) y colapso (No
 
 ## Archivo
 - https://mufu.today/atlas.html
+- https://mufu.today/infografias.html
 - https://mufu.today/coleccion.html
 - https://mufu.today/archivo.html
 - https://mufu.today/data/collection.json

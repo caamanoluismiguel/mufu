@@ -14,6 +14,7 @@ apertura física; esta necesita documentación propia.
 
 - `index.html`: relato completo, módulos, escenarios, preguntas, video, visita y reloj.
 - `atlas.html`: 21 conexiones curatoriales, ocho módulos, tiempos, futuros y luz.
+- `infografias.html`: dos láminas PNG grandes, visibles, abribles y descargables.
 - `coleccion.html`: 51 registros originales y dos bonus explícitamente desconocidos.
 - `archivo.html`: fuentes, niveles de evidencia, privacidad, custodia y correcciones.
 - `infografia.html`: síntesis accesible e imprimible de todo el trimestre.
