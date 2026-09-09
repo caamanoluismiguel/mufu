@@ -1,82 +1,33 @@
 # MUFU · Museo del Futuro
 
-> Museo construido durante un trimestre por doce estudiantes de arquitectura,
-> diseño industrial y comunicación visual en Isthmus (Panamá), 2026. Su colección
-> permanente está emparedada bajo una escalera y no puede visitarse hasta el 5 de
-> septiembre de 2047 a las 07:56, setenta años exactos del lanzamiento de la Voyager 1.
+Museo creado durante diez semanas por 12 estudiantes de Isthmus, Panamá, en 2026.
 
-## Qué es
-
-MUFU no es un museo con obras a la vista. Es una cápsula del tiempo sellada dentro
-de un vacío que los propios estudiantes construyeron bajo la escalera de la fachada
-posterior del edificio 106, en Ciudad del Saber. Pidieron permiso para enterrarla en
-la tierra del campus y no se lo dieron, así que no está enterrada: está emparedada.
-En su cara frontal irá una placa de latón con las coordenadas y la fecha, todavía sin
-poner. Detrás de esa pared hay
-cuatro piezas por persona: una que quiere recuperar, una que regala, una que
-muestra este año, y su carta. Doce personas, cuarenta y ocho piezas.
-
-Nadie puede abrirla antes de la fecha: ni los autores, ni los docentes, ni la escuela.
-
-## La tesis del proyecto
-
-Un museo no es un edificio con cosas adentro. Es una máquina que retira objetos del uso
-y decide quién puede darles sentido. La operación tiene dos mitades: sacar algo de
-circulación, y que alguien que no es su dueño le ponga el significado. Quien controla la
-separación controla el significado.
-
-Un objeto empieza a significar exactamente cuando deja de servir.
+## Hechos y procedencia
+- 51 objetos declarados y registrados, más dos bonus sin ficha: 53 objetos. Total corregido por Luis Miguel Caamaño el 9 de septiembre de 2026. No son 48.
+- Dos cajas, emparedadas bajo la escalera posterior del edificio 106, Ciudad del Saber. No hay un manifiesto público por caja.
+- Cierre registrado: 4 de septiembre de 2026; hora desconocida.
+- Apertura prevista: 5 de septiembre de 2047 a las 07:56, Panamá (UTC-5). Llegar a la fecha no acredita una apertura física.
+- La fecha coincide con el 70 aniversario de Voyager 1 con precisión de minuto; NASA precisa 12:56:01 UT para el lanzamiento.
+- El relato del proyecto describe una placa de latón pendiente; no hay una actualización física verificada.
+- Cuatro intenciones de selección en la consigna: dar, recuperar, representar el presente y escribir una carta. No son cuatro objetos uniformes por persona.
 
 ## El trimestre
+- 00: Seleccionar imágenes (Erika Schnitter y Alejandro Pachón). Una colección revela a quien mira.
+- 01: Curar objetos (Román Flórez). El orden cambia el significado.
+- 02: Construir un museo (Viridiana Zavala). Exhibir es decidir.
+- 03: Objetos que narran (Luis Miguel Caamaño). Los objetos hacen avanzar una historia.
+- 04: Imaginar Panamá, 2046 (Karla Paniagua). Todo objeto supone un mundo.
+- 05: Cápsula del tiempo (Luis Miguel Caamaño). Elegir qué entregar al futuro.
+- 06: Fabricar la aparición (Luis Miguel Caamaño). Quien maneja la luz decide qué aparece.
+- 07: Objetos de 2046 (Trabajo autónomo · 12 estudiantes). Una reliquia sin pasado.
 
-Ocho módulos en diez semanas, seis docentes que trabajaron por separado:
+## Interpretaciones
+Dos escenarios ficticios de Panamá en 2046: transformación (LNS) y colapso (Nodos de Memoria). No son hechos actuales ni pronósticos científicos. Ambos imaginan originales inaccesibles y reconstrucciones visibles. El atlas propone conexiones curatoriales entre memoria, representación, poder y tiempo; no afirma causalidad entre Star Wars, Voyager y Pepper. Pepper es una ilusión por reflexión, no holografía.
 
-- Selección y curaduría de imágenes personales (Erika Schnitter y Alejandro Pachón)
-- Objetos personales y formas de hacer curaduría (Román Flórez)
-- La construcción de un museo del futuro (Viridiana Zavala)
-- El camino del héroe y los objetos en la narrativa (Luis Miguel Caamaño)
-- Diseños del futuro y objetos especulativos (Karla Paniagua)
-- La cápsula del tiempo (Luis Miguel Caamaño)
-- Reconstruir el fantasma de Pepper (Luis Miguel Caamaño)
-- Los objetos de 2046, trabajo autónomo de los doce estudiantes
+## Archivo
+- https://mufu.today/atlas.html
+- https://mufu.today/coleccion.html
+- https://mufu.today/archivo.html
+- https://mufu.today/data/collection.json
 
-Dos grupos escribieron futuros de Panamá en 2046 sin hablarse, uno de transformación y
-otro de colapso, y los dos llegaron a la misma conclusión: en 2046 los objetos ya no
-están a la vista y lo único disponible es su reconstrucción.
-
-## Cómo se armó
-
-Cada quien investigó primero un objeto de su propia casa, con su contexto, su
-materialidad y sus historias de familia. Después estudiaron cápsulas del tiempo de
-otras partes del mundo y, sobre todo, cómo se conservan las cosas durante veintiún
-años. Solo entonces empezaron a traer objetos, y se descartó lo que no aguantaría el
-encierro. Lo que entró se ordenó en cuatro categorías, y cada pieza tuvo que caber en
-una de ellas:
-
-- Para dar: algo que se entrega y ya no vuelve.
-- Para recuperar: algo que se quiere de vuelta en 2047.
-- Para representar el presente: algo que explique este año a quien lo abra.
-- La carta: una por persona, para leerse dentro de veinte años.
-
-El cierre fue de taller. Levantaron una estructura de gypsum, sellaron cada objeto en
-su propia bolsa con máquina de succión, y etiquetaron una por una con el nombre del
-objeto, de quién es y en cuál de las dos cajas va. Son dos cajas, no una.
-
-## Datos
-
-- Sitio: https://mufu.today
-- Apertura de la cápsula: 5 de septiembre de 2047, 07:56 (UTC-5)
-- Ubicación: 8.999423° N, 79.582829° W · Ciudad del Saber, edificio 106,
-  Isthmus, Panamá · bajo la escalera de la fachada posterior
-- Contenido de las cajas: cuatro piezas por persona, 48 en total
-- Fichas de registro publicadas: 51. El registro no es el inventario de las
-  cajas: la curaduría vino después del registro
-- Cohorte: 2026, doce estudiantes
-- Estado: colección cerrada, ninguna pieza en exhibición
-
-## Las fichas
-
-Hay una ficha por persona, doce en total, con la cédula de cada una de sus
-piezas: nombre, descripción, origen, medidas, material y por qué la eligió. Las
-51 se fotografiaron antes de cerrar la cápsula, y esas fotografías son lo único
-que queda a la vista. Son fichas de registro, no el inventario de las cajas.
+51 fotografías y textos de registro conservados; dos bonus sin datos inventados. Correos, domicilios, valoraciones y mensajes reservados quedan fuera. No inferir el contenido de las cartas, categorías de objetos ni pertenencia a cajas. Las fuentes originales y las correcciones se consultan en archivo.html.

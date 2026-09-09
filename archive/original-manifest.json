@@ -1,0 +1,396 @@
+{
+  "commit": "221d43b58498aab5fa1847a80411679d2e06d0b2",
+  "note": "Snapshot anterior a la corrección de 53 objetos. Contiene afirmaciones históricas superadas; consultar archivo.html.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 10,
+      "sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "404.html",
+      "bytes": 3993,
+      "sha256": "edf863a9ffef161ebfb495b22e6301864ab37df259e71228669737d5e4900d5f"
+    },
+    {
+      "path": "CNAME",
+      "bytes": 11,
+      "sha256": "73a6938592436190ed6d2a4bc5ce12ab9f93d8c05ac7ea396b37f89f53a41f0e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8051,
+      "sha256": "0b88ad3347b6ad3cfe506945fecc39a249ccf03a0ac7f7e4f769cbdbea16908d"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 396,
+      "sha256": "94f14043e3479793ddffa7a38f8f330d1860627765f3c2412fc2359cb1cbb674"
+    },
+    {
+      "path": "ficha-01.html",
+      "bytes": 23008,
+      "sha256": "2c5a6107a005e36977c6f427cdff9d4226bb4de87bd662534d0c9f3f20d8ac83"
+    },
+    {
+      "path": "ficha-02.html",
+      "bytes": 23126,
+      "sha256": "b0e23e1ef00ecdc758b282fa205eded23ffea7119efa16f0691f06ad74d9a439"
+    },
+    {
+      "path": "ficha-03.html",
+      "bytes": 23452,
+      "sha256": "0e4cbeb65cfe713ba91244e02162ea08aef8c16acd4946247007ecf039c36d00"
+    },
+    {
+      "path": "ficha-04.html",
+      "bytes": 24515,
+      "sha256": "ce6266dfd067174de3b61f68a1f6c21d8932d0df49e93ce21335c418adf0a4f8"
+    },
+    {
+      "path": "ficha-05.html",
+      "bytes": 23878,
+      "sha256": "ee5b6517399eeef3ad9349593feee8d76ec19cb76b50dff3d18431ef62f32361"
+    },
+    {
+      "path": "ficha-06.html",
+      "bytes": 23701,
+      "sha256": "3a0b4f0d3b93bde492aeb0e371a8ff423356ac8a2fedf99279530271dbfececc"
+    },
+    {
+      "path": "ficha-07.html",
+      "bytes": 23698,
+      "sha256": "cd560f17cd56bcdc38f6747d315f6bf7f8eef7dc9b47bfefa30ba42101243a87"
+    },
+    {
+      "path": "ficha-08.html",
+      "bytes": 25857,
+      "sha256": "40d0bdc7a753ccde55c1cf6275e34e8f18a8cc0f75e5345af1d5a8169150f410"
+    },
+    {
+      "path": "ficha-09.html",
+      "bytes": 24184,
+      "sha256": "309de17841cc479e2ad72d94c6567f17bc82e2cb0231d5c34ce6d936008760ed"
+    },
+    {
+      "path": "ficha-10.html",
+      "bytes": 20862,
+      "sha256": "e3de47b10792b6938fdd7bb8077f8cdc9b80b6a46c4e9e17f1a449c8df27c9cd"
+    },
+    {
+      "path": "ficha-11.html",
+      "bytes": 26156,
+      "sha256": "152d4335a0cdb42a1780d2639983fdc9e064b58aedd2ffa6dc7cd2032dde7caf"
+    },
+    {
+      "path": "ficha-12.html",
+      "bytes": 32358,
+      "sha256": "1bd80a7b9d4459e317904f8a5da8804af3578dc3b3b2c5885600559da01b23d0"
+    },
+    {
+      "path": "ficha.html",
+      "bytes": 22685,
+      "sha256": "bebdc1060bbac1586c2dd7bbde2e97af2668817d9d3dbb7fdf39c0e157f63f49"
+    },
+    {
+      "path": "img/adriana-solis-01.jpg",
+      "bytes": 23644,
+      "sha256": "d1cd38c8f60eb11903937fed5ed89ed60bac64fddeacb69f84916e2da05bc8d8"
+    },
+    {
+      "path": "img/adriana-solis-02.jpg",
+      "bytes": 5325,
+      "sha256": "b486056517bafa8090ad20cee67db113084c7504aacdc8ac95296a28f489b0f7"
+    },
+    {
+      "path": "img/adriana-solis-03.jpg",
+      "bytes": 22416,
+      "sha256": "567eb0c668f002a6bc15847d4f805b0cb8b41653c1ac48d2056e3cbe16a30078"
+    },
+    {
+      "path": "img/adriana-solis-04.jpg",
+      "bytes": 43734,
+      "sha256": "3b4fc0c884c311537cda2686918b19a454c4700a363decc65d289431b23b167b"
+    },
+    {
+      "path": "img/alana-holstein-01.jpg",
+      "bytes": 64154,
+      "sha256": "783e1ac35b27b6f3187493bf5928c2ad26c2e939f7980c39f8e8084de5a3aa99"
+    },
+    {
+      "path": "img/alana-holstein-02.jpg",
+      "bytes": 49649,
+      "sha256": "8041dd36af00f183cd09ab353e33e68fbfd426c6b983b5d9dc4d9029d8f5b54d"
+    },
+    {
+      "path": "img/alana-holstein-03.jpg",
+      "bytes": 33857,
+      "sha256": "a9f2c54bc7a412ad7517d753a17b06021df946e1e1db19578c3bf4804c06b51c"
+    },
+    {
+      "path": "img/alana-holstein-04.jpg",
+      "bytes": 70171,
+      "sha256": "7cf8992421231210c7fed2263c9a7dbd8b2d60ab837fc32750fe86cbf524a5e2"
+    },
+    {
+      "path": "img/alberto-zebede-01.jpg",
+      "bytes": 47935,
+      "sha256": "32edb11aed33c6de90935730b3bd66e790a6e1a6e45076b6370cbd3257becaa6"
+    },
+    {
+      "path": "img/alberto-zebede-02.jpg",
+      "bytes": 98860,
+      "sha256": "6ec8fb6c635630c991e9fef6d656af340161ef06fc37b40a5050519638c34e62"
+    },
+    {
+      "path": "img/alberto-zebede-03.jpg",
+      "bytes": 88696,
+      "sha256": "356312c9c916d1d4b6022cef580766fb5de85082c613d5c531ba851c0c4d14bf"
+    },
+    {
+      "path": "img/alberto-zebede-04.jpg",
+      "bytes": 52562,
+      "sha256": "c76998d5163282cf0cffd31d8d810450fa96df183e628c00684b97786274242c"
+    },
+    {
+      "path": "img/amanda-brostella-01.jpg",
+      "bytes": 15233,
+      "sha256": "b1e3c565b8c474c2f64e623521f4b0876d0a650784eed5091e31bfcbac8c7f7d"
+    },
+    {
+      "path": "img/amanda-brostella-02.jpg",
+      "bytes": 31911,
+      "sha256": "eff4cac7c190af514171081f3dd502b675100c72948f1b397a70bfd601ea43a4"
+    },
+    {
+      "path": "img/amanda-brostella-03.jpg",
+      "bytes": 46885,
+      "sha256": "a1b0fc8c80489206320e0288e76ce7f64297c97c87fe03a8ba4bf37add0941f4"
+    },
+    {
+      "path": "img/frida-antebi-01.jpg",
+      "bytes": 14647,
+      "sha256": "be1758c7d176ca2a39778cb730db722f03e6a1bf5e5d66c3680cc1c501e9ac5d"
+    },
+    {
+      "path": "img/frida-antebi-02.jpg",
+      "bytes": 21180,
+      "sha256": "cbd2d4ae5a18849898b59dcda9538c228647fd49eb8d18256690158e5f6f1f92"
+    },
+    {
+      "path": "img/frida-antebi-03.jpg",
+      "bytes": 13631,
+      "sha256": "2ec95f243f8de69954e5739b606721ac5e37f586ae7068d61174a84db09c7f18"
+    },
+    {
+      "path": "img/frida-antebi-04.jpg",
+      "bytes": 18758,
+      "sha256": "0d9ed8bcca329f2b725ad9f57dd08665e94fd435aed24dfdee74ab0f6875185c"
+    },
+    {
+      "path": "img/frida-antebi-05.jpg",
+      "bytes": 21968,
+      "sha256": "7a0933e16ca89e2fed4cc88772317f40db8f72f2c8a90cbbe2e0d141146e4e78"
+    },
+    {
+      "path": "img/frida-menaged-01.jpg",
+      "bytes": 50347,
+      "sha256": "3be048115cdfb77e537ab862e4659149acb2e5900e920c2564faea38c0f62b45"
+    },
+    {
+      "path": "img/frida-menaged-02.jpg",
+      "bytes": 58950,
+      "sha256": "b306ea8ad55c8047529587795fe282b09c30501dda5d1ba47a39b91800bc3d20"
+    },
+    {
+      "path": "img/frida-menaged-03.jpg",
+      "bytes": 29503,
+      "sha256": "c3f51038591b479bf42e22a0f1b8a0fdf1c3cdbd50eb2591b8b2d0f380276518"
+    },
+    {
+      "path": "img/frida-menaged-04.jpg",
+      "bytes": 27252,
+      "sha256": "ead2ad8abd170fb1d6cc8467b31cae4afcfd46ad3d9fd67c098593991c3c2298"
+    },
+    {
+      "path": "img/karla-torres-01.jpg",
+      "bytes": 78548,
+      "sha256": "2445548dfa3e347ec9034e952bb78ea8511408a6e5eea9864bec718e74bfbc32"
+    },
+    {
+      "path": "img/karla-torres-02.jpg",
+      "bytes": 67254,
+      "sha256": "aac22986b5d79b844920b9290852b361e70faa0af3e4b6abb01187aeccfca180"
+    },
+    {
+      "path": "img/karla-torres-03.jpg",
+      "bytes": 67509,
+      "sha256": "b771b367873b0f8062c7eb628e32ec113a63663d31fa9114722f774c3d8eea53"
+    },
+    {
+      "path": "img/karla-torres-04.jpg",
+      "bytes": 39586,
+      "sha256": "83846e1655e95f92e9dedb5a9f71aeaf90a9b37ff872d832abbbae0a643d304a"
+    },
+    {
+      "path": "img/martha-pretto-01.jpg",
+      "bytes": 87566,
+      "sha256": "a39fea24694dde4158251e825e349fb0a6ab431d5e75d50f81c47be4f409aa70"
+    },
+    {
+      "path": "img/martha-pretto-02.jpg",
+      "bytes": 108278,
+      "sha256": "8a0b6e2bdd708f2c849a89a66cb08747e461063f62455282513a516a1fefd512"
+    },
+    {
+      "path": "img/martha-pretto-03.jpg",
+      "bytes": 61634,
+      "sha256": "b0c668ce951d5f034c2f990372ec4bd1a8fea0d6bea71e1f16a7c76bbb3dd8ee"
+    },
+    {
+      "path": "img/martha-pretto-04.jpg",
+      "bytes": 61937,
+      "sha256": "b373a9e182ea070e1b0d3b4b795ea95f3b9772a3274b78ee695193ea4baac75f"
+    },
+    {
+      "path": "img/moises-mizrachi-01.jpg",
+      "bytes": 39763,
+      "sha256": "0784232a77c8c67d4039fb3d2c4a62951df06d3df79c31dc0923348787e211ef"
+    },
+    {
+      "path": "img/moises-mizrachi-02.jpg",
+      "bytes": 15964,
+      "sha256": "bc66ddbfc0043413f0137037b9342fe7428887c25eb45321087c6e000a60a0fa"
+    },
+    {
+      "path": "img/raquel-cohen-01.jpg",
+      "bytes": 39117,
+      "sha256": "cb5a9d3acdd3fb02124177c2b3a4150db2e0116a69d625bbcd13572da47e2800"
+    },
+    {
+      "path": "img/raquel-cohen-02.jpg",
+      "bytes": 10406,
+      "sha256": "9751240d6e1e333abe6848311aa7aa00684d06ceed2235757ba38d0ab0b2cbcf"
+    },
+    {
+      "path": "img/raquel-cohen-03.jpg",
+      "bytes": 15424,
+      "sha256": "005389004db9ce3acd5e09f29fefeed21518f34b9957480291fc64922f04a12e"
+    },
+    {
+      "path": "img/raquel-cohen-04.jpg",
+      "bytes": 35499,
+      "sha256": "0e20a40ee69d93b8c6a9eec11bd895d4e1b385e020743e1eec2211abef1c4c33"
+    },
+    {
+      "path": "img/roberto-torres-01.jpg",
+      "bytes": 12287,
+      "sha256": "5f32b5090268478bac6b0dc9aeeca99b542c8894e4c9e91740856fd3fc67407a"
+    },
+    {
+      "path": "img/roberto-torres-02.jpg",
+      "bytes": 100732,
+      "sha256": "0d110c618decebb80d45b5b5b184343db10776d4bb8fce71355d83d697ea4177"
+    },
+    {
+      "path": "img/roberto-torres-03.jpg",
+      "bytes": 60511,
+      "sha256": "f80dc0fa5954c738deff7e12e30c7512d9ff5a9094707ae51ed9f84c7117a91d"
+    },
+    {
+      "path": "img/roberto-torres-04.jpg",
+      "bytes": 60570,
+      "sha256": "a6a8ae8c077470f4884460146d74d6149aa42a2c3788dc539e30e9de092d522d"
+    },
+    {
+      "path": "img/tamara-cos-01.jpg",
+      "bytes": 68335,
+      "sha256": "961671c8b960dc871403684a7f32d7fbd59523d6d09a51de598de1a6ba35f4bf"
+    },
+    {
+      "path": "img/tamara-cos-02.jpg",
+      "bytes": 43386,
+      "sha256": "4ad0a47e1c8f482e897c25ad49f01ad965f2a5488b985a28cc4e2acaf3d42498"
+    },
+    {
+      "path": "img/tamara-cos-03.jpg",
+      "bytes": 47621,
+      "sha256": "37b2fd53315d2a5efb788e12831cb40cd07331c97d5465e849b11d47f97a7ffd"
+    },
+    {
+      "path": "img/tamara-cos-04.jpg",
+      "bytes": 45116,
+      "sha256": "03f2d83c342fa8fdb4ee02faaeb521ccf464ba242f179e201f83148cb012fd8a"
+    },
+    {
+      "path": "img/tamara-cos-05.jpg",
+      "bytes": 45102,
+      "sha256": "e4e7c73ebdc093c88612e8debb09a1b61f8229a0f611318d89b76588b8a2b2d5"
+    },
+    {
+      "path": "img/tamara-cos-06.jpg",
+      "bytes": 59480,
+      "sha256": "2a2363996865febdbab83d3360d0481e7b8f3002e2841eb3fdb3c621406c5ff8"
+    },
+    {
+      "path": "img/tamara-cos-07.jpg",
+      "bytes": 37542,
+      "sha256": "af4232283190757e41ee33363dbe69660186cfad4a9c2ea930aa249f84c1d5e6"
+    },
+    {
+      "path": "img/tamara-cos-08.jpg",
+      "bytes": 118667,
+      "sha256": "b1be58d1c75a6d1a2c6d9be5542b88f6e750a524274118ba9bd482cd1462594d"
+    },
+    {
+      "path": "img/tamara-cos-09.jpg",
+      "bytes": 10353,
+      "sha256": "3a6c91b2aab157097ee40e4f0185f34d8d7546c4a8ceac64a4fc7a6e3f09ba39"
+    },
+    {
+      "path": "index.html",
+      "bytes": 122435,
+      "sha256": "504d35bca0dcd949c9e3487072227e6bc4cb19affa096532aa8c4530b9e821a8"
+    },
+    {
+      "path": "llms.txt",
+      "bytes": 4150,
+      "sha256": "cbcc5a2997e975bc3219892cc6cb97b4bf097f1b9634861716dff485c0e716de"
+    },
+    {
+      "path": "medios/aparicion.jpg",
+      "bytes": 23754,
+      "sha256": "47254c8143ee8cfe9aafe8d512b3babefd5985ce557c48a663e241fd9c2b17e7"
+    },
+    {
+      "path": "medios/aparicion.mp4",
+      "bytes": 5652921,
+      "sha256": "01f97400f4006cfb894d4d261c701f975d2be8265e6bd4f30d603575d12aef33"
+    },
+    {
+      "path": "medios/isthmus.jpg",
+      "bytes": 357208,
+      "sha256": "2f05fff97902573ba5a89fd95fb997b1214b79d54b9645e2238506fec8b97a08"
+    },
+    {
+      "path": "og.png",
+      "bytes": 49603,
+      "sha256": "44f8066543299ff982f31aed0ae08b27af77daf7af347d9250281baeb580f883"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 590,
+      "sha256": "e8523cf6af91e6527ab6f2641398c3e5bc2eedd2d047b0caef1058d708979433"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 2230,
+      "sha256": "30cbf434fde3bd82bb507d55ba8fcf796972e7eab92733e26116633a1e26f0f8"
+    }
+  ]
+}
