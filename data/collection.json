@@ -1494,6 +1494,20 @@
       "note": "Asocia a Pepper con la ilusión concebida por Henry Dircks. El relato de MUFU sitúa la demostración en 1862. Es reflexión óptica, no holografía."
     },
     {
+      "id": "pepper-patente",
+      "title": "John Henry Pepper · The True History of the Ghost",
+      "type": "Fuente primaria / relato del inventor",
+      "url": "https://cuny.manifoldapp.org/read/the-true-history-of-the-ghost/section/c430b376-bfb6-48a0-9b78-0b2bc98a369f",
+      "note": "Reproduce la patente británica n.º 326 de Dircks y Pepper, fechada el 5 de febrero de 1863, y relata la explotación del espectáculo. Documenta la patente y su comercialización, no la prioridad absoluta entre todos los efectos prácticos."
+    },
+    {
+      "id": "logan",
+      "title": "American Cinematographer · Logan’s Run and How It Was Filmed",
+      "type": "Fuente histórica / producción cinematográfica",
+      "url": "https://theasc.com/article/logans-run-and-how-it-was-filmed/",
+      "note": "Reportaje de producción de 1976 que documenta hologramas realizados para Logan’s Run. Es un antecedente cinematográfico anterior a Star Wars (1977)."
+    },
+    {
       "id": "moma",
       "title": "MoMA · Full Disclosure",
       "type": "Referencia posterior",
@@ -1583,11 +1597,14 @@
       "icon": "message-circle",
       "threads": [
         "memoria",
-        "imagen"
+        "imagen",
+        "tiempo"
       ],
-      "text": "Un mensaje de una persona ausente, confiado a R2-D2, activa el viaje de Luke. Es un holograma dentro de la ficción de Star Wars, no el primer holograma de la historia.",
+      "text": "R2-D2 hace presente a una persona ausente y su mensaje activa el viaje de Luke. MUFU lee esta imagen emblemática de Star Wars como un referente cultural de la comunicación del futuro: una figura luminosa que habla a través de la distancia. Su importancia aquí es cultural; Logan’s Run ya utilizó hologramas en 1976.",
       "sources": [
-        "leia"
+        "leia",
+        "logan",
+        "hilo"
       ]
     },
     {
@@ -1608,17 +1625,19 @@
     {
       "id": "pepper",
       "title": "El fantasma de Pepper",
-      "date": "1862 · Óptica",
+      "date": "1862–1863 · Escena y patente",
       "icon": "lightbulb",
       "threads": [
         "imagen",
         "poder",
         "tiempo"
       ],
-      "text": "El reflejo en un vidrio inclinado hace aparecer una imagen sin materia en la escena. Una lámpara funciona como una llave de la visibilidad.",
+      "text": "Vidrio, luz y reflejo convierten una ausencia en presencia escénica. Presentado en 1862 y patentado por Dircks y Pepper en 1863, el efecto se convirtió en espectáculo comercial. MUFU recupera esta técnica del pasado para construir una imagen que asociamos al futuro. La luz y los derechos de explotación conectan la aparición con el control de su acceso.",
       "sources": [
         "pepper",
-        "curso"
+        "pepper-patente",
+        "curso",
+        "hilo"
       ]
     },
     {
@@ -1757,7 +1776,7 @@
       "pepper",
       "leia",
       "imagen",
-      "Presencia luminosa de un ausente; técnicas distintas."
+      "Del efecto escénico patentado al holograma como imagen cultural del futuro: MUFU conecta una técnica del pasado con el imaginario de Star Wars."
     ],
     [
       "pepper",
@@ -1890,6 +1909,18 @@
         "pepper",
         "leia",
         "curso"
+      ]
+    },
+    {
+      "q": "¿Por qué una técnica del siglo XIX parece una imagen del futuro?",
+      "keywords": "pepper star wars leia primer holograma cine patente comercializado futuro pasado logan",
+      "answer": "MUFU conecta tres momentos: Pepper convierte un reflejo en espectáculo, Star Wars ofrece una imagen emblemática de comunicación mediante una presencia luminosa y el taller recupera el efecto óptico para representar objetos inaccesibles. Esa es la lectura curatorial: el futuro también se imagina con técnicas del pasado. La patente de Dircks y Pepper está fechada en 1863; no acredita ser el primer efecto práctico patentado de toda la historia. Star Wars (1977) tampoco inaugura el uso cinematográfico de hologramas: hay un antecedente documentado en Logan’s Run (1976).",
+      "sources": [
+        "pepper-patente",
+        "leia",
+        "logan",
+        "curso",
+        "hilo"
       ]
     },
     {
