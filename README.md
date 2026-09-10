@@ -74,12 +74,23 @@ corrección, actualizar el registro, su página de origen y el historial con fue
 
 ## Diseño y confianza
 
-Se conserva el lenguaje de sección arquitectónica: papel gris verdoso, tinta,
-reglas, latón y oliva. Las cuatro familias de conexiones usan latón (memoria),
+La edición visual comparte cabecera, índice, tipografía y visor de imágenes entre
+el relato, el atlas, la colección y las fichas originales. Superficies blancas,
+acentos rojos y bandas verdes distinguen los recorridos. Se conservan las cotas,
+la sección arquitectónica y las cuatro familias de conexiones: latón (memoria),
 verde azulado (representación), rojo apagado (poder) y oliva (tiempo). El color
 siempre tiene un rótulo; nunca es la única forma de identificar una relación.
 Instrument Serif titula, Spectral acompaña la lectura y Archivo Narrow rotula.
 Los diagramas conceptuales no se presentan como mediciones del lugar construido.
+
+`scripts/visual-edition.mjs` aplica la presentación sin reescribir el contenido;
+`assets/edition.css` y `assets/edition.js` contienen el sistema visual y su visor.
+`node scripts/check-content.mjs` comprueba 1.306 pasajes capturados antes del
+rediseño en 20 páginas. La captura de referencia no debe regenerarse durante una
+revisión visual. Las pruebas de navegador cubren cuatro tamaños, accesibilidad,
+filtros, navegación, diálogos, zoom, descargas y funcionamiento sin JavaScript.
+El ciclo de mejora es construir, revisar capturas, corregir y volver a validar.
+No hay un proceso permanente que cambie automáticamente el contenido publicado.
 
 El trimestre tiene ocho módulos. Las duraciones individuales no están documentadas.
 Pepper es reflexión óptica; Leia es un holograma de ficción, no el primero de la

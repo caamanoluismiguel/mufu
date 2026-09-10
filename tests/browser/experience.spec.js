@@ -25,10 +25,10 @@ test('collection filters, accents, empty state, shareable URL and dialog focus',
   await page.reload();await expect(page.locator('.object-card:visible')).toHaveCount(2);
   await page.getByRole('button',{name:'Restablecer filtros'}).click();
   await page.locator('#search').fill('obsidiana');await expect(page.locator('.object-card:visible')).toHaveCount(1);
-  const trigger=page.locator('[data-inspect]:visible');await trigger.click();await expect(page.locator('dialog')).toBeVisible();
+  const trigger=page.locator('[data-inspect]:visible');await trigger.click();await expect(page.locator('#record-dialog')).toBeVisible();
   await expect(page.locator('#dialog-title')).toContainText('Obsidiana');
   const a11y=await new AxeBuilder({page}).include('dialog').withTags(['wcag2a','wcag2aa']).analyze();expect(a11y.violations).toEqual([]);
-  await page.keyboard.press('Escape');await expect(page.locator('dialog')).not.toBeVisible();await expect(trigger).toBeFocused();
+  await page.keyboard.press('Escape');await expect(page.locator('#record-dialog')).not.toBeVisible();await expect(trigger).toBeFocused();
   await page.locator('#search').fill('zzzzzzzz');await expect(page.locator('#empty-results')).toBeVisible();
   await page.locator('[data-reset]').click();await expect(page.locator('.object-card:visible')).toHaveCount(53);
   await page.locator('#search').fill('solis');await expect(page.locator('.object-card:visible')).toHaveCount(4);
@@ -88,4 +88,25 @@ test('visual infographics are immediate, openable, downloadable and reachable fr
   await page.goto('/index.html');
   await expect(page.getByRole('link',{name:'Ver infografías'})).toHaveAttribute('href','infografias.html');
   await expect(page.locator('.bar nav a[href="infografias.html"]')).toBeVisible();
+});
+
+test('museum index and image zoom work by keyboard and touch-sized controls',async({page})=>{
+  await page.setViewportSize({width:375,height:812});
+  await page.goto('/index.html');
+  const menu=page.getByRole('button',{name:'Abrir índice del museo'});
+  await menu.click();await expect(page.locator('#museum-index')).toBeVisible();
+  await expect(page.locator('#museum-index nav a')).toHaveCount(6);
+  const menuA11y=await new AxeBuilder({page}).include('#museum-index').withTags(['wcag2a','wcag2aa']).analyze();expect(menuA11y.violations).toEqual([]);
+  await page.screenshot({path:'output/index-menu-mobile.png'});
+  await page.keyboard.press('Escape');await expect(menu).toBeFocused();
+  await page.goto('/infografias.html');
+  const poster=page.locator('.visual-poster figure a').first();
+  await poster.click();await expect(page.locator('#image-viewer')).toBeVisible();
+  await expect.poll(()=>page.locator('#viewer-image').evaluate(img=>img.naturalWidth)).toBe(1122);
+  await page.getByRole('button',{name:'Acercar imagen'}).click();await expect(page.locator('#viewer-scale')).toHaveText('150 %');
+  await expect(page.locator('#viewer-download')).toHaveAttribute('href',/infografia-trimestre-borrador.png$/);
+  await page.getByRole('button',{name:'Ajustar imagen',exact:true}).click();await expect(page.locator('#viewer-scale')).toHaveText('100 %');
+  const viewerA11y=await new AxeBuilder({page}).include('#image-viewer').withTags(['wcag2a','wcag2aa']).analyze();expect(viewerA11y.violations).toEqual([]);
+  await page.screenshot({path:'output/viewer-mobile.png'});
+  await page.keyboard.press('Escape');await expect(poster).toBeFocused();
 });

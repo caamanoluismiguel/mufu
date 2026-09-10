@@ -85,3 +85,6 @@ test('generated outputs are deterministic and match canonical data',()=>{
   assert.deepEqual(files.map(f=>hash(fs.readFileSync(f))),before);
   const data=JSON.parse(fs.readFileSync('data/collection.json'));assert.deepEqual(data.records,registry.records);assert.deepEqual(data.facts,facts);
 });
+test('visual redesign preserves the written content of all twenty pages',()=>{
+  execFileSync(process.execPath,['scripts/check-content.mjs']);
+});

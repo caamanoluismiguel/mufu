@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { load } from 'cheerio';
+import { visualEdition } from './visual-edition.mjs';
 import { facts, sources, statuses, modules, threads, nodes, edges, comparisons, custody, questions, corrections } from '../data/editorial.mjs';
 const registry=JSON.parse(fs.readFileSync('data/registry.json','utf8'));
 const {people,records,bonus}=registry;
@@ -138,6 +139,7 @@ const paths=['index.html','atlas.html','infografias.html','coleccion.html','arch
 for(const page of [...paths,'404.html','ficha.html']){
   const $=load(fs.readFileSync(page,'utf8').trimEnd());
   $('link').filter((_,el)=>/fonts\.(googleapis|gstatic)\.com/.test($(el).attr('href')||'')).remove();
+  visualEdition($,page,icon);
   fs.writeFileSync(page,$.html().replace(/[ \t]+$/gm,'').trimEnd()+'\n');
 }
 fs.writeFileSync('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(p=>`\n  <url><loc>https://mufu.today/${p==='index.html'?'':p}</loc><lastmod>${facts.revision}</lastmod></url>`).join('')}\n</urlset>\n`);
