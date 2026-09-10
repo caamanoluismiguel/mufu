@@ -127,6 +127,7 @@ export const questions = [
 ];
 
 export const corrections = [
+  ['2026-09-10','El museo como eje común','Luis Miguel Caamaño aclara que no hay un docente principal. El sitio se presenta como repositorio transversal del trimestre y reconoce su puente narrativo y la creación de la página por separado de los aportes compartidos. El propósito central es comprender el museo, lo aprendido y las conexiones entre las experiencias.'],
   ['2026-09-10','El trimestre compartido','Se hace explícita la autoría colectiva del trimestre alrededor del museo. Se añaden los cruces entre las clases y sus docentes, a partir del relato original y de la aclaración de Luis Miguel Caamaño. No se sustituyen los módulos ni se atribuyen nombres oficiales de asignaturas que el archivo no documenta.'],
   ['2026-09-09','Total de la colección','Se sustituye el total de 48 inferido de cuatro categorías por la declaración actualizada: 51 registros + 2 bonus = 53 objetos. Las cuatro categorías se conservan como consigna pedagógica.'],
   ['2026-09-09','Lugar y escala','Se corrigen referencias residuales a entierro, cota −2.40, urna y pedestal como ubicación permanente. El destino documentado es el vacío emparedado bajo la escalera.'],

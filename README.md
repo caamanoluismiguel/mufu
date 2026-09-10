@@ -104,6 +104,9 @@ los ocho módulos mediante nueve cruces pedagógicos con enlaces al relato origi
 y la nota de procedencia. Los filtros no ocultan contenido en la versión impresa;
 la lectura completa también funciona sin JavaScript. Las láminas originales de
 imagen no se retocan: se amplía la infografía web y su exportación PNG.
+El museo es el eje compartido, sin un docente principal. El puente narrativo y
+la creación de este repositorio transversal por Luis Miguel Caamaño se acreditan
+por separado, sin convertir la autoría de la página en una jerarquía docente.
 
 El trimestre tiene ocho módulos. Las duraciones individuales no están documentadas.
 Pepper es reflexión óptica; Leia es un holograma de ficción, no el primero de la

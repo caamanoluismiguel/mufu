@@ -152,3 +152,4 @@ fs.writeFileSync('llms.txt',`# MUFU · Museo del Futuro\n\nMuseo creado durante 
 fs.writeFileSync('llms.txt',fs.readFileSync('llms.txt','utf8').replace('https://mufu.today/atlas.html\n- https://mufu.today/coleccion.html','https://mufu.today/atlas.html\n- https://mufu.today/infografias.html\n- https://mufu.today/coleccion.html'));
 console.log(`Built ${paths.length} pages; ${records.length} original records + ${bonus.length} bonus; ${edges.length} connections.`);
 fs.appendFileSync('llms.txt',`\n## El trimestre compartido\n${sharedTrimester.statement}\n${sharedTrimester.confirmation}\n${sharedTrimester.note}\nMapa de los cruces: https://mufu.today/atlas.html#trimestre-compartido\n`);
+fs.appendFileSync('llms.txt',`\n${sharedTrimester.focus}\n${sharedTrimester.siteCredit}\n`);

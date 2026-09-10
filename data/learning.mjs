@@ -1,6 +1,8 @@
 export const sharedTrimester = {
   title: 'Un museo hecho entre todos.',
   statement: 'El museo fue el tema común de diez semanas. MUFU nace de la sinergia entre las clases, sus docentes y los 12 estudiantes: las decisiones de una experiencia vuelven a aparecer, transformadas, en las demás.',
+  focus: 'El museo es el centro. Comprender lo aprendido y hacer visibles sus conexiones es el propósito común. Ningún docente es el principal: los aportes de las distintas clases y de los estudiantes se encuentran alrededor de ese tema.',
+  siteCredit: 'Luis Miguel Caamaño realizó el puente narrativo del trimestre y creó este sitio como repositorio transversal de la experiencia compartida. La autoría de la página y la contribución de cada clase se reconocen por separado, sin establecer una jerarquía docente.',
   confirmation: 'Luis Miguel Caamaño, conversación de actualización del 10 de septiembre de 2026: el trimestre es la sinergia de todas las clases y de quienes participaron, alrededor de un tema principal compartido, el museo.',
   note: 'Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal.',
 };
@@ -16,7 +18,7 @@ export const contributors = [
 
 export const learningConnections = [
   {id:'seleccion', modules:['00','01'], threads:['memoria','poder'], title:'La selección ya es una interpretación.', text:'Las fotos de un carrete y los objetos personales cambian de sentido cuando alguien decide cuáles conservar y junto a cuáles mostrarlos.'},
-  {id:'experiencia', modules:['01','02'], threads:['memoria','imagen','poder'], title:'La colección se convierte en experiencia.', text:'La curaduría de Román Flórez encuentra una escala espacial y colectiva en el museo de Viridiana Zavala: recorrido, relato, ambiente y roles.'},
+  {id:'experiencia', modules:['01','02'], threads:['memoria','imagen','poder'], title:'La colección se convierte en experiencia.', text:'La curaduría trabajada con Román Flórez encuentra una escala espacial y colectiva en la experiencia museal trabajada con Viridiana Zavala: recorrido, relato, ambiente y roles.'},
   {id:'mundos', modules:['02','04'], threads:['imagen','poder','tiempo'], title:'Un museo depende de un mundo.', text:'Construir el ecosistema museal con Viridiana y los escenarios con Karla Paniagua permite preguntar qué leyes, tecnologías y formas de convivencia hacen posible una colección.'},
   {id:'narrativa', modules:['03','04'], threads:['memoria','imagen','tiempo'], title:'El objeto cuenta el mundo que lo necesita.', text:'Las funciones narrativas estudiadas con Luis Miguel conectan con los objetos especulativos de los escenarios: una pieza puede activar una historia y hacer legible un sistema.'},
   {id:'ausencia', modules:['04','06'], threads:['imagen','poder','tiempo'], title:'La ficción toma cuerpo en un aparato.', text:'Los escenarios de Karla imaginan originales inaccesibles. La aparición construida con Luis Miguel permite experimentar esa misma condición: ver una imagen sin poder tocar el original.'},

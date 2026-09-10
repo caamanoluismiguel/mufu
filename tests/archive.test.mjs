@@ -132,6 +132,10 @@ test('collective authorship and cross-class connections are sourced and preserve
   }
   const archive=fs.readFileSync('archivo.html','utf8');assert.ok(archive.includes(sharedTrimester.confirmation));
   const data=JSON.parse(fs.readFileSync('data/collection.json'));assert.deepEqual(data.learningConnections,learningConnections);
+  assert.ok(archive.includes(sharedTrimester.siteCredit));
+  for(const page of ['index.html','atlas.html','infografias.html','infografia.html','archivo.html']){
+    assert.ok(fs.readFileSync(page,'utf8').includes(sharedTrimester.focus),page);
+  }
 });
 test('all pages load the same final typography layer with local font files',()=>{
   for(const page of fs.readdirSync('.').filter(f=>f.endsWith('.html'))){

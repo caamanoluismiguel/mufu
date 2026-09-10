@@ -2,6 +2,7 @@
 .shared-intro>.wrap,.weave-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem 5rem;align-items:start}
 .shared-intro h2,.weave-intro h2{margin:0;max-width:12ch}
 .shared-intro p,.weave-intro>p{font:400 1.0625rem/1.8 var(--body);margin:0 0 1.3rem}
+.weave-purpose>p{font:400 1.0625rem/1.8 var(--body);margin:0 0 1.3rem}
 .shared-intro .shared-people{font:500 1rem/1.7 var(--label);color:var(--muted)}
 .shared-intro .section-label,.weave-intro .section-label{font:500 .9375rem/1.5 var(--label)}
 .learning-weave{padding:4rem 0;background:#e9eee5;border-bottom:1px solid #bbc8b7}
@@ -44,6 +45,7 @@
   .shared-intro,.learning-weave{padding:2.5rem 0}
   .shared-intro>.wrap,.weave-intro{grid-template-columns:1fr;gap:1.5rem}
   .shared-intro p,.weave-intro>p{font-size:1rem}
+  .weave-purpose>p{font-size:1rem}
   .shared-intro h2,.weave-intro h2{max-width:14ch}
   .weave-hub{flex-wrap:wrap;gap:.75rem 1rem}
   .weave-hub>a{margin:0;flex-basis:100%}

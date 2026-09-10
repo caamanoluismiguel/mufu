@@ -8,7 +8,7 @@ const moduleLinks=ids=>ids.map(id=>{const m=modules.find(m=>m.id===id);return `<
 export function learningWeave(icon,{compact=false,includeConnections=!compact}={}){
   return `<section class="learning-weave${compact?' weave-compact':''}" id="trimestre-compartido" aria-labelledby="weave-title">
     <div class="content-wide">
-      <div class="weave-intro"><div><p class="section-label">MUFU / El trimestre compartido</p><h2 id="weave-title">${sharedTrimester.title}</h2></div><p>${sharedTrimester.statement}</p></div>
+      <div class="weave-intro"><div><p class="section-label">MUFU / El trimestre compartido</p><h2 id="weave-title">${sharedTrimester.title}</h2></div><div class="weave-purpose"><p>${sharedTrimester.statement}</p><p>${sharedTrimester.focus}</p></div></div>
       <div class="weave-hub">${icon('landmark')}<div><h3>El museo</h3><p>Tema común · autoría colectiva · diez semanas</p></div><a class="text-link" href="index.html#recorrido">El relato completo ${icon('arrow-up-right')}</a></div>
       ${compact?'':`<div class="weave-controls" data-weave-controls hidden role="group" aria-label="Cruces del trimestre"><button type="button" data-weave-filter="all" aria-pressed="true">Todos</button>${threads.map(t=>`<button type="button" data-weave-filter="${t.id}" aria-pressed="false"><i style="--thread:${t.color}" aria-hidden="true"></i>${t.name}</button>`).join('')}</div>`}
       <ul class="weave-contributors">${contributors.map(person=>{

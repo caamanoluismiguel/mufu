@@ -1990,6 +1990,8 @@
   "sharedTrimester": {
     "title": "Un museo hecho entre todos.",
     "statement": "El museo fue el tema común de diez semanas. MUFU nace de la sinergia entre las clases, sus docentes y los 12 estudiantes: las decisiones de una experiencia vuelven a aparecer, transformadas, en las demás.",
+    "focus": "El museo es el centro. Comprender lo aprendido y hacer visibles sus conexiones es el propósito común. Ningún docente es el principal: los aportes de las distintas clases y de los estudiantes se encuentran alrededor de ese tema.",
+    "siteCredit": "Luis Miguel Caamaño realizó el puente narrativo del trimestre y creó este sitio como repositorio transversal de la experiencia compartida. La autoría de la página y la contribución de cada clase se reconocen por separado, sin establecer una jerarquía docente.",
     "confirmation": "Luis Miguel Caamaño, conversación de actualización del 10 de septiembre de 2026: el trimestre es la sinergia de todas las clases y de quienes participaron, alrededor de un tema principal compartido, el museo.",
     "note": "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal."
   },
@@ -2071,7 +2073,7 @@
         "poder"
       ],
       "title": "La colección se convierte en experiencia.",
-      "text": "La curaduría de Román Flórez encuentra una escala espacial y colectiva en el museo de Viridiana Zavala: recorrido, relato, ambiente y roles."
+      "text": "La curaduría trabajada con Román Flórez encuentra una escala espacial y colectiva en la experiencia museal trabajada con Viridiana Zavala: recorrido, relato, ambiente y roles."
     },
     {
       "id": "mundos",
