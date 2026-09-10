@@ -106,7 +106,9 @@ if(!home('#museum-origin').length){
 }
 home('#portada').removeClass('wrap').addClass('museum-hero').html(`<div class="hero-media"><video id="hero-film" muted playsinline loop preload="none" poster="medios/aparicion.jpg" aria-label="Video original de las doce apariciones; reproducción sin sonido"><source src="medios/aparicion.mp4" type="video/mp4"></video></div><div class="hero-overlay wrap"><p class="eyebrow">Isthmus · Panamá · Cohorte 2026</p><h1 class="display h-xl">MUFU<span class="l2">Museo del Futuro</span></h1><p class="hero-deck">53 objetos. Una pared.<br>Una cita en 2047.</p><a class="entrar" href="atlas.html">Entrar al atlas ${icon('arrow-up-right')}</a><a class="hero-read" href="infografias.html">Ver infografías</a><a class="hero-read" href="coleccion.html">Ver la colección</a></div><div class="hero-caption"><span>Última función · video del archivo · 12 apariciones</span><button type="button" id="hero-play" aria-pressed="false" aria-label="Reproducir las apariciones" title="Reproducir las apariciones">${icon('play')}</button><a href="#obra">Ver el registro completo ${icon('arrow-up-right')}</a></div>`);
 home('#museum-origin .tesis').last().text('Empezaron con la galería de fotos de su teléfono. Terminaron emparedando sus objetos bajo una escalera, con una cita de apertura prevista para 2047. La placa seguía pendiente en el último registro.');
-home('#hero-play').html(`<span class="play-icon">${icon('play')}</span><span class="pause-icon">${icon('pause')}</span>`);
+home('.hero-media').html('<img src="medios/mufuhero.png" width="1672" height="940" fetchpriority="high" alt="Una figura suspendida en una vitrina de vidrio bajo una escalera, frente a la bahía de Panamá.">');
+home('#hero-play').remove();
+home('.hero-caption>span').text('MUFU · Imagen conceptual');
 home('.bar nav').html('<a href="atlas.html">Atlas</a><a href="infografias.html">Infografías</a><a href="#recorrido">El trimestre</a><a href="coleccion.html">53 objetos</a><a href="archivo.html">Archivo</a><a href="#visita">Visita</a>');
 home('script:not([type])').each((_,el)=>{
   let js=home(el).html();
@@ -114,7 +116,7 @@ home('script:not([type])').each((_,el)=>{
   js=js.replace(/const APERTURA = new Date\([^;]+;\s*\/\* Fecha del entierro:[\s\S]*?const ENTIERRO = new Date\([^;]+;/,'// Calendar configuration is generated from data/editorial.mjs into assets/facts.js.');
   home(el).html(js);
 });
-if(!home('script[src="assets/hero.js"]').length)home('body').append('<script type="module" src="assets/hero.js"></script>');
+home('script[src="assets/hero.js"]').remove();
 const homeAtlas=`<section id="home-atlas" class="home-atlas"><div class="wrap"><div class="home-atlas-head"><p class="section-label">Un museo empieza por una selección</p><a href="coleccion.html">53 objetos ${icon('arrow-up-right')}</a></div><div class="contact-strip">${records.slice(0,13).map(r=>`<a href="${r.source}" title="${esc(r.title)}"><img src="${r.image.src}" alt="${esc(r.title)}" loading="lazy" width="${r.image.width}" height="${r.image.height}"></a>`).join('')}<a class="contact-bonus" href="archivo.html#conteo" aria-label="Dos objetos bonus sin registro">+2<span>sin ficha</span></a></div><div class="home-atlas-copy"><h2>Diez semanas.<br><em>Todo estaba conectado.</em></h2><p>El mensaje de Leia, el Disco de Oro, el fantasma de Pepper y las cartas de una clase. Cuatro hilos para recorrer lo que aprendimos: memoria, representación, poder y tiempo.</p><a href="atlas.html" class="atlas-entry">Explorar el atlas ${icon('arrow-up-right')}</a></div><div class="home-thread-links">${threads.map(t=>`<a href="atlas.html?hilo=${t.id}"><i style="background:${t.color}" aria-hidden="true"></i>${t.name}<span>${t.question}</span>${icon('arrow-up-right')}</a>`).join('')}</div></div></section>`;
 home('#cuenta').before(homeAtlas);
 home('#home-atlas').after(home('#museum-origin'));

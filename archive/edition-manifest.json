@@ -44,8 +44,8 @@
     },
     {
       "path": "assets/archive.css",
-      "bytes": 43074,
-      "sha256": "d711c24d7549521ede051d2c04a27bd46ee2b9022a3a52177963d386976b00b7"
+      "bytes": 43312,
+      "sha256": "2d71bdcd913e4fd1cfcd7a6b3a902578c457fd9822b3937e58805e045ed66496"
     },
     {
       "path": "assets/clock.js",
@@ -499,8 +499,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 118874,
-      "sha256": "4dc1a481dff5c636e1cbdd284e6e9d6b47ff3048fcf2d5e45940ea54711afd54"
+      "bytes": 117788,
+      "sha256": "925e4418d1424993747890ad61d4efd7feca9ff67a6efffd90560415fdfbfd49"
     },
     {
       "path": "infografia.html",
@@ -548,6 +548,11 @@
       "sha256": "3ab919cb815e43e4ab6eca35a80094c965dcea9ec4f65471f50a4278aefef802"
     },
     {
+      "path": "medios/mufuhero.png",
+      "bytes": 1596525,
+      "sha256": "d375646a81257333fd6158847774862cf3602b8cdcb8060b460be670198e3b7a"
+    },
+    {
       "path": "package-lock.json",
       "bytes": 15761,
       "sha256": "d83df0fafbaea874a318a4e4c708209d42ddda3c8d0545f223174f05643eff37"
@@ -569,8 +574,8 @@
     },
     {
       "path": "scripts/build.mjs",
-      "bytes": 41334,
-      "sha256": "1be25e5d6dfa3bb8b0ab703456fcc88deb93de036f1203139fe07a8820b75403"
+      "bytes": 41435,
+      "sha256": "c7b60aebe4f486c020be7e22e88f974a0a36c9e3df41d658d9596a997b9dba66"
     },
     {
       "path": "scripts/export-infographic.mjs",
@@ -604,8 +609,8 @@
     },
     {
       "path": "tests/browser/experience.spec.js",
-      "bytes": 7502,
-      "sha256": "7f3ab2ce7923ea1dff716424932aed9a25b5cf77114f80aa801b3682f4c0f159"
+      "bytes": 7143,
+      "sha256": "7f2d7d2d48b8f608221f30a8865546ee6f7f078d9cf4de1a1234cb77439fceff"
     }
   ]
 }

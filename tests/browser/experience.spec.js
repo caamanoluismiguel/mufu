@@ -61,18 +61,18 @@ test('scheduled date does not claim a physical opening',async({page})=>{
   await page.clock.install({time:new Date('2047-09-05T12:56:00Z')});await page.goto('/index.html');
   await expect(page.locator('#estado-lab')).toHaveText('Fecha cumplida');await expect(page.locator('#cuenta-lab')).toContainText('falta documentar');
 });
-test('opening film has visible original pixels and play/pause control',async({page})=>{
-  await page.goto('/index.html');await page.locator('#hero-play').click();
-  await expect(page.locator('#hero-play')).toHaveAttribute('aria-pressed','true');
-  await expect.poll(()=>page.locator('#hero-film').evaluate(v=>v.currentTime)).toBeGreaterThan(0.1);
-  const visible=await page.locator('#hero-film').evaluate(v=>{const c=document.createElement('canvas');c.width=160;c.height=90;const ctx=c.getContext('2d');ctx.drawImage(v,0,0,160,90);const d=ctx.getImageData(0,0,160,90).data;let n=0;for(let i=0;i<d.length;i+=4)if(d[i]+d[i+1]+d[i+2]>60)n++;return n;});
-  expect(visible).toBeGreaterThan(50);
-  await page.locator('#hero-play').click();await expect(page.locator('#hero-play')).toHaveAttribute('aria-pressed','false');
+test('opening image loads and the original film remains in the archive',async({page})=>{
+  await page.goto('/index.html');
+  const image=page.locator('.hero-media img');
+  await expect(image).toBeVisible();
+  await expect.poll(()=>image.evaluate(img=>img.naturalWidth)).toBeGreaterThan(1000);
+  await expect(page.locator('#portada video')).toHaveCount(0);
+  await expect(page.locator('video.aparicion__v')).toHaveCount(1);
 });
 test('short mobile viewport keeps navigation and the next section visible',async({page})=>{
   await page.setViewportSize({width:375,height:667});await page.goto('/index.html');
   const bottom=await page.locator('#portada').evaluate(e=>e.getBoundingClientRect().bottom);expect(bottom).toBeLessThan(667);
-  await expect(page.locator('#hero-play')).toBeInViewport();
+  await expect(page.getByRole('link',{name:'Ver infografías',exact:true})).toBeInViewport();
   await page.screenshot({path:'output/index-short-mobile.png'});
 });
 test('visual infographics are immediate, openable, downloadable and reachable from the home page',async({page})=>{
