@@ -1,0 +1,64 @@
+.shared-intro{background:#fff;border-bottom:1px solid var(--rule);padding:3.5rem 0}
+.shared-intro>.wrap,.weave-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem 5rem;align-items:start}
+.shared-intro h2,.weave-intro h2{margin:0;max-width:12ch}
+.shared-intro p,.weave-intro>p{font:400 1.0625rem/1.8 var(--body);margin:0 0 1.3rem}
+.shared-intro .shared-people{font:500 1rem/1.7 var(--label);color:var(--muted)}
+.shared-intro .section-label,.weave-intro .section-label{font:500 .9375rem/1.5 var(--label)}
+.learning-weave{padding:4rem 0;background:#e9eee5;border-bottom:1px solid #bbc8b7}
+.weave-hub{display:flex;align-items:center;gap:1.25rem;border-block:1px solid #97a68e;padding:1.25rem 0;margin:2rem 0 0}
+.weave-hub>svg{width:44px;height:44px;flex:none;color:var(--olive)}
+.weave-hub h3{font:400 2.25rem/1.1 var(--display);margin:0}
+.weave-hub p{font:500 1rem/1.5 var(--label);margin:.25rem 0 0;color:var(--muted)}
+.weave-hub>a{margin-left:auto}
+.weave-controls{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding:.75rem 0;border-bottom:1px solid #bbc8b7}
+.weave-controls[hidden]{display:none}
+.weave-controls button{font:500 1rem/1.5 var(--label);display:flex;align-items:center;gap:.5rem;background:none;border:0;border-bottom:2px solid transparent;color:var(--ink);padding:.65rem .25rem;min-height:44px;cursor:pointer}
+.weave-controls button[aria-pressed=true]{border-color:var(--brass)}
+.weave-controls button:hover{color:var(--brass)}
+.weave-controls i,.weave-themes i{display:inline-block;width:7px;height:7px;background:var(--thread);flex:none}
+.weave-contributors{list-style:none;margin:0;padding:0}
+.weave-contributors>li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 155px;gap:1.5rem 3rem;padding:1.8rem 0;border-bottom:1px solid #bbc8b7}
+.weave-contributors>li[hidden],.weave-crossings li[hidden]{display:none}
+.weave-person h3{margin:0 0 .65rem}
+.weave-person p{font:500 1rem/1.5 var(--label);margin:0}
+.weave-contribution>p,.weave-crossings li>p{font:400 1rem/1.8 var(--body);margin:0 0 1rem}
+.weave-contribution nav,.weave-crossings nav{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem}
+.weave-contribution nav a,.weave-crossings nav a{font:500 .9375rem/1.5 var(--label);color:var(--ink);text-underline-offset:4px;padding:.3rem 0;min-height:32px}
+.weave-themes{list-style:none;margin:0;padding:0}
+.weave-themes a{display:flex;align-items:center;gap:.6rem;min-height:32px;color:var(--ink);font:500 .9375rem/1.5 var(--label);text-decoration:none}
+.weave-themes a:hover{text-decoration:underline;text-underline-offset:4px}
+.weave-crossings{padding-top:3rem}
+.weave-crossings h3{margin:0 0 1rem}
+.weave-crossings>ol{display:grid;grid-template-columns:1fr 1fr;list-style:none;padding:0;margin:1rem 0 0;gap:0 3rem}
+.weave-crossings li{padding:1.5rem 0;border-top:1px solid #bbc8b7}
+.weave-crossings h4{margin:0 0 1rem}
+.learning-weave>.content-wide>.source-note{max-width:95ch}
+.weave-compact .weave-contributors{margin-bottom:1.5rem}
+.infographic .learning-weave{margin-block:2rem;padding:2rem;border:1px solid var(--rule);background:white}
+.infographic .learning-weave>.content-wide{padding:0;max-width:none}
+@media(max-width:1100px){
+  .weave-contributors>li{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:1rem 2rem}
+  .weave-themes{grid-column:2;display:flex;flex-wrap:wrap;gap:0 1rem}
+}
+@media(max-width:760px){
+  .shared-intro,.learning-weave{padding:2.5rem 0}
+  .shared-intro>.wrap,.weave-intro{grid-template-columns:1fr;gap:1.5rem}
+  .shared-intro p,.weave-intro>p{font-size:1rem}
+  .shared-intro h2,.weave-intro h2{max-width:14ch}
+  .weave-hub{flex-wrap:wrap;gap:.75rem 1rem}
+  .weave-hub>a{margin:0;flex-basis:100%}
+  .weave-contributors>li{grid-template-columns:1fr;gap:1rem;padding:1.5rem 0}
+  .weave-themes{grid-column:auto}
+  .weave-crossings>ol{grid-template-columns:1fr}
+  .weave-controls{gap:.25rem .75rem}
+  .infographic .learning-weave{border:0;padding:1.5rem 0}
+}
+@media print{
+  .learning-weave,.infographic .learning-weave{background:white;padding:1rem 0;border:0}
+  .weave-controls,.weave-hub>a{display:none}
+  .weave-contributors>li{break-inside:avoid;display:grid!important;grid-template-columns:1fr 1.8fr;gap:.5rem 1.5rem;padding:.8rem 0}
+  .weave-themes{display:none}
+  .weave-contribution>p,.weave-person p{font-size:10pt}
+  .weave-crossings>ol{display:block}
+  .weave-crossings li{display:block!important;break-inside:avoid}
+}

@@ -3,6 +3,10 @@ import {destinations,activeDestination,siteHeader} from './navigation.mjs';
 export function visualEdition($,page,icon){
   $('link[href="assets/edition.css"],script[src="assets/edition.js"],#museum-index,#image-viewer,.index-toggle,.reading-progress,#home-visuals,.edition-utility').remove();
   $('head').append('<link rel="stylesheet" href="assets/edition.css">');
+  $('link[href="assets/typography.css"],link[href="assets/learning.css"],script[src="assets/learning.js"]').remove();
+  if($('.learning-weave,.shared-intro').length)$('head').append('<link rel="stylesheet" href="assets/learning.css">');
+  $('head').append('<link rel="stylesheet" href="assets/typography.css">');
+  if($('[data-weave-controls]').length)$('body').append('<script type="module" src="assets/learning.js"></script>');
   if(page==='404.html'&&!$('base').length)$('head').prepend('<base href="/">');
   $('body').addClass('mufu-edition').attr('data-surface',page==='index.html'?'home':/^ficha(?:-\d+)?\.html$/.test(page)?'record':'archive');
   const links=destinations.map(([href,label],i)=>[href,label,String(i+1).padStart(2,'0')]);

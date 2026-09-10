@@ -2,13 +2,15 @@ import fs from 'node:fs';
 import { load } from 'cheerio';
 import { visualEdition } from './visual-edition.mjs';
 import { siteHeader } from './navigation.mjs';
+import { applySharedLearning } from './shared-learning.mjs';
+import { sharedTrimester,contributors,learningConnections } from '../data/learning.mjs';
 import { facts, sources, statuses, modules, threads, nodes, edges, comparisons, custody, questions, corrections } from '../data/editorial.mjs';
 const registry=JSON.parse(fs.readFileSync('data/registry.json','utf8'));
 const {people,records,bonus}=registry;
 const fontVariants={
   'instrument-serif':[[400,'normal'],[400,'italic']],
   spectral:[[300,'normal'],[300,'italic'],[400,'normal'],[400,'italic'],[500,'normal'],[600,'normal']],
-  'archivo-narrow':[[400,'normal'],[500,'normal'],[600,'normal']],
+  'archivo-narrow':[[400,'normal'],[500,'normal'],[600,'normal'],[700,'normal']],
 };
 fs.mkdirSync('assets/fonts',{recursive:true});
 const fontCSS=[];
@@ -132,7 +134,7 @@ printPage('.print-actions').append(`<a href="medios/mufu-infografia.png" downloa
 printPage('.print-threads article').each((i,el)=>printPage(el).attr('style',`border-top:3px solid ${threads[i].color};padding-top:1rem`));
 fs.writeFileSync('infografia.html',printPage.html());
 
-const data={facts,people,records,bonus,sources,threads,nodes,edges,questions};
+const data={facts,people,records,bonus,sources,threads,nodes,edges,questions,sharedTrimester,contributors,learningConnections};
 fs.writeFileSync('data/collection.json',JSON.stringify(data,null,2)+'\n');
 fs.writeFileSync('assets/data.js',`export default ${JSON.stringify(data).replace(/</g,'\\u003c')};\n`);
 fs.writeFileSync('assets/facts.js',`export default ${JSON.stringify(facts)};\n`);
@@ -141,6 +143,7 @@ const paths=['index.html','atlas.html','infografias.html','coleccion.html','arch
 for(const page of [...paths,'404.html','ficha.html']){
   const $=load(fs.readFileSync(page,'utf8').trimEnd());
   $('link').filter((_,el)=>/fonts\.(googleapis|gstatic)\.com/.test($(el).attr('href')||'')).remove();
+  applySharedLearning($,page,icon);
   visualEdition($,page,icon);
   fs.writeFileSync(page,$.html().replace(/[ \t]+$/gm,'').trimEnd()+'\n');
 }
@@ -148,3 +151,4 @@ fs.writeFileSync('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset 
 fs.writeFileSync('llms.txt',`# MUFU · Museo del Futuro\n\nMuseo creado durante diez semanas por 12 estudiantes de Isthmus, Panamá, en 2026.\n\n## Hechos y procedencia\n- 51 objetos declarados y registrados, más dos bonus sin ficha: 53 objetos. Total corregido por Luis Miguel Caamaño el 9 de septiembre de 2026. No son 48.\n- Dos cajas, emparedadas bajo la escalera posterior del edificio 106, Ciudad del Saber. No hay un manifiesto público por caja.\n- Cierre registrado: 4 de septiembre de 2026; hora desconocida.\n- Apertura prevista: 5 de septiembre de 2047 a las 07:56, Panamá (UTC-5). Llegar a la fecha no acredita una apertura física.\n- La fecha coincide con el 70 aniversario de Voyager 1 con precisión de minuto; NASA precisa 12:56:01 UT para el lanzamiento.\n- El relato del proyecto describe una placa de latón pendiente; no hay una actualización física verificada.\n- Cuatro intenciones de selección en la consigna: dar, recuperar, representar el presente y escribir una carta. No son cuatro objetos uniformes por persona.\n\n## El trimestre\n${modules.map(m=>`- ${m.id}: ${m.title} (${m.teacher}). ${m.lesson}`).join('\n')}\n\n## Interpretaciones\nDos escenarios ficticios de Panamá en 2046: transformación (LNS) y colapso (Nodos de Memoria). No son hechos actuales ni pronósticos científicos. Ambos imaginan originales inaccesibles y reconstrucciones visibles. El atlas propone conexiones curatoriales entre memoria, representación, poder y tiempo; no afirma causalidad entre Star Wars, Voyager y Pepper. Pepper es una ilusión por reflexión, no holografía.\n\n## Archivo\n- https://mufu.today/atlas.html\n- https://mufu.today/coleccion.html\n- https://mufu.today/archivo.html\n- https://mufu.today/data/collection.json\n\n51 fotografías y textos de registro conservados; dos bonus sin datos inventados. Correos, domicilios, valoraciones y mensajes reservados quedan fuera. No inferir el contenido de las cartas, categorías de objetos ni pertenencia a cajas. Las fuentes originales y las correcciones se consultan en archivo.html.\n`);
 fs.writeFileSync('llms.txt',fs.readFileSync('llms.txt','utf8').replace('https://mufu.today/atlas.html\n- https://mufu.today/coleccion.html','https://mufu.today/atlas.html\n- https://mufu.today/infografias.html\n- https://mufu.today/coleccion.html'));
 console.log(`Built ${paths.length} pages; ${records.length} original records + ${bonus.length} bonus; ${edges.length} connections.`);
+fs.appendFileSync('llms.txt',`\n## El trimestre compartido\n${sharedTrimester.statement}\n${sharedTrimester.confirmation}\n${sharedTrimester.note}\nMapa de los cruces: https://mufu.today/atlas.html#trimestre-compartido\n`);

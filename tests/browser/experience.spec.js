@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import {learningConnections} from '../../data/learning.mjs';
 const pages=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','ficha-02.html','404.html'];
 for(const width of [375,768,1440,1920]){
   test(`${width}px pages render with local assets, no horizontal overflow or accessibility violations`,async({page})=>{
@@ -161,4 +162,72 @@ test('museum index and image zoom work by keyboard and touch-sized controls',asy
   const viewerA11y=await new AxeBuilder({page}).include('#image-viewer').withTags(['wcag2a','wcag2aa']).analyze();expect(viewerA11y.violations).toEqual([]);
   await page.screenshot({path:'output/viewer-mobile.png'});
   await page.keyboard.press('Escape');await expect(poster).toBeFocused();
+});
+
+test('the three typography roles render with local fonts on every surface',async({page})=>{
+  const cdp=await page.context().newCDPSession(page);
+  await cdp.send('DOM.enable');await cdp.send('CSS.enable');
+  for(const file of [...pages,'ficha.html']){
+    await page.goto(`/${file}`);await page.evaluate(()=>document.fonts.ready);
+    await expect(page.locator('body')).toHaveCSS('font-family',/Spectral/);
+    await expect(page.locator('body')).toHaveCSS('font-weight','400');
+    await expect(page.locator('.museum-header nav a').first()).toHaveCSS('font-family',/Archivo Narrow/);
+    const title=page.locator('h1:not(.h-xl)');
+    if(await title.count())await expect(title).toHaveCSS('font-family',/Instrument Serif/);
+    const reading=page.locator('.intro-title>p,.lede,.hero-deck').first();
+    if(await reading.count()){
+      await expect(reading).toHaveCSS('font-family',/Spectral/);
+      await expect(reading).toHaveCSS('font-weight','400');
+    }
+    const {root}=await cdp.send('DOM.getDocument');
+    for(const selector of ['.museum-header nav a','.site-brand','h1:not(.h-xl)','.intro-title>p,.lede,.hero-deck']){
+      const {nodeId}=await cdp.send('DOM.querySelector',{nodeId:root.nodeId,selector});
+      if(!nodeId)continue;
+      const {fonts}=await cdp.send('CSS.getPlatformFontsForNode',{nodeId});
+      expect(fonts.length,`${file}: ${selector}`).toBeGreaterThan(0);
+      // The preserved template title includes one square placeholder outside the Latin font.
+      const allowedFallback=file==='ficha.html'&&selector==='h1:not(.h-xl)'?1:0;
+      const fallbackGlyphs=fonts.filter(f=>!f.isCustomFont).reduce((sum,f)=>sum+f.glyphCount,0);
+      expect(fallbackGlyphs,`${file}: ${JSON.stringify(fonts)}`).toBeLessThanOrEqual(allowedFallback);
+    }
+  }
+  await page.goto('/infografias.html');
+  await page.setViewportSize({width:375,height:900});
+  await expect(page.locator('.museum-header nav a').first()).toHaveCSS('font-size','15px');
+  await page.setViewportSize({width:1440,height:900});
+  await expect(page.locator('.museum-header nav a').first()).toHaveCSS('font-size','15px');
+});
+
+test('cross-class map keeps shared authorship, source links, filters and print access',async({page,browser})=>{
+  await page.goto('/atlas.html#trimestre-compartido');
+  await expect(page.locator('.weave-contributors>li')).toHaveCount(6);
+  for(const name of ['Erika Schnitter y Alejandro Pachón','Román Flórez','Viridiana Zavala','Luis Miguel Caamaño','Karla Paniagua','Los 12 estudiantes']){
+    await expect(page.locator('.weave-person p').filter({hasText:name})).toBeVisible();
+  }
+  await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(9);
+  for(const theme of ['memoria','imagen','poder','tiempo']){
+    const button=page.locator(`[data-weave-filter="${theme}"]`);
+    await button.focus();await page.keyboard.press('Enter');
+    await expect(button).toHaveAttribute('aria-pressed','true');
+    await expect(page.locator('[data-contributor=cohorte]')).toBeVisible();
+    await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(learningConnections.filter(c=>c.threads.includes(theme)).length);
+  }
+  await page.emulateMedia({media:'print'});
+  await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(9);
+  await expect(page.locator('.weave-controls')).not.toBeVisible();
+  await page.emulateMedia({media:'screen'});
+  await page.locator('[data-weave-filter=all]').click();
+  for(const width of [375,1440]){
+    await page.setViewportSize({width,height:900});
+    await page.locator('#trimestre-compartido').screenshot({path:`output/shared-trimester-${width}.png`});
+  }
+  await page.locator('[data-contributor=viridiana] nav a').click();
+  await expect(page).toHaveURL(/index.html#modulo-original-02$/);
+  await expect(page.locator('#modulo-original-02')).toBeInViewport();
+  const context=await browser.newContext({javaScriptEnabled:false});const staticPage=await context.newPage();
+  await staticPage.goto('http://127.0.0.1:4177/atlas.html#trimestre-compartido');
+  await expect(staticPage.locator('.weave-controls')).not.toBeVisible();
+  await expect(staticPage.locator('[data-learning-connection]')).toHaveCount(9);
+  await expect(staticPage.locator('[data-contributor=karla]')).toBeVisible();
+  await context.close();
 });

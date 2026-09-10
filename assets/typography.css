@@ -1,0 +1,38 @@
+@import url('./fonts.css?v=2026-09-10');
+
+/* The same reading, display and interface roles on every museum surface. */
+:root{
+  --font-display:'Instrument Serif',Georgia,serif;
+  --font-reading:'Spectral',Georgia,serif;
+  --font-ui:'Archivo Narrow',Arial,sans-serif;
+  --display:var(--font-display);--disp:var(--font-display);
+  --body:var(--font-reading);--texto:var(--font-reading);
+  --label:var(--font-ui);--cota:var(--font-ui);--sans:var(--font-ui);
+  --type-page:5rem;--type-reading:1.0625rem;--type-label:.9375rem;
+}
+body.mufu-edition{font:400 1rem/1.7 var(--font-reading);font-synthesis:none}
+.mufu-edition :where(h1,h2,h3,h4,h5,h6){font-family:var(--font-display);font-weight:400}
+body.mufu-edition h1:not(.h-xl){font:400 var(--type-page)/1.05 var(--font-display)}
+body.mufu-edition :is(.lede,.intro-title>p,.prose,.mom__d,.pieza-l__d){font:400 var(--type-reading)/1.8 var(--font-reading)}
+body.mufu-edition :is(button,input,select,textarea){font-family:var(--font-ui)}
+body.mufu-edition .museum-header nav a{font-family:var(--font-ui)!important;font-weight:500}
+body.mufu-edition .museum-header nav a{font-size:var(--type-label)!important}
+body.mufu-edition .chapter-nav a{font:500 var(--type-label)/1.5 var(--font-ui)}
+body.mufu-edition :is(.pieza-l dl,.dialog-grid dl){font:400 var(--type-label)/1.6 var(--font-ui)}
+body.mufu-edition :is(.section-label,.eyebrow){font:500 var(--type-label)/1.5 var(--font-ui)}
+body.mufu-edition :is(.prose,.mom__d,.pieza-l__d) :is(b,strong){font-weight:600}
+.mufu-edition :is(.weave-intro,.shared-intro) h2{font:400 3.5rem/1.08 var(--font-display)}
+.mufu-edition .weave-person h3{font:400 1.85rem/1.15 var(--font-display)}
+.mufu-edition .weave-crossings h3{font:400 2.5rem/1.1 var(--font-display)}
+.mufu-edition .weave-crossings h4{font:400 1.75rem/1.2 var(--font-display)}
+@media(max-width:1150px){:root{--type-page:4.5rem}}
+@media(max-width:760px){
+  :root{--type-page:3.25rem;--type-reading:1rem}
+  .mufu-edition :is(.weave-intro,.shared-intro) h2{font-size:2.5rem}
+}
+@media(max-width:380px){:root{--type-page:3rem}}
+@media print{
+  :root{--type-page:32pt;--type-reading:10pt;--type-label:9pt}
+  .mufu-edition :is(.weave-intro,.shared-intro) h2{font-size:24pt}
+  .mufu-edition .weave-person h3{font-size:15pt}
+}

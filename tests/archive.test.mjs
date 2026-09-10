@@ -6,6 +6,8 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {load} from 'cheerio';
 import {facts,nodes,edges,modules,sources,threads} from '../data/editorial.mjs';
+import {contributors,learningConnections,sharedTrimester} from '../data/learning.mjs';
+import {contributorName} from '../scripts/learning-weave.mjs';
 import {remaining} from '../assets/clock.js';
 const registry=JSON.parse(fs.readFileSync('data/registry.json'));
 const text=($,el)=>$(el).text().replace(/\s+/g,' ').trim();
@@ -110,4 +112,32 @@ test('generated outputs are deterministic and match canonical data',()=>{
 });
 test('visual redesign preserves the written content of all twenty pages',()=>{
   execFileSync(process.execPath,['scripts/check-content.mjs']);
+});
+test('collective authorship and cross-class connections are sourced and preserved in every learning view',()=>{
+  assert.equal(contributors.length,6);
+  assert.equal(learningConnections.length,9);
+  assert.equal(new Set(contributors.flatMap(c=>c.modules)).size,8);
+  for(const item of [...contributors,...learningConnections])for(const id of item.modules)assert.ok(modules.some(m=>m.id===id),id);
+  for(const connection of learningConnections)for(const id of connection.threads)assert.ok(threads.some(t=>t.id===id),id);
+  for(const page of ['atlas.html','infografia.html','infografias.html']){
+    const $=load(fs.readFileSync(page,'utf8'));
+    assert.equal($('#trimestre-compartido').length,1,page);
+    assert.equal($('.weave-contributors>li').length,6,page);
+    if(page!=='infografias.html')assert.equal($('[data-learning-connection]').length,9,page);
+    for(const person of contributors){
+      assert.ok($(`[data-contributor="${person.id}"]`).text().includes(contributorName(person)),page);
+      for(const id of person.modules)assert.equal($(`[data-contributor="${person.id}"] a[href="index.html#modulo-original-${id}"]`).length,1);
+    }
+    assert.deepEqual($('[data-contributor=cohorte]').attr('data-weave-themes').split(' '),threads.map(t=>t.id));
+  }
+  const archive=fs.readFileSync('archivo.html','utf8');assert.ok(archive.includes(sharedTrimester.confirmation));
+  const data=JSON.parse(fs.readFileSync('data/collection.json'));assert.deepEqual(data.learningConnections,learningConnections);
+});
+test('all pages load the same final typography layer with local font files',()=>{
+  for(const page of fs.readdirSync('.').filter(f=>f.endsWith('.html'))){
+    const $=load(fs.readFileSync(page,'utf8'));
+    assert.equal($('link[href="assets/typography.css"]').length,1,page);
+    assert.equal($('link[rel=stylesheet]').last().attr('href'),'assets/typography.css',page);
+  }
+  assert.ok(fs.existsSync('assets/fonts/archivo-narrow-latin-700-normal.woff2'));
 });

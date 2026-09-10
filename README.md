@@ -81,6 +81,9 @@ la sección arquitectónica y las cuatro familias de conexiones: latón (memoria
 verde azulado (representación), rojo apagado (poder) y oliva (tiempo). El color
 siempre tiene un rótulo; nunca es la única forma de identificar una relación.
 Instrument Serif titula, Spectral acompaña la lectura y Archivo Narrow rotula.
+`assets/typography.css` fija esos tres roles, sus pesos y la escala de lectura
+en todas las páginas. Las fuentes se sirven localmente; la navegación no cambia
+de familia entre móvil y escritorio. No se sintetizan negritas ni cursivas.
 Los diagramas conceptuales no se presentan como mediciones del lugar construido.
 
 `scripts/visual-edition.mjs` aplica la presentación sin reescribir el contenido;
@@ -93,6 +96,14 @@ revisión visual. Las pruebas de navegador cubren cuatro tamaños, accesibilidad
 filtros, navegación, diálogos, zoom, descargas y funcionamiento sin JavaScript.
 El ciclo de mejora es construir, revisar capturas, corregir y volver a validar.
 No hay un proceso permanente que cambie automáticamente el contenido publicado.
+
+`data/learning.mjs` reúne la lectura del trimestre como obra compartida. El mapa
+reconoce a la dirección, los cuatro docentes y los 12 estudiantes, y relaciona
+los ocho módulos mediante nueve cruces pedagógicos con enlaces al relato original.
+`scripts/shared-learning.mjs` lo incorpora a la portada, el atlas, las infografías
+y la nota de procedencia. Los filtros no ocultan contenido en la versión impresa;
+la lectura completa también funciona sin JavaScript. Las láminas originales de
+imagen no se retocan: se amplía la infografía web y su exportación PNG.
 
 El trimestre tiene ocho módulos. Las duraciones individuales no están documentadas.
 Pepper es reflexión óptica; Leia es un holograma de ficción, no el primero de la

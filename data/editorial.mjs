@@ -1,5 +1,5 @@
 export const facts = {
-  revision: '2026-09-09', weeks: 10, modules: 8, students: 12,
+  revision: '2026-09-10', weeks: 10, modules: 8, students: 12,
   registered: 51, bonus: 2, total: 53, boxes: 2, appearances: 12,
   closureDate: '2026-09-04', opening: '2047-09-05T07:56:00-05:00',
   location: 'Edificio 106, Ciudad del Saber, Panamá; bajo la escalera de la fachada posterior',
@@ -24,6 +24,7 @@ export const sources = [
   { id: 'logan', title: 'American Cinematographer · Logan’s Run and How It Was Filmed', type: 'Fuente histórica / producción cinematográfica', url: 'https://theasc.com/article/logans-run-and-how-it-was-filmed/', note: 'El reportaje de 1976 documenta holografía real en Logan’s Run y presenta a Michael York como la primera estrella de cine que actuó en un holograma. Esta prioridad técnica tiene un alcance específico: no establece la primera representación ficticia de un holograma en cualquier película.' },
   { id: 'leia-futuro', title: 'MIT Media Lab · Holography and Sci-Fi-Inspired Devices', type: 'Referencia / imaginario tecnológico', url: 'https://www.media.mit.edu/articles/advancements-in-holography-usher-in-sci-fi-inspired-devices/', note: 'Vincula la escena de Leia en Star Wars (1977) con la asociación cultural entre hologramas y futuro. Apoya la distinción de MUFU entre el antecedente técnico y la imagen popularizada por el cine.' },
   { id: 'moma', title: 'MoMA · Full Disclosure', type: 'Referencia posterior', url: 'https://www.moma.org/calendar/exhibitions/5926', note: 'Referencia para esta ampliación del archivo: información, confianza y fuentes. No se presenta como parte del programa original.' },
+  { id: 'comunidad', title: 'El trimestre como obra compartida', type: 'Testimonio / contexto pedagógico', url: 'archivo.html#autoria', note: 'Confirmación de Luis Miguel Caamaño del 10 de septiembre de 2026: MUFU integra las clases del trimestre alrededor del museo. Los nombres y aportes se contrastan con los ocho módulos del relato original.' },
 ];
 
 export const statuses = [
@@ -126,6 +127,7 @@ export const questions = [
 ];
 
 export const corrections = [
+  ['2026-09-10','El trimestre compartido','Se hace explícita la autoría colectiva del trimestre alrededor del museo. Se añaden los cruces entre las clases y sus docentes, a partir del relato original y de la aclaración de Luis Miguel Caamaño. No se sustituyen los módulos ni se atribuyen nombres oficiales de asignaturas que el archivo no documenta.'],
   ['2026-09-09','Total de la colección','Se sustituye el total de 48 inferido de cuatro categorías por la declaración actualizada: 51 registros + 2 bonus = 53 objetos. Las cuatro categorías se conservan como consigna pedagógica.'],
   ['2026-09-09','Lugar y escala','Se corrigen referencias residuales a entierro, cota −2.40, urna y pedestal como ubicación permanente. El destino documentado es el vacío emparedado bajo la escalera.'],
   ['2026-09-09','Tiempo y estado','La hora del cierre no está documentada. El calendario indica cuándo puede abrirse, nunca confirma una apertura física automática. Los 21 años son una simetría nominal entre años.'],
