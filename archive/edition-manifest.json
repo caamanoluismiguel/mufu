@@ -609,8 +609,8 @@
     },
     {
       "path": "tests/browser/experience.spec.js",
-      "bytes": 7143,
-      "sha256": "7f2d7d2d48b8f608221f30a8865546ee6f7f078d9cf4de1a1234cb77439fceff"
+      "bytes": 7551,
+      "sha256": "d9c95e26b048b1bfc8257a1b2018fc6191c76bcd1fab897b55ec1fdb9d5759fc"
     }
   ]
 }

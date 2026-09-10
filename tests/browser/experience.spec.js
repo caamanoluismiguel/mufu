@@ -47,11 +47,14 @@ test('atlas filters, connection selection and light experiment remain functional
   await page.goto('/atlas.html?hilo=tiempo');
   await expect(page.locator('[data-thread=tiempo]')).toHaveAttribute('aria-pressed','true');
   await expect(page.locator('[data-node][aria-pressed=true]')).not.toHaveClass(/not-in-thread/);
-  await page.locator('[data-node=leia]').click();await expect(page.locator('[data-thread=all]')).toHaveAttribute('aria-pressed','true');
+  await page.locator('[data-node=leia]').click();await expect(page.locator('[data-thread=tiempo]')).toHaveAttribute('aria-pressed','true');
+  await page.locator('[data-node=curar]').click();await expect(page.locator('[data-thread=all]')).toHaveAttribute('aria-pressed','true');
 });
 test('questions explain unknowns and original records are available without JavaScript',async({page,browser})=>{
   await page.goto('/archivo.html');await page.locator('#question-query').fill('pepper');
-  await expect(page.locator('[data-question]:visible')).toHaveCount(1);
+  await expect(page.locator('[data-question]:visible')).toHaveCount(3);
+  await expect(page.locator('[data-question]:visible').filter({hasText:'¿Pepper es un holograma?'})).toBeVisible();
+  await expect(page.locator('[data-question]:visible').filter({hasText:'¿Qué aportan Logan’s Run y Star Wars a esta conexión?'})).toBeVisible();
   await page.locator('#question-query').fill('zzzzzz');await expect(page.locator('#question-empty')).toBeVisible();
   const context=await browser.newContext({javaScriptEnabled:false});const offline=await context.newPage();
   await offline.goto('http://127.0.0.1:4177/coleccion.html');await expect(offline.locator('.object-card')).toHaveCount(53);
