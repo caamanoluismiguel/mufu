@@ -1505,7 +1505,14 @@
       "title": "American Cinematographer · Logan’s Run and How It Was Filmed",
       "type": "Fuente histórica / producción cinematográfica",
       "url": "https://theasc.com/article/logans-run-and-how-it-was-filmed/",
-      "note": "Reportaje de producción de 1976 que documenta hologramas realizados para Logan’s Run. Es un antecedente cinematográfico anterior a Star Wars (1977)."
+      "note": "El reportaje de 1976 documenta holografía real en Logan’s Run y presenta a Michael York como la primera estrella de cine que actuó en un holograma. Esta prioridad técnica tiene un alcance específico: no establece la primera representación ficticia de un holograma en cualquier película."
+    },
+    {
+      "id": "leia-futuro",
+      "title": "MIT Media Lab · Holography and Sci-Fi-Inspired Devices",
+      "type": "Referencia / imaginario tecnológico",
+      "url": "https://www.media.mit.edu/articles/advancements-in-holography-usher-in-sci-fi-inspired-devices/",
+      "note": "Vincula la escena de Leia en Star Wars (1977) con la asociación cultural entre hologramas y futuro. Apoya la distinción de MUFU entre el antecedente técnico y la imagen popularizada por el cine."
     },
     {
       "id": "moma",
@@ -1593,17 +1600,18 @@
     {
       "id": "leia",
       "title": "El mensaje de Leia",
-      "date": "1977 · Ficción",
+      "date": "1976 → 1977 · Técnica e imaginario",
       "icon": "message-circle",
       "threads": [
         "memoria",
         "imagen",
         "tiempo"
       ],
-      "text": "R2-D2 hace presente a una persona ausente y su mensaje activa el viaje de Luke. MUFU lee esta imagen emblemática de Star Wars como un referente cultural de la comunicación del futuro: una figura luminosa que habla a través de la distancia. Su importancia aquí es cultural; Logan’s Run ya utilizó hologramas en 1976.",
+      "text": "Logan’s Run (1976) llevó holografía real a la pantalla; American Cinematographer presenta a Michael York como la primera estrella de cine que actuó en un holograma. Star Wars (1977) popularizó el holograma como imagen de la comunicación del futuro: R2-D2 hace presente a Leia y su mensaje activa el viaje de Luke. MUFU enlaza ese imaginario con la técnica teatral de Pepper.",
       "sources": [
-        "leia",
         "logan",
+        "leia",
+        "leia-futuro",
         "hilo"
       ]
     },
@@ -1776,7 +1784,7 @@
       "pepper",
       "leia",
       "imagen",
-      "Del efecto escénico patentado al holograma como imagen cultural del futuro: MUFU conecta una técnica del pasado con el imaginario de Star Wars."
+      "Pepper: aparición teatral. Logan’s Run (1976): holografía real en el cine. Star Wars (1977): popularización del holograma como imagen del futuro. MUFU conecta técnica, cine e imaginario."
     ],
     [
       "pepper",
@@ -1908,6 +1916,17 @@
       "sources": [
         "pepper",
         "leia",
+        "curso"
+      ]
+    },
+    {
+      "q": "¿Qué aportan Logan’s Run y Star Wars a esta conexión?",
+      "keywords": "logan star wars leia primer primero holograma cine popularizo popularización futuro",
+      "answer": "Son dos hitos distintos. Logan’s Run (1976) utilizó holografía real: el reportaje de American Cinematographer presenta a Michael York como la primera estrella cinematográfica que actuó en un holograma. Star Wars (1977) popularizó la imagen del holograma como comunicación del futuro mediante el mensaje de Leia. MUFU conecta el antecedente técnico, su popularización cultural y la recuperación de Pepper en el taller. La afirmación de prioridad se atribuye a la fuente y a ese uso concreto; no se extiende a toda representación ficticia anterior.",
+      "sources": [
+        "logan",
+        "leia",
+        "leia-futuro",
         "curso"
       ]
     },

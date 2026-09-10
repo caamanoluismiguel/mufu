@@ -39,8 +39,8 @@
     },
     {
       "path": "archivo.html",
-      "bytes": 48875,
-      "sha256": "b3543277e845b04b1fc74a8eb80ce33508ea33369a6c77030cf0ef74835ed91e"
+      "bytes": 52714,
+      "sha256": "2cfb2afd2a1a3cf6b7c66328b3c344a1c0ec0051cb36fc05a518d2cf629e051c"
     },
     {
       "path": "assets/archive.css",
@@ -54,8 +54,8 @@
     },
     {
       "path": "assets/data.js",
-      "bytes": 71572,
-      "sha256": "11182c98934a41eed82f433e13391977bd983a64913c356ba3ee88786e5c8731"
+      "bytes": 73086,
+      "sha256": "23e67d84937d1a6521e13bfc6f3c726488e85d0cb9247698558016ccc31b734e"
     },
     {
       "path": "assets/experience.js",
@@ -149,8 +149,8 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 79565,
-      "sha256": "1f6203d3562cb5ac7b841b9d48991e33e235931aec89de8e3cd7534673b0e6f3"
+      "bytes": 81134,
+      "sha256": "bbef8bd09beb49fe95f5c83089351a99b0010ac9051e19e5a0ffd24685cffd97"
     },
     {
       "path": "coleccion.html",
@@ -159,13 +159,13 @@
     },
     {
       "path": "data/collection.json",
-      "bytes": 87265,
-      "sha256": "5a672d3196f1baab09cea1b3a5e5a7b9dadec3ff3267507e920ff634c7190631"
+      "bytes": 88923,
+      "sha256": "0f99bd8d8e61065abf7c17a75dbfdf766dc41121f78ae1342533e673fa1294f4"
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 24770,
-      "sha256": "2c4e9a02c3a50c5575a1270500e16cd3e4f85bf2eea069b5b7aaa29e76fb8a6e"
+      "bytes": 26288,
+      "sha256": "80a4b3840ab1b4b8d875e8433bd66f4412f8e812225719564beeeb3791b36fe6"
     },
     {
       "path": "data/registry.json",
@@ -504,8 +504,8 @@
     },
     {
       "path": "infografia.html",
-      "bytes": 16397,
-      "sha256": "5ab4f4668decd8f9bd615c061d8c3240d210d0101d1c2f7e28ae17c0e9ec7cb3"
+      "bytes": 16444,
+      "sha256": "6ddf7c1c4645d42e423ad273ada59b8fe72104b677cef3f9a8d628522e68ef1f"
     },
     {
       "path": "infografias.html",
