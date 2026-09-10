@@ -85,6 +85,8 @@ Los diagramas conceptuales no se presentan como mediciones del lugar construido.
 
 `scripts/visual-edition.mjs` aplica la presentación sin reescribir el contenido;
 `assets/edition.css` y `assets/edition.js` contienen el sistema visual y su visor.
+`scripts/navigation.mjs` define los destinos, el orden y la sección activa de
+la cabecera y el índice en las 20 páginas, incluida la versión imprimible.
 `node scripts/check-content.mjs` comprueba 1.306 pasajes capturados antes del
 rediseño en 20 páginas. La captura de referencia no debe regenerarse durante una
 revisión visual. Las pruebas de navegador cubren cuatro tamaños, accesibilidad,

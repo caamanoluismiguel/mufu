@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-const pages=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','ficha-02.html'];
+const pages=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','ficha-02.html','404.html'];
 for(const width of [375,768,1440,1920]){
   test(`${width}px pages render with local assets, no horizontal overflow or accessibility violations`,async({page})=>{
     await page.setViewportSize({width,height:1000});
@@ -12,11 +12,43 @@ for(const width of [375,768,1440,1920]){
       await page.locator('img').evaluateAll(async imgs=>{await Promise.all(imgs.map(async img=>{img.loading='eager';try{await img.decode();}catch{}}));});
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),file).toBe(true);
       const broken=await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>!i.naturalWidth).map(i=>i.src));expect(broken,file).toEqual([]);
+      await page.evaluate(()=>scrollTo(0,500));
+      await expect(page.locator('.museum-header')).toBeInViewport();
+      await page.evaluate(()=>scrollTo(0,0));
       const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
       expect(results.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})),file).toEqual([]);
       await page.screenshot({path:`output/${file.replace('.html','')}-${width}.png`,fullPage:file!=='index.html'});
     }
     expect(errors).toEqual([]);
+  });
+}
+for(const width of [375,1440]){
+  test(`${width}px navigation keeps identical labels, geometry and current section across pages`,async({page})=>{
+    await page.setViewportSize({width,height:900});
+    let geometry;
+    for(const file of [...pages,'ficha.html']){
+      await page.goto(`/${file}`);await page.evaluate(()=>document.fonts.ready);
+      const nav=page.locator('.museum-header nav');
+      await expect(nav.locator('a')).toHaveText(['El trimestre','Atlas','53 objetos','Infografías','Archivo','Visita']);
+      const boxes=await page.locator('.museum-header,.museum-header>a,.museum-header nav a,.index-toggle').evaluateAll(elements=>elements.map(el=>{
+        const {x,y,width,height}=el.getBoundingClientRect();
+        return [x,y,width,height].map(Math.round);
+      }));
+      if(!geometry)geometry=boxes;else expect(boxes,file).toEqual(geometry);
+      await page.getByRole('button',{name:'Abrir índice del museo'}).click();
+      await expect(page.locator('#museum-index nav b')).toHaveText(['El trimestre','Atlas','53 objetos','Infografías','Archivo','Visita']);
+      const active=file.startsWith('ficha')?'coleccion.html':file==='infografia.html'?'infografias.html':file;
+      for(const selector of ['.museum-header nav','#museum-index nav']){
+        const current=page.locator(`${selector} [aria-current]`);
+        if(file==='404.html')await expect(current).toHaveCount(0);
+        else await expect(current).toHaveAttribute('href',active);
+      }
+      await page.keyboard.press('Escape');
+      await expect(page.getByRole('button',{name:'Abrir índice del museo'})).toBeFocused();
+      await page.screenshot({path:`output/navigation-${file.replace('.html','')}-${width}.png`});
+    }
+    await page.emulateMedia({media:'print'});
+    await expect(page.locator('.museum-header')).not.toBeVisible();
   });
 }
 test('collection filters, accents, empty state, shareable URL and dialog focus',async({page})=>{
@@ -32,6 +64,26 @@ test('collection filters, accents, empty state, shareable URL and dialog focus',
   await page.locator('#search').fill('zzzzzzzz');await expect(page.locator('#empty-results')).toBeVisible();
   await page.locator('[data-reset]').click();await expect(page.locator('.object-card:visible')).toHaveCount(53);
   await page.locator('#search').fill('solis');await expect(page.locator('.object-card:visible')).toHaveCount(4);
+});
+test('shared navigation recovers from a nested missing page and reaches the visit section',async({page})=>{
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const response=await page.goto('/sala/inexistente');
+  expect(response.status()).toBe(404);
+  await expect(page.locator('.museum-header')).toHaveCSS('position','sticky');
+  await page.locator('.museum-header nav').getByRole('link',{name:'Infografías',exact:true}).click();
+  await expect(page).toHaveURL(/\/infografias.html$/);
+  await page.getByRole('button',{name:'Abrir índice del museo'}).click();
+  await page.locator('#museum-index nav').getByRole('link',{name:/Visita/}).click();
+  await expect(page).toHaveURL(/\/index.html#visita$/);
+  await expect(page.locator('#visita')).toBeInViewport();
+  for(const selector of ['.museum-header nav','#museum-index nav']){
+    await expect(page.locator(`${selector} [aria-current]`)).toHaveAttribute('href','index.html#visita');
+  }
+  await page.locator('.museum-header nav').getByRole('link',{name:'El trimestre',exact:true}).click();
+  await expect(page.locator('.museum-header nav [aria-current]')).toHaveAttribute('href','index.html');
+  await page.goBack();
+  await expect(page.locator('.museum-header nav [aria-current]')).toHaveAttribute('href','index.html#visita');
+  expect(errors).toEqual([]);
 });
 test('atlas filters, connection selection and light experiment remain functional on mobile',async({page})=>{
   await page.setViewportSize({width:375,height:900});await page.goto('/atlas.html?hilo=tiempo#n-voyager');
@@ -87,7 +139,7 @@ test('visual infographics are immediate, openable, downloadable and reachable fr
   await expect(page.locator('.visual-actions a[target=_blank]')).toHaveCount(2);
   await page.goto('/index.html');
   await expect(page.getByRole('link',{name:'Ver infografías'})).toHaveAttribute('href','infografias.html');
-  await expect(page.locator('.bar nav a[href="infografias.html"]')).toBeVisible();
+  await expect(page.locator('.museum-header nav a[href="infografias.html"]')).toBeVisible();
 });
 
 test('museum index and image zoom work by keyboard and touch-sized controls',async({page})=>{

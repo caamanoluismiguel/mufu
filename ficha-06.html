@@ -341,19 +341,22 @@
   <body class="mufu-edition" data-surface="record">
     <a class="skip" href="#ficha">Saltar al contenido</a>
 
-    <div class="top">
-      <div class="top__in">
-        <a href="index.html">← MUFU · Colección</a>
-        <b>Alberto Zebede</b>
-      <button class="index-toggle" type="button" aria-label="Abrir índice del museo" title="Índice del museo" aria-haspopup="dialog" aria-controls="museum-index"><!-- @license lucide-static v1.43.0 - ISC -->
+    <header class="site-header museum-header"><a class="site-brand" href="index.html">MU<span>FU</span><small>Museo del Futuro</small></a><nav aria-label="Principal"><a href="index.html">El trimestre</a><a href="atlas.html">Atlas</a><a href="coleccion.html" aria-current="page">53 objetos</a><a href="infografias.html">Infografías</a><a href="archivo.html">Archivo</a><a href="index.html#visita">Visita</a></nav><a class="site-date" href="index.html#cuenta"><!-- @license lucide-static v1.43.0 - ISC -->
+<svg class="lucide lucide-calendar-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 14v2.2l1.6 1"></path>
+  <path d="M16 2v3"></path>
+  <path d="M21 7.338V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2.338"></path>
+  <path d="M3 9h5.859"></path>
+  <path d="M8 2v3"></path>
+  <circle cx="16" cy="16" r="6"></circle>
+</svg>
+<span>05.09.2047 <b>07:56 · Panamá</b></span></a><button class="index-toggle" type="button" aria-label="Abrir índice del museo" title="Índice del museo" aria-haspopup="dialog" aria-controls="museum-index"><!-- @license lucide-static v1.43.0 - ISC -->
 <svg class="lucide lucide-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M4 5h16"></path>
   <path d="M4 12h16"></path>
   <path d="M4 19h16"></path>
 </svg>
-</button></div>
-      <div id="barra"></div>
-    </div>
+</button></header>
 
     <main id="ficha">
       <header class="enc wrap">
@@ -468,12 +471,6 @@
     </main>
 
     <script>
-      const barra = document.getElementById("barra");
-      addEventListener("scroll", () => {
-        const h = document.documentElement;
-        barra.style.width = Math.min(100, (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100) + "%";
-      }, { passive: true });
-
       /* quien pide menos movimiento no entra al revelado */
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) montarRevelado();
       function montarRevelado() {
@@ -500,12 +497,12 @@
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>
 </svg>
-</a><a href="atlas.html"><span>02</span><b>Atlas de conexiones</b><!-- @license lucide-static v1.43.0 - ISC -->
+</a><a href="atlas.html"><span>02</span><b>Atlas</b><!-- @license lucide-static v1.43.0 - ISC -->
 <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>
 </svg>
-</a><a href="coleccion.html"><span>03</span><b>53 objetos</b><!-- @license lucide-static v1.43.0 - ISC -->
+</a><a href="coleccion.html" aria-current="page"><span>03</span><b>53 objetos</b><!-- @license lucide-static v1.43.0 - ISC -->
 <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>
@@ -515,7 +512,7 @@
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>
 </svg>
-</a><a href="archivo.html"><span>05</span><b>Archivo y fuentes</b><!-- @license lucide-static v1.43.0 - ISC -->
+</a><a href="archivo.html"><span>05</span><b>Archivo</b><!-- @license lucide-static v1.43.0 - ISC -->
 <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>

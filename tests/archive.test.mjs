@@ -67,6 +67,29 @@ test('graph and eight-module routes have valid endpoints and references',()=>{
   for(const [a,b,t] of edges){assert.ok(nodes.some(n=>n.id===a&&n.threads.includes(t)));assert.ok(nodes.some(n=>n.id===b&&n.threads.includes(t)));assert.ok(threads.some(n=>n.id===t));}
   for(const n of nodes)for(const s of n.sources)assert.ok(sources.some(x=>x.id===s));
 });
+test('all twenty pages share the same primary navigation and expanded index',()=>{
+  const destinations=[
+    ['index.html','El trimestre'],['atlas.html','Atlas'],['coleccion.html','53 objetos'],
+    ['infografias.html','Infografías'],['archivo.html','Archivo'],['index.html#visita','Visita'],
+  ];
+  const pages=fs.readdirSync('.').filter(file=>file.endsWith('.html'));
+  assert.equal(pages.length,20);
+  for(const page of pages){
+    const $=load(fs.readFileSync(page,'utf8'));
+    assert.equal($('.museum-header').length,1,page);
+    assert.equal($('.museum-header .index-toggle').length,1,page);
+    assert.equal($('.bar,.top,.edition-utility,#barra').length,0,page);
+    const menu=$('.museum-header nav a').toArray().map(el=>[$(el).attr('href'),text($,el)]);
+    const index=$('#museum-index nav a').toArray().map(el=>[$(el).attr('href'),text($,$(el).find('b'))]);
+    assert.deepEqual(menu,destinations,page);
+    assert.deepEqual(index,destinations,page);
+    const active=page.startsWith('ficha')?'coleccion.html':page==='infografia.html'?'infografias.html':page;
+    const expected=page==='404.html'?[]:[active];
+    for(const selector of ['.museum-header nav','#museum-index nav']){
+      assert.deepEqual($(`${selector} a[aria-current="page"]`).map((_,el)=>$(el).attr('href')).get(),expected,page);
+    }
+  }
+});
 test('clock is correct at anniversaries, leap day, second before, and after opening',()=>{
   assert.deepEqual(remaining(new Date('2026-09-05T07:56:00-05:00')),{years:21,days:0,hours:0,minutes:0,seconds:0,due:false});
   assert.deepEqual(remaining(new Date('2047-09-05T12:55:59Z')),{years:0,days:0,hours:0,minutes:0,seconds:1,due:false});

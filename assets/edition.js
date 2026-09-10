@@ -13,6 +13,17 @@ $('.index-toggle')?.addEventListener('click',event=>open(index,event.currentTarg
 $('[data-close-index]')?.addEventListener('click',()=>close(index));
 index?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>close(index)));
 
+if(document.body.dataset.surface==='home'){
+  const updateNavigation=()=>{
+    const active=location.hash==='#visita'?'index.html#visita':'index.html';
+    document.querySelectorAll('.museum-header nav a,#museum-index nav a').forEach(link=>{
+      if(link.getAttribute('href')===active)link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    });
+  };
+  addEventListener('hashchange',updateNavigation);updateNavigation();
+}
+
 let scale=1;
 let baseWidth=0;
 const viewport=$('.viewer-scroll'),canvas=$('.viewer-canvas'),image=$('#viewer-image');

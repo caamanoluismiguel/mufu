@@ -37,11 +37,22 @@ body.dialog-open{overflow:hidden}
 .mufu-edition .site-header,.mufu-edition .bar{height:88px;min-height:88px;padding:0 2.5rem!important;gap:2rem!important;background:#fff!important;border-bottom:1px solid #dedfda!important}
 .mufu-edition .site-brand,.mufu-edition .bar__mark{font:700 1.8rem/1 var(--sans)!important;letter-spacing:0;color:var(--ink);min-width:100px;text-decoration:none}
 .mufu-edition .site-brand span,.mufu-edition .bar__mark span{color:var(--ink)}
-.mufu-edition .site-brand small{font:400 .75rem/1 var(--sans);margin-top:.4rem}
+.mufu-edition .site-brand small{display:block;font:400 .75rem/1 var(--sans);margin-top:.4rem}
 .mufu-edition .site-header nav,.mufu-edition .bar nav{gap:1.75rem;justify-content:center;margin:0;flex:1}
 .mufu-edition .site-header nav a,.mufu-edition .bar nav a{font:500 .9375rem/1.4 var(--sans);color:#484e49;padding:1rem 0;white-space:nowrap}
 .mufu-edition .site-header nav a:hover,.mufu-edition .bar nav a:hover{color:var(--brass)}
 .mufu-edition .site-header nav a[aria-current]{color:var(--ink);border-color:var(--brass)}
+.mufu-edition .museum-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:normal;text-align:left;width:100%;max-width:none;flex-shrink:0;box-sizing:border-box}
+.mufu-edition .museum-header nav{display:flex}
+.mufu-edition .museum-header nav a{text-decoration:none;border-bottom:2px solid transparent}
+.mufu-edition .museum-header nav a[aria-current]{border-color:var(--brass)}
+.mufu-edition .museum-header .site-date{font:500 .9375rem/1.25 var(--label);color:var(--ink);display:flex;align-items:center;gap:.6rem;text-decoration:none;white-space:nowrap}
+.mufu-edition .museum-header .site-date b{display:block;font-weight:400;color:var(--muted)}
+.mufu-edition .museum-header .site-date svg{width:20px;height:20px}
+.mufu-edition .hero-caption .estatus,.mufu-edition .hero-caption .estatus b{color:#fff}
+.mufu-edition .hero-caption .estatus i{background:#fff}
+.mufu-edition:has(>main.caja){display:block;padding:0}
+.mufu-edition>main.caja{margin:4rem auto;padding-inline:1.25rem}
 .mufu-edition .site-date{font-size:.9375rem}
 .mufu-edition .estatus{font-size:.9375rem;margin-left:0}
 .index-toggle,.edition-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;border:1px solid var(--rule);background:transparent;color:inherit;padding:0;cursor:pointer;border-radius:0;text-decoration:none}
@@ -57,6 +68,7 @@ body.dialog-open{overflow:hidden}
 .index-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;padding-top:2rem}
 .index-layout nav a{display:flex;align-items:center;gap:1.5rem;padding:.85rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}
 .index-layout nav a:hover b{color:var(--brass);transform:translateX(8px)}
+.index-layout nav a[aria-current] b{color:var(--brass)}
 .index-layout nav a>span{font:400 .9375rem var(--label);color:var(--muted)}
 .index-layout nav b{font:400 3rem/1.1 var(--display);transition:transform .2s,color .2s}
 .index-layout nav svg{width:24px;height:24px;margin-left:auto}
@@ -277,7 +289,7 @@ body.dialog-open{overflow:hidden}
   .mufu-edition .site-header,.mufu-edition .bar{padding-inline:1.5rem!important;gap:1rem!important}
   .mufu-edition .site-header nav,.mufu-edition .bar nav{gap:1rem}
   .mufu-edition .site-header nav a,.mufu-edition .bar nav a{font-size:.875rem}
-  .mufu-edition .estatus span,.mufu-edition .site-date{display:none}
+  .mufu-edition .estatus span,.mufu-edition .site-date,.mufu-edition .museum-header .site-date{display:none}
   .mufu-edition .intro-title h1{font-size:4.7rem}
   .mufu-edition .intro-title{gap:2.5rem}
   .mufu-edition .home-atlas-copy{grid-template-columns:1fr 1fr}
@@ -447,6 +459,7 @@ body.dialog-open{overflow:hidden}
   .mufu-edition *{animation:none!important;transition:none!important}
 }
 @media print{
+  .mufu-edition .museum-header{display:none!important}
   .index-toggle,.reading-progress,.museum-index,.image-viewer,.hero-next,.edition-utility{display:none!important}
   .mufu-edition .collection-filters,.mufu-edition .node-inspector,.mufu-edition .visual-poster-copy{position:static}
   .mufu-edition .content-wide{padding-inline:0}

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import { load } from 'cheerio';
 import { visualEdition } from './visual-edition.mjs';
+import { siteHeader } from './navigation.mjs';
 import { facts, sources, statuses, modules, threads, nodes, edges, comparisons, custody, questions, corrections } from '../data/editorial.mjs';
 const registry=JSON.parse(fs.readFileSync('data/registry.json','utf8'));
 const {people,records,bonus}=registry;
@@ -26,10 +27,10 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const icon=name=>fs.readFileSync(`node_modules/lucide-static/icons/${name}.svg`,'utf8').replace(/<svg /,'<svg aria-hidden="true" focusable="false" ');
 const source=id=>sources.find(s=>s.id===id);
 const refs=ids=>`<div class="refs">${ids.map(id=>`<a href="${source(id).url}">${esc(source(id).title)} ${icon('arrow-up-right')}</a>`).join('')}</div>`;
-const nav=active=>`<header class="site-header"><a class="site-brand" href="index.html">MU<span>FU</span><small>Museo del Futuro</small></a><nav aria-label="Principal">${[['index.html','El trimestre','home'],['atlas.html','Atlas','atlas'],['infografias.html','Infografías','visuals'],['coleccion.html','53 objetos','collection'],['archivo.html','Archivo','archive']].map(([href,t,k])=>`<a href="${href}" ${active===k?'aria-current="page"':''}>${t}</a>`).join('')}</nav><a class="site-date" href="index.html#cuenta">${icon('calendar-clock')}<span>05.09.2047 <b>07:56 · Panamá</b></span></a></header>`;
+const nav=page=>siteHeader(page,icon);
 const footer=`<footer class="site-footer"><a class="footer-brand" href="index.html">MUFU <span>Museo del Futuro</span></a><p>Isthmus · Cohorte 2026<br>Edificio 106 · Ciudad del Saber, Panamá</p><p><a href="infografias.html">Infografías visuales</a><br>51 registros + 2 bonus = 53 objetos<br><a href="archivo.html#metodo">Fuentes, límites y correcciones</a></p><a href="#top">Volver arriba ${icon('arrow-up')}</a></footer>`;
 const head=(title,path)=>`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#E4E6E1"><title>${title} · MUFU</title><meta name="description" content="${title}. Diez semanas, 53 objetos y una cita en 2047. Archivo, conexiones y fuentes del Museo del Futuro de Isthmus."><link rel="canonical" href="https://mufu.today/${path}"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/archive.css"></head>`;
-const shell=(title,path,page,body)=>head(title,path)+`<body class="archive-site" data-page="${page}" id="top"><a class="skip-link" href="#main">Saltar al contenido</a>${nav(page)}<main id="main">${body}</main>${footer}<script type="module" src="assets/experience.js"></script></body></html>`;
+const shell=(title,path,page,body)=>head(title,path)+`<body class="archive-site" data-page="${page}" id="top"><a class="skip-link" href="#main">Saltar al contenido</a>${nav(path)}<main id="main">${body}</main>${footer}<script type="module" src="assets/experience.js"></script></body></html>`;
 const label=(k,t)=>`<p class="section-label"><span>${k}</span>${t}</p>`;
 const intro=(num,title,copy)=>`<div class="section-head">${label(num,title)}<h2>${title}</h2><p>${copy}</p></div>`;
 
@@ -99,6 +100,7 @@ const visuals=`<section class="content-wide visuals-intro">${label('MUFU / 04','
 fs.writeFileSync('infografias.html',shell('Infografías visuales','infografias.html','visuals',visuals));
 
 const home=load(fs.readFileSync('index.html','utf8').trimEnd());
+const homeStatus=home('.estatus').first().remove();
 home('#home-atlas').remove();
 if(!home('#museum-origin').length){
   const paragraphs=home('.hero .tesis').toArray().map(el=>home.html(el)).join('');
@@ -110,7 +112,7 @@ home('#museum-origin .tesis').last().text('Empezaron con la galería de fotos de
 home('.hero-media').html('<img src="medios/mufuhero.png" width="1672" height="940" fetchpriority="high" alt="Una figura suspendida en una vitrina de vidrio bajo una escalera, frente a la bahía de Panamá.">');
 home('#hero-play').remove();
 home('.hero-caption>span').text('MUFU · Imagen conceptual');
-home('.bar nav').html('<a href="atlas.html">Atlas</a><a href="infografias.html">Infografías</a><a href="#recorrido">El trimestre</a><a href="coleccion.html">53 objetos</a><a href="archivo.html">Archivo</a><a href="#visita">Visita</a>');
+home('.hero-caption>span').after(homeStatus);
 home('script:not([type])').each((_,el)=>{
   let js=home(el).html();
   js=js.replace('fichas de registro · 51 registros','autores · 51 registros');
