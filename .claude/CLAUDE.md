@@ -96,6 +96,27 @@ pieza y el contenido de las cartas. El sitio publica las coordenadas del entierr
 `robots.txt` invita a los rastreadores de IA, así que esos datos no salen. Los nombres
 sí: son la autoría.
 
+## Cómo añadir un testimonio de estudiante
+
+Van en `#testimonios` de `index.html`, a cota ±0.00, entre «Última función» y «La
+visita». Faltan textos por llegar: se añaden pegando un bloque, sin rehacer nada.
+
+Copia un `<article class="mom" id="testimonio-nombre-apellido">` existente y cambia:
+
+1. El `id`, en minúsculas y con guiones. No puede repetirse: hay un test que falla
+   con ids duplicados.
+2. `mom__t` con el nombre completo, y `mom__q` con el enlace a su ficha.
+3. `mom__lead` con **una frase del propio texto**, entre comillas angulares. No la
+   escribas tú: la persona ya dijo lo que quería decir.
+4. El texto completo, en varios `<p class="mom__d">` dentro del `<details>`.
+
+Reglas de edición: corrige puntuación y parte los bloques largos, pero **no uniformes
+el registro**. Cada quien escribe distinto y esa diferencia es la autoría. Tampoco
+suavices lo incómodo: un testimonio donde todo salió bien no lo lee nadie.
+
+Después: `npm run build`, añade los pasajes nuevos al fixture de contenido congelado
+(solo los tuyos, ver la trampa 2), `npm run package`, y las dos baterías de tests.
+
 ## Pendiente para el 16 de septiembre de 2026
 
 Sesión 10 del taller de Karla Paniagua: se presentan **dos prototipos, uno por grupo**.
