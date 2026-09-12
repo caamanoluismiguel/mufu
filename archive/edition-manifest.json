@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 141193,
-      "sha256": "08cbbb527cf5432d8a2dce80810384ed477324672082bbaa58e65489ac15f51a"
+      "bytes": 141217,
+      "sha256": "94faf35a1a4798ba81c28a6f6ac7a8e64d4826b67342f33589e3a0535db0753c"
     },
     {
       "path": "infografia.html",
@@ -568,9 +568,19 @@
       "sha256": "3a3563df2c81e3374d88577e28d76d063fb858a01758e9ced5c042f9b992b7c5"
     },
     {
+      "path": "medios/infografia-conexiones-mini.webp",
+      "bytes": 48130,
+      "sha256": "8f7b5a155ead191ba87cbc6ac8a317c6aac5def2e1fe24d656aeb55d6df15061"
+    },
+    {
       "path": "medios/infografia-trimestre-borrador.png",
       "bytes": 2079063,
       "sha256": "8bc9d4a389713adf9665d11248326e61d320fa7eb13f0590c40ad68d412b2897"
+    },
+    {
+      "path": "medios/infografia-trimestre-mini.webp",
+      "bytes": 47028,
+      "sha256": "76c243fd0646e305409b4cb9630c3940e5ce1e26fd5b54d44a71e2fbb73b032d"
     },
     {
       "path": "medios/isthmus.jpg",
@@ -664,8 +674,8 @@
     },
     {
       "path": "scripts/visual-edition.mjs",
-      "bytes": 5363,
-      "sha256": "3542fe3c703ac19dc656f710c7db2982d2d6c32fe190418c3a8166d97c2b80db"
+      "bytes": 5387,
+      "sha256": "2f037b14a1aa1644b4cf0d192765d4a34c71115c414642d93ba6fad2f6b1f155"
     },
     {
       "path": "sitemap.xml",
