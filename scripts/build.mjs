@@ -126,7 +126,7 @@ const homeAtlas=`<section id="home-atlas" class="home-atlas"><div class="wrap"><
 home('#cuenta').before(homeAtlas);
 home('#home-atlas').after(home('#museum-origin'));
 home('#conteo').text('12 autores · 51 registros + 2 bonus = 53 objetos');
-home('.mom').each((i,el)=>home(el).attr('id',`modulo-original-${String(i).padStart(2,'0')}`));
+home('#recorrido .mom').each((i,el)=>home(el).attr('id',`modulo-original-${String(i).padStart(2,'0')}`));
 fs.writeFileSync('index.html',home.html());
 
 const printPage=load(fs.readFileSync('infografia.html','utf8'));

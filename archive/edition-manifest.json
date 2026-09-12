@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 140267,
-      "sha256": "6fbd916ee5dad38779c1a54a04f36c8a9ce6cbf037c8b25273a1b64c0d11f896"
+      "bytes": 140280,
+      "sha256": "30a927cfbd76c4dd3f882907aac50e260c72a87bee8c88c99fc2ec78326cd88c"
     },
     {
       "path": "infografia.html",
@@ -609,8 +609,8 @@
     },
     {
       "path": "scripts/build.mjs",
-      "bytes": 41429,
-      "sha256": "c523da132956ee4147a57082435b1e0581a79fe1c7194c7a17366fd956ea3904"
+      "bytes": 41440,
+      "sha256": "21746f7c73ed65af77c6f4f7b69aea8ffaaed749b0109c955e05f6b5092bcb9f"
     },
     {
       "path": "scripts/check-content.mjs",
