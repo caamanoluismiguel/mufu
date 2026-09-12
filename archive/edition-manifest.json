@@ -179,8 +179,8 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 101862,
-      "sha256": "806e700b976c9a1ba231b11ed598ee001f9cfe6a1af8b132f93284436796f199"
+      "bytes": 101969,
+      "sha256": "0cf8cb0cc0948f2184100614c9a1f4b3df97383d5cff0d9cb06c38c9bc664650"
     },
     {
       "path": "coleccion.html",
@@ -194,8 +194,8 @@
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 27374,
-      "sha256": "6b8a8df716872e75295298800afe5f5523169ca4af18309905e15eff16be784d"
+      "bytes": 27421,
+      "sha256": "b346acf61187a327085a80b19647466d6dc9d5c4c3ae177fcdb05c89285e38cd"
     },
     {
       "path": "data/learning.mjs",
@@ -534,23 +534,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 128882,
-      "sha256": "7a17804aee95a5562ae9e9d0da5ef6bd709dc868bd8e1647e6b83dd792afd988"
+      "bytes": 130301,
+      "sha256": "0bdfde6edbf00e49e8514bed20a827d6d34195e01f40c229d9206f689dbcfe07"
     },
     {
       "path": "infografia.html",
-      "bytes": 36318,
-      "sha256": "76a7d2707a6aac38e8e59a5dbb4e019378003dea662e49213cbeb6b6466c322c"
+      "bytes": 36390,
+      "sha256": "5ad9f6019926071052172e37c0cd01e2e856eb0897f0c17a3c17b30cb70c326d"
     },
     {
       "path": "infografias.html",
-      "bytes": 23106,
-      "sha256": "1bfa4c2adcfb3b13d6b8da34abc1af7bd0cd7d285452910238dc6e77b6b7eb30"
+      "bytes": 23118,
+      "sha256": "28306888284cf1af98fe46c313a18b98346c820d2595604bd8bd5ed360a783ec"
     },
     {
       "path": "llms.txt",
-      "bytes": 3840,
-      "sha256": "d5f6d3bec5055a228e402860d0b499ba456a9abd8029e03b30108e4e878fcc1f"
+      "bytes": 3852,
+      "sha256": "317678f6c8b6f3234c14b1b4041cecb0ec1f7c5b97692610306fce5b5f7488eb"
     },
     {
       "path": "medios/aparicion.jpg",
@@ -674,8 +674,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 116876,
-      "sha256": "986a06dc78c475bebab9362cf37d41d064e80686ad04fa91e7b5ea1ac5960bb3"
+      "bytes": 117988,
+      "sha256": "35585f93af427182b544e7879fd894e2890d76ba685cb773ce21631a93aefb81"
     }
   ]
 }
