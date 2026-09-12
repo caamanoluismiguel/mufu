@@ -54,8 +54,8 @@
     },
     {
       "path": "assets/data.js",
-      "bytes": 78915,
-      "sha256": "2a2cbfaf79b39dabf306764bd155f7a3535d1371ac19e56498b3387a0432efac"
+      "bytes": 78911,
+      "sha256": "287ad84b2de8f7188b2c8f580b6927dfcc79ee82fe8900b3916da0aa026531eb"
     },
     {
       "path": "assets/edition.css",
@@ -74,8 +74,8 @@
     },
     {
       "path": "assets/facts.js",
-      "bytes": 639,
-      "sha256": "05191a270a72b3260e4abf6c3c0ebbdcda242754faeb511cb7605b3cfc77a14c"
+      "bytes": 635,
+      "sha256": "0a12245220a40eb3f0e2d49cadd92458e1e4171165749001036830ede697392c"
     },
     {
       "path": "assets/fonts.css",
@@ -189,13 +189,13 @@
     },
     {
       "path": "data/collection.json",
-      "bytes": 96188,
-      "sha256": "b6b93f83d47727c6bbb063d54b8b6583b82ca1097d5aa4d7a894e4a1e34f852e"
+      "bytes": 96184,
+      "sha256": "b1b8c45d76dc0e6628f9d7194cd1404de8fa10b4fdb7852eeb4be3f2fbc115ed"
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 27421,
-      "sha256": "b346acf61187a327085a80b19647466d6dc9d5c4c3ae177fcdb05c89285e38cd"
+      "bytes": 27417,
+      "sha256": "2b94908c421513d61a8648021c4ed843409aac6d2ef011eaa888a260a1b96323"
     },
     {
       "path": "data/learning.mjs",
@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 141217,
-      "sha256": "d184507b565abfc0849a7c91fae648a751b7e81e6fea136a2f6be786029db130"
+      "bytes": 141238,
+      "sha256": "7c89a6042fc0b21be9ec0b4f660b9a46710c087c33c80d1cf47654d4eff7ddb3"
     },
     {
       "path": "infografia.html",
@@ -694,8 +694,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 123836,
-      "sha256": "455034bb70f00c9cbe1eb43514d573551b434ee08db25238d2c78d3d857a9372"
+      "bytes": 123832,
+      "sha256": "7d5491731a69bd9edca624d15f4b18a074c1f8f6d321d6391376e57b1e6e79d5"
     }
   ]
 }

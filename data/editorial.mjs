@@ -3,7 +3,7 @@ export const facts = {
   registered: 51, bonus: 2, total: 53, boxes: 2, appearances: 12,
   closureDate: '2026-09-04', opening: '2047-09-05T07:56:00-05:00',
   location: 'Edificio 106, Ciudad del Saber, Panamá; bajo la escalera de la fachada posterior',
-  coordinates: { latitude: 8.999423, longitude: -79.582829 },
+  coordinates: { latitude: 8.9994, longitude: -79.5828 },
   originalCommit: '221d43b58498aab5fa1847a80411679d2e06d0b2',
   countSource: 'Confirmación de Luis Miguel Caamaño en la conversación de actualización del 9 de septiembre de 2026: 51 objetos declarados y dos añadidos sin registro como bonus.',
   physicalOpeningConfirmed: false,
