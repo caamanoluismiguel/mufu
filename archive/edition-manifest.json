@@ -44,8 +44,8 @@
     },
     {
       "path": "assets/archive.css",
-      "bytes": 43198,
-      "sha256": "b4cf217f4a6154446afecea353ca7632bfe62f5ceb54617b07a64e75e9fee7a8"
+      "bytes": 43199,
+      "sha256": "c43f652514bcf8fff842546b9d4430aaa1af12289e92cb56bda03428c89933e9"
     },
     {
       "path": "assets/clock.js",
@@ -59,8 +59,8 @@
     },
     {
       "path": "assets/edition.css",
-      "bytes": 34044,
-      "sha256": "c6b7b71cbcc1d31371495334d164a02f5b026f773d84766c87eb5f947035601c"
+      "bytes": 34045,
+      "sha256": "76aad87e93bee81866665de212b22695ae62bb2942308c9c5175d6ba3c917dc7"
     },
     {
       "path": "assets/edition.js",

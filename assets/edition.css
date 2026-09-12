@@ -316,7 +316,7 @@ body.dialog-open{overflow:hidden}
   .mufu-edition .site-header nav,.mufu-edition .bar nav{order:3;flex-basis:100%;margin:0!important;justify-content:space-between;gap:.65rem!important;overflow:auto!important;scrollbar-width:none}
   .mufu-edition .site-header nav a,.mufu-edition .bar nav a{font:500 .9375rem/1.2 var(--label)!important;padding:.4rem 0 .6rem;min-height:32px}
   .mufu-edition .museum-hero{height:590px;max-height:calc(100svh - 154px);min-height:440px!important}
-  .mufu-edition .hero-media img,.mufu-edition .hero-media video{object-position:68% 50%}
+  .mufu-edition .hero-media img,.mufu-edition .hero-media video{object-position:100% 50%}
   .mufu-edition .hero-media::after{background:linear-gradient(90deg,rgba(0,0,0,.72),transparent 85%)}
   .mufu-edition .hero-overlay{padding:1.65rem 1.25rem 4.5rem!important;margin-block:auto}
   .mufu-edition .museum-hero .eyebrow{font-size:.875rem;margin-bottom:1.1rem}

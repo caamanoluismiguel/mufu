@@ -337,7 +337,7 @@ body:not(.archive-site) :is(h1,h2,h3,h4){letter-spacing:0}
 .hero-media{position:absolute;inset:0 0 72px;z-index:-1}
 .hero-media img,.hero-media video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{text-shadow:0 2px 12px #000}
-@media(max-width:760px){.hero-media img,.hero-media video{object-position:65% center}.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.12) 85%)}}
+@media(max-width:760px){.hero-media img,.hero-media video{object-position:100% center}.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.12) 85%)}}
 .hero-overlay{width:100%;padding-block:3rem!important;margin-block:auto;position:relative}
 .museum-hero .eyebrow{color:#c2c7bd}
 .museum-hero .h-xl{color:#f2f3ef}
