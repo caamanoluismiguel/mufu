@@ -117,12 +117,18 @@ test('scheduled date does not claim a physical opening',async({page})=>{
   await page.clock.install({time:new Date('2047-09-05T12:56:00Z')});await page.goto('/index.html');
   await expect(page.locator('#estado-lab')).toHaveText('Fecha cumplida');await expect(page.locator('#cuenta-lab')).toContainText('falta documentar');
 });
-test('opening image loads and the original film remains in the archive',async({page})=>{
+test('opening timelapse loops, can be paused, and the original film remains in the archive',async({page})=>{
   await page.goto('/index.html');
-  const image=page.locator('.hero-media img');
-  await expect(image).toBeVisible();
-  await expect.poll(()=>image.evaluate(img=>img.naturalWidth)).toBeGreaterThan(1000);
-  await expect(page.locator('#portada video')).toHaveCount(0);
+  const film=page.locator('#hero-film');const button=page.locator('#hero-play');
+  await expect(film).toBeVisible();await expect(button).toBeVisible();
+  expect(await film.evaluate(v=>v.loop&&v.muted&&v.playsInline)).toBe(true);
+  await expect(film).toHaveAttribute('poster',/mufuhero-poster/);
+  await expect.poll(()=>film.evaluate(v=>v.videoWidth)).toBeGreaterThan(1000);
+  if(await film.evaluate(v=>v.paused))await button.click();
+  await expect.poll(()=>film.evaluate(v=>v.currentTime)).toBeGreaterThan(0.1);
+  await button.click();
+  await expect(film).toHaveJSProperty('paused',true);
+  await expect(button).toHaveAttribute('aria-pressed','false');
   await expect(page.locator('video.aparicion__v')).toHaveCount(1);
 });
 test('short mobile viewport keeps navigation and the next section visible',async({page})=>{

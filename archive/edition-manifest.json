@@ -44,8 +44,8 @@
     },
     {
       "path": "assets/archive.css",
-      "bytes": 43312,
-      "sha256": "2d71bdcd913e4fd1cfcd7a6b3a902578c457fd9822b3937e58805e045ed66496"
+      "bytes": 43198,
+      "sha256": "b4cf217f4a6154446afecea353ca7632bfe62f5ceb54617b07a64e75e9fee7a8"
     },
     {
       "path": "assets/clock.js",
@@ -59,8 +59,8 @@
     },
     {
       "path": "assets/edition.css",
-      "bytes": 33980,
-      "sha256": "e84fa27057f1ce0df00fa361b248b77c7b5976ee14f50ab63d767760170532ed"
+      "bytes": 34044,
+      "sha256": "c6b7b71cbcc1d31371495334d164a02f5b026f773d84766c87eb5f947035601c"
     },
     {
       "path": "assets/edition.js",
@@ -159,8 +159,8 @@
     },
     {
       "path": "assets/hero.js",
-      "bytes": 818,
-      "sha256": "c1ca89563bb9ba6528e90402b707be4634bde3fdca9e0efd23321792c4883f01"
+      "bytes": 1184,
+      "sha256": "ba783d9cb233dcef59f6974575e3ec51b2ca768a03a1dabd95900c06312fe329"
     },
     {
       "path": "assets/learning.css",
@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 140306,
-      "sha256": "72dd0e11c504efede95a8534cca5a321c4b52a63c3f155b892ac28e7023c87bf"
+      "bytes": 140978,
+      "sha256": "9805d0e0b274179f295fab46c1a6b4295093cd8bc04d0157228902eb356ca342"
     },
     {
       "path": "infografia.html",
@@ -583,6 +583,16 @@
       "sha256": "0129b956ceb466e26d2b58c53057533ded86b702e9f33c4427fbf1c87a4be483"
     },
     {
+      "path": "medios/mufuhero-poster.jpg",
+      "bytes": 32911,
+      "sha256": "e2a2dc12a7d36b15acc328ee5b7de5dc7f817fbc7947fd729bfb844df68a8204"
+    },
+    {
+      "path": "medios/mufuhero.mp4",
+      "bytes": 865345,
+      "sha256": "3c5a7746cf6f50fcd0268497b6eaaa07f9b8d77c6b84db0c4745092a44fce6cc"
+    },
+    {
       "path": "medios/mufuhero.png",
       "bytes": 1596525,
       "sha256": "d375646a81257333fd6158847774862cf3602b8cdcb8060b460be670198e3b7a"
@@ -609,8 +619,8 @@
     },
     {
       "path": "scripts/build.mjs",
-      "bytes": 41440,
-      "sha256": "21746f7c73ed65af77c6f4f7b69aea8ffaaed749b0109c955e05f6b5092bcb9f"
+      "bytes": 41468,
+      "sha256": "83f1d4878a9da00079d58b684fac65a484abe0b70cb2235d685ea2d303b8e8bb"
     },
     {
       "path": "scripts/check-content.mjs",
@@ -669,8 +679,8 @@
     },
     {
       "path": "tests/browser/experience.spec.js",
-      "bytes": 16956,
-      "sha256": "64f3d6efefef6e21176309799470a15ad4b8e45e199d87112ea32fb39eb5196c"
+      "bytes": 17398,
+      "sha256": "8a3aa16d74efcb403fe6db5a3a8f48ae1406cd0b98cee6403e65331912316d5a"
     },
     {
       "path": "tests/fixtures/written-content.json",

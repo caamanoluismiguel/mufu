@@ -556,14 +556,18 @@
 
     <main id="contenido">
       <!-- ============ PORTADA ============ -->
-      <section class="hero museum-hero" id="portada"><div class="hero-media"><img src="medios/mufuhero.png" width="1672" height="940" fetchpriority="high" alt="Una figura suspendida en una vitrina de vidrio bajo una escalera, frente a la bahía de Panamá."></div><div class="hero-overlay wrap"><p class="eyebrow">Isthmus · Panamá · Cohorte 2026</p><h1 class="display h-xl">MUFU<span class="l2">Museo del Futuro</span></h1><p class="hero-deck">53 objetos. Una pared.<br>Una cita en 2047.</p><div class="hero-actions"><a class="entrar" href="atlas.html">Entrar al atlas <!-- @license lucide-static v1.43.0 - ISC -->
+      <section class="hero museum-hero" id="portada"><div class="hero-media"><video id="hero-film" width="1120" height="630" muted="" playsinline="" loop="" preload="metadata" poster="medios/mufuhero-poster.jpg" aria-label="Timelapse del museo: la luz recorre un día entero mientras la vitrina no se mueve."><source src="medios/mufuhero.mp4" type="video/mp4"></video></div><div class="hero-overlay wrap"><p class="eyebrow">Isthmus · Panamá · Cohorte 2026</p><h1 class="display h-xl">MUFU<span class="l2">Museo del Futuro</span></h1><p class="hero-deck">53 objetos. Una pared.<br>Una cita en 2047.</p><div class="hero-actions"><a class="entrar" href="atlas.html">Entrar al atlas <!-- @license lucide-static v1.43.0 - ISC -->
 <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>
 </svg>
-</a><a class="hero-read" href="infografias.html">Ver infografías</a><a class="hero-read" href="coleccion.html">Ver la colección</a></div></div><div class="hero-caption"><span>MUFU · Imagen conceptual</span><a class="estatus" id="estatus" href="#cuenta">
+</a><a class="hero-read" href="infografias.html">Ver infografías</a><a class="hero-read" href="coleccion.html">Ver la colección</a></div></div><div class="hero-caption"><span>MUFU · Timelapse conceptual</span><a class="estatus" id="estatus" href="#cuenta">
         <i aria-hidden="true"></i><b id="estado-lab">Cerrada</b><span> · faltan <u id="mini">·</u></span>
-      </a><a href="#obra">Ver el registro completo <!-- @license lucide-static v1.43.0 - ISC -->
+      </a><button type="button" id="hero-play" aria-pressed="false" aria-label="Reproducir las apariciones" title="Reproducir las apariciones"><!-- @license lucide-static v1.43.0 - ISC -->
+<svg class="lucide lucide-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+</svg>
+</button><a href="#obra">Ver el registro completo <!-- @license lucide-static v1.43.0 - ISC -->
 <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M7 7h10v10"></path>
   <path d="M7 17 17 7"></path>
@@ -2293,7 +2297,7 @@
     </script>
 
 
-<script type="module" src="assets/clock.js"></script>
+<script type="module" src="assets/clock.js"></script><script type="module" src="assets/hero.js"></script>
 
 
 <div class="reading-progress" aria-hidden="true"></div><dialog id="museum-index" class="museum-index" aria-labelledby="index-title"><div class="index-head"><span id="index-title">MUFU · Museo del Futuro</span><button type="button" class="edition-icon" data-close-index="" aria-label="Cerrar índice" title="Cerrar índice"><!-- @license lucide-static v1.43.0 - ISC -->
