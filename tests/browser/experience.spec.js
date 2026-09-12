@@ -131,6 +131,17 @@ test('opening timelapse loops, can be paused, and the original film remains in t
   await expect(button).toHaveAttribute('aria-pressed','false');
   await expect(page.locator('video.aparicion__v')).toHaveCount(1);
 });
+test('opening timelapse stays paused under data saver',async({page})=>{
+  await page.addInitScript(()=>{Object.defineProperty(navigator,'connection',{value:{saveData:true,effectiveType:'4g'},configurable:true});});
+  await page.goto('/index.html');
+  const film=page.locator('#hero-film');
+  await expect(film).toBeVisible();
+  await page.waitForTimeout(1200);
+  await expect(film).toHaveJSProperty('paused',true);
+  expect(await film.evaluate(v=>v.currentTime)).toBe(0);
+  await page.locator('#hero-play').click();
+  await expect.poll(()=>film.evaluate(v=>v.currentTime)).toBeGreaterThan(0.1);
+});
 test('short mobile viewport keeps navigation and the next section visible',async({page})=>{
   await page.setViewportSize({width:375,height:667});await page.goto('/index.html');
   const bottom=await page.locator('#portada').evaluate(e=>e.getBoundingClientRect().bottom);expect(bottom).toBeLessThan(667);

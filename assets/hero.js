@@ -9,7 +9,11 @@ if(video&&button){
     button.setAttribute('aria-label',activo?'Pausar el timelapse':'Reproducir el timelapse');
     button.title=button.getAttribute('aria-label');
   };
-  const intentar=()=>{ if(quieto.matches||pausadoAMano)return; video.play().catch(()=>{}); };
+  const red=navigator.connection;
+  // 780 KB no se le imponen a quien navega con ahorro de datos o fuera de 4G.
+  // El póster pesa 30 KB y el botón sigue permitiendo verlo a quien quiera.
+  const ahorrando=()=>!!(red&&(red.saveData||(red.effectiveType&&red.effectiveType!=='4g')));
+  const intentar=()=>{ if(quieto.matches||pausadoAMano||ahorrando())return; video.play().catch(()=>{}); };
   button.addEventListener('click',async()=>{
     if(!video.paused){pausadoAMano=true;video.pause();return;}
     pausadoAMano=false;

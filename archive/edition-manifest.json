@@ -159,8 +159,8 @@
     },
     {
       "path": "assets/hero.js",
-      "bytes": 1184,
-      "sha256": "ba783d9cb233dcef59f6974575e3ec51b2ca768a03a1dabd95900c06312fe329"
+      "bytes": 1483,
+      "sha256": "f41933d2635ff9feec15e13b74e22f52e18291662aaa06fca917123bf131e742"
     },
     {
       "path": "assets/learning.css",
@@ -535,7 +535,7 @@
     {
       "path": "index.html",
       "bytes": 141217,
-      "sha256": "94faf35a1a4798ba81c28a6f6ac7a8e64d4826b67342f33589e3a0535db0753c"
+      "sha256": "d184507b565abfc0849a7c91fae648a751b7e81e6fea136a2f6be786029db130"
     },
     {
       "path": "infografia.html",
@@ -689,8 +689,8 @@
     },
     {
       "path": "tests/browser/experience.spec.js",
-      "bytes": 17398,
-      "sha256": "8a3aa16d74efcb403fe6db5a3a8f48ae1406cd0b98cee6403e65331912316d5a"
+      "bytes": 17997,
+      "sha256": "4e3d393421d7d3ee7cb2adfcc03da024823f3507fc9341be0b95bf6ba209249f"
     },
     {
       "path": "tests/fixtures/written-content.json",
