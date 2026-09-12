@@ -82,9 +82,20 @@ commit.
 
 ## Reglas de diseño y de voz
 
-Las de diseño están en `README.md` y no se negocian: cero degradados, cero
-monoespaciada, cero mayúsculas con tracking abierto, y los dos metales sin mezclar
-(latón para lo que está a ±0.00, oliva para lo que está debajo).
+Están en **`README.md`, sección «El sistema de color y sus reglas»**, y no se
+negocian: cero monoespaciada, cero mayúsculas con tracking abierto, los dos metales sin
+mezclar (latón a ±0.00, oliva bajo la línea de suelo), y degradados **solo** como
+sombras de legibilidad sobre fotografía o vídeo, nunca decorativos.
+
+Dos avisos que ahorran tiempo:
+
+- **La paleta que se ve es la de `assets/edition.css`.** `archive.css` define otra que
+  no se aplica nunca, porque las 20 páginas llevan la clase `mufu-edition`. Cambiar un
+  color en `archive.css` no cambia nada en pantalla.
+- **No renombres la clase `.mom`.** `edition.css` la restila en quince reglas y tres
+  breakpoints, y una manda `.mom__d` y `.mom__c` a `grid-column:2`. Se intentó el
+  2026-09-12 para los testimonios y la sección creció 422 px en móvil. El `<div>` vacío
+  con `aria-hidden` de cada testimonio no sobra: ocupa la columna del número.
 
 La voz es español de LATAM con tuteo. Nunca voseo. Sin rayas largas y sin cadencia de
 máquina: nada de frases simétricas, tríadas ni aforismos de relleno.
@@ -95,6 +106,13 @@ Los correos personales, las direcciones de los propietarios, el valor en dólare
 pieza y el contenido de las cartas. El sitio publica las coordenadas del entierro y
 `robots.txt` invita a los rastreadores de IA, así que esos datos no salen. Los nombres
 sí: son la autoría.
+
+**Las coordenadas tienen dos precisiones a propósito (2026-09-12).** La portada, su
+JSON-LD y la tarjeta social redondean a cuatro decimales, unos once metros: dicen el
+edificio sin señalar el punto de la pared. Los 51 registros de `data/registry.json` y
+las 13 fichas conservan los seis decimales **porque son dato declarado por los
+estudiantes, no texto del sitio**. Hay un test que compara cada registro con su ficha
+original y falla si se tocan: cambiarlos sería falsificar el archivo.
 
 ## Cómo añadir un testimonio de estudiante
 

@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8280,
-      "sha256": "c335e4235f53c794087d79dfa6e06ec7c402bb54403fc4602704240f96c98a90"
+      "bytes": 10746,
+      "sha256": "df2f27163310084ee4330c9776f641a1456dd35ced3e0ff7efc53688cb17ce96"
     },
     {
       "path": "archive/condition-report-template.json",
@@ -44,8 +44,8 @@
     },
     {
       "path": "assets/archive.css",
-      "bytes": 43199,
-      "sha256": "c43f652514bcf8fff842546b9d4430aaa1af12289e92cb56bda03428c89933e9"
+      "bytes": 43187,
+      "sha256": "2227f2952f1ba3a13010ba3089a3ee564b0fa7570474ee90e8982e1be3f313ca"
     },
     {
       "path": "assets/clock.js",
@@ -59,8 +59,8 @@
     },
     {
       "path": "assets/edition.css",
-      "bytes": 34045,
-      "sha256": "76aad87e93bee81866665de212b22695ae62bb2942308c9c5175d6ba3c917dc7"
+      "bytes": 34027,
+      "sha256": "1eaf58723af7f57789a8456830ffad5cb4d346aef4d4b4b2d5d124b08c787b84"
     },
     {
       "path": "assets/edition.js",

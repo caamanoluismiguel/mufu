@@ -138,3 +138,54 @@ GitHub Pages desde `main`, raíz del repositorio. `CNAME` conserva `mufu.today`.
 Antes de publicar: generar, empaquetar, ejecutar las pruebas, revisar el diff y
 guardar una nueva versión del manifiesto. La rama de implementación es
 `codex/mufu-connected-archive`; no cambiar DNS ni proveedores para esta ampliación.
+
+## El sistema de color y sus reglas
+
+Estas reglas existían en una versión anterior de este README y se perdieron en la
+reescritura del 9 de septiembre de 2026. Se recuperan con la paleta que el sitio usa
+hoy, no con la anterior.
+
+**Dos hojas superpuestas.** `assets/archive.css` define una paleta base y
+`assets/edition.css` la pisa para las páginas con clase `mufu-edition`. **Las 20
+páginas llevan esa clase**, así que la paleta de `archive.css` no se ve nunca: es el
+respaldo por si `edition.css` no carga. Cambiar un color ahí no cambia nada en
+pantalla. La paleta real es la de `edition.css`.
+
+```
+--paper   #f5f5f2   el fondo
+--tierra  #e7e9e4   la masa excavada
+--rule    #d3d7d3   las reglas finas
+--muted   #595e5b   texto secundario
+--ink     #202322   texto
+--brass   #af3024   el acento: lo que está a ± 0.00
+--olive   #535e2c   lo que está bajo la línea de suelo
+--teal    #176567   NO es un acento de contenido
+```
+
+**El latón y el oliva no se mezclan sin motivo.** Latón para lo que está a ± 0.00,
+oliva para lo que está debajo. Son el mismo material antes y después de veintiún años
+bajo tierra. Si añades un acento y no sabes a qué cota pertenece, no lo añadas.
+
+**El teal tiene dos trabajos y ninguno es decorar.** Es el anillo de `:focus-visible`,
+que debe leerse como interfaz y no como contenido, y es uno de los tres colores que
+distinguen los tres bloques de `.future-portraits` en el atlas. Fuera de ahí, no.
+
+**Hubo un `--rust` y ya no existe.** Era `#a33228` contra el `#af3024` del latón: un
+contraste de 1,07:1 entre ellos, o sea el mismo color con dos nombres. Fusionado en
+`--brass` el 12 de septiembre de 2026, sin un solo píxel de diferencia.
+
+**Degradados: solo funcionales, nunca decorativos.** Hay tres, y los tres son sombras
+para que el texto se lea sobre fotografía o sobre el vídeo de portada. No se usan para
+dar profundidad ni para resplandores: eso se hace con línea y con trama. Si añades uno
+que no sea para legibilidad, no lo añadas.
+
+**Cero monoespaciada.** Las cotas van en Archivo Narrow, que es estrecha, no mono.
+
+**Cero mayúsculas con tracking abierto.** Ni en rótulos, ni en botones, ni en la
+navegación.
+
+**Tipografía.** Instrument Serif para los títulos, Spectral para leer, Archivo Narrow
+solo para cotas y anotación. Los archivos son locales, en `assets/fonts/`.
+
+**Contraste.** Los tres acentos sobre papel están entre 5,88:1 y 6,40:1. Si añades un
+color, mídelo antes.

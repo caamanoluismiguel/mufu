@@ -3,8 +3,7 @@
 /* One visual system for the living archive and its original record pages. */
 :root{
   --paper:#f5f5f2;--paper-light:#fff;--ink:#202322;--muted:#595e5b;--rule:#d3d7d3;
-  --brass:#af3024;--olive:#535e2c;--teal:#176567;--rust:#a33228;
-  --papel:var(--paper);--papel-c:#fff;--tinta:var(--ink);--tinta-t:#343a36;--grafito:var(--muted);
+  --brass:#af3024;--olive:#535e2c;--teal:#176567;--papel:var(--paper);--papel-c:#fff;--tinta:var(--ink);--tinta-t:#343a36;--grafito:var(--muted);
   --tierra:#e7e9e4;--linea:var(--rule);--laton:var(--brass);--oliva:var(--olive);
   --display:'Instrument Serif',Georgia,serif;--disp:var(--display);
   --body:'Spectral',Georgia,serif;--texto:var(--body);
