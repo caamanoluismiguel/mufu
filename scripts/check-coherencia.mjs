@@ -61,6 +61,29 @@ for (const f of editoriales) {
   }
 }
 
+/* ── 2b · frases casi iguales entre secciones ──────────────────────── */
+/* la repetición literal la caza el bloque anterior; esta busca la otra,
+   la de decir lo mismo con otras palabras en dos sitios distintos */
+const vocab = f => new Set((f.toLowerCase().match(/\b[a-záéíóúñ]{5,}\b/g) || []));
+for (const f of editoriales) {
+  const {$} = texto(f);
+  /* fuera: citas destacadas, pies de figura y el texto de la placa, que
+     repiten a propósito lo que ya dice su contexto */
+  const frases = $('p').not('.mom__lead, figcaption p, .placa-grande p, blockquote p, .object-card p, .pieza-l p, [data-id] p, li p')
+    .map((_, e) => norm($(e).text())).get()
+    /* fuera las líneas de datos: una dirección repite los nombres del sitio
+       sin estar diciendo lo mismo que la prosa que lo describe */
+    .filter(x => x.length > 80 && !/°\s*[NSEW]/.test(x));
+  for (let a = 0; a < frases.length; a++) for (let b = a + 1; b < frases.length; b++) {
+    const va = vocab(frases[a]), vb = vocab(frases[b]);
+    if (va.size < 6 || vb.size < 6) continue;
+    let comunes = 0; for (const w of va) if (vb.has(w)) comunes++;
+    const sim = comunes / Math.min(va.size, vb.size);
+    if (sim >= 0.6) aviso('dos párrafos dicen casi lo mismo',
+      `${f} · "${frases[a].slice(0, 60)}…" / "${frases[b].slice(0, 60)}…"`);
+  }
+}
+
 /* ── 3 · cifras declaradas contra la realidad ──────────────────────── */
 const home = texto('index.html');
 const reales = {
