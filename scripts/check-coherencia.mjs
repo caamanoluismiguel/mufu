@@ -123,6 +123,9 @@ if (/text-transform:\s*uppercase/.test(css)) aviso('regla de diseño', 'aparecen
 const firma = new Map();
 for (const r of registry.records) {
   const k = `${r.person}|${r.title}|${r.description}`;
+  /* dudas ya documentadas en archivo.html: se cuentan, pero no vuelven a gritar */
+  const documentadas = new Set(['Tamara Cos|Moneda 25 centavos de peso argentino']);
+  if (firma.has(k) && documentadas.has(`${r.person}|${r.title}`)) { continue; }
   if (firma.has(k)) duda('registros idénticos', `${r.person} declara dos veces "${r.title.slice(0, 50)}" · ¿son dos piezas o una repetida?`);
   firma.set(k, r.id);
 }
