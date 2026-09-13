@@ -357,7 +357,7 @@
         margin:0 0 clamp(1.75rem,4vw,2.5rem)}
       @media(min-width:700px){.preg-leyenda{grid-template-columns:1fr 1fr}}
       @media(min-width:1000px){.preg-leyenda{grid-template-columns:repeat(3,1fr)}}
-      .pq{display:flex;align-items:center;gap:.7rem;text-align:left;background:var(--papel);
+      .pq{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;text-align:left;background:var(--papel);
         border:0;padding:.8rem 1rem;color:var(--tinta-t);font-family:var(--texto);
         font-weight:300;font-size:.9375rem;cursor:pointer;transition:background .22s}
       .pq span{font-family:var(--cota);font-weight:600;font-size:.875rem;color:var(--grafito);
@@ -393,10 +393,14 @@
         border:1px solid var(--oliva);padding:.1rem .4rem}
       .est__doc,.est__estado{font-family:var(--cota);font-weight:500;font-size:.9375rem;
         color:var(--grafito)}
-      .hilos{display:flex;gap:.35rem;margin-top:.75rem}
-      .hilos .h{width:.5rem;height:.5rem;border-radius:50%;border:1px solid var(--linea);
-        flex:none;transition:background .25s,border-color .25s,transform .25s,opacity .25s}
-      .hilos .h.on{background:var(--grafito);border-color:var(--grafito)}
+      .pq__ruta{flex:0 0 100%;font-family:var(--cota);font-weight:500;font-size:.75rem;
+        color:var(--grafito);font-style:normal;margin:.25rem 0 0 2.2rem}
+      .hilos{display:flex;gap:.3rem;margin-top:.75rem;flex-wrap:wrap}
+      .hilos .h{width:1.3rem;height:1.3rem;border-radius:50%;border:1px solid var(--linea);
+        font-family:var(--cota);font-weight:600;font-size:.6875rem;line-height:1.2rem;
+        text-align:center;font-style:normal;color:var(--linea);
+        flex:none;transition:background .25s,border-color .25s,transform .25s,opacity .25s,color .25s}
+      .hilos .h.on{background:var(--grafito);border-color:var(--grafito);color:var(--papel-c)}
       .hilos .h.sel{background:var(--oliva);border-color:var(--oliva);transform:scale(1.5)}
       .hilos .h.dim{opacity:.3}
       .est__mas{font-family:var(--cota);font-weight:500;color:var(--oliva);font-size:1.15rem;
@@ -1039,10 +1043,10 @@
               <div class="mom__n">07</div>
               <div>
                 <h3 class="mom__t">Los objetos de 2046</h3>
-                <p class="mom__q">Trabajo autónomo · los 12 estudiantes</p>
+                <p class="mom__q">Trabajo autónomo · los 12 estudiantes, con Karla Paniagua a distancia</p>
               </div>
               <p class="mom__d mom__lead">
-                El trimestre termina sin docente en el aula: cada grupo
+                El trimestre termina sin docente en el aula, con Karla Paniagua guiando a distancia: cada grupo
                 construye un prototipo del objeto que él mismo imaginó. Dos
                 objetos, uno por mundo.
               </p>
@@ -1384,30 +1388,39 @@
             <div class="preg-leyenda" id="leyenda">
               <button class="pq" type="button" data-q="1" aria-pressed="false">
                 <span>1</span>¿Qué seleccionamos?
+                <em class="pq__ruta">trabajada en 00 · 01 · 05 · empieza a resolverse en 00</em>
               </button>
               <button class="pq" type="button" data-q="2" aria-pressed="false">
                 <span>2</span>¿Por qué seleccionamos algo?
+                <em class="pq__ruta">trabajada en 00 · 01 · 05 · empieza a resolverse en 05</em>
               </button>
               <button class="pq" type="button" data-q="3" aria-pressed="false">
                 <span>3</span>¿Qué conexiones hay entre los objetos?
+                <em class="pq__ruta">trabajada en 00 · 01 · 02 · empieza a resolverse en 01</em>
               </button>
               <button class="pq" type="button" data-q="4" aria-pressed="false">
                 <span>4</span>¿Cómo cambia su significado junto a otros?
+                <em class="pq__ruta">trabajada en 00 · 01 · 02 · 03 · empieza a resolverse en 01</em>
               </button>
               <button class="pq" type="button" data-q="5" aria-pressed="false">
                 <span>5</span>¿Quién construye la historia de un objeto?
+                <em class="pq__ruta">trabajada en 00 · 01 · 02 · 03 · 04 · 07 · empieza a resolverse en 01</em>
               </button>
               <button class="pq" type="button" data-q="6" aria-pressed="false">
                 <span>6</span>¿Qué pasa si le inventamos una historia nueva?
+                <em class="pq__ruta">trabajada en 01 · 03 · 06 · 07 · empieza a resolverse en 01</em>
               </button>
               <button class="pq" type="button" data-q="7" aria-pressed="false">
                 <span>7</span>¿Qué objetos merecen conservarse?
+                <em class="pq__ruta">trabajada en 02 · 03 · 04 · 05 · empieza a resolverse en 05</em>
               </button>
               <button class="pq" type="button" data-q="8" aria-pressed="false">
                 <span>8</span>¿Cómo imaginamos el futuro?
+                <em class="pq__ruta">trabajada en 04 · 05 · 07 · empieza a resolverse en 04</em>
               </button>
               <button class="pq" type="button" data-q="9" aria-pressed="false">
                 <span>9</span>¿Qué queremos que sobreviva al tiempo?
+                <em class="pq__ruta">trabajada en 04 · 05 · 06 · empieza a resolverse en 05</em>
               </button>
             </div>
 
@@ -1418,7 +1431,7 @@
                   <span class="est__mid">
                     <span class="est__t">Mirar sin editar</span>
                     <span class="est__estado">imágenes sueltas → conjunto con lógica</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 1, 2, 3, 4, 5"><i class="h on" data-q="1" aria-hidden="true"></i><i class="h on" data-q="2" aria-hidden="true"></i><i class="h on" data-q="3" aria-hidden="true"></i><i class="h on" data-q="4" aria-hidden="true"></i><i class="h on" data-q="5" aria-hidden="true"></i><i class="h" data-q="6" aria-hidden="true"></i><i class="h" data-q="7" aria-hidden="true"></i><i class="h" data-q="8" aria-hidden="true"></i><i class="h" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 1, 2, 3, 4, 5"><i class="h on" data-q="1" aria-hidden="true">1</i><i class="h on" data-q="2" aria-hidden="true">2</i><i class="h on" data-q="3" aria-hidden="true">3</i><i class="h on" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h" data-q="6" aria-hidden="true">6</i><i class="h" data-q="7" aria-hidden="true">7</i><i class="h" data-q="8" aria-hidden="true">8</i><i class="h" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1432,7 +1445,7 @@
                   <span class="est__mid">
                     <span class="est__t">Agrupar y contar</span>
                     <span class="est__estado">objeto propio → pieza con historia</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 1, 2, 3, 4, 5, 6"><i class="h on" data-q="1" aria-hidden="true"></i><i class="h on" data-q="2" aria-hidden="true"></i><i class="h on" data-q="3" aria-hidden="true"></i><i class="h on" data-q="4" aria-hidden="true"></i><i class="h on" data-q="5" aria-hidden="true"></i><i class="h on" data-q="6" aria-hidden="true"></i><i class="h" data-q="7" aria-hidden="true"></i><i class="h" data-q="8" aria-hidden="true"></i><i class="h" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 1, 2, 3, 4, 5, 6"><i class="h on" data-q="1" aria-hidden="true">1</i><i class="h on" data-q="2" aria-hidden="true">2</i><i class="h on" data-q="3" aria-hidden="true">3</i><i class="h on" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h on" data-q="6" aria-hidden="true">6</i><i class="h" data-q="7" aria-hidden="true">7</i><i class="h" data-q="8" aria-hidden="true">8</i><i class="h" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1446,12 +1459,12 @@
                   <span class="est__mid">
                     <span class="est__t">Construir el mundo alrededor</span>
                     <span class="est__estado">pieza → pieza dentro de un sistema</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 3, 4, 5, 7"><i class="h" data-q="1" aria-hidden="true"></i><i class="h" data-q="2" aria-hidden="true"></i><i class="h on" data-q="3" aria-hidden="true"></i><i class="h on" data-q="4" aria-hidden="true"></i><i class="h on" data-q="5" aria-hidden="true"></i><i class="h" data-q="6" aria-hidden="true"></i><i class="h on" data-q="7" aria-hidden="true"></i><i class="h" data-q="8" aria-hidden="true"></i><i class="h" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 3, 4, 5, 7"><i class="h" data-q="1" aria-hidden="true">1</i><i class="h" data-q="2" aria-hidden="true">2</i><i class="h on" data-q="3" aria-hidden="true">3</i><i class="h on" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h" data-q="6" aria-hidden="true">6</i><i class="h on" data-q="7" aria-hidden="true">7</i><i class="h" data-q="8" aria-hidden="true">8</i><i class="h" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
                 <div class="est__panel" id="est-02" hidden="">
-                  <p>Quién paga y sostiene ese sistema.</p>
+                  <p>Quién paga y sostiene un museo como el que acaban de inventar.</p>
                 </div>
               </li>
               <li class="est est--puente">
@@ -1460,7 +1473,7 @@
                   <span class="est__mid">
                     <span class="est__t">Leer el objeto<span class="est__badge">puente</span></span>
                     <span class="est__estado">pieza → signo legible</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 4, 5, 6, 7"><i class="h" data-q="1" aria-hidden="true"></i><i class="h" data-q="2" aria-hidden="true"></i><i class="h" data-q="3" aria-hidden="true"></i><i class="h on" data-q="4" aria-hidden="true"></i><i class="h on" data-q="5" aria-hidden="true"></i><i class="h on" data-q="6" aria-hidden="true"></i><i class="h on" data-q="7" aria-hidden="true"></i><i class="h" data-q="8" aria-hidden="true"></i><i class="h" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 4, 5, 6, 7"><i class="h" data-q="1" aria-hidden="true">1</i><i class="h" data-q="2" aria-hidden="true">2</i><i class="h" data-q="3" aria-hidden="true">3</i><i class="h on" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h on" data-q="6" aria-hidden="true">6</i><i class="h on" data-q="7" aria-hidden="true">7</i><i class="h" data-q="8" aria-hidden="true">8</i><i class="h" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1474,7 +1487,7 @@
                   <span class="est__mid">
                     <span class="est__t">Proyectar con evidencia</span>
                     <span class="est__estado">signo → hipótesis fechada</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 5, 7, 8, 9"><i class="h" data-q="1" aria-hidden="true"></i><i class="h" data-q="2" aria-hidden="true"></i><i class="h" data-q="3" aria-hidden="true"></i><i class="h" data-q="4" aria-hidden="true"></i><i class="h on" data-q="5" aria-hidden="true"></i><i class="h" data-q="6" aria-hidden="true"></i><i class="h on" data-q="7" aria-hidden="true"></i><i class="h on" data-q="8" aria-hidden="true"></i><i class="h on" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 5, 7, 8, 9"><i class="h" data-q="1" aria-hidden="true">1</i><i class="h" data-q="2" aria-hidden="true">2</i><i class="h" data-q="3" aria-hidden="true">3</i><i class="h" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h" data-q="6" aria-hidden="true">6</i><i class="h on" data-q="7" aria-hidden="true">7</i><i class="h on" data-q="8" aria-hidden="true">8</i><i class="h on" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1488,7 +1501,7 @@
                   <span class="est__mid">
                     <span class="est__t">Medir hacia atrás para elegir hacia adelante<span class="est__badge">puente</span></span>
                     <span class="est__estado">hipótesis → evidencia de uno mismo</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 1, 2, 7, 8, 9"><i class="h on" data-q="1" aria-hidden="true"></i><i class="h on" data-q="2" aria-hidden="true"></i><i class="h" data-q="3" aria-hidden="true"></i><i class="h" data-q="4" aria-hidden="true"></i><i class="h" data-q="5" aria-hidden="true"></i><i class="h" data-q="6" aria-hidden="true"></i><i class="h on" data-q="7" aria-hidden="true"></i><i class="h on" data-q="8" aria-hidden="true"></i><i class="h on" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 1, 2, 7, 8, 9"><i class="h on" data-q="1" aria-hidden="true">1</i><i class="h on" data-q="2" aria-hidden="true">2</i><i class="h" data-q="3" aria-hidden="true">3</i><i class="h" data-q="4" aria-hidden="true">4</i><i class="h" data-q="5" aria-hidden="true">5</i><i class="h" data-q="6" aria-hidden="true">6</i><i class="h on" data-q="7" aria-hidden="true">7</i><i class="h on" data-q="8" aria-hidden="true">8</i><i class="h on" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1502,7 +1515,7 @@
                   <span class="est__mid">
                     <span class="est__t">Fabricar la aparición</span>
                     <span class="est__estado">materia → imagen sin peso</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 6, 9"><i class="h" data-q="1" aria-hidden="true"></i><i class="h" data-q="2" aria-hidden="true"></i><i class="h" data-q="3" aria-hidden="true"></i><i class="h" data-q="4" aria-hidden="true"></i><i class="h" data-q="5" aria-hidden="true"></i><i class="h on" data-q="6" aria-hidden="true"></i><i class="h" data-q="7" aria-hidden="true"></i><i class="h" data-q="8" aria-hidden="true"></i><i class="h on" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 6, 9"><i class="h" data-q="1" aria-hidden="true">1</i><i class="h" data-q="2" aria-hidden="true">2</i><i class="h" data-q="3" aria-hidden="true">3</i><i class="h" data-q="4" aria-hidden="true">4</i><i class="h" data-q="5" aria-hidden="true">5</i><i class="h on" data-q="6" aria-hidden="true">6</i><i class="h" data-q="7" aria-hidden="true">7</i><i class="h" data-q="8" aria-hidden="true">8</i><i class="h on" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1514,9 +1527,9 @@
                 <button class="est__cab" type="button" aria-expanded="false" aria-controls="est-07">
                   <span class="est__n">07</span>
                   <span class="est__mid">
-                    <span class="est__t">Los objetos de 2046<span class="est__badge">sin docente</span></span>
+                    <span class="est__t">Los objetos de 2046<span class="est__badge">Karla, a distancia</span></span>
                     <span class="est__estado">hipótesis → dos prototipos sin uso</span>
-                    <span class="hilos" aria-label="Preguntas trabajadas: 5, 6, 8"><i class="h" data-q="1" aria-hidden="true"></i><i class="h" data-q="2" aria-hidden="true"></i><i class="h" data-q="3" aria-hidden="true"></i><i class="h" data-q="4" aria-hidden="true"></i><i class="h on" data-q="5" aria-hidden="true"></i><i class="h on" data-q="6" aria-hidden="true"></i><i class="h" data-q="7" aria-hidden="true"></i><i class="h on" data-q="8" aria-hidden="true"></i><i class="h" data-q="9" aria-hidden="true"></i></span>
+                    <span class="hilos" role="img" aria-label="Preguntas trabajadas: 5, 6, 8"><i class="h" data-q="1" aria-hidden="true">1</i><i class="h" data-q="2" aria-hidden="true">2</i><i class="h" data-q="3" aria-hidden="true">3</i><i class="h" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h on" data-q="6" aria-hidden="true">6</i><i class="h" data-q="7" aria-hidden="true">7</i><i class="h on" data-q="8" aria-hidden="true">8</i><i class="h" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                   <span class="est__mas" aria-hidden="true">+</span>
                 </button>
@@ -1531,6 +1544,7 @@
                     <span class="est__t">Última función</span>
                     <span class="est__doc">La entrega</span>
                     <span class="est__estado">aparición → ausencia con dirección</span>
+                    <span class="hilos" role="img" aria-label="Preguntas todavía abiertas: 2, 5, 9"><i class="h" data-q="1" aria-hidden="true">1</i><i class="h on" data-q="2" aria-hidden="true">2</i><i class="h" data-q="3" aria-hidden="true">3</i><i class="h" data-q="4" aria-hidden="true">4</i><i class="h on" data-q="5" aria-hidden="true">5</i><i class="h" data-q="6" aria-hidden="true">6</i><i class="h" data-q="7" aria-hidden="true">7</i><i class="h" data-q="8" aria-hidden="true">8</i><i class="h on" data-q="9" aria-hidden="true">9</i></span>
                   </span>
                 </div>
               </li>
