@@ -173,6 +173,27 @@ Sesión 10 del taller de Karla Paniagua: se presentan **dos prototipos, uno por 
 
 1. Las dos fotografías van **dentro de cada `<article class="estado">` de `#futuros`**,
    junto al equipo que las hizo. No en una sección nueva (ver la trampa 4).
-2. Hay dos frases hoy en presente que ese día dejan de ser verdad: el cierre del módulo
-   04 en `index.html` («los dos prototipos están en desarrollo y se presentan el 16 de
-   septiembre») y el texto del módulo 07 en `data/editorial.mjs`.
+2. Hay dos frases hoy en presente que ese día dejan de ser verdad. **Las versiones en
+   pasado ya están escritas: es copiar y pegar.**
+
+   **`index.html`, cierre del módulo 04.** Buscar:
+
+   > Los dos prototipos están en desarrollo y se presentan el 16 de septiembre de 2026;
+   > sus fotografías entran en esta página ese mismo día.
+
+   Sustituir por:
+
+   > Los dos prototipos se presentaron el 16 de septiembre de 2026. Sus fotografías
+   > están más abajo, cada una dentro del mundo del que salió.
+
+   **`data/editorial.mjs`, módulo 07.** Buscar:
+
+   > Son dos prototipos, uno por grupo, en desarrollo hasta su presentación el 16 de
+   > septiembre de 2026.
+
+   Sustituir por:
+
+   > Son dos prototipos, uno por grupo, presentados el 16 de septiembre de 2026.
+
+   Después: `npm run build`, actualizar los cuatro pasajes en el fixture, `npm run
+   package`, y las dos baterías.

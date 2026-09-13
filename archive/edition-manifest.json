@@ -39,8 +39,8 @@
     },
     {
       "path": "archivo.html",
-      "bytes": 65082,
-      "sha256": "7f4d68135b4fa3301d7d78a84585a2f2cc01ffcad83ae4f14e0e41db91a28eaf"
+      "bytes": 65122,
+      "sha256": "078a386fdf996b02266e5c621f4a6754a3bf45b5e4c3bddc399e0da012d9e237"
     },
     {
       "path": "assets/archive.css",
@@ -54,8 +54,8 @@
     },
     {
       "path": "assets/data.js",
-      "bytes": 79050,
-      "sha256": "c04171ba93f31935eaa7127c61ef99301169dedb3dd11148e64571aace418583"
+      "bytes": 79058,
+      "sha256": "3f9540ba99a41a3deaf63bc93b9e7d91d85a90e33dd62677ec39208c9e3431b0"
     },
     {
       "path": "assets/edition.css",
@@ -179,8 +179,8 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 102220,
-      "sha256": "c4bc614e67f308f286ca3e950e9bdf2bedae53cfd6155c0b2b716c9d4917df19"
+      "bytes": 102332,
+      "sha256": "5726482313711aa5f33942e8a3a6238e1bf384efbc46853b8dcad9b369a6072b"
     },
     {
       "path": "coleccion.html",
@@ -189,13 +189,13 @@
     },
     {
       "path": "data/collection.json",
-      "bytes": 96323,
-      "sha256": "9918a894a2e06d3204df46bf77c2d3df57d57894cb3b8e9fd75e1c8831049677"
+      "bytes": 96331,
+      "sha256": "8e283e45cf83788d4f8fce33f914f251c6fac78979279e60815e4674d8a79c44"
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 27990,
-      "sha256": "1976784fb9654fbe25ccae91cf486e07c1cd94ef00d9a1c454fe00a4f578d158"
+      "bytes": 27998,
+      "sha256": "6ee669df1f4b10b5deb879c7e6158cd5540e3823745e01b1a78a98dd7a4256fb"
     },
     {
       "path": "data/learning.mjs",
@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 146341,
-      "sha256": "6e3522099771152b71e42c78813dcf3bb452eff75af0fab191322ab8c785caa5"
+      "bytes": 147240,
+      "sha256": "d627977b14932c3170b044b290eb63b98a5292af2f22a91b32611dcf6f529cc4"
     },
     {
       "path": "infografia.html",
@@ -634,8 +634,8 @@
     },
     {
       "path": "scripts/check-coherencia.mjs",
-      "bytes": 7146,
-      "sha256": "dac725f37907003557bed951fe4e657080779599383976b9399efed075b9c5f7"
+      "bytes": 7259,
+      "sha256": "8ee53dc0292c6057227c662b475081673819c61eab06502a37e79ee47d3d2996"
     },
     {
       "path": "scripts/check-content.mjs",
@@ -699,8 +699,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 134551,
-      "sha256": "fecb48fbd87233989c3ca20869b620e0cddfa1dc8976f398def55c31019c5507"
+      "bytes": 134363,
+      "sha256": "7883975b55a2af47baa865dc09c7d2b053ef322d78837829fd409e1fd967da49"
     }
   ]
 }

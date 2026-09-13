@@ -75,7 +75,9 @@ const esperado = [
   ['53 objetos', reales.registros + reales.bonus === 53],
   ['12 estudiantes', reales.personas === 12],
   ['ocho módulos', reales.modulos === 8],
-  ['nueve preguntas', reales.preguntas === 9],
+  ['las nueve preguntas del trimestre', reales.preguntas === 9],
+  ['las diez preguntas', reales.preguntas === 10],
+  ['diez puntos', reales.preguntas === 10],
 ];
 for (const [frase, ok] of esperado) {
   if (home.t.includes(frase) && !ok) aviso('cifra que no cuadra', `el sitio dice "${frase}" y los datos dicen otra cosa`);

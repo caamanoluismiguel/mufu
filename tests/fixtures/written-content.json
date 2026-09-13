@@ -126,9 +126,7 @@
     "04EspeculativoA través de los LNS / Nodos de Memoria Dos relatos estudiantiles ambientados en 2046. Sus leyes, tecnologías y gobiernos pertenecen a la ficción.",
     "A través de los LNS / Nodos de Memoria",
     "Dos relatos estudiantiles ambientados en 2046. Sus leyes, tecnologías y gobiernos pertenecen a la ficción.",
-    "05Interpretación curatorialEl hilo y las nueve preguntas El archivo describe la convergencia entre los ejercicios. Las relaciones son lecturas curatoriales, no pruebas de causalidad histórica.",
     "Interpretación curatorial",
-    "El hilo y las nueve preguntas",
     "El archivo describe la convergencia entre los ejercicios. Las relaciones son lecturas curatoriales, no pruebas de causalidad histórica.",
     "06Relato del proyectoÚltima función y cierre de la cápsula Se conservan el video de doce apariciones y el relato del montaje. Los detalles contradictorios de versiones anteriores se señalan en el historial.",
     "Última función y cierre de la cápsula",
@@ -200,7 +198,9 @@
     "53 objetosel registro completo, con su fotografía",
     "Infografíasdos láminas para mirar o imprimir",
     "Archivode dónde sale cada dato y qué no se sabe",
-    "Visitadónde está y qué se ve al llegar"
+    "Visitadónde está y qué se ve al llegar",
+    "05Interpretación curatorialEl hilo y las preguntas del trimestre El archivo describe la convergencia entre los ejercicios. Las relaciones son lecturas curatoriales, no pruebas de causalidad histórica.",
+    "El hilo y las preguntas del trimestre"
   ],
   "atlas.html": [
     "Atlas / 01Diez semanas. Una misma pregunta.",
@@ -1227,9 +1227,7 @@
     "Con una diferencia",
     "En 2047 podrán ponerse en relación los escenarios escritos para 2046 y el mundo de ese nuevo presente. La apertura permitirá documentar lo que cambió, lo que resistió y lo que no se había imaginado: el ejercicio retrospectivo de 2005, esta vez recorrido hacia adelante.",
     "Lo que quedóabierto",
-    "Cada estación es un módulo, y lo que la rotula no es la semana ni el tema: es el estado en que el objeto sale de ahí. Debajo, nueve puntos: las nueve preguntas del trimestre, encendidas donde esa estación las trabajó.",
     "Ninguna se resuelve de una vez. Abre una estación y verás lo que dejó sin cerrar; toca una pregunta y podrás seguirla por las diez semanas hasta ver cuáles seguían abiertas el último día.",
-    "Las nueve preguntas · toca una para seguirla",
     "Si el patrón que otros encuentran en tus fotos es tuyo o es de ellos.",
     "Hasta dónde se le puede inventar un pasado a un objeto sin traicionarlo.",
     "Cómo se le habla a alguien que no comparte ningún contexto: el problema del disco de la Voyager.",
@@ -1366,10 +1364,7 @@
     "7¿Qué objetos merecen conservarse? trabajada en 02 · 03 · 04 · 05 · empieza a resolverse en 05",
     "8¿Cómo imaginamos el futuro? trabajada en 04 · 05 · 07 · empieza a resolverse en 04",
     "9¿Qué queremos que sobreviva al tiempo? trabajada en 04 · 05 · 06 · empieza a resolverse en 05",
-    "02 Construir el mundo alrededor pieza → pieza dentro de un sistema 123456789 + Quién paga y sostiene un museo como el que acaban de inventar.",
     "Quién paga y sostiene un museo como el que acaban de inventar.",
-    "07 Los objetos de 2046Karla, a distancia hipótesis → dos prototipos sin uso 123456789 + Si un prototipo que nunca va a funcionar es un objeto o solo la ilustración de una idea.",
-    "07 Los objetos de 2046Karla, a distancia hipótesis → dos prototipos sin uso 123456789 +",
     "2 de 10 · La colección está cerrada · falta para la apertura",
     "3 de 10 · Las diez semanas",
     "Lo que sigue es el trimestre entero resumido, módulo por módulo. Tres de ellos tienen parada propia más abajo, con todo el detalle: los dos futuros que imaginaron para 2046, las piezas que quedaron emparedadas y la última función.",
@@ -1380,7 +1375,10 @@
     "Infografíasdos láminas para mirar o imprimir",
     "Archivode dónde sale cada dato y qué no se sabe",
     "Visitadónde está y qué se ve al llegar",
-    "Las diez paradas de esta página"
+    "Las diez paradas de esta página",
+    "Cada estación es un módulo, y lo que la rotula no es la semana ni el tema: es el estado en que el objeto sale de ahí. Debajo, diez puntos: las nueve preguntas con las que empezó el trimestre y una décima que no estaba en el temario y apareció en la primera semana. Se encienden donde esa estación las trabajó.",
+    "Las diez preguntas · toca una para seguirla",
+    "10¿El patrón que otros encuentran en tus fotos es tuyo o es de ellos? no estaba en el temario · se abrió en 00 y nunca se cerró"
   ],
   "infografia.html": [
     "MUFU · Museo del FuturoInfografía / cohorte 2026",
