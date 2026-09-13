@@ -65,6 +65,13 @@ body.dialog-open{overflow:hidden}
 .museum-index::backdrop,.image-viewer::backdrop{background:rgba(12,17,15,.78);backdrop-filter:blur(8px)}
 .index-head{display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid var(--rule);padding-bottom:1.5rem;font:500 1rem var(--sans)}
 .index-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;padding-top:2rem}
+.index-layout nav a{flex-wrap:wrap}
+.index-layout nav a small{flex:0 0 100%;order:3;font:500 .8125rem var(--label);color:var(--muted);margin:.1rem 0 0}
+.index-paradas{list-style:none;margin:2rem 0 0;padding:0;grid-column:1}
+.index-paradas__t{font:600 .8125rem var(--label);color:var(--muted);margin-bottom:.6rem}
+.index-paradas li a{display:flex;gap:.9rem;padding:.4rem 0;color:var(--ink);text-decoration:none;font:400 1.0625rem var(--font-reading)}
+.index-paradas li a span{font:600 .8125rem var(--label);color:var(--muted);min-width:1.4rem}
+.index-paradas li a:hover{color:var(--brass)}
 .index-layout nav a{display:flex;align-items:center;gap:1.5rem;padding:.85rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}
 .index-layout nav a:hover b{color:var(--brass);transform:translateX(8px)}
 .index-layout nav a[aria-current] b{color:var(--brass)}
