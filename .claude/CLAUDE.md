@@ -71,6 +71,11 @@ páginas y busca:
   los estudiantes quedan fuera: son dato, no redacción)
 - **reglas de diseño**: monoespaciadas y mayúsculas forzadas en el CSS
 - **registros idénticos** en el archivo
+- **las diez paradas**: el rótulo de cada sección (`8 de 10 · Las preguntas`), su número
+  y la entrada del índice desplegable tienen que decir lo mismo. El rótulo es el nombre
+  corto y el `<h2>` es el titular: pueden sonar distinto, pero **tienen que hablar de lo
+  mismo**. Si le cambias el título a una sección, cámbiale también el rótulo y la entrada
+  de `paradas` en `scripts/visual-edition.mjs`
 
 Separa dos cosas: **fallos**, que rompen la construcción, y **dudas**, que se imprimen y
 no bloquean porque las tiene que resolver una persona. Hoy hay una duda abierta: Tamara

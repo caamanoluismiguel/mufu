@@ -19,7 +19,7 @@ export function visualEdition($,page,icon){
   const paradas=[['#portada','1','La portada'],['#cuenta','2','La cuenta'],
     ['#recorrido','3','Las diez semanas'],['#futuros','4','Panamá 2046'],
     ['#coleccion','5','Las piezas emparedadas'],['#obra','6','Última función'],
-    ['#hilo','7','El hilo'],['#mapa','8','El plano'],
+    ['#hilo','7','El hilo'],['#mapa','8','Las preguntas'],
     ['#visita','9','La visita'],['#testimonios','10','Las voces']];
   const active=activeDestination(page);
   const previous=$('body>.site-header,body>.bar,body>.top').first();

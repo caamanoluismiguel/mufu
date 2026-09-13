@@ -106,6 +106,23 @@ for (const [frase, ok] of esperado) {
   if (home.t.includes(frase) && !ok) aviso('cifra que no cuadra', `el sitio dice "${frase}" y los datos dicen otra cosa`);
 }
 
+/* ── 3b · las preguntas abiertas: el texto contra los puntos ───────── */
+/* el mapa afirma cuántas siguen abiertas y la entrega final las enciende.
+   Si alguien cambia una cosa y no la otra, nadie se entera. */
+{
+  const crudo = fs.readFileSync('index.html', 'utf8');
+  const fin = crudo.split('est--fin').pop() || '';
+  const abiertas = (fin.slice(0, 2000).match(/class="h on"/g) || []).length;
+  const nombres = ['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez'];
+  const total = load(crudo)('.pq').length;
+  const cerradas = total - abiertas;
+  const homeBajo = home.t.toLowerCase();
+  if (abiertas && !homeBajo.includes(`${nombres[abiertas]} siguen abiertas`))
+    aviso('el mapa no cuadra', `la entrega final enciende ${abiertas} preguntas y el texto no dice «${nombres[abiertas]} siguen abiertas»`);
+  if (cerradas > 0 && !homeBajo.includes(`${nombres[cerradas]} de las ${nombres[total]} encontraron respuesta`))
+    aviso('el mapa no cuadra', `quedan ${cerradas} cerradas de ${total} y el texto no lo dice así`);
+}
+
 /* ── 4 · contradicciones declaradas ────────────────────────────────── */
 /* cada par: si las dos frases aparecen en la misma página, algo va mal */
 const incompatibles = [
@@ -153,6 +170,30 @@ for (const r of registry.records) {
   if (firma.has(k) && documentadas.has(`${r.person}|${r.title}`)) { continue; }
   if (firma.has(k)) duda('registros idénticos', `${r.person} declara dos veces "${r.title.slice(0, 50)}" · ¿son dos piezas o una repetida?`);
   firma.set(k, r.id);
+}
+
+/* ── 6b · las diez paradas se llaman igual en los tres sitios ──────────
+   El rótulo («8 de 10 · Las preguntas»), la entrada del índice desplegable
+   y el orden tienen que coincidir. El 2026-09-13 la parada 8 quedó con dos
+   nombres al cambiarle el título, y la 2 no tenía ninguno. */
+{
+  const $ = load(fs.readFileSync('index.html', 'utf8'));
+  const indice = $('#museum-index .index-paradas a').toArray().map(a => ({
+    href: $(a).attr('href'),
+    n: norm($(a).find('span').text()),
+    nombre: norm($(a).clone().children('span').remove().end().text()),
+  }));
+  if (indice.length !== 10) aviso('paradas', `el índice lista ${indice.length} paradas, no diez`);
+  indice.forEach((parada, i) => {
+    const id = (parada.href || '').replace('#', '');
+    const seccion = $(`#${id}`);
+    if (!seccion.length) return aviso('paradas', `el índice apunta a #${id} y esa sección no existe`);
+    if (parada.n !== String(i + 1)) aviso('paradas', `#${id} va en el puesto ${i + 1} y su número dice ${parada.n}`);
+    if (id === 'portada') return;               // la portada no lleva rótulo: es el hero
+    const rotulo = norm(seccion.find('.eyebrow').first().text());
+    const esperado = `${i + 1} de 10 · ${parada.nombre}`;
+    if (rotulo !== esperado) aviso('paradas', `#${id}: el rótulo dice "${rotulo}" y el índice la llama "${parada.nombre}" · deberían decir "${esperado}"`);
+  });
 }
 
 /* ── 7 · resultado ─────────────────────────────────────────────────── */
