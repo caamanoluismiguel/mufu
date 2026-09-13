@@ -113,6 +113,9 @@ test('generated outputs are deterministic and match canonical data',()=>{
 test('visual redesign preserves the written content of all twenty pages',()=>{
   execFileSync(process.execPath,['scripts/check-content.mjs']);
 });
+test('no contradictions, duplicate prose, broken anchors or voice-rule breaches',()=>{
+  execFileSync(process.execPath,['scripts/check-coherencia.mjs'],{stdio:'inherit'});
+});
 test('collective authorship and cross-class connections are sourced and preserved in every learning view',()=>{
   assert.equal(contributors.length,6);
   assert.equal(learningConnections.length,9);

@@ -39,8 +39,8 @@
     },
     {
       "path": "archivo.html",
-      "bytes": 64258,
-      "sha256": "d701048ae6eed250abf2a0b98054b2990edd10fb2be23cec0f00a53885dbac61"
+      "bytes": 64427,
+      "sha256": "ca1394f4a4915151c6708fe20cfb5483ec2e23217b9e1681fbb4d18740dd51d2"
     },
     {
       "path": "assets/archive.css",
@@ -614,8 +614,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 650,
-      "sha256": "9b6e2510c505b16c24433bf0143b375c81fdfb3f8ad16d782e364a35379e427f"
+      "bytes": 700,
+      "sha256": "8258f19e0da80eb7cdcf47b4319ebf3b6eba551b319dd8eb2089a08a1fd55c75"
     },
     {
       "path": "playwright.config.js",
@@ -629,8 +629,13 @@
     },
     {
       "path": "scripts/build.mjs",
-      "bytes": 41894,
-      "sha256": "9bee1ab3da87e33bb994158bb808eedb19d6d77513ccef8cae2c4c6d860c5e56"
+      "bytes": 42063,
+      "sha256": "9b007f0222c804cd1535d66530f25fdd0658eef47e89b3c32e7c62ed5970c46b"
+    },
+    {
+      "path": "scripts/check-coherencia.mjs",
+      "bytes": 6897,
+      "sha256": "54bda98f128ae993267742b7440d5da37b7b2c377d4cd1a153627b0ccd15f3f8"
     },
     {
       "path": "scripts/check-content.mjs",
@@ -684,8 +689,8 @@
     },
     {
       "path": "tests/archive.test.mjs",
-      "bytes": 9718,
-      "sha256": "e08288ec5647b138baf3dbd99328064baf1e097f9bd7bba78b0fda9cdbc07d79"
+      "bytes": 9894,
+      "sha256": "c626bf9ea28d359106affc014f1709c296128a68d102e52694458e9e88e6dd14"
     },
     {
       "path": "tests/browser/experience.spec.js",

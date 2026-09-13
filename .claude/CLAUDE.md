@@ -55,6 +55,38 @@ Es el mismo orden que corre el CI en `.github/workflows/verify.yml`. Saltarse `p
 deja el ZIP y el manifiesto de edición desfasados, y este repo los regenera en cada
 commit.
 
+## El comprobador de coherencia · `npm run check`
+
+`scripts/check-coherencia.mjs` corre dentro de `npm test` y en el CI. Revisa las 20
+páginas y busca:
+
+- **anclas rotas**, dentro de una página y entre páginas, e ids duplicados
+- **párrafos repetidos** en prosa editorial (los componentes que repiten plantilla por
+  elemento, como las fichas o las tarjetas de bonus, quedan fuera a propósito)
+- **cifras que no cuadran**: si el texto dice «51 registros» u «ocho módulos», lo
+  contrasta con `registry.json` y con el DOM
+- **contradicciones declaradas**: pares de frases que no pueden convivir. Hoy hay tres,
+  y la lista solo crece
+- **reglas de voz**: voseo, y rayas largas en prosa del sitio (los títulos declarados por
+  los estudiantes quedan fuera: son dato, no redacción)
+- **reglas de diseño**: monoespaciadas y mayúsculas forzadas en el CSS
+- **registros idénticos** en el archivo
+
+Separa dos cosas: **fallos**, que rompen la construcción, y **dudas**, que se imprimen y
+no bloquean porque las tiene que resolver una persona. Hoy hay una duda abierta: Tamara
+Cos declara dos veces la misma moneda de 25 centavos, y nadie sabe si son dos piezas o
+un registro repetido.
+
+**La regla de uso es una sola: cada error que se cuela una vez se convierte aquí en una
+comprobación.** La lista de contradicciones no se recorta nunca. Lo que ya está dentro
+son fallos reales cometidos el 2026-09-12: cambiar las coordenadas y dejar la prosa que
+describía la precisión anterior, dejar dos versiones del mismo párrafo una detrás de
+otra, y rotular como «sin docente» un módulo que tuvo a Karla a distancia.
+
+Lo que **no** puede cazar: errores de razonamiento nuevos, datos inventados y
+regresiones visuales. Para eso están la comparación contra capturas de línea base y
+leer con cuidado.
+
 ## Cinco trampas que rompen el trabajo
 
 1. **El hash de `index.html` está congelado.** El test «generated outputs are
