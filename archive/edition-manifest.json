@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 147117,
-      "sha256": "344fd98303d60377a05e2068ff594d7f0fef268ee338e3b4855d4a2860ce90a7"
+      "bytes": 147002,
+      "sha256": "a87602498cfb8c9cae03377d3f3ed6f674af1d4ba18a5714977b6ffe80732698"
     },
     {
       "path": "infografia.html",
@@ -699,8 +699,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 134240,
-      "sha256": "9644700be6991603b7c88087a9849856cc23e3e14faa74f6289b6f628fac28f9"
+      "bytes": 134249,
+      "sha256": "1ea9d662abf79a47bc7399371d13e82f291acbb4e21241b3f127fc0bef49d0e3"
     }
   ]
 }
