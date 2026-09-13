@@ -1725,7 +1725,7 @@
         "tiempo",
         "imagen"
       ],
-      "text": "El permiso para enterrar fue denegado, según el relato del proyecto. Se construyó un vacío bajo la escalera. Una restricción institucional terminó definiendo la forma del museo.",
+      "text": "La solicitud para enterrar las cajas en el campus se envió y sigue sin respuesta, según el relato del proyecto. Se construyó un vacío bajo la escalera mientras tanto. Un silencio institucional terminó definiendo la forma del museo.",
       "sources": [
         "cierre",
         "hilo",
@@ -1900,7 +1900,7 @@
     {
       "q": "¿Está enterrada?",
       "keywords": "donde ubicacion enterrada emparedada escalera edificio cajas muro pared permiso",
-      "answer": "Está emparedada en un vacío bajo la escalera posterior del edificio 106, en Ciudad del Saber, Panamá. El relato atribuye esa decisión a la negativa del permiso para enterrarla en el campus. Son dos cajas; falta el inventario público por caja.",
+      "answer": "Está emparedada en un vacío bajo la escalera posterior del edificio 106, en Ciudad del Saber, Panamá. El relato atribuye esa decisión al silencio de la solicitud de permiso para enterrarla en el campus. Son dos cajas; falta el inventario público por caja.",
       "sources": [
         "cierre",
         "hilo"

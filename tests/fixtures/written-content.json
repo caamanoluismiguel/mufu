@@ -30,7 +30,6 @@
     "¿Cuándo se puede abrir?",
     "La cita es el 5 de septiembre de 2047 a las 07:56, hora de Panamá (UTC−5). Coincide con el 70 aniversario de Voyager 1 con precisión de minuto. Llegar a la fecha no demuestra que la apertura física haya sucedido.",
     "¿Está enterrada?",
-    "Está emparedada en un vacío bajo la escalera posterior del edificio 106, en Ciudad del Saber, Panamá. El relato atribuye esa decisión a la negativa del permiso para enterrarla en el campus. Son dos cajas; falta el inventario público por caja.",
     "¿Qué une a Leia, Voyager y las cartas?",
     "Un emisor ausente confía un mensaje a un soporte. En Star Wars activa un viaje; en Voyager se dirige a un posible lector desconocido; en MUFU espera a una persona futura. Es una conexión curatorial, no una causalidad histórica demostrada.",
     "¿Pepper es un holograma?",
@@ -90,10 +89,8 @@
     "03TestimonioAñadir dos bonusDos objetos entraron sin ficha. No hay fotografía, título ni autor documentados públicamente para ellos.Corrección del total: 51 + 2 = 53",
     "Añadir dos bonus",
     "Dos objetos entraron sin ficha. No hay fotografía, título ni autor documentados públicamente para ellos.",
-    "04Relato del proyectoEnvasar y guardarEl relato describe bolsas selladas por succión, etiquetas y dos cajas. El archivo público no identifica qué objeto va en cada caja.Última función y cierre de la cápsula",
     "Relato del proyecto",
     "Envasar y guardar",
-    "El relato describe bolsas selladas por succión, etiquetas y dos cajas. El archivo público no identifica qué objeto va en cada caja.",
     "05Relato del proyectoEmparedarCierre bajo la escalera del edificio 106. Se registra el día 4 de septiembre de 2026; no se conoce la hora exacta.Última función y cierre de la cápsula",
     "Emparedar",
     "Cierre bajo la escalera del edificio 106. Se registra el día 4 de septiembre de 2026; no se conoce la hora exacta.",
@@ -187,7 +184,11 @@
     "Borrador IA · secuencia ilustrativa",
     "Borrador IA · conexiones conceptuales",
     "Isthmus · Cohorte 2026Edificio 106 · Ciudad del Saber, Panamá",
-    "Infografías visuales51 registros + 2 bonus = 53 objetosFuentes, límites y correcciones"
+    "Infografías visuales51 registros + 2 bonus = 53 objetosFuentes, límites y correcciones",
+    "Está emparedada en un vacío bajo la escalera posterior del edificio 106, en Ciudad del Saber, Panamá. El relato atribuye esa decisión al silencio de la solicitud de permiso para enterrarla en el campus. Son dos cajas; falta el inventario público por caja.",
+    "Los diagramas web son conceptuales y no están a escala. Las imágenes de objetos provienen de las fichas existentes; la imagen de Isthmus es un dibujo del edificio. Las láminas generadas con IA son borradores de la conversación, conservados con sus limitaciones. La portada es una reconstrucción generada con el modelo de vídeo de Google Gemini a partir de las fotografías del puppet para stop motion de Martha Pretto, una de las 53 piezas emparedadas, publicada con su consentimiento.",
+    "04Relato del proyectoEnvasar y guardarEl relato describe bolsas selladas por succión, etiquetas y dos cajas de acero inoxidable selladas, cada una con la mitad de los objetos. No se repartieron por autor ni por tema: se repartieron para que un fallo en una caja no se lleve la colección entera. El archivo público no identifica qué objeto va en cada una.Última función y cierre de la cápsula",
+    "El relato describe bolsas selladas por succión, etiquetas y dos cajas de acero inoxidable selladas, cada una con la mitad de los objetos. No se repartieron por autor ni por tema: se repartieron para que un fallo en una caja no se lleve la colección entera. El archivo público no identifica qué objeto va en cada una."
   ],
   "atlas.html": [
     "Atlas / 01Diez semanas. Una misma pregunta.",
@@ -1108,7 +1109,6 @@
     "Escribieron su pieza final sin saberlo",
     "Las dos ficciones que doce estudiantes inventaron para 2046 describen, punto por punto, la obra con la que el curso terminó tres semanas después.",
     "Lo que imaginaron para 2046 · lo que construyeron en 2026",
-    "Los objetos bajan a bóvedas sin acceso general. La cápsula queda sellada, sin acceso hasta 2047. Pidieron permiso para enterrarla en la tierra del campus y no se lo dieron, así que la cápsula no está enterrada: está emparedada en un espacio que construyeron ellos mismos debajo de la escalera trasera del edificio 106. Con suerte, para 2047 alguien ya habrá contestado si se podía enterrar o no.",
     "Solo se ven en reconstrucción, nunca en materia. En la sala aparecen como luz sobre un vidrio, imposibles de tocar.",
     "La ley obliga al silencio: sin guías, sin explicaciones habladas. La sala no tiene música ni voz: un golpe seco por cambio.",
     "Los Falsos Nodos exhiben copias para proteger los originales. Lo que el público ve en MUFU es un reflejo; la colección física queda tras la pared.",
@@ -1266,7 +1266,12 @@
     "Casi toda esta página está contada desde fuera, en pasado y sin nombre propio. Estos textos no. Son los textos que escribieron quienes hicieron el museo, sobre lo que les pasó mientras lo hacían.",
     "03 Las coordenadas llevan datum y cuatro decimales, unos once metros: sitúan el edificio y no el punto exacto de la pared. La descripción desde el edificio es la que va a servir cuando el GPS ya no exista.",
     "05 La fecha va un año por delante de los escenarios de 2046. Esa distancia no se buscó: la fecha sale del aniversario de la Voyager 1 y del plazo de veintiún años. La cuenta regresiva lo explica.",
-    "MUFU · Museo del Futuro. Cohorte 2026. Isthmus, Ciudad del Saber, Panamá. https://mufu.today · Consultado el la fecha de hoy."
+    "MUFU · Museo del Futuro. Cohorte 2026. Isthmus, Ciudad del Saber, Panamá. https://mufu.today · Consultado el la fecha de hoy.",
+    "Los objetos bajan a bóvedas sin acceso general. La cápsula queda sellada, sin acceso hasta 2047. Pidieron permiso para enterrarla en la tierra del campus y la solicitud sigue sin respuesta, así que la cápsula no está enterrada: está emparedada en un espacio que construyeron ellos mismos debajo de la escalera trasera del edificio 106. Si la respuesta llega antes del 5 de septiembre de 2047, habrá tardado menos que la cápsula.",
+    "Hay algo más que el registro deja ver y que la consigna no pidió. Leídas las cincuenta y una filiaciones seguidas, la palabra que más se repite no es «recuerdo»: es «primera». El primer portaminas, comprado al cambiarse a Diseño Industrial. La primera cola tejida a mano. El rollo de cinta comprado para el primer día de universidad. La pelota de golf de la primera visita a Walt Disney World, en 2005. El boleto de la primera visita al Biomuseo.",
+    "Se pidió algo que representara el presente, algo para entregar y algo para recuperar. Comienzos no pidió nadie. Y en una caja que no se abre hasta 2047, lo que más se guardó no son cumbres ni finales: son los momentos en que algo empezó.",
+    "El registro publica lo que hay, no todo lo que se sabe. Los correos, las direcciones, las valoraciones, el contenido de las cartas y el reparto por caja quedan fuera a propósito: qué se retiene y por qué.",
+    "No está lejos ni enterrada. Está a centímetros de quien baja esa escalera, detrás de un tabique. Lo que separa a cualquiera de los 53 objetos no es la distancia: es el acuerdo de no abrirlo."
   ],
   "infografia.html": [
     "MUFU · Museo del FuturoInfografía / cohorte 2026",
