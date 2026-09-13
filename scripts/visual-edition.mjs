@@ -41,7 +41,7 @@ export function visualEdition($,page,icon){
       const overlay=$(el);
       overlay.find('.entrar,.hero-read').wrapAll('<div class="hero-actions"></div>');
     });
-    $('.hero-caption').append(`<a class="hero-next" href="#home-atlas" aria-label="Continuar el recorrido" title="Continuar el recorrido">${icon('arrow-down')}</a>`);
+    $('.hero-caption').append(`<a class="hero-next" href="#cuenta" aria-label="Continuar el recorrido" title="Continuar el recorrido">${icon('arrow-down')}</a>`);
     $('#home-atlas').after(`<section id="home-visuals" class="home-visuals"><div class="wrap"><div class="section-head"><p class="section-label">Infografías visuales</p><h2>Ver el museo.<br><em>De un vistazo.</em></h2><p>Dos láminas para mirar, compartir o guardar: el recorrido de diez semanas y el mapa que une memoria, representación, poder y tiempo.</p></div><div class="visual-portals"><a href="infografias.html#trimestre"><div><span>01 / El trimestre</span><h3>Diez semanas para construir un museo.</h3>${icon('arrow-up-right')}</div><img src="medios/infografia-trimestre-mini.webp" alt="Infografía del trimestre MUFU" width="450" height="562" loading="lazy" decoding="async"></a><a href="infografias.html#conexiones"><div><span>02 / El hilo</span><h3>El hilo que une todo.</h3>${icon('arrow-up-right')}</div><img src="medios/infografia-conexiones-mini.webp" alt="Mapa de conexiones MUFU" width="450" height="562" loading="lazy" decoding="async"></a></div></div></section>`);
   }
 }

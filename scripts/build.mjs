@@ -121,8 +121,7 @@ home('script:not([type])').each((_,el)=>{
   home(el).html(js);
 });
 const homeAtlas=`<section id="home-atlas" class="home-atlas"><div class="wrap"><div class="home-atlas-head"><p class="section-label">Un museo empieza por una selección</p><a href="coleccion.html">53 objetos ${icon('arrow-up-right')}</a></div><div class="contact-strip">${records.slice(0,13).map(r=>`<a href="${r.source}" title="${esc(r.title)}"><img src="${r.image.src}" alt="${esc(r.title)}" loading="lazy" width="${r.image.width}" height="${r.image.height}"></a>`).join('')}<a class="contact-bonus" href="archivo.html#conteo" aria-label="Dos objetos bonus sin registro">+2<span>sin ficha</span></a></div><div class="home-atlas-copy"><h2>Diez semanas.<br><em>Todo estaba conectado.</em></h2><p>El mensaje de Leia, el Disco de Oro, el fantasma de Pepper y las cartas de una clase. Cuatro hilos para recorrer lo que aprendimos: memoria, representación, poder y tiempo.</p><a href="atlas.html" class="atlas-entry">Explorar el atlas ${icon('arrow-up-right')}</a></div><div class="home-thread-links">${threads.map(t=>`<a href="atlas.html?hilo=${t.id}"><i style="background:${t.color}" aria-hidden="true"></i>${t.name}<span>${t.question}</span>${icon('arrow-up-right')}</a>`).join('')}</div></div></section>`;
-home('#cuenta').before(homeAtlas);
-home('#home-atlas').after(home('#museum-origin'));
+home('#mapa').after(homeAtlas);
 home('#conteo').text('12 autores · 51 registros + 2 bonus = 53 objetos');
 home('#recorrido .mom').each((i,el)=>home(el).attr('id',`modulo-original-${String(i).padStart(2,'0')}`));
 fs.writeFileSync('index.html',home.html());
