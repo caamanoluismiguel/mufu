@@ -144,6 +144,15 @@ pieza y el contenido de las cartas. El sitio publica las coordenadas del entierr
 `robots.txt` invita a los rastreadores de IA, así que esos datos no salen. Los nombres
 sí: son la autoría.
 
+**Las fechas del módulo 02 quedan fuera a propósito (2026-09-16).** El programa de
+Viridiana Zavala sí trae calendario, pero se contradice solo: el encabezado dice «27 de
+agosto al 7 de agosto» y la tabla pasa de «31 AGO» a «3 AGO». Hay dos lecturas posibles,
+27 jul al 7 ago (dos semanas de lunes a viernes) o 27 ago al 7 sep (dos bloques de jueves
+a lunes, que además chocan con el emparedado del 4 de septiembre). No se ha podido
+verificar con la docente. El sitio publica lo que sí es firme, las diez sesiones
+numeradas y su contenido, y no publica ninguna fecha de ese módulo. Si alguna vez se
+confirma, entra en `index.html` y en la fuente `programa-02` de `data/editorial.mjs`.
+
 **Las coordenadas tienen dos precisiones a propósito (2026-09-12).** La portada, su
 JSON-LD y la tarjeta social redondean a cuatro decimales, unos once metros: dicen el
 edificio sin señalar el punto de la pared. Los 51 registros de `data/registry.json` y

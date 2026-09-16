@@ -1,5 +1,5 @@
 {
-  "edition": "2026-09-10",
+  "edition": "2026-09-16",
   "note": "Huellas de esta edición. No certifican la verdad del contenido.",
   "files": [
     {
@@ -39,8 +39,8 @@
     },
     {
       "path": "archivo.html",
-      "bytes": 65122,
-      "sha256": "078a386fdf996b02266e5c621f4a6754a3bf45b5e4c3bddc399e0da012d9e237"
+      "bytes": 67857,
+      "sha256": "ed8f28b299cf6bfcd39e8d44362df51a24773e39227f590a1de2f4910ff73bf6"
     },
     {
       "path": "assets/archive.css",
@@ -54,8 +54,8 @@
     },
     {
       "path": "assets/data.js",
-      "bytes": 79058,
-      "sha256": "3f9540ba99a41a3deaf63bc93b9e7d91d85a90e33dd62677ec39208c9e3431b0"
+      "bytes": 81015,
+      "sha256": "94962c8f9a03e88c7147b0b47421d1fb460562b7cdb524533e47344b52f9b11c"
     },
     {
       "path": "assets/edition.css",
@@ -75,7 +75,7 @@
     {
       "path": "assets/facts.js",
       "bytes": 635,
-      "sha256": "0a12245220a40eb3f0e2d49cadd92458e1e4171165749001036830ede697392c"
+      "sha256": "135ef2c243360fd6f23898536a817e24e80caa1218f05785c1e000bb1bdd39c4"
     },
     {
       "path": "assets/fonts.css",
@@ -179,8 +179,8 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 102332,
-      "sha256": "5726482313711aa5f33942e8a3a6238e1bf384efbc46853b8dcad9b369a6072b"
+      "bytes": 103060,
+      "sha256": "3d63574d09a2c6551b5621b7d161b7a069df0e8f14ff67a0db30ba312d7c9b88"
     },
     {
       "path": "coleccion.html",
@@ -189,18 +189,18 @@
     },
     {
       "path": "data/collection.json",
-      "bytes": 96331,
-      "sha256": "8e283e45cf83788d4f8fce33f914f251c6fac78979279e60815e4674d8a79c44"
+      "bytes": 98438,
+      "sha256": "7467a5c551d2b9bb6211f6de9df29b374a680a19e298dafbf303617f84c7b29d"
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 27998,
-      "sha256": "6ee669df1f4b10b5deb879c7e6158cd5540e3823745e01b1a78a98dd7a4256fb"
+      "bytes": 29599,
+      "sha256": "e3c71b98937e5f56e8a97f2e5b79e5f142d5d0514c3c755d66de2900773a797c"
     },
     {
       "path": "data/learning.mjs",
-      "bytes": 5502,
-      "sha256": "6077845391c1b5e5b8c36312c727e75e2c0a5cc6ce9c7ec499ebf51436c13880"
+      "bytes": 6050,
+      "sha256": "e5ea74ad7fd8f932469a162114843538f1b60437324fb9b3637d7a8f7408056d"
     },
     {
       "path": "data/registry.json",
@@ -534,23 +534,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 153162,
-      "sha256": "bee0cd7a050abd274c43aea861b5933049bcd2ee5631885c3f737110c4ca1f8b"
+      "bytes": 155728,
+      "sha256": "2ef03e046254767fe24cb3a6fa4df9f7e516b3d35ad6fb8696bcb54ed45a27bf"
     },
     {
       "path": "infografia.html",
-      "bytes": 36640,
-      "sha256": "0898a18879656609e3b041e292c6203bc7db70a611569f4f20c318a64084292e"
+      "bytes": 37188,
+      "sha256": "c497a02921befe7725da2f704bd33815e169b4d600d93b2025fc4f15e4ed55ff"
     },
     {
       "path": "infografias.html",
-      "bytes": 23336,
-      "sha256": "912c92098350a2aeebcc5ce4c1f7eeb36ab3f04aaa542370ad5ebb4cda33ca34"
+      "bytes": 23730,
+      "sha256": "4795b02e2e4353ac77212c4ed5f5203287fd0ee390f7f1dd5c670f92501d92a3"
     },
     {
       "path": "llms.txt",
-      "bytes": 3884,
-      "sha256": "0f80750e1741739cb8624849f7243b62adcd2a33ac59f6fe94afb36ce3e7212a"
+      "bytes": 4031,
+      "sha256": "e51ab2a3c5b2da2cceaba65f3c048aecc6981922fa4f34ce81201886715a8aba"
     },
     {
       "path": "medios/aparicion.jpg",
@@ -685,7 +685,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 1647,
-      "sha256": "c88c059122e6447435d12eaea6428754823136d622bfec01e1b2e64bc63b381d"
+      "sha256": "0d2cfd54ddb8fa23693328d35dd0c67ff69bb8a6fe3736e4e71341ecdf6460d7"
     },
     {
       "path": "tests/archive.test.mjs",
@@ -699,8 +699,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 137380,
-      "sha256": "7058d5c97235668b6011e17bfb87f76cd38eb2d659ede92707f24408cdf99e6b"
+      "bytes": 147312,
+      "sha256": "0ac5b7b6c5d3b7c81228fe6359ceb7bf231a5fb58c0ab450d5481f0c4c1adcbc"
     }
   ]
 }

@@ -114,10 +114,8 @@
     "05Volver a las fuentes",
     "Volver a las fuentes",
     "Referencias del proyecto, históricas y curatoriales.",
-    "01Archivo del proyectoRelato del trimestre MUFU Ocho módulos en diez semanas. El archivo no fija la duración de cada módulo.",
     "Archivo del proyecto",
     "Relato del trimestre MUFU",
-    "Ocho módulos en diez semanas. El archivo no fija la duración de cada módulo.",
     "02TestimonioCorrección del total: 51 + 2 = 53 Confirmación de Luis Miguel Caamaño en la conversación de actualización del 9 de septiembre de 2026: 51 objetos declarados y dos añadidos sin registro como bonus.",
     "Corrección del total: 51 + 2 = 53",
     "03Documentado51 fichas y sus fotografías Transcripción publicada del registro de la cohorte. Una ficha puede describir un conjunto, por ejemplo una torre de monedas; no contamos cada componente por separado.",
@@ -200,7 +198,21 @@
     "Archivode dónde sale cada dato y qué no se sabe",
     "Visitadónde está y qué se ve al llegar",
     "05Interpretación curatorialEl hilo y las preguntas del trimestre El archivo describe la convergencia entre los ejercicios. Las relaciones son lecturas curatoriales, no pruebas de causalidad histórica.",
-    "El hilo y las preguntas del trimestre"
+    "El hilo y las preguntas del trimestre",
+    "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal. La excepción es el módulo 02: de esa clase sí se conserva el programa de la docente, y de ahí salen sus diez sesiones y su contenido teórico.",
+    "01Archivo del proyectoRelato del trimestre MUFU Ocho módulos en diez semanas. El archivo no fija la duración de la mayoría de los módulos. Del 02 se conserva el programa de la docente, que declara diez sesiones, y del 03 el relato fija tres días.",
+    "Ocho módulos en diez semanas. El archivo no fija la duración de la mayoría de los módulos. Del 02 se conserva el programa de la docente, que declara diez sesiones, y del 03 el relato fija tres días.",
+    "16Documento del cursoPrograma del módulo 02 · El Museo del Futuro Programa entregado por Viridiana Zavala para su clase. Fija el objetivo, las habilidades, diez sesiones numeradas y dos lecturas. El documento no se publica aquí: es material docente. Sus fechas quedan fuera del sitio porque el calendario del propio documento se contradice y no se ha podido verificar con la docente.",
+    "Documento del curso",
+    "Programa del módulo 02 · El Museo del Futuro",
+    "Programa entregado por Viridiana Zavala para su clase. Fija el objetivo, las habilidades, diez sesiones numeradas y dos lecturas. El documento no se publica aquí: es material docente. Sus fechas quedan fuera del sitio porque el calendario del propio documento se contradice y no se ha podido verificar con la docente.",
+    "17Lectura del programaE. B. Hunter · Selfies de museo, algo más que un espejo El Correo de la UNESCO, octubre de 2024. Lectura de la primera sesión del módulo 02. Sostiene que fotografiarse en una sala es una manera de apropiarse de la obra, no solo vanidad.",
+    "Lectura del programa",
+    "E. B. Hunter · Selfies de museo, algo más que un espejo",
+    "El Correo de la UNESCO, octubre de 2024. Lectura de la primera sesión del módulo 02. Sostiene que fotografiarse en una sala es una manera de apropiarse de la obra, no solo vanidad.",
+    "18Lectura del programaOlivier Debroise · El perfil del curador independiente Lectura de la sesión de curaduría del módulo 02. El programa la cita por un título corto y el texto no está publicado en abierto, así que el enlace identifica al autor, historiador y curador francomexicano, y no reproduce la lectura.",
+    "Olivier Debroise · El perfil del curador independiente",
+    "Lectura de la sesión de curaduría del módulo 02. El programa la cita por un título corto y el texto no está publicado en abierto, así que el enlace identifica al autor, historiador y curador francomexicano, y no reproduce la lectura."
   ],
   "atlas.html": [
     "Atlas / 01Diez semanas. Una misma pregunta.",
@@ -275,11 +287,9 @@
     "El orden cambia el significado.",
     "Los mismos objetos se agruparon de varias maneras y recibieron historias distintas, incluso inventadas. La procedencia y la ficción se vuelven dos lecturas que hay que distinguir.",
     "¿Hasta dónde podemos inventar un pasado sin traicionar al objeto?",
-    "02 Construir un museoViridiana ZavalaExhibir es decidir.Recorridos, pilares, pedestales, roles, recursos digitales y una canción construyeron el ambiente del museo. La visita involucra el cuerpo y depende de decisiones de otras personas.Pieza Mundo musealLo que quedó abierto¿Quién paga, organiza y sostiene ese mundo?Leer el módulo completo",
     "Construir un museo",
     "Viridiana Zavala",
     "Exhibir es decidir.",
-    "Recorridos, pilares, pedestales, roles, recursos digitales y una canción construyeron el ambiente del museo. La visita involucra el cuerpo y depende de decisiones de otras personas.",
     "¿Quién paga, organiza y sostiene ese mundo?",
     "03 Objetos que narranLuis Miguel CaamañoLos objetos hacen avanzar una historia.Matrix y el camino del héroe abrieron tres funciones: MacGuffin, reliquia y talismán. El Disco de Oro llevó el problema al límite: comunicarse con alguien que no comparte idioma, cuerpo ni época.Pieza Signo legibleLo que quedó abierto¿Cómo diseñamos un mensaje para alguien sin nuestro contexto?Leer el módulo completo",
     "Objetos que narran",
@@ -306,7 +316,6 @@
     "Objetos de 2046",
     "Trabajo autónomo · 12 estudiantes",
     "Una reliquia sin pasado.",
-    "Cada grupo llevó a materia un objeto de su mundo. Mientras la cápsula retira objetos que tuvieron uso, el prototipo futuro empieza a significar antes de poder funcionar. Son dos prototipos, uno por grupo, en desarrollo hasta su presentación el 16 de septiembre de 2026.",
     "¿Un prototipo sin uso es un objeto o la ilustración de una idea?",
     "Una relación de origen",
     "Mnemosine → Musas → mouseion → museo",
@@ -345,14 +354,22 @@
     "Quien controla la separacióncontrola el significado.",
     "Isthmus · Cohorte 2026Edificio 106 · Ciudad del Saber, Panamá",
     "Infografías visuales51 registros + 2 bonus = 53 objetosFuentes, límites y correcciones",
-    "07 Objetos de 2046Trabajo autónomo · 12 estudiantes, con Karla Paniagua a distanciaUna reliquia sin pasado.Cada grupo llevó a materia un objeto de su mundo. Mientras la cápsula retira objetos que tuvieron uso, el prototipo futuro empieza a significar antes de poder funcionar. Son dos prototipos, uno por grupo, en desarrollo hasta su presentación el 16 de septiembre de 2026.Hipótesis Prototipo especulativoLo que quedó abierto¿Un prototipo sin uso es un objeto o la ilustración de una idea?Leer el módulo completo",
     "Trabajo autónomo · 12 estudiantes, con Karla Paniagua a distancia",
     "El trimestrelas diez semanas, parada por parada",
     "Atlaslo que conecta los ocho módulos",
     "53 objetosel registro completo, con su fotografía",
     "Infografíasdos láminas para mirar o imprimir",
     "Archivode dónde sale cada dato y qué no se sabe",
-    "Visitadónde está y qué se ve al llegar"
+    "Visitadónde está y qué se ve al llegar",
+    "Construir el museoViridiana ZavalaLa clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva.Construir un museoRepresentaciónPoder",
+    "La clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva.",
+    "La colección se convierte en experiencia.La curaduría aparece dos veces y de dos maneras. Con Román Flórez se practica sobre los objetos: agrupar, ordenar, inventar una historia. Con Viridiana Zavala se estudia como oficio, con su historia y su guión curatorial, y encuentra una escala espacial y colectiva en la experiencia museal: recorrido, relato, ambiente y roles.Curar objetosConstruir un museo",
+    "La curaduría aparece dos veces y de dos maneras. Con Román Flórez se practica sobre los objetos: agrupar, ordenar, inventar una historia. Con Viridiana Zavala se estudia como oficio, con su historia y su guión curatorial, y encuentra una escala espacial y colectiva en la experiencia museal: recorrido, relato, ambiente y roles.",
+    "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal. La excepción es el módulo 02: de esa clase sí se conserva el programa de la docente, y de ahí salen sus diez sesiones y su contenido teórico. Procedencia de esta lectura.",
+    "02 Construir un museoViridiana ZavalaExhibir es decidir.Diez sesiones: primero el museo como institución, con el ICOM, la museología, la curaduría, la museografía y la distinción entre objeto patrimonial y objeto museal; después el taller. Recorridos, pilares, pedestales, roles, recursos digitales y una canción construyeron el ambiente. La visita involucra el cuerpo y depende de decisiones de otras personas.Pieza Mundo musealLo que quedó abierto¿Quién paga, organiza y sostiene ese mundo?Leer el módulo completo",
+    "Diez sesiones: primero el museo como institución, con el ICOM, la museología, la curaduría, la museografía y la distinción entre objeto patrimonial y objeto museal; después el taller. Recorridos, pilares, pedestales, roles, recursos digitales y una canción construyeron el ambiente. La visita involucra el cuerpo y depende de decisiones de otras personas.",
+    "07 Objetos de 2046Trabajo autónomo · 12 estudiantes, con Karla Paniagua a distanciaUna reliquia sin pasado.Cada grupo llevó a materia un objeto de su mundo. Mientras la cápsula retira objetos que tuvieron uso, el prototipo futuro empieza a significar antes de poder funcionar. Son dos prototipos, uno por grupo, en desarrollo hasta su presentación el 16 de septiembre de 2026.Hipótesis Prototipo especulativoLo que quedó abierto¿Un prototipo sin uso es un objeto o la ilustración de una idea?Leer el módulo completo",
+    "Cada grupo llevó a materia un objeto de su mundo. Mientras la cápsula retira objetos que tuvieron uso, el prototipo futuro empieza a significar antes de poder funcionar. Son dos prototipos, uno por grupo, en desarrollo hasta su presentación el 16 de septiembre de 2026."
   ],
   "coleccion.html": [
     "Colección / 02Los originales permanecen tras la pared",
@@ -1155,7 +1172,6 @@
     "Un museo especulativo para Panamá",
     "Karla Paniagua",
     "Dos grupos, dos mundos, el mismo año: 2046. Uno de transformación, otro de colapso.",
-    "De todos esos objetos, cada grupo eligió uno para construirlo a escala real. Los dos prototipos están en desarrollo y se presentan el 16 de septiembre de 2026; sus fotografías entran en esta página ese mismo día.",
     "La cápsula del tiempo",
     "Luis Miguel Caamaño",
     "Al regresar, la cápsula: una consigna con cuatro intenciones de selección.",
@@ -1371,7 +1387,6 @@
     "La consigna pedía cuatro cosas, y ninguna era un comienzo. Eso no lo pidió nadie. Y en una caja que no se abre hasta 2047, lo que más se guardó no son cumbres ni finales: son los momentos en que algo empezó.",
     "El video que se conserva contiene doce apariciones, una por estudiante, y no representa la totalidad de los 53 objetos. El relato del proyecto describe que el público pudo tocar los objetos antes de ver su aparición.",
     "Cada estudiante eligió fotos de su propio carrete, de manera intuitiva: las que por alguna razón llamaban la atención. Después vino la parte difícil, que fue curar esa selección: entender por qué se habían elegido y qué conexiones existían entre ellas. Se miraron los colores que se repetían, los lugares, las personas, la composición, los ángulos y encuadres. Una selección aparentemente aleatoria puede revelar patrones, intereses y formas personales de mirar el mundo. Aunque ninguna foto se tomó pensando en exponerla, había ahí un relato esperando. Quedó planteada la pregunta que volvería todo el trimestre: qué significa seleccionar, y cómo cambia el significado de algo cuando se pone junto a otras cosas.",
-    "La escala cambió por completo. La pregunta de partida fue ¿hacia dónde se dirige la humanidad?, y a partir de ella se construyó un futuro posible con su propio mundo y sus reglas. Los objetos se organizaron en pilares (lo artesanal, lo educativo, una filosofía de vida, la tecnología, la cultura, la sociedad) y cada uno quedó dentro de un sistema mayor: ya no se trataba de mostrar una colección sino de construir un mundo alrededor de ella. Se escribió una historia para el museo, se diseñó el recorrido que decidía en qué orden la gente se encontraría con cada pieza, y el salón se repartió en roles: unos en lo digital, otros en curaduría, otros en el ambiente. Se construyeron pedestales, formas de exhibición y recursos digitales, y hasta una canción propia para acompañar la exposición, porque el sonido también arma el ambiente. Un museo no depende solo de sus objetos, sino de quienes los eligen, los cuidan, diseñan el espacio y escriben los relatos.",
     "El puente: el camino del héroe y los objetos en el relato",
     "Recién ahí aparecieron los escenarios, construidos sobre los arquetipos de futuro de Jim Dator y la escuela de Manoa. El salón se partió en dos: un grupo tomó Transformación; el otro, Colapso. Para darle cuerpo a cada mundo se trabajó con el marco del diseño ficción de Bruce Sterling, Julian Bleecker y Paolo Cardini, que fabrica objetos como evidencia de un futuro, y con el modelo de futuros experienciales de Stuart Candy y Jake Dunagan, que pregunta en qué situación se encuentra uno con esa cosa. Se bocetó primero el lugar, después la situación y el objeto. De ahí salieron los lentes de contacto inteligentes, los museos portátiles y el método de transporte clandestino, cada uno con sus historias, sus leyes, sus usuarios y sus sistemas técnicos. Ver los dos escenarios completos ↓ Un objeto especulativo no existe aislado: depende de un mundo y, a la vez, puede transformar el mundo donde existe. La pregunta no era predecir el futuro, sino averiguar qué clase de mundo necesitaría o produciría ese objeto.",
     "Del mundo de la transformación sale el objeto central del mundo LNS: los lentes de contacto. Del mundo del colapso sale un objeto de la vida clandestina: el sistema con que se monta y traslada un Nodo de Memoria, las copias de resguardo que protegen a los originales, o el brazalete TRC-507 con su manual de campo redactado en inglés por una autoridad de ocupación.",
@@ -1393,7 +1408,12 @@
     "«Después de esta experiencia de un trimestre, la visión a los museos cambia completamente.»",
     "Puedo decir que después de esta experiencia de un trimestre, la visión a los museos cambia completamente. No solo comencé a verlos como lugares especiales que conservan historias, generaciones, legados y objetos, sino que también son espacios que generan sensaciones a través de la correcta curaduría, a través de un equipo de trabajo funcional y unido.",
     "Lleva más trabajo multidisciplinario del esperado, lo cual no habíamos experimentado en la universidad. Esto me deja con un sabor muchísimo más valorativo a los espacios museales.",
-    "Me llevo mucho aprendizaje para un futuro y, quién dice, sea un proyecto en algún momento."
+    "Me llevo mucho aprendizaje para un futuro y, quién dice, sea un proyecto en algún momento.",
+    "El programa de la clase se llamaba El Museo del Futuro, igual que el proyecto que salió de ella. Empezó por la teoría. Las primeras sesiones no arrancaron construyendo nada, sino preguntando qué es un museo y por qué existen: la definición del ICOM, las funciones que se le atribuyen, y la idea de colección rastreada desde la Antigüedad. Ahí aparecieron las tres palabras que este sitio terminó usando como estructura: colección, archivo y patrimonio.",
+    "Después vino separar tres oficios que suelen confundirse. La museología estudia el museo como fenómeno. La curaduría decide qué se muestra y bajo qué relato, y tiene su propia historia, la del conservador que se convierte en curador contemporáneo, y su propio documento de trabajo, el guión curatorial. La museografía lo baja al espacio, cruzando curaduría, arquitectura y diseño.",
+    "De la sesión sobre cultura material salió la distinción que este sitio usa todo el tiempo sin haberla nombrado: un objeto patrimonial y un objeto museal no son lo mismo. Una cosa entra al museo y cambia de estatuto, deja de servir para lo que servía y pasa a significar. Es lo que le pasó después a cada objeto que terminó en la cápsula. El bloque teórico cerró con el museo contemporáneo y sus nuevas necesidades, bajo un título que ya era el encargo del trimestre: hacia el museo del futuro. Se leyeron dos textos, «Selfies de museo, algo más que un espejo» de E. B. Hunter, sobre lo que hace un visitante cuando se fotografía dentro de una sala, y el perfil del curador independiente de Olivier Debroise.",
+    "Las últimas sesiones fueron taller, y la décima, la entrega del proyecto. Ahí la escala cambió por completo. La pregunta de partida fue ¿hacia dónde se dirige la humanidad?, y a partir de ella se construyó un futuro posible con su propio mundo y sus reglas. Los objetos se organizaron en pilares (lo artesanal, lo educativo, una filosofía de vida, la tecnología, la cultura, la sociedad) y cada uno quedó dentro de un sistema mayor: ya no se trataba de mostrar una colección sino de construir un mundo alrededor de ella. Se escribió una historia para el museo, se diseñó el recorrido que decidía en qué orden la gente se encontraría con cada pieza, y el salón se repartió en roles: unos en lo digital, otros en curaduría, otros en el ambiente. Se construyeron pedestales, formas de exhibición y recursos digitales, y hasta una canción propia para acompañar la exposición, porque el sonido también arma el ambiente. Un museo no depende solo de sus objetos, sino de quienes los eligen, los cuidan, diseñan el espacio y escriben los relatos.",
+    "De todos esos objetos, cada grupo eligió uno para construirlo a escala real. Los dos prototipos están en desarrollo y se presentan el 16 de septiembre de 2026; sus fotografías entran en esta página ese mismo día."
   ],
   "infografia.html": [
     "MUFU · Museo del FuturoInfografía / cohorte 2026",
@@ -1490,7 +1510,12 @@
     "53 objetosel registro completo, con su fotografía",
     "Infografíasdos láminas para mirar o imprimir",
     "Archivode dónde sale cada dato y qué no se sabe",
-    "Visitadónde está y qué se ve al llegar"
+    "Visitadónde está y qué se ve al llegar",
+    "Construir el museoViridiana ZavalaLa clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva.Construir un museoRepresentaciónPoder",
+    "La clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva.",
+    "La colección se convierte en experiencia.La curaduría aparece dos veces y de dos maneras. Con Román Flórez se practica sobre los objetos: agrupar, ordenar, inventar una historia. Con Viridiana Zavala se estudia como oficio, con su historia y su guión curatorial, y encuentra una escala espacial y colectiva en la experiencia museal: recorrido, relato, ambiente y roles.Curar objetosConstruir un museo",
+    "La curaduría aparece dos veces y de dos maneras. Con Román Flórez se practica sobre los objetos: agrupar, ordenar, inventar una historia. Con Viridiana Zavala se estudia como oficio, con su historia y su guión curatorial, y encuentra una escala espacial y colectiva en la experiencia museal: recorrido, relato, ambiente y roles.",
+    "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal. La excepción es el módulo 02: de esa clase sí se conserva el programa de la docente, y de ahí salen sus diez sesiones y su contenido teórico. Procedencia de esta lectura."
   ],
   "infografias.html": [
     "MUFU / 04Infografías visuales",
@@ -1514,6 +1539,9 @@
     "53 objetosel registro completo, con su fotografía",
     "Infografíasdos láminas para mirar o imprimir",
     "Archivode dónde sale cada dato y qué no se sabe",
-    "Visitadónde está y qué se ve al llegar"
+    "Visitadónde está y qué se ve al llegar",
+    "Construir el museoViridiana ZavalaLa clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva.Construir un museoRepresentaciónPoder",
+    "La clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva.",
+    "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal. La excepción es el módulo 02: de esa clase sí se conserva el programa de la docente, y de ahí salen sus diez sesiones y su contenido teórico. Procedencia de esta lectura."
   ]
 }

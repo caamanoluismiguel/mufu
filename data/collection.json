@@ -1,6 +1,6 @@
 {
   "facts": {
-    "revision": "2026-09-10",
+    "revision": "2026-09-16",
     "weeks": 10,
     "modules": 8,
     "students": 12,
@@ -1428,7 +1428,7 @@
       "title": "Relato del trimestre MUFU",
       "type": "Archivo del proyecto",
       "url": "index.html#recorrido",
-      "note": "Ocho módulos en diez semanas. El archivo no fija la duración de cada módulo."
+      "note": "Ocho módulos en diez semanas. El archivo no fija la duración de la mayoría de los módulos. Del 02 se conserva el programa de la docente, que declara diez sesiones, y del 03 el relato fija tres días."
     },
     {
       "id": "conteo",
@@ -1527,6 +1527,27 @@
       "type": "Testimonio / contexto pedagógico",
       "url": "archivo.html#autoria",
       "note": "Confirmación de Luis Miguel Caamaño del 10 de septiembre de 2026: MUFU integra las clases del trimestre alrededor del museo. Los nombres y aportes se contrastan con los ocho módulos del relato original."
+    },
+    {
+      "id": "programa-02",
+      "title": "Programa del módulo 02 · El Museo del Futuro",
+      "type": "Documento del curso",
+      "url": "index.html#modulo-original-02",
+      "note": "Programa entregado por Viridiana Zavala para su clase. Fija el objetivo, las habilidades, diez sesiones numeradas y dos lecturas. El documento no se publica aquí: es material docente. Sus fechas quedan fuera del sitio porque el calendario del propio documento se contradice y no se ha podido verificar con la docente."
+    },
+    {
+      "id": "selfies",
+      "title": "E. B. Hunter · Selfies de museo, algo más que un espejo",
+      "type": "Lectura del programa",
+      "url": "https://courier.unesco.org/es/articles/selfies-de-museo-algo-mas-que-un-espejo",
+      "note": "El Correo de la UNESCO, octubre de 2024. Lectura de la primera sesión del módulo 02. Sostiene que fotografiarse en una sala es una manera de apropiarse de la obra, no solo vanidad."
+    },
+    {
+      "id": "debroise",
+      "title": "Olivier Debroise · El perfil del curador independiente",
+      "type": "Lectura del programa",
+      "url": "https://es.wikipedia.org/wiki/Olivier_Debroise",
+      "note": "Lectura de la sesión de curaduría del módulo 02. El programa la cita por un título corto y el texto no está publicado en abierto, así que el enlace identifica al autor, historiador y curador francomexicano, y no reproduce la lectura."
     }
   ],
   "threads": [
@@ -1993,7 +2014,7 @@
     "focus": "El museo es el centro. Comprender lo aprendido y hacer visibles sus conexiones es el propósito común. Ningún docente es el principal: los aportes de las distintas clases y de los estudiantes se encuentran alrededor de ese tema.",
     "siteCredit": "Luis Miguel Caamaño realizó el puente narrativo del trimestre y creó este sitio como repositorio transversal de la experiencia compartida. La autoría de la página y la contribución de cada clase se reconocen por separado, sin establecer una jerarquía docente.",
     "confirmation": "Luis Miguel Caamaño, conversación de actualización del 10 de septiembre de 2026: el trimestre es la sinergia de todas las clases y de quienes participaron, alrededor de un tema principal compartido, el museo.",
-    "note": "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal."
+    "note": "Los aportes y los nombres se recuperan del relato original. Estos cruces son una lectura pedagógica de sus relaciones, no el programa completo de las asignaturas ni un calendario semanal. La excepción es el módulo 02: de esa clase sí se conserva el programa de la docente, y de ahí salen sus diez sesiones y su contenido teórico."
   },
   "contributors": [
     {
@@ -2018,7 +2039,7 @@
         "02"
       ],
       "area": "Construir el museo",
-      "text": "Aquí nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva."
+      "text": "La clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva."
     },
     {
       "id": "luis-miguel",
@@ -2073,7 +2094,7 @@
         "poder"
       ],
       "title": "La colección se convierte en experiencia.",
-      "text": "La curaduría trabajada con Román Flórez encuentra una escala espacial y colectiva en la experiencia museal trabajada con Viridiana Zavala: recorrido, relato, ambiente y roles."
+      "text": "La curaduría aparece dos veces y de dos maneras. Con Román Flórez se practica sobre los objetos: agrupar, ordenar, inventar una historia. Con Viridiana Zavala se estudia como oficio, con su historia y su guión curatorial, y encuentra una escala espacial y colectiva en la experiencia museal: recorrido, relato, ambiente y roles."
     },
     {
       "id": "mundos",
