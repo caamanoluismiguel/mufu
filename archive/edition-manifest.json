@@ -179,8 +179,8 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 103060,
-      "sha256": "3d63574d09a2c6551b5621b7d161b7a069df0e8f14ff67a0db30ba312d7c9b88"
+      "bytes": 103035,
+      "sha256": "de92532bd3e444f9d152bc6a713e5da666fe1e87e74e7ff0c26a0775be0c9a40"
     },
     {
       "path": "coleccion.html",
@@ -194,8 +194,8 @@
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 29599,
-      "sha256": "e3c71b98937e5f56e8a97f2e5b79e5f142d5d0514c3c755d66de2900773a797c"
+      "bytes": 29574,
+      "sha256": "502a5272a63eac2b12b49333edfaefc86a53dbd6f40487fe71ef5e6ccfc873c9"
     },
     {
       "path": "data/learning.mjs",
@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 155728,
-      "sha256": "2ef03e046254767fe24cb3a6fa4df9f7e516b3d35ad6fb8696bcb54ed45a27bf"
+      "bytes": 155804,
+      "sha256": "134bb56998ba9995a2d67a1af18235e523c2517a940a8cecbe0318c57f8b41c6"
     },
     {
       "path": "infografia.html",
@@ -634,8 +634,8 @@
     },
     {
       "path": "scripts/check-coherencia.mjs",
-      "bytes": 11165,
-      "sha256": "60a0775c66653e63ad1407812f3a32f332cddc16f1bfd787130b558fae8c0ca8"
+      "bytes": 11957,
+      "sha256": "5dbfc4de96bcbf61c6580c8ae78d10b2c2f0309f8ef1db81ab939ad0792703b3"
     },
     {
       "path": "scripts/check-content.mjs",
@@ -699,8 +699,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 147312,
-      "sha256": "0ac5b7b6c5d3b7c81228fe6359ceb7bf231a5fb58c0ab450d5481f0c4c1adcbc"
+      "bytes": 147320,
+      "sha256": "97a1fa4901b5914e63718ef84b1e4b70063716ee942bb1fb708a89b7642321c2"
     }
   ]
 }

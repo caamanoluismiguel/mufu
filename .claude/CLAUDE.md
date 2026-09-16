@@ -181,33 +181,29 @@ suavices lo incómodo: un testimonio donde todo salió bien no lo lee nadie.
 Después: `npm run build`, añade los pasajes nuevos al fixture de contenido congelado
 (solo los tuyos, ver la trampa 2), `npm run package`, y las dos baterías de tests.
 
-## Pendiente para el 16 de septiembre de 2026
+## Pendiente: las fotos de los dos prototipos
 
-Sesión 10 del taller de Karla Paniagua: se presentan **dos prototipos, uno por grupo**.
+La sesión 10 del taller de Karla Paniagua ya ocurrió: los dos prototipos, uno por grupo,
+se presentaron el **16 de septiembre de 2026**. Las dos frases que estaban en presente ya
+pasaron a pasado ese día, en `index.html` (cierre del módulo 04) y en el módulo 07 de
+`data/editorial.mjs`.
 
-1. Las dos fotografías van **dentro de cada `<article class="estado">` de `#futuros`**,
-   junto al equipo que las hizo. No en una sección nueva (ver la trampa 4).
-2. Hay dos frases hoy en presente que ese día dejan de ser verdad. **Las versiones en
-   pasado ya están escritas: es copiar y pegar.**
+Falta lo único que no depende de nosotros: **las fotografías, que se toman después de la
+entrega**. Cuando lleguen:
 
-   **`index.html`, cierre del módulo 04.** Buscar:
+1. Van **dentro de cada `<article class="estado">` de `#futuros`**, junto al equipo que
+   las hizo. No en una sección nueva (ver la trampa 4).
+2. En `index.html`, cierre del módulo 04, sustituir:
 
-   > Los dos prototipos están en desarrollo y se presentan el 16 de septiembre de 2026;
-   > sus fotografías entran en esta página ese mismo día.
+   > Las fotografías se toman después de la entrega y entran en esta página en cuanto
+   > lleguen, cada una dentro del mundo del que salió.
 
-   Sustituir por:
+   por:
 
-   > Los dos prototipos se presentaron el 16 de septiembre de 2026. Sus fotografías
-   > están más abajo, cada una dentro del mundo del que salió.
+   > Sus fotografías están más abajo, cada una dentro del mundo del que salió.
 
-   **`data/editorial.mjs`, módulo 07.** Buscar:
+   Ese cambio sin las imágenes lo caza `check-coherencia` (comprobación 6c): si la prosa
+   dice que las fotos ya están y `#futuros` no tiene ninguna `<img>`, el build se cae.
 
-   > Son dos prototipos, uno por grupo, en desarrollo hasta su presentación el 16 de
-   > septiembre de 2026.
-
-   Sustituir por:
-
-   > Son dos prototipos, uno por grupo, presentados el 16 de septiembre de 2026.
-
-   Después: `npm run build`, actualizar los cuatro pasajes en el fixture, `npm run
-   package`, y las dos baterías.
+Después: `npm run build`, actualizar los pasajes tocados en el fixture, `npm run package`,
+y las dos baterías.

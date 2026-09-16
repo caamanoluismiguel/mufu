@@ -196,6 +196,20 @@ for (const r of registry.records) {
   });
 }
 
+/* ── 6c · no prometer una fotografía que no está en la página ───────────
+   El 2026-09-16 los prototipos se presentaron y las fotos llegaban después.
+   La frase preparada decía que estaban más abajo. Si alguna vez la prosa
+   afirma que las fotografías ya están, #futuros tiene que tener imágenes. */
+{
+  const $ = load(fs.readFileSync('index.html', 'utf8'));
+  const dice = norm($('#recorrido').text());
+  const promete = ['sus fotografías están más abajo', 'sus fotografías entran en esta página ese mismo día']
+    .find(f => dice.toLowerCase().includes(f));
+  const fotos = $('#futuros article.estado img').length;
+  if (promete && !fotos)
+    aviso('foto prometida', `el recorrido dice «${promete}» y #futuros no tiene ninguna imagen`);
+}
+
 /* ── 7 · resultado ─────────────────────────────────────────────────── */
 if (dudas.length) {
   console.log(`\n  ${dudas.length} pregunta(s) para una persona, no bloquean:\n`);
