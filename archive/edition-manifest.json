@@ -534,8 +534,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 158754,
-      "sha256": "bb8b3dc15a13ce4934acaf872e5ba875e360c8c58b0df096086f162a7d61be75"
+      "bytes": 158938,
+      "sha256": "6db90e4cd7a57caa10d3a14277eeed394bc9b594b6fa29b7fe5a4118082f7403"
     },
     {
       "path": "infografia.html",
@@ -634,8 +634,8 @@
     },
     {
       "path": "scripts/check-coherencia.mjs",
-      "bytes": 11957,
-      "sha256": "5dbfc4de96bcbf61c6580c8ae78d10b2c2f0309f8ef1db81ab939ad0792703b3"
+      "bytes": 12984,
+      "sha256": "0a960f843c063f5c600cfdd53fcae3c6431a19dc8651a7c2b9a49a4a995a09a7"
     },
     {
       "path": "scripts/check-content.mjs",
@@ -699,8 +699,8 @@
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 158809,
-      "sha256": "6cfd3eb41ebee63131d79948acf72f065d8250b91b213e865aa65da8a52c6f39"
+      "bytes": 159435,
+      "sha256": "d433fe401bbce5593008e31362ed229fb684b9811c02e5c28285471b33a99e71"
     }
   ]
 }

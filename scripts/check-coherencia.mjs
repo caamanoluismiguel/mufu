@@ -210,6 +210,24 @@ for (const r of registry.records) {
     aviso('foto prometida', `el recorrido dice «${promete}» y #futuros no tiene ninguna imagen`);
 }
 
+/* ── 6d · ningún módulo se da más espacio que los demás ────────────────
+   El 2026-09-16 el 03 enseñaba 248 palabras antes de «Seguir leyendo» y el 06
+   enseñaba 131, cuando los otros seis enseñaban entre 11 y 30. Eran además los
+   dos únicos sin `mom__lead`. Ese contraste le daba peso visual a dos módulos
+   del mismo autor sin que nadie lo hubiera decidido. */
+{
+  const $ = load(fs.readFileSync('index.html', 'utf8'));
+  $('#recorrido .mom[id^="modulo-original"]').each((_, e) => {
+    const mod = $(e), n = (mod.attr('id') || '').slice(-2);
+    const visible = mod.find('p.mom__d').not('details p').text();
+    const palabras = norm(visible).split(' ').filter(Boolean).length;
+    if (!mod.find('.mom__lead').length)
+      aviso('módulo sin entradilla', `el ${n} no tiene .mom__lead y todos los demás sí`);
+    if (palabras > 45)
+      aviso('módulo que se explaya', `el ${n} enseña ${palabras} palabras antes de «Seguir leyendo»; el límite son 45`);
+  });
+}
+
 /* ── 7 · resultado ─────────────────────────────────────────────────── */
 if (dudas.length) {
   console.log(`\n  ${dudas.length} pregunta(s) para una persona, no bloquean:\n`);

@@ -161,6 +161,13 @@ decía «Henry». Es Henry, ingeniero inglés de Liverpool. Y el módulo 06 afir
 hologramas de concierto «son este mismo truco» y tres líneas después que decir que es lo
 mismo no es exacto; ahora dice que usan la misma óptica, que es lo cierto.
 
+**Ningún módulo se explaya más que los demás, y ahora lo vigila `check-coherencia` 6d.**
+El 03 enseñaba 248 palabras antes de «Seguir leyendo» y el 06 enseñaba 131, cuando los
+otros seis enseñaban entre 11 y 30, y eran los dos únicos sin `mom__lead`. Ese contraste
+le daba peso visual a dos módulos del mismo autor sin que nadie lo decidiera. La
+comprobación exige entradilla en los ocho y un máximo de 45 palabras visibles. Si añades
+prosa a un módulo, va **dentro del `<details>`**.
+
 **El enlace de Kuny apunta al Internet Archive** porque la copia de la IFLA devuelve 503.
 Un texto sobre la pérdida de lo digital que sobrevive en una copia y no en su original.
 
