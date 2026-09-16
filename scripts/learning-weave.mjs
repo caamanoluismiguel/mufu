@@ -2,6 +2,9 @@ import {modules,threads} from '../data/editorial.mjs';
 import {contributors,learningConnections,sharedTrimester} from '../data/learning.mjs';
 
 export const contributorName=person=>person.id==='cohorte'?'Los 12 estudiantes':modules.find(m=>m.id===person.modules[0]).teacher;
+/* el nombre de la tarjeta puede llevar el nombre de la clase detrás del punto medio.
+   La lista de personas de la portada quiere solo a la persona, y sin repetirla. */
+export const contributorPerson=person=>contributorName(person).split(' · ')[0];
 const original=id=>`index.html#modulo-original-${id}`;
 const moduleLinks=ids=>ids.map(id=>{const m=modules.find(m=>m.id===id);return `<a href="${original(id)}">${m.title}</a>`;}).join('');
 
@@ -13,9 +16,9 @@ export function learningWeave(icon,{compact=false,includeConnections=!compact}={
       ${compact?'':`<div class="weave-controls" data-weave-controls hidden role="group" aria-label="Cruces del trimestre"><button type="button" data-weave-filter="all" aria-pressed="true">Todos</button>${threads.map(t=>`<button type="button" data-weave-filter="${t.id}" aria-pressed="false"><i style="--thread:${t.color}" aria-hidden="true"></i>${t.name}</button>`).join('')}</div>`}
       <ul class="weave-contributors">${contributors.map(person=>{
         const themes=threads.filter(t=>person.id==='cohorte'||person.modules.some(id=>modules.find(m=>m.id===id).threads.includes(t.id)));
-        return `<li data-contributor="${person.id}" data-weave-themes="${themes.map(t=>t.id).join(' ')}"><div class="weave-person"><h3>${person.area}</h3><p>${contributorName(person)}</p></div><div class="weave-contribution"><p>${person.text}</p><nav aria-label="Aportes de ${contributorName(person)}">${moduleLinks(person.modules)}</nav></div><ul class="weave-themes" aria-label="Hilos compartidos">${themes.map(t=>`<li><a href="atlas.html?hilo=${t.id}#conexiones"><i style="--thread:${t.color}" aria-hidden="true"></i>${t.name}</a></li>`).join('')}</ul></li>`;
+        return `<li data-contributor="${person.id}" data-weave-themes="${themes.map(t=>t.id).join(' ')}"><div class="weave-person"><h3>${person.area}</h3><p>${contributorName(person)}</p></div><div class="weave-contribution"><p>${person.text}</p><nav aria-label="Aportes de ${contributorPerson(person)}">${moduleLinks(person.modules)}</nav></div><ul class="weave-themes" aria-label="Hilos compartidos">${themes.map(t=>`<li><a href="atlas.html?hilo=${t.id}#conexiones"><i style="--thread:${t.color}" aria-hidden="true"></i>${t.name}</a></li>`).join('')}</ul></li>`;
       }).join('')}</ul>
-      ${!includeConnections?`<a class="text-link" href="atlas.html#cruces-clases">Los nueve cruces entre las clases ${icon('arrow-up-right')}</a>`:`<div class="weave-crossings" id="cruces-clases"><h3>Lo que pasa de una clase a otra</h3><p class="source-note" data-weave-count aria-live="polite">9 conexiones pedagógicas</p><ol>${learningConnections.map(c=>`<li data-learning-connection="${c.id}" data-weave-themes="${c.threads.join(' ')}"><h4>${c.title}</h4><p>${c.text}</p><nav aria-label="Relatos de origen: ${c.title}">${moduleLinks(c.modules)}</nav></li>`).join('')}</ol></div>`}
+      ${!includeConnections?`<a class="text-link" href="atlas.html#cruces-clases">Los ${learningConnections.length} cruces entre las clases ${icon('arrow-up-right')}</a>`:`<div class="weave-crossings" id="cruces-clases"><h3>Lo que pasa de una clase a otra</h3><p class="source-note" data-weave-count aria-live="polite">${learningConnections.length} conexiones pedagógicas</p><ol>${learningConnections.map(c=>`<li data-learning-connection="${c.id}" data-weave-themes="${c.threads.join(' ')}"><h4>${c.title}</h4><p>${c.text}</p><nav aria-label="Relatos de origen: ${c.title}">${moduleLinks(c.modules)}</nav></li>`).join('')}</ol></div>`}
       <p class="source-note">${sharedTrimester.note} <a href="archivo.html#autoria">Procedencia de esta lectura</a>.</p>
     </div>
   </section>`;

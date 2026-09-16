@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {learningConnections} from '../../data/learning.mjs';
+import {contributors,learningConnections} from '../../data/learning.mjs';
 const pages=['index.html','atlas.html','infografias.html','coleccion.html','archivo.html','infografia.html','ficha-02.html','404.html'];
 for(const width of [375,768,1440,1920]){
   test(`${width}px pages render with local assets, no horizontal overflow or accessibility violations`,async({page})=>{
@@ -217,11 +217,11 @@ test('the three typography roles render with local fonts on every surface',async
 
 test('cross-class map keeps shared authorship, source links, filters and print access',async({page,browser})=>{
   await page.goto('/atlas.html#trimestre-compartido');
-  await expect(page.locator('.weave-contributors>li')).toHaveCount(6);
+  await expect(page.locator('.weave-contributors>li')).toHaveCount(contributors.length);
   for(const name of ['Erika Schnitter y Alejandro Pachón','Román Flórez','Viridiana Zavala','Luis Miguel Caamaño','Karla Paniagua','Los 12 estudiantes']){
-    await expect(page.locator('.weave-person p').filter({hasText:name})).toBeVisible();
+    await expect(page.locator('.weave-person p').filter({hasText:name}).first()).toBeVisible();
   }
-  await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(9);
+  await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(learningConnections.length);
   for(const theme of ['memoria','imagen','poder','tiempo']){
     const button=page.locator(`[data-weave-filter="${theme}"]`);
     await button.focus();await page.keyboard.press('Enter');
@@ -230,7 +230,7 @@ test('cross-class map keeps shared authorship, source links, filters and print a
     await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(learningConnections.filter(c=>c.threads.includes(theme)).length);
   }
   await page.emulateMedia({media:'print'});
-  await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(9);
+  await expect(page.locator('[data-learning-connection]:visible')).toHaveCount(learningConnections.length);
   await expect(page.locator('.weave-controls')).not.toBeVisible();
   await page.emulateMedia({media:'screen'});
   await page.locator('[data-weave-filter=all]').click();
@@ -244,7 +244,7 @@ test('cross-class map keeps shared authorship, source links, filters and print a
   const context=await browser.newContext({javaScriptEnabled:false});const staticPage=await context.newPage();
   await staticPage.goto('http://127.0.0.1:4177/atlas.html#trimestre-compartido');
   await expect(staticPage.locator('.weave-controls')).not.toBeVisible();
-  await expect(staticPage.locator('[data-learning-connection]')).toHaveCount(9);
+  await expect(staticPage.locator('[data-learning-connection]')).toHaveCount(learningConnections.length);
   await expect(staticPage.locator('[data-contributor=karla]')).toBeVisible();
   await context.close();
 });

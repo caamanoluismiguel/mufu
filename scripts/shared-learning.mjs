@@ -1,10 +1,10 @@
-import {learningWeave,contributorName} from './learning-weave.mjs';
+import {learningWeave,contributorPerson} from './learning-weave.mjs';
 import {contributors,sharedTrimester} from '../data/learning.mjs';
 
 export function applySharedLearning($,page,icon){
   $('.shared-intro,#trimestre-compartido,#autoria,.shared-context,[data-shared-link]').remove();
   if(page==='index.html'){
-    $('.suelo').after(`<section class="shared-intro"><div class="wrap"><div><p class="section-label">Isthmus / Un trimestre compartido</p><h2>${sharedTrimester.title}</h2></div><div><p>${sharedTrimester.statement}</p><p>${sharedTrimester.focus}</p><p class="shared-people">${contributors.map(contributorName).join(' · ')}</p><a class="text-link" href="atlas.html#trimestre-compartido">Las clases y sus conexiones ${icon('arrow-up-right')}</a></div></div></section>`);
+    $('.suelo').after(`<section class="shared-intro"><div class="wrap"><div><p class="section-label">Isthmus / Un trimestre compartido</p><h2>${sharedTrimester.title}</h2></div><div><p>${sharedTrimester.statement}</p><p>${sharedTrimester.focus}</p><p class="shared-people">${[...new Set(contributors.map(contributorPerson))].join(' · ')}</p><a class="text-link" href="atlas.html#trimestre-compartido">Las clases y sus conexiones ${icon('arrow-up-right')}</a></div></div></section>`);
   }
   if(page==='atlas.html'){
     $('.atlas-intro .chapter-nav').prepend('<a data-shared-link href="#trimestre-compartido">El trimestre compartido</a>');

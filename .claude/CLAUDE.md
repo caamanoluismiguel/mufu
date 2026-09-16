@@ -92,6 +92,46 @@ Lo que **no** puede cazar: errores de razonamiento nuevos, datos inventados y
 regresiones visuales. Para eso están la comparación contra capturas de línea base y
 leer con cuidado.
 
+## Quién dio qué, y cuánto duró (2026-09-16)
+
+El sitio declaraba una sola duración, «3 días» en el módulo 03, y era la de Luis Miguel.
+Eso hacía que el bloque docente más largo del trimestre se leyera como el más corto.
+Lo que confirmó él ese día, y que ahora está en la fuente `duraciones`:
+
+| Módulo | Docente | Duración |
+|---|---|---|
+| 00, 01 | Erika y Alejandro, Román | **no se registró**, y no se estima |
+| 02 | Viridiana Zavala | 10 sesiones, dato de su programa |
+| 03 | Luis Miguel Caamaño | 3 días, **intervención aparte** |
+| 04 | Karla Paniagua | 10 días |
+| 05 y 06 | Luis Miguel Caamaño | **una sola clase de 10 días, en dos mitades** |
+
+**El 05 y el 06 son la misma clase, «El objeto como mensaje».** El badge de 10 días va
+solo en el 05 y el 06 lo ancla con una frase, para que nadie sume veinte. Los dos llevan
+el nombre de la clase en la firma.
+
+**Ese nombre es una decisión editorial, no un dato.** El del módulo 02 sale del programa
+de la docente; este lo eligió Luis Miguel el 2026-09-16. La fuente `duraciones` lo dice
+con todas las letras y esa distinción no se puede borrar: es la diferencia entre
+documentar y bautizar.
+
+Luis Miguel tiene **dos fichas** en el mapa docente, una por clase, porque dio dos. Antes
+tenía una para tres módulos mientras cada docente tenía la suya.
+
+## Dos trampas del tejido docente (2026-09-16)
+
+1. **`contributorName` devuelve el `teacher` del primer módulo de la ficha**, así que si
+   ese campo lleva el nombre de la clase detrás de un punto medio, la lista de personas
+   de la portada imprime a la misma persona dos veces y parte el nombre de la clase como
+   si fuera otro docente. Para eso está `contributorPerson`, que corta en el punto medio
+   y va con un `Set`. Pasó al separar las fichas de Luis Miguel.
+
+2. **Los conteos de conexiones y de fichas estaban escritos a mano en cuatro sitios:**
+   `learning-weave.mjs` (el rótulo «9 conexiones pedagógicas» y «Los nueve cruces»),
+   `tests/archive.test.mjs` y `tests/browser/experience.spec.js` (dos veces). Ahora los
+   cuatro salen de `contributors.length` y `learningConnections.length`. Si añades una
+   conexión, no hay nada que actualizar a mano.
+
 ## Cinco trampas que rompen el trabajo
 
 1. **El hash de `index.html` está congelado.** El test «generated outputs are

@@ -39,8 +39,8 @@
     },
     {
       "path": "archivo.html",
-      "bytes": 67857,
-      "sha256": "ed8f28b299cf6bfcd39e8d44362df51a24773e39227f590a1de2f4910ff73bf6"
+      "bytes": 68946,
+      "sha256": "f2fb407e5b9a559c84d853331bc6f2f3f5fdf7c675bfc2151222b0d63f5dadd0"
     },
     {
       "path": "assets/archive.css",
@@ -54,8 +54,8 @@
     },
     {
       "path": "assets/data.js",
-      "bytes": 81015,
-      "sha256": "94962c8f9a03e88c7147b0b47421d1fb460562b7cdb524533e47344b52f9b11c"
+      "bytes": 82778,
+      "sha256": "dd7e6a1cd8af1cad8a696ebb5bb04cfd32fb20d0201d7dd51208ba1cf0ea84ae"
     },
     {
       "path": "assets/edition.css",
@@ -179,8 +179,8 @@
     },
     {
       "path": "atlas.html",
-      "bytes": 103035,
-      "sha256": "de92532bd3e444f9d152bc6a713e5da666fe1e87e74e7ff0c26a0775be0c9a40"
+      "bytes": 105203,
+      "sha256": "993e8760dd18b51f6df4818bd57c6d6bebfb1656303839c68dfeaf4faea512c6"
     },
     {
       "path": "coleccion.html",
@@ -189,18 +189,18 @@
     },
     {
       "path": "data/collection.json",
-      "bytes": 98438,
-      "sha256": "7467a5c551d2b9bb6211f6de9df29b374a680a19e298dafbf303617f84c7b29d"
+      "bytes": 100500,
+      "sha256": "9154fb3c5f6d2ec8b315d9d7ad114ff6303cf1cef2cf41f06b6ebe588f0d4ec5"
     },
     {
       "path": "data/editorial.mjs",
-      "bytes": 29574,
-      "sha256": "502a5272a63eac2b12b49333edfaefc86a53dbd6f40487fe71ef5e6ccfc873c9"
+      "bytes": 30326,
+      "sha256": "a0c668bc42eaa2a5bb1871abc927c35314e4bd33ce16961301215e9bb07c29fc"
     },
     {
       "path": "data/learning.mjs",
-      "bytes": 6050,
-      "sha256": "e5ea74ad7fd8f932469a162114843538f1b60437324fb9b3637d7a8f7408056d"
+      "bytes": 7109,
+      "sha256": "d3e5c94d31e8ddd0f85ed58be093a71e0bb8656f38fa8718e6ea17fe41fa73fa"
     },
     {
       "path": "data/registry.json",
@@ -534,23 +534,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 155804,
-      "sha256": "134bb56998ba9995a2d67a1af18235e523c2517a940a8cecbe0318c57f8b41c6"
+      "bytes": 155940,
+      "sha256": "756725fec19179b73535d522c8ba04be77c1006f4e22abdd6c18fff9eb3567e6"
     },
     {
       "path": "infografia.html",
-      "bytes": 37188,
-      "sha256": "c497a02921befe7725da2f704bd33815e169b4d600d93b2025fc4f15e4ed55ff"
+      "bytes": 39356,
+      "sha256": "ba0feb8e83683cdd3b438ef5b7c7588acb80a5cbce3b446bf3cbf084178b3384"
     },
     {
       "path": "infografias.html",
-      "bytes": 23730,
-      "sha256": "4795b02e2e4353ac77212c4ed5f5203287fd0ee390f7f1dd5c670f92501d92a3"
+      "bytes": 24737,
+      "sha256": "9bfc252539752a1fd1958284da7e7efcd0529a290287eb2eb5a195a05004a857"
     },
     {
       "path": "llms.txt",
-      "bytes": 4031,
-      "sha256": "e51ab2a3c5b2da2cceaba65f3c048aecc6981922fa4f34ce81201886715a8aba"
+      "bytes": 4083,
+      "sha256": "d6c1da30cc249de2e2265462111e5dbe291553ef0af6a2b4290c90a9833a6e13"
     },
     {
       "path": "medios/aparicion.jpg",
@@ -649,8 +649,8 @@
     },
     {
       "path": "scripts/learning-weave.mjs",
-      "bytes": 3111,
-      "sha256": "8b1e7137768693aba2c1f344372185cfb07a8d6bd04f134a688381695b6050a3"
+      "bytes": 3417,
+      "sha256": "5b45fa837b90b87b34f712598882cf2c30e98a83a4821eae73527dbf8a17f836"
     },
     {
       "path": "scripts/migrate.mjs",
@@ -674,8 +674,8 @@
     },
     {
       "path": "scripts/shared-learning.mjs",
-      "bytes": 2393,
-      "sha256": "6dea2ce8789eae7fc9ad72093ad00aa0b801fa976c4076403bb57c7d6d386e5c"
+      "bytes": 2411,
+      "sha256": "d905a7844eb473deb4bf1d54f0809135e91bdea1392915de203524e1a4d94125"
     },
     {
       "path": "scripts/visual-edition.mjs",
@@ -689,18 +689,18 @@
     },
     {
       "path": "tests/archive.test.mjs",
-      "bytes": 9894,
-      "sha256": "c626bf9ea28d359106affc014f1709c296128a68d102e52694458e9e88e6dd14"
+      "bytes": 9896,
+      "sha256": "7714028e50f29d0740bc62717132e9ada9f4bbb896bd50a603c0e4d7af598e3c"
     },
     {
       "path": "tests/browser/experience.spec.js",
-      "bytes": 17997,
-      "sha256": "4e3d393421d7d3ee7cb2adfcc03da024823f3507fc9341be0b95bf6ba209249f"
+      "bytes": 18111,
+      "sha256": "0dfcc94ff476f55aef63adc092d3cf8865cdc964d15f33c33a5d3c8b5de7f616"
     },
     {
       "path": "tests/fixtures/written-content.json",
-      "bytes": 147320,
-      "sha256": "97a1fa4901b5914e63718ef84b1e4b70063716ee942bb1fb708a89b7642321c2"
+      "bytes": 152259,
+      "sha256": "c804c86624a41eda7e95b4976d0494c3d2c492fcb0e63fe1dcb87b0655972586"
     }
   ]
 }

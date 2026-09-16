@@ -1428,7 +1428,7 @@
       "title": "Relato del trimestre MUFU",
       "type": "Archivo del proyecto",
       "url": "index.html#recorrido",
-      "note": "Ocho módulos en diez semanas. El archivo no fija la duración de la mayoría de los módulos. Del 02 se conserva el programa de la docente, que declara diez sesiones, y del 03 el relato fija tres días."
+      "note": "Ocho módulos en diez semanas. Se conocen cuatro duraciones: diez sesiones el 02, tres días el 03, diez días el 04 y diez días la clase que forman el 05 y el 06. Del 00 y del 01 no hay dato y no se estima."
     },
     {
       "id": "conteo",
@@ -1527,6 +1527,13 @@
       "type": "Testimonio / contexto pedagógico",
       "url": "archivo.html#autoria",
       "note": "Confirmación de Luis Miguel Caamaño del 10 de septiembre de 2026: MUFU integra las clases del trimestre alrededor del museo. Los nombres y aportes se contrastan con los ocho módulos del relato original."
+    },
+    {
+      "id": "duraciones",
+      "title": "Duración de los módulos y nombre de la clase 05–06",
+      "type": "Testimonio",
+      "url": "index.html#recorrido",
+      "note": "Luis Miguel Caamaño, 16 de septiembre de 2026. El módulo 04 duró diez días. Los módulos 05 y 06 son las dos mitades de una sola clase suya de diez días. Los tres días del 03 fueron una intervención aparte, no parte de esa clase. Del 00 y del 01 declara no recordar la duración, y el archivo la deja vacía en vez de estimarla. El nombre «El objeto como mensaje» es una decisión editorial suya de esa fecha, no un título tomado de un programa: se distingue a propósito del módulo 02, cuyo nombre sí sale del documento de la docente."
     },
     {
       "id": "programa-02",
@@ -2042,14 +2049,21 @@
       "text": "La clase que da nombre al proyecto. Primero el museo como institución: el ICOM, sus funciones, la museología, la curaduría y la museografía como oficios distintos, y la diferencia entre un objeto patrimonial y un objeto museal. Después, en taller, nació MUFU como un mundo compartido: pilares, relatos, recorridos, roles, pedestales, recursos digitales y sonido. Exhibir es una decisión colectiva."
     },
     {
-      "id": "luis-miguel",
+      "id": "luis-miguel-puente",
       "modules": [
-        "03",
+        "03"
+      ],
+      "area": "Leer el objeto",
+      "text": "Tres días entre el museo construido y los futuros por construir. Las funciones narrativas de un objeto, y el problema de diseñar un mensaje para alguien que no comparte idioma, cuerpo ni época."
+    },
+    {
+      "id": "luis-miguel-clase",
+      "modules": [
         "05",
         "06"
       ],
-      "area": "Narrar, conservar, hacer aparecer",
-      "text": "El puente narrativo, la cápsula y la aparición vuelven materiales las preguntas del trimestre: qué significa un objeto, para quién se guarda y quién decide lo que vemos."
+      "area": "Guardar y hacer aparecer",
+      "text": "Una clase de diez días en dos mitades. Primero la cápsula, que mide veintiún años hacia atrás para poder apostar veintiuno hacia adelante. Después la aparición, que deja ver un objeto sin poder tocarlo. Las dos preguntan para quién se guarda y quién decide lo que vemos."
     },
     {
       "id": "karla",
@@ -2109,6 +2123,32 @@
       ],
       "title": "Un museo depende de un mundo.",
       "text": "Construir el ecosistema museal con Viridiana y los escenarios con Karla Paniagua permite preguntar qué leyes, tecnologías y formas de convivencia hacen posible una colección."
+    },
+    {
+      "id": "sin-contexto",
+      "modules": [
+        "03",
+        "05"
+      ],
+      "threads": [
+        "memoria",
+        "tiempo"
+      ],
+      "title": "El mismo encargo, dos veces.",
+      "text": "El disco de la Voyager y la carta de la cápsula piden lo mismo: escribir para quien no comparte idioma, cuerpo ni época. Uno se dirige al espacio y la otra a una persona futura que además se llama igual que quien escribe."
+    },
+    {
+      "id": "sin-materia",
+      "modules": [
+        "03",
+        "06"
+      ],
+      "threads": [
+        "imagen",
+        "poder"
+      ],
+      "title": "Un objeto puede actuar sin estar.",
+      "text": "Las funciones narrativas trabajan sobre cosas que se pueden tomar. El fantasma de Pepper les quita la materia y deja el signo: el objeto sigue actuando sobre quien mira, ahora como una imagen que alguien enciende y apaga."
     },
     {
       "id": "narrativa",

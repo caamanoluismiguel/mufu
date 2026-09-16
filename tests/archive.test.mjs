@@ -117,16 +117,16 @@ test('no contradictions, duplicate prose, broken anchors or voice-rule breaches'
   execFileSync(process.execPath,['scripts/check-coherencia.mjs'],{stdio:'inherit'});
 });
 test('collective authorship and cross-class connections are sourced and preserved in every learning view',()=>{
-  assert.equal(contributors.length,6);
-  assert.equal(learningConnections.length,9);
+  assert.equal(contributors.length,7);
+  assert.equal(learningConnections.length,11);
   assert.equal(new Set(contributors.flatMap(c=>c.modules)).size,8);
   for(const item of [...contributors,...learningConnections])for(const id of item.modules)assert.ok(modules.some(m=>m.id===id),id);
   for(const connection of learningConnections)for(const id of connection.threads)assert.ok(threads.some(t=>t.id===id),id);
   for(const page of ['atlas.html','infografia.html','infografias.html']){
     const $=load(fs.readFileSync(page,'utf8'));
     assert.equal($('#trimestre-compartido').length,1,page);
-    assert.equal($('.weave-contributors>li').length,6,page);
-    if(page!=='infografias.html')assert.equal($('[data-learning-connection]').length,9,page);
+    assert.equal($('.weave-contributors>li').length,7,page);
+    if(page!=='infografias.html')assert.equal($('[data-learning-connection]').length,11,page);
     for(const person of contributors){
       assert.ok($(`[data-contributor="${person.id}"]`).text().includes(contributorName(person)),page);
       for(const id of person.modules)assert.equal($(`[data-contributor="${person.id}"] a[href="index.html#modulo-original-${id}"]`).length,1);
