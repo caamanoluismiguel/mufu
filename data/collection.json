@@ -1555,6 +1555,62 @@
       "type": "Lectura del programa",
       "url": "https://es.wikipedia.org/wiki/Olivier_Debroise",
       "note": "Lectura de la sesión de curaduría del módulo 02. El programa la cita por un título corto y el texto no está publicado en abierto, así que el enlace identifica al autor, historiador y curador francomexicano, y no reproduce la lectura."
+    },
+    {
+      "id": "campbell",
+      "title": "Joseph Campbell · El héroe de las mil caras",
+      "type": "Fuente del concepto",
+      "url": "https://www.jcf.org/learn/joseph-campbell-heros-journey",
+      "note": "Campbell formuló el monomito en 1949 con diecisiete etapas en tres actos. Las doce etapas que usa el cine no son suyas: las condensó Christopher Vogler, primero en un memo interno de Disney y luego en The Writer’s Journey (1992). Campbell no escribía para guionistas, y la universalidad del monomito es una tesis discutida en folklorística."
+    },
+    {
+      "id": "macguffin",
+      "title": "El MacGuffin · rastreo del término",
+      "type": "Rastreo documental",
+      "url": "https://quoteinvestigator.com/2018/02/28/macguffin/",
+      "note": "Hitchcock difundió el término y él mismo se lo atribuyó al guionista escocés Angus MacPhail. El registro más antiguo en su boca es su conferencia en Columbia University del 30 de marzo de 1939, con la anécdota del tren y el aparato para cazar leones; lo repitió en las conversaciones con Truffaut. Que Hitchcock lo acuñara es falso por su propia declaración, y que naciera en The 39 Steps es tradición oral sin documento. Esta referencia es un rastreo de citas, no una fuente institucional."
+    },
+    {
+      "id": "greimas",
+      "title": "Propp y Greimas · el objeto como función",
+      "type": "Fuente del concepto",
+      "url": "https://rupkatha.com/V9/n2/v9n241.pdf",
+      "note": "Vladimir Propp define en Morfología del cuento (1928) la función como el acto de un personaje según su significado para el curso de la acción, y cataloga treinta y una. Greimas generaliza eso en el modelo actancial (Sémantique structurale, 1966), donde el Objeto es una de las seis posiciones. Ninguno de los dos escribe sobre museos ni sobre cultura material: su corpus son relatos."
+    },
+    {
+      "id": "kopytoff",
+      "title": "Igor Kopytoff · La biografía cultural de las cosas",
+      "type": "Fuente del concepto",
+      "url": "https://www.cambridge.org/core/books/social-life-of-things/4F4D3929A501EC19CF413D36BDF8AB3A",
+      "note": "Capítulo «The Cultural Biography of Things: Commodification as Process», dentro del volumen The Social Life of Things (Cambridge University Press, 1986) editado por Arjun Appadurai. La idea de la biografía cultural es de Kopytoff; el enlace apunta al volumen porque es donde se publicó. Kopytoff no escribe sobre reliquias ni talismanes como par de categorías."
+    },
+    {
+      "id": "cripta",
+      "title": "Oglethorpe University · Cripta de la Civilización",
+      "type": "Fuente histórica",
+      "url": "https://oglethorpe.edu/about/history/crypt/",
+      "note": "Ideada por Thornwell Jacobs en 1936 y sellada el 28 de mayo de 1940, con apertura fijada para el 28 de mayo de 8113. Es el antecedente más ambicioso de la forma. De ahí salió en 1990 la International Time Capsule Society, que mantiene una lista de cápsulas perdidas. Las cifras de fracaso que circulan son estimaciones de esa sociedad y no un estudio, así que este archivo no las publica como dato."
+    },
+    {
+      "id": "kuny",
+      "title": "Terry Kuny · A Digital Dark Ages?",
+      "type": "Fuente histórica",
+      "url": "https://archive.org/details/63kuny1",
+      "note": "Ponencia de la 63ª conferencia de la IFLA, presentada el 4 de septiembre de 1997, donde se fija el término «edad oscura digital». El enlace apunta al Internet Archive porque la copia en el servidor de la IFLA ya no responde: un texto sobre la pérdida de lo digital que sobrevive en una copia y no en su original. Kuny fija la etiqueta; el problema lo había descrito Jeff Rothenberg en Scientific American en 1995."
+    },
+    {
+      "id": "saffo",
+      "title": "Paul Saffo · Six Rules for Effective Forecasting",
+      "type": "Referencia / método ajeno",
+      "url": "https://hbr.org/2007/07/six-rules-for-effective-forecasting",
+      "note": "Harvard Business Review, julio-agosto de 2007. Su quinta regla es mirar hacia atrás el doble de lo que se mira hacia adelante. MUFU miró la misma distancia, veintiún años, no el doble. Se cita para marcar la diferencia: la simetría del ejercicio no tiene nombre establecido en prospectiva y no se le inventa uno."
+    },
+    {
+      "id": "tupac",
+      "title": "The Conversation · Tupac no fue holografía",
+      "type": "Análisis académico en prensa",
+      "url": "https://theconversation.com/tupacs-rise-from-the-dead-was-sadly-not-holography-6641",
+      "note": "La aparición de Coachella del 15 de abril de 2012, producida por Digital Domain y AV Concepts, usó la óptica de Pepper con lámina reflectante en vez de vidrio y una imagen generada por computadora. No es holografía: no hay paralaje y se ve desde un solo eje. La geometría es la de 1862; el contenido no. Decir que es el mismo efecto sin ese matiz sería impreciso."
     }
   ],
   "threads": [

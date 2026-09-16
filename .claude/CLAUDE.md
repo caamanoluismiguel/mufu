@@ -132,6 +132,38 @@ tenía una para tres módulos mientras cada docente tenía la suya.
    cuatro salen de `contributors.length` y `learningConnections.length`. Si añades una
    conexión, no hay nada que actualizar a mano.
 
+## Los tres módulos de Luis Miguel, con su linaje (2026-09-16)
+
+Se leían con menos autoridad que el 02 y el 04 por una razón medible: los otros
+atribuían su aparato (ICOM, Debroise, Dator, Els Dragt, Candy, Sterling) y estos nombraban
+artefactos sin autor. El rigor existía, pero vivía en `sources[]` y no en la prosa.
+
+Lo que entró, con su fuente: Campbell 1949 y **las doce etapas que son de Vogler, no
+suyas**; el MacGuffin **como término de Angus MacPhail**, no de Hitchcock; Propp y Greimas
+para «el objeto es una posición, no una categoría»; Kopytoff para la biografía cultural
+del objeto; el comité del Disco de Oro; la Cripta de la Civilización; Terry Kuny y la
+edad oscura digital; Saffo; y el caso Tupac.
+
+**Tres decisiones que no se revierten sin volver a discutirlas:**
+
+1. **Se quitó el superlativo del Disco de Oro.** Decía «el encargo de diseño más difícil
+   que se ha hecho nunca» y no hay ninguna declaración de Sagan, Druyan ni Lomberg que lo
+   sostenga. En su lugar va la restricción real, que sí es comprobable: seis semanas.
+2. **La simetría de los veintiún años no tiene nombre y el sitio lo dice.** Lo más cercano
+   es la regla de Saffo, que es **el doble**, no la misma distancia. Se cita para marcar la
+   diferencia. No se le inventa una etiqueta al método.
+3. **No se cita a Appadurai como autor de la biografía cultural del objeto.** Ese es
+   Kopytoff; Appadurai editó el volumen de 1986. Y **no se publica el porcentaje de
+   cápsulas perdidas**: el 80% que circula es estimación de la propia ITCS, no un estudio.
+
+**Errores de dato corregidos:** `index.html` decía «Henri Dircks» mientras `editorial.mjs`
+decía «Henry». Es Henry, ingeniero inglés de Liverpool. Y el módulo 06 afirmaba que los
+hologramas de concierto «son este mismo truco» y tres líneas después que decir que es lo
+mismo no es exacto; ahora dice que usan la misma óptica, que es lo cierto.
+
+**El enlace de Kuny apunta al Internet Archive** porque la copia de la IFLA devuelve 503.
+Un texto sobre la pérdida de lo digital que sobrevive en una copia y no en su original.
+
 ## Cinco trampas que rompen el trabajo
 
 1. **El hash de `index.html` está congelado.** El test «generated outputs are
